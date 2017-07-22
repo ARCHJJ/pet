@@ -10,7 +10,7 @@
 <title><decorator:title/></title>
 <link rel="stylesheet" type="text/css" href="frames/main_frame.css"/>
 <script type="text/javascript" src="frames/main_frame.js"></script>
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 <decorator:head/>	
 </head>
@@ -40,22 +40,6 @@
 				<div id="login_info">
 					<span class="auth">
 						<c:choose>
-							<c:when test="${session.auth eq 11}">[자료검증 위원장]</c:when>
-							<c:when test="${session.auth eq 12}">[자료검증 위원]</c:when>
-							<c:when test="${session.auth eq 13}">[자료검증 간사]</c:when>
-							
-							<c:when test="${session.auth eq 101}">[갑반 위원장]</c:when>
-							<c:when test="${session.auth eq 102}">[갑반 위원]</c:when>
-							<c:when test="${session.auth eq 103}">[갑반 간사]</c:when>
-							
-							<c:when test="${session.auth eq 201}">[을반 위원장]</c:when>
-							<c:when test="${session.auth eq 202}">[을반 위원]</c:when>
-							<c:when test="${session.auth eq 203}">[을반 간사]</c:when>
-							
-							<c:when test="${session.auth eq 301}">[선발위원회 위원장]</c:when>
-							<c:when test="${session.auth eq 302}">[선발위원회 위원]</c:when>
-							<c:when test="${session.auth eq 303}">[선발위원회 간사]</c:when>
-							
 							<c:when test="${session.auth eq 701}">[관리자]</c:when>
 						</c:choose>
 					</span>
