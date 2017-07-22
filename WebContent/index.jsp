@@ -7,6 +7,6 @@
 <title></title>
 </head>
 <body>
-	<a href="main.do">메인페이지</a>
+	<a href="main.do">메인페이지12345</a>
 </body>
 </html>

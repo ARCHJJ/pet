@@ -25,16 +25,13 @@
 					<ul class="nav">
 						<!-- 관리자메뉴 -->
 						<c:if test="${session.auth eq 701}">
-							<li><a href="record.do"><img src="img/frames/top/menu/menu2_off.gif"/></a></li>
-							<li><a href="total.do"><img src="img/frames/top/menu/menu3_off.gif" /></a></li>
-							<li><a href="minimum.do?egroup=administration"><img src="img/frames/top/menu/menu4_off.gif"/></a></li>
+							<li><a href="">메뉴1</a></li>
+							<li><a href="">메뉴2</a></li>
+							<li><a href="">메뉴3</a></li>
 						</c:if>
-							<li><a href="candidate.do?egroup=administration"><img src="img/frames/top/menu/menu1_off.gif"/></a></li>
-						
-						<!-- 관리자메뉴 -->
-						<c:if test="${session.auth eq 701}">
-							<li><a href="admin.do"><img src="img/frames/top/menu/menu5_off.gif" /></a></li>
-						</c:if>
+						<li><a href="">메뉴4</a></li>
+						<li><a href="">메뉴5</a></li>
+						<li><a href="">메뉴6</a></li>
 					</ul> 
 				</div>
 				<div id="login_info">
