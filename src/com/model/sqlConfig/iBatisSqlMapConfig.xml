@@ -32,5 +32,5 @@
 	</transactionManager>
 
 	<!--  <sqlMap resource="com/model/sqlMap/baseDao.xml"/>-->
-
+	<sqlMap resource="com/model/sqlMap/LoginDao.xml"/>
 </sqlMapConfig>

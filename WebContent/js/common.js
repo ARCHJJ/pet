@@ -1,5 +1,5 @@
 //롤오버
-$(window).load(function(){
+$(document).ready(function(){
 	$(".nav a").each(function(){ 
 		var image = $(this).children("img");
 		var imgsrc = $(image).attr("src");

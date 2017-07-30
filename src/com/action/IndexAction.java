@@ -10,6 +10,6 @@ public class IndexAction implements CommandAction{
 	public String requestPro(HttpServletRequest request,
 			HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		return "main.jsp";
+		return "index.jsp";
 	}
 }
