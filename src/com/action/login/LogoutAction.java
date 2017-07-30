@@ -13,7 +13,7 @@ public class LogoutAction extends CommonAction{
 		// TODO Auto-generated method stub
 		
 		request.getSession().invalidate();
-		request.setAttribute("url", "index.do");
+		request.setAttribute("url", "main.do");
 		
 		return "redirect.jsp";
 	}

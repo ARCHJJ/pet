@@ -71,7 +71,7 @@ function login(userid, password){
 					alert("계정이 잠김상태 입니다.");
 					loginReset();
 				}else{
-					location.href="index.do";
+					location.href="main.do";
 				}
 			}, 
 		error: 
