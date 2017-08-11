@@ -11,12 +11,12 @@ public class MarketDao extends DaoCore{
 	private static MarketDao instance = new MarketDao();
 	public static MarketDao getInstance(){return instance;}
 	
-	public MarketBean isMarketInfoValid(int market_id, String email, String market_name) {
+	public MarketBean isMarketInfoValid(int market_id, String email) {
 		MarketBean mb = new MarketBean();
 		try{
 			HashMap<String, Object> param = new HashMap<String, Object>();
-			param.put("userid", market_id);
-			param.put("password", email);
+			param.put("market_id", market_id);
+			param.put("email", email);
 			
 			mb  = (MarketBean) getSqlMapClient().queryForObject("MarketDao.isUserInfoValid", param);
 		}catch(Exception e){

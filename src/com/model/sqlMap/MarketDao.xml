@@ -12,8 +12,7 @@
 		SELECT * FROM market
 			WHERE
 				market_id = #market_id# AND
-				email = #userid# AND
-				market_name = #market_name#
+				email = #email#
 	</select>
 </sqlMap>
 
