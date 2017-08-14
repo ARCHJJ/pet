@@ -10,6 +10,12 @@ $(document).ready(function(){
     $('#signup').click(function(){
       	 $('.ui.modal.second').modal('show');
        });
+    
+    $('.outer-menu').hover(function () {
+    	$(this).find('.inner-menu').css('display', 'block');
+    }, function () {
+    	$(this).find('.inner-menu').css('display', 'none');
+    });
 });
 
 //userid foucs

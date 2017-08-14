@@ -1,30 +1,66 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="decorator"
+	uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@ taglib prefix="page" uri="http://www.opensymphony.com/sitemesh/page"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><decorator:title/></title>
-<link rel="stylesheet" type="text/css" href="frames/main_frame.css"/>
-<link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
+<title><decorator:title /></title>
+<link rel="stylesheet" type="text/css" href="frames/main_frame.css" />
+<link rel="stylesheet" type="text/css"
+	href="Semantic-UI-CSS-master/semantic.min.css">
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="frames/main_frame.js"></script>
 <!-- <script type="text/javascript" src="js/common.js"></script> -->
-<script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
-<decorator:head/>	
+<script type="text/javascript"
+	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<decorator:head />
 </head>
 <body onload="<decorator:getProperty property='body.onload'/>">
 	<div id="wrapper">
 		<div id="top">
 			<div id="header">
 				<div class="logo">
-					<a href="main.do"><button onclick="blur()"/>메인</a>
+					<a href="main.do"><button onclick="blur()" />메인</a>
 				</div>
-				<div class="menu">
+				<div class="header-menu">
+					<ul class="outer-menu">
+						<li><a href="#">메뉴1</a>
+							<ul class="inner-menu">
+								<li><a href="#">풀다운 메뉴</a></li>
+								<li><a href="#">풀다운 메뉴</a></li>
+								<li><a href="#">풀다운 메뉴</a></li>
+							</ul></li>
+					</ul>
+					<ul class="outer-menu">
+						<li><a href="#">메뉴2</a>
+							<ul class="inner-menu">
+								<li><a href="#">풀다운 메뉴</a></li>
+								<li><a href="#">풀다운 메뉴</a></li>
+
+							</ul></li>
+					</ul>
+					<ul class="outer-menu">
+						<li><a href="#">메뉴3</a>
+							<ul class="inner-menu">
+								<li><a href="#">풀다운 메뉴</a></li>
+
+							</ul></li>
+					</ul>
+					<ul class="outer-menu">
+						<li><a href="#">메뉴4</a>
+							<ul class="inner-menu">
+								<li><a href="#">풀다운 메뉴</a></li>
+								<li><a href="#">풀다운 메뉴</a></li>
+								<li><a href="#">풀다운 메뉴</a></li>
+							</ul></li>
+					</ul>
+				</div>
+				<%-- <div class="menu">
 					<ul class="nav">
 						<li><a href="">메뉴1</a></li>
 						<li><a href="">메뉴2</a></li>
@@ -35,29 +71,25 @@
 							<li><a href="">메뉴5</a></li>
 							<li><a href="">메뉴6</a></li>
 						</c:if>
-					</ul> 
-				</div>
+					</ul>
+				</div> --%>
 				<div id="login_info">
-					<span class="auth">
-						<c:choose>
+					<span class="auth"> <c:choose>
 							<c:when test="${session.power eq 101}">[관리자]</c:when>
 						</c:choose>
 					</span>
 					<c:choose>
 						<c:when test="${session ne null }">
 							<span>${session.name}님</span>
-							<span>
-								<a onclick="javascript:Logout()">[로그아웃]</a>
+							<span> <a onclick="javascript:Logout()">[로그아웃]</a>
 							</span>
 						</c:when>
 						<c:when test="${session eq null}">
 							<div id="button">
-								<button class="ui primary basic button" id="login">
-									로그인
+								<button class="ui primary basic button" id="login">로그인
 								</button>
 								<button class="ui positive basic button" id="signup">
-									회원가입
-								</button>
+									회원가입</button>
 							</div>
 						</c:when>
 					</c:choose>
@@ -66,14 +98,14 @@
 		</div>
 		<div id="middle">
 			<div id="container">
-				<decorator:body/>
+				<decorator:body />
 			</div>
 		</div>
 		<div id="bottom">
 			<div id="footer"></div>
 		</div>
 	</div>
-	
+
 	<div class="ui modal first">
 		<i class="close icon"></i>
 		<div class="header">로그인</div>
@@ -85,20 +117,22 @@
 				<div class="ui header">로그인 폼</div>
 				<div class="ui fluid input">
 					<form name="login_form" method="post" action="login.do">
-						아이디(이메일) : <input type="text" name="userid" /> <br><br>
-						비밀번호 : <input type="text" name="password" /> <br> <br>
+						아이디(이메일) : <input type="text" name="userid" /> <br>
+						<br> 비밀번호 : <input type="text" name="password" /> <br>
+						<br>
 					</form>
 				</div>
 			</div>
 		</div>
 		<div class="actions">
 			<div class="ui black deny button">취소</div>
-			<div class="ui positive right labeled icon button" onclick="loginCheck();">
+			<div class="ui positive right labeled icon button"
+				onclick="loginCheck();">
 				로그인 <i class="checkmark icon"></i>
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="ui modal second">
 		<i class="close icon"></i>
 		<div class="header">회원가입 폼</div>
@@ -113,15 +147,18 @@
 						<table>
 							<tr>
 								<td>이메일</td>
-								<td><input type="text" name="userid" maxlength="20" onfocus="javascript:changeBorder('userid')" /></td>
+								<td><input type="text" name="userid" maxlength="20"
+									onfocus="javascript:changeBorder('userid')" /></td>
 							</tr>
 							<tr>
 								<td>PW</td>
-								<td><input type="password" name="passwd" maxlength="20" onfocus="javascript:changeBorder('passwd')" /></td>
+								<td><input type="password" name="passwd" maxlength="20"
+									onfocus="javascript:changeBorder('passwd')" /></td>
 							</tr>
 							<tr>
 								<td>이름</td>
-								<td> <input type="text" name="username" maxlength="20" onfocus="javascript:changeBorder('username')" /></td>
+								<td><input type="text" name="username" maxlength="20"
+									onfocus="javascript:changeBorder('username')" /></td>
 							</tr>
 						</table>
 					</form>
@@ -131,7 +168,8 @@
 		</div>
 		<div class="actions">
 			<div class="ui black deny button">취소</div>
-			<div class="ui positive right labeled icon button" onclick="registerCheck();">
+			<div class="ui positive right labeled icon button"
+				onclick="registerCheck();">
 				가입 <i class="checkmark icon"></i>
 			</div>
 		</div>
