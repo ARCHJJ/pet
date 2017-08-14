@@ -1,4 +1,4 @@
-package com.mymenu.market;
+package com.model.mymenu.market;
 
 public class MarketBean {
 	private int market_id;
