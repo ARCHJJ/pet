@@ -74,7 +74,7 @@
 		</div>
 	</div>
 	
-	<div class="ui modal">
+	<div class="ui modal first">
 		<i class="close icon"></i>
 		<div class="header">로그인</div>
 		<div class="image content">
@@ -95,6 +95,44 @@
 			<div class="ui black deny button">취소</div>
 			<div class="ui positive right labeled icon button" onclick="loginCheck();">
 				로그인 <i class="checkmark icon"></i>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ui modal second">
+		<i class="close icon"></i>
+		<div class="header">회원가입 폼</div>
+		<div class="image content">
+			<div class="ui medium image">
+				<img src="img/logo.gif">
+			</div>
+			<div class="description">
+				<div class="ui header">펫방 회원가입</div>
+				<div class="ui input focus">
+					<form name="register_form" method="post">
+						<table>
+							<tr>
+								<td>이메일</td>
+								<td><input type="text" name="userid" maxlength="20" onfocus="javascript:changeBorder('userid')" /></td>
+							</tr>
+							<tr>
+								<td>PW</td>
+								<td><input type="password" name="passwd" maxlength="20" onfocus="javascript:changeBorder('passwd')" /></td>
+							</tr>
+							<tr>
+								<td>이름</td>
+								<td> <input type="text" name="username" maxlength="20" onfocus="javascript:changeBorder('username')" /></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<p>가입하시겠습니까?</p>
+			</div>
+		</div>
+		<div class="actions">
+			<div class="ui black deny button">취소</div>
+			<div class="ui positive right labeled icon button" onclick="registerCheck();">
+				가입 <i class="checkmark icon"></i>
 			</div>
 		</div>
 	</div>

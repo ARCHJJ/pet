@@ -32,7 +32,6 @@ public class LoginAction implements CommandAction{
 		response.setContentType("application/json");
 		response.setCharacterEncoding("utf-8");
 		response.getWriter().write(json.toString());
-		
 		return null;
 				
 	}

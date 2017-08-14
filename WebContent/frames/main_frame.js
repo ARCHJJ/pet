@@ -4,11 +4,11 @@ function Logout(){
 
 $(document).ready(function(){
     $('#login').click(function(){
-   	 $('.ui.modal').modal('show');
+   	 $('.ui.modal.first').modal('show');
     });
     
     $('#signup').click(function(){
-      	 $('.ui.modal').modal('show');
+      	 $('.ui.modal.second').modal('show');
        });
 });
 
@@ -81,3 +81,55 @@ function login(userid, password){
 	}); 
 }
 
+//가입폼 유효성 검사
+function registerCheck(){
+	var userid = document.register_form.userid.value;
+	var password = document.register_form.passwd.value;
+	var username = document.register_form.username.value;
+	
+	if(!userid){
+		alert("아이디를 입력하세요.");
+		document.login_form.userid.focus();
+		return false;
+	}else if(!password){
+		alert("비밀번호를 입력하세요.");
+		document.login_form.password.focus();
+		return false;
+	}else if(!username){
+		alert("비밀번호를 입력하세요.");
+		document.login_form.username.focus();
+		return false;
+	}
+	register(userid, password, username);
+}
+
+//가입폼 리셋
+function registerReset(){
+	document.register_form.reset();
+}
+//가입 처리
+function register(userid, password, username){
+	jQuery.ajax({
+		type: "post",
+		url: "register.do",
+		data : {userid: userid, password: password, username: username},
+		dataType: "json",
+		success:
+			function(data){
+				if(data.result == "false1"){
+					alert("현재 영대 컴공과 학생이 아닙니다. ");
+					registerReset();
+				}else if(data.result == "false2"){
+					alert("시스템 오류 발생하였습니다.");
+					registerReset();
+				}else{
+					alert("회원가입 되었습니다. ");
+					location.href="index.do";
+				}
+			}, 
+		error: 
+			function error(xhr,status,error){
+				alert(error);
+			} 
+	}); 
+}
