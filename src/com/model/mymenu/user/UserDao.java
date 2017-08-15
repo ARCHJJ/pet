@@ -1,9 +1,8 @@
-package com.mymenu.user;
+package com.model.mymenu.user;
 
 import java.util.HashMap;
 
 import com.model.dao.DaoCore;
-import com.mymenu.user.UserBean;
 
 public class UserDao extends DaoCore{
 	private static UserDao instance = new UserDao();

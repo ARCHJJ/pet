@@ -1,4 +1,4 @@
-package com.mymenu.user;
+package com.model.mymenu.user;
 
 public class UserBean {
 	private int user_id;		//login e-mail
