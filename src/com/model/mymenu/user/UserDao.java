@@ -9,14 +9,13 @@ public class UserDao extends DaoCore{
 	public static UserDao getInstance(){return instance;}
 	
 	//마이메뉴가 고객 권한이 맞는지 확인
-	public UserBean isUserInfoValid(String userid, int power) {
+	public UserBean getUserInfo(String userid) {
 		UserBean ub = new UserBean();
 		try{
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("userid", userid);
-			param.put("power", power);
 			
-			ub  = (UserBean) getSqlMapClient().queryForObject("UserDao.isUserInfoValid", param);
+			ub  = (UserBean) getSqlMapClient().queryForObject("UserDao.getUserInfo", param);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
