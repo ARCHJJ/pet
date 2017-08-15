@@ -14,6 +14,6 @@ public class MenuUserAction {
 		
 		UserBean ub = UserDao.getInstance().getUserInfo(userid);
 		
-		return null;
+		return "WebContent/WEB-INF/Mymenu/mymenu_user.jsp";
 	}
 }
