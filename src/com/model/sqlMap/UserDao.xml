@@ -8,11 +8,23 @@
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="UserBean" type="com.mymenu.user.UserBean" />
 	
-	<select id="isUserInfoValid" parameterClass="HashMap" resultClass="UserBean">
+	<select id="getUserInfo" parameterClass="HashMap" resultClass="UserBean">
 		SELECT * FROM member
 			WHERE
-				email = #userid# AND
-				power = #power#
+				email = #userid#
 	</select>
+	
+	<select id="loadReservInfo" parameterClass="HashMap" resultClass="UserBean">
+		SELECT * FROM reservation
+			WHERE
+				member_email = #userid#
+	</select>
+	
+	<delete id="deleteReservInfo" parameterClass="HashMap" resultClass="UserBean">
+		DELETE * from reservation
+			WHERE 
+				member_email = #userid# AND
+				rev_idx = #select_rev_idx#
+	</delete>
 </sqlMap>
 
