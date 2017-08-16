@@ -144,6 +144,17 @@
 							<li><a href="kin.do">지식인</a></li>
 							<li><a href="freeboard.do">자유게시판</a></li>
 					</ul>
+					<c:if test="${session.power eq 300}">
+							<li><a href="#">마이메뉴</a>
+					<ul>
+							<li><a href="">예약정보</a></li>
+							<li><a href="">동물모니터링</a></li>
+							<li><a href="">게시글관리</a></li>
+							<li><a href="">메시지확인</a></li>
+							<li><a href="">개인정보수정</a></li>
+							<li><a href="">비밀번호변경</a></li>
+					</ul>
+					</c:if>
 						
 						<!-- 관리자메뉴 -->
 						<c:if test="${session.power eq 101}">
