@@ -14,7 +14,7 @@
 			ORDER BY index DESC
 	</select>
 	
-	<insert id="insertWrite" parameterClass="ArrayList" resultClass="BoardBean">
+	<insert id="insertWrite" parameterClass="ArrayList">
 		INSERT INTO board(board_type,index,email,title,file,content,date) 
 			VALUES(?,?,?,?,?,?,sysdate)
 	</insert>
@@ -24,14 +24,14 @@
 			FROM board WHERE index=?
 	</select>
 	
-	<update id="modify" parameterClass="ArrayList" resultClass="BoardBean">
+	<update id="modify" parameterClass="ArrayList" resultClass="Integer">
 		UPDATE board 
 			SET title=?, content=?
 			WHERE board_type=? AND
 			index=?
 	</update>
 	
-	<delete id="delete" parameterClass="ArrayList" resultClass="BoardBean">
+	<delete id="delete" parameterClass="ArrayList" resultClass="Integer">
 		DELETE FROM board
 			WHERE board_type=? AND
 			index=?
