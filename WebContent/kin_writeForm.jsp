@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
@@ -42,7 +40,7 @@ function writeCheck()
  <title>공지사항</title>
  </head>
  <body>
- <form name=writeform method=post action="notice_writeOk.jsp">
+ <form name=writeform method=post action="kin_writeOk.jsp">
 <table>
   <tr>
    <td>

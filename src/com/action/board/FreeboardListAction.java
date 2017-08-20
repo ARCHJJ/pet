@@ -10,7 +10,7 @@ import com.controller.CommandAction;
 import com.model.board.BoardBean;
 import com.model.board.freeboardDao;
 
-public class BoardListAction implements CommandAction {
+public class FreeboardListAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -59,6 +59,6 @@ public class BoardListAction implements CommandAction {
 	        request.setAttribute("list", list);
 	        */
 		
-	        return "WEB-INF/notice/noticeList.jsp";
+	        return "WEB-INF/Board/freeList.jsp";
 	}
 }
