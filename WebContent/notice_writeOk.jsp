@@ -16,36 +16,35 @@
 	String content = request.getParameter("content");
 	
 	int max=0;
+	
 	try {	
 		Connection conn = DriverManager.getConnection(url,id,pass);
 		Statement stmt = conn.createStatement();
 		
-		String sql = "SELECT MAX(NUM) FROM board";
+		String sql = "SELECT * FROM board WHERE board_type='1'";
 		ResultSet rs = stmt.executeQuery(sql);
 		
 		if(rs.next()){
 			max=rs.getInt(1);
 		}
-		sql = "INSERT INTO board(board_type,index,email,title,file,content,date) VALUES(1,?,?,?,?,?,sysdate)";
+		sql = "INSERT INTO board(index,board_type,email,title,file,content)" 
+				+ "VALUES(?, 1, ?, ?, ?, ?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
-		pstmt.setInt(1, 3);
+		pstmt.setInt(1, max+1);
 		pstmt.setString(2, email);
 		pstmt.setString(3, title);
 		pstmt.setString(4, file);
 		pstmt.setString(5, content);
-		pstmt.setInt(6, max+1);
 
 		pstmt.execute();
-
 		pstmt.close();
-
+		stmt.close();
 		conn.close();
+		
 } catch(SQLException e) {
 	out.println( e.toString() );
 	}
 %>
   <script language=javascript>
-   self.window.alert("입력한 글을 저장하였습니다.");
-   location.href="main.jsp"; 
 </script>
