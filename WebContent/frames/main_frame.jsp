@@ -144,6 +144,17 @@
 							<li><a href="kin.do">지식인</a></li>
 							<li><a href="freeboard.do">자유게시판</a></li>
 					</ul>
+					<c:if test="${session.power eq 200}">
+							<li><a href="#">매장메뉴</a>
+					<ul>
+							<li><a href="">물품관리</a></li>
+							<li><a href="">모니터링</a></li>
+							<li><a href="">상품등록/관리</a></li>
+							<li><a href="">예약현황관리</a></li>
+							<li><a href="">메시지확인</a></li>
+							<li><a href="">매장정보수정</a></li>
+					</ul>
+					</c:if>
 					<c:if test="${session.power eq 300}">
 							<li><a href="#">마이메뉴</a>
 					<ul>
