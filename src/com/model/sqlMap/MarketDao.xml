@@ -6,7 +6,7 @@
 	<typeAlias alias="String" type="java.lang.String" />
 	<typeAlias alias="HashMap" type="java.util.HashMap" />
 	<typeAlias alias="Date" type="java.util.Date" />
-	<typeAlias alias="MarketBean" type="com.mymenu.market.MarketBean" />
+	<typeAlias alias="MarketBean" type="com.model.mymenu.market.MarketBean" />
 	
 	<select id="isMarketInfoValid" parameterClass="HashMap" resultClass="MarketBean">
 		SELECT * FROM market

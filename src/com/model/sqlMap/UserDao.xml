@@ -6,7 +6,7 @@
 	<typeAlias alias="String" type="java.lang.String" />
 	<typeAlias alias="HashMap" type="java.util.HashMap" />
 	<typeAlias alias="Date" type="java.util.Date" />
-	<typeAlias alias="UserBean" type="com.mymenu.user.UserBean" />
+	<typeAlias alias="UserBean" type="com.model.mymenu.user.UserBean" />
 	
 	<select id="getUserInfo" parameterClass="HashMap" resultClass="UserBean">
 		SELECT * FROM member
@@ -20,7 +20,7 @@
 				member_email = #userid#
 	</select>
 	
-	<delete id="deleteReservInfo" parameterClass="HashMap" resultClass="UserBean">
+	<delete id="deleteReservInfo" parameterClass="HashMap">
 		DELETE * from reservation
 			WHERE 
 				member_email = #userid# AND

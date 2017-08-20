@@ -15,8 +15,4 @@
 				password = #password#
 	</select>
 	
-	<insert id="add" parameterClass="LoginBean">
-		insert into member()
-			values()
-	</insert>
 </sqlMap>
