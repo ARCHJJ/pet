@@ -14,10 +14,7 @@ public class MarketDao extends DaoCore{
 	public MarketBean isMarketInfoValid(String email) {
 		MarketBean mb = new MarketBean();
 		try{
-			HashMap<String, Object> param = new HashMap<String, Object>();
-			param.put("email", email);
-			
-			mb  = (MarketBean) getSqlMapClient().queryForObject("MarketDao.isUserInfoValid", param);
+			mb  = (MarketBean) getSqlMapClient().queryForObject("MarketDao.isMarketInfoValid", email);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

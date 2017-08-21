@@ -8,5 +8,14 @@
 </head>
 <body>
 	매장 상세정보
+	${mb.market_id }
+	${mb.email }
+	${mb.market_name }
+	${mb.description }
+	${mb.photos }
+	${mb.pets }
+	${mb.address }
+	${mb.classes }
+	${mb.service }
 </body>
 </html>
