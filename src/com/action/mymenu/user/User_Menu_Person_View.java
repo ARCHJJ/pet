@@ -3,10 +3,11 @@ package com.action.mymenu.user;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.action.CommonAction;
 import com.model.mymenu.user.UserBean;
 import com.model.mymenu.user.UserDao;
 
-public class MenuUserAction {
+public class User_Menu_Person_View extends CommonAction{
 	public String requestPro(HttpServletRequest request,
 			HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
@@ -14,6 +15,6 @@ public class MenuUserAction {
 		
 		UserBean ub = UserDao.getInstance().getUserInfo(userid);
 		
-		return "WebContent/WEB-INF/Mymenu/mymenu_user.jsp";
+		return "WEB-INF/Mymenu/User/User_Menu_Person_View.jsp";
 	}
 }
