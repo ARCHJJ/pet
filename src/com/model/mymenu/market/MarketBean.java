@@ -8,7 +8,7 @@ public class MarketBean {
 	private String photos;
 	private int pets;
 	private String address;
-	private int classcam;
+	private int classes;
 	private int service;
 	public int getMarket_id() {
 		return market_id;
@@ -52,11 +52,11 @@ public class MarketBean {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getClasscam() {
-		return classcam;
+	public int getClasses() {
+		return classes;
 	}
-	public void setClasscam(int classcam) {
-		this.classcam = classcam;
+	public void setClasses(int classes) {
+		this.classes = classes;
 	}
 	public int getService() {
 		return service;
