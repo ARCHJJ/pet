@@ -8,5 +8,13 @@
 </head>
 <body>
 	개인정보 보기화면
+	${ub.email }
+	${ub.password }
+	${ub.address1 }
+	${ub.address2 }
+	${ub.phone }
+	${ub.gender }
+	${ub.power }
+	${ub.name }
 </body>
 </html>

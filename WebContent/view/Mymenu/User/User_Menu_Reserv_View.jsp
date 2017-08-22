@@ -8,5 +8,13 @@
 </head>
 <body>
 	예약정보 확인 화면
+	${rb.rev_idx }
+	${rb.member_email }
+	${rb.market_id }
+	${rb.service }
+	${rb.pets }
+	${rb.timeofrev }
+	${rb.date }
+	${rb.cctvid }
 </body>
 </html>

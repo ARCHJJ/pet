@@ -8,5 +8,7 @@
 </head>
 <body>
 	작성한 글 관리
+	${ub.user_id }
+	${ub.user_password }
 </body>
 </html>
