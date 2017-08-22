@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ReservDao">
+	<typeAlias alias="Integer" type="java.lang.Integer" />
+	<typeAlias alias="String" type="java.lang.String" />
+	<typeAlias alias="HashMap" type="java.util.HashMap" />
+	<typeAlias alias="Date" type="java.util.Date" />
+	<typeAlias alias="ReservBean" type="com.model.mymenu.user.ReservBean" />
+	
+	<select id="getReservInfo" parameterClass="String" resultClass="ReservBean">
+		SELECT * FROM reservation
+			WHERE
+				member_email = #userid#
+	</select>
+</sqlMap>
