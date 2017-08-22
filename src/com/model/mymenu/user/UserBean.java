@@ -1,25 +1,32 @@
 package com.model.mymenu.user;
 
 public class UserBean {
-	private int user_id;		//login e-mail
-	private String address;		//주소
+	private String email;		//login e-mail
+	private String password;
+	private String address1;		//주소
 	private String address2;	//상세주소
 	private String phone;		//전화번호
 	private String gender;		//성별
 	private int power;		//권한
 	private String name;		//이름
 	
-	public int getUser_id() {
-		return user_id;
+	public String getEmail() {
+		return email;
 	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getAddress() {
-		return address;
+	public String getPassword() {
+		return password;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getAddress1() {
+		return address1;
+	}
+	public void setAddress1(String address1) {
+		this.address1 = address1;
 	}
 	public String getAddress2() {
 		return address2;

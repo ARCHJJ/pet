@@ -12,23 +12,27 @@ public class UserDao extends DaoCore{
 	public UserBean getUserInfo(String userid) {
 		UserBean ub = new UserBean();
 		try{
-			HashMap<String, Object> param = new HashMap<String, Object>();
-			param.put("userid", userid);
-			
-			ub = (UserBean) getSqlMapClient().queryForObject("UserDao.getUserInfo", param);
+			ub = (UserBean) getSqlMapClient().queryForObject("UserDao.getUserInfo", userid);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return ub;
 	}
 	
-	public UserBean loadReservInfo(String userid) {
+	public UserBean getWriteInfo(String userid) {
 		UserBean ub = new UserBean();
 		try{
-			HashMap<String, Object> param = new HashMap<String, Object>();
-			param.put("userid", userid);
-			
-			ub = (UserBean) getSqlMapClient().queryForObject("UserDao.loadReservInfo", param);
+			ub = (UserBean) getSqlMapClient().queryForObject("UserDao.getWriteInfo", userid);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return ub;
+	}
+	
+	public UserBean getMonitorInfo(String userid) {
+		UserBean ub = new UserBean();
+		try{
+			ub = (UserBean) getSqlMapClient().queryForObject("UserDao.getMonitorInfo", userid);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -48,5 +52,7 @@ public class UserDao extends DaoCore{
 		}
 		return ub;
 	}
+	
+	
 }
 

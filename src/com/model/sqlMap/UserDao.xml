@@ -8,23 +8,31 @@
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="UserBean" type="com.model.mymenu.user.UserBean" />
 	
-	<select id="getUserInfo" parameterClass="HashMap" resultClass="UserBean">
+	<select id="getUserInfo" parameterClass="String" resultClass="UserBean">
 		SELECT * FROM member
 			WHERE
 				email = #userid#
 	</select>
 	
-	<select id="loadReservInfo" parameterClass="HashMap" resultClass="UserBean">
+	<!--
+	<select id="getWriteInfo" parameterClass="String" resultClass="UserBean">
 		SELECT * FROM reservation
 			WHERE
 				member_email = #userid#
 	</select>
 	
-	<delete id="deleteReservInfo" parameterClass="HashMap">
-		DELETE * from reservation
+	<select id="getMonitorInfo" parameterClass="String" resultClass="UserBean">
+		SELECT * FROM reservation
+			WHERE
+				member_email = #userid#
+	</select>
+	
+	<delete id="deleteReservInfo" parameterClass="String">
+		DELETE FROM reservation
 			WHERE 
 				member_email = #userid# AND
 				rev_idx = #select_rev_idx#
 	</delete>
+	 -->
 </sqlMap>
 
