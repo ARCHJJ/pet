@@ -161,12 +161,12 @@
 							<c:if test="${session.power eq 200}">
 								<li><a href="#">매장메뉴</a>
 									<ul>
-										<li><a href="">물품관리</a></li>
+										<li><a href="mymenu_shop_item.do">물품관리</a></li>
 										<li><a href="">모니터링</a></li>
 										<li><a href="">상품등록/관리</a></li>
 										<li><a href="">예약현황관리</a></li>
 										<li><a href="">메시지확인</a></li>
-										<li><a href="mymenu_shop.do">매장정보수정</a></li>
+										<li><a href="mymenu_shop_info.do">매장정보수정</a></li>
 									</ul>
 							</c:if> 
 							 <!-- 관리자메뉴 --> 
