@@ -7,7 +7,7 @@
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="ItemBean" type="com.model.mymenu.market.ItemBean" />
 	
-	<select id="isItemInfoValid" parameterClass="Integer" resultClass="ItemBean">
+	<select id="getItemInfoValid" parameterClass="Integer" resultClass="ItemBean">
 		SELECT * FROM item
 			WHERE
 				market_id = #market_id#

@@ -6,10 +6,10 @@ public class ItemDao extends DaoCore{
 	private static ItemDao instance = new ItemDao();
 	public static ItemDao getInstance() {return instance;}
 	
-	public ItemBean isItemInfoValid(int market_id) {
+	public ItemBean getItemInfoValid(int market_id) {
 		ItemBean ib = new ItemBean();
 		try {
-			ib = (ItemBean) getSqlMapClient().queryForObject("ItemDao.isItemInfoValid", market_id);
+			ib = (ItemBean) getSqlMapClient().queryForObject("ItemDao.getItemInfoValid", market_id);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
