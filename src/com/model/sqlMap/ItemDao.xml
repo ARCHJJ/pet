@@ -10,7 +10,7 @@
 	<select id="getItemInfoValid" parameterClass="String" resultClass="ItemBean">
 		SELECT * FROM item
 			WHERE
-				market_id IN (
+				market_id = (
 				SELECT market_id
 				FROM market
 				WHERE email = #email#
