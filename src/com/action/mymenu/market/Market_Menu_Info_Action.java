@@ -8,7 +8,7 @@ import com.model.login.LoginBean;
 import com.model.mymenu.market.MarketBean;
 import com.model.mymenu.market.MarketDao;
 
-public class MenuMarketAction extends CommonAction {
+public class Market_Menu_Info_Action extends CommonAction {
 	public String requestPro(HttpServletRequest request, 
 			HttpServletResponse response) throws Throwable {
 		String userid =  ((LoginBean) request.getSession().getAttribute("session")).getEmail();
