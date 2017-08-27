@@ -7,10 +7,14 @@
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="ItemBean" type="com.model.mymenu.market.ItemBean" />
 	
-	<select id="getItemInfoValid" parameterClass="Integer" resultClass="ItemBean">
+	<select id="getItemInfoValid" parameterClass="String" resultClass="ItemBean">
 		SELECT * FROM item
 			WHERE
-				market_id = #market_id#
+				market_id IN (
+				SELECT market_id
+				FROM market
+				WHERE email = #email#
+				)
 	</select>
 </sqlMap>
 
