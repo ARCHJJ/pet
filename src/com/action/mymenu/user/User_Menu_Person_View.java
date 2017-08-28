@@ -9,8 +9,7 @@ import com.model.mymenu.user.UserBean;
 import com.model.mymenu.user.UserDao;
 
 public class User_Menu_Person_View extends CommonAction{
-	public String requestPro(HttpServletRequest request,
-			HttpServletResponse response) throws Throwable {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		String userid = ((LoginBean) request.getSession().getAttribute("session")).getEmail();
 		

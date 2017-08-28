@@ -14,25 +14,5 @@
 				email = #userid#
 	</select>
 	
-	<!--
-	<select id="getWriteInfo" parameterClass="String" resultClass="UserBean">
-		SELECT * FROM reservation
-			WHERE
-				member_email = #userid#
-	</select>
-	
-	<select id="getMonitorInfo" parameterClass="String" resultClass="UserBean">
-		SELECT * FROM reservation
-			WHERE
-				member_email = #userid#
-	</select>
-	
-	<delete id="deleteReservInfo" parameterClass="String">
-		DELETE FROM reservation
-			WHERE 
-				member_email = #userid# AND
-				rev_idx = #select_rev_idx#
-	</delete>
-	 -->
 </sqlMap>
 
