@@ -6,6 +6,10 @@
 	<typeAlias alias="String" type="java.lang.String" />
 	<typeAlias alias="HashMap" type="java.util.HashMap" />
 	<typeAlias alias="Date" type="java.util.Date" />
+	<typeAlias alias="UserBean" type="com.model.mymenu.user.UserBean" />
 	
-	
+	<select id="getMemberList" resultClass="UserBean">
+		SELECT * FROM member 
+			ORDER BY power desc
+	</select>
 </sqlMap>

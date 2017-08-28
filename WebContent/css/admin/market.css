@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+body{
+background: url("img/mainback.jpg") no-repeat;
+}
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+th {
+    height: 50px;
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+#addpro{
+margin: 10px 0 10px 0;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
+th {
+    background-color: #4CAF50;
+    color: white;
+}

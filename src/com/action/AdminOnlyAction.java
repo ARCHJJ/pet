@@ -19,7 +19,7 @@ public class AdminOnlyAction implements CommandAction{
 		if(request.getSession().getAttribute("session") == null){
 			return "sessionOut.jsp";
 		}else{
-			if(((LoginBean) request.getSession().getAttribute("session")).getPower() != 701){//관리자 권한이 아닐경우
+			if(((LoginBean) request.getSession().getAttribute("session")).getPower() != 300){//관리자 권한이 아닐경우
 				request.getSession().invalidate();
 				return "injustice.jsp";
 			}else{

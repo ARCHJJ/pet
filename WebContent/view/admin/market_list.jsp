@@ -8,12 +8,13 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="css/admin/market.css">
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
 
-<script type="text/javascript" src="js/admin/market_list.js"></script>
+<script type="text/javascript" src="js/admin/market.js"></script>
 </head>
 <body>
 	<div>
@@ -26,7 +27,7 @@
 				<td>수정</td>
 				<td>삭제</td>
 			</tr>
-			<c:forEach items="${prolist}" var="item">
+			<c:forEach items="${marketlist}" var="item">
 				<tr>
 					<td>${item.market_id }</td>
 					<td>${item.market_name }</td>
