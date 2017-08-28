@@ -172,9 +172,11 @@
 							</c:if> 
 							 <!-- 관리자메뉴 --> 
 							<c:if test="${session.power eq 300}">
-								<li><a href="">메뉴4</a></li>
-								<li><a href="">메뉴5</a></li>
-								<li><a href="">메뉴6</a></li>
+								<li><a href="marketmanage.do">매장관리</a></li>
+								<li><a href="membermanage.do">회원관리</a></li>
+								<li><a href="noticemanage.do">공지사항관리</a></li>
+								<li><a href="csmanage.do">고객센터관리</a></li>
+								<li><a href="reservemanage.do">예약현황관리</a></li>
 							</c:if>
 					</ul>
 				</div>
