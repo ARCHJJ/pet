@@ -12,4 +12,24 @@
 		SELECT * FROM member 
 			ORDER BY power desc
 	</select>
+	
+	<update id="updateMember" parameterClass="HashMap">
+		UPDATE member
+			SET
+				password = #password#,
+				address1 = #address1#,
+				address2 = #address2#,
+				phone = #phone#,
+				gender = #gender#,
+				power = #power#,
+				name = #name#,
+			WHERE
+				email = #email#
+	</update>
+	
+	<delete id="deleteMember" parameterClass="String">
+		DELETE FROM member 
+			WHERE 
+				email = #email#
+	</delete>
 </sqlMap>

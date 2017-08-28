@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.action.AdminOnlyAction;
 
-public class GetMarketListAction extends AdminOnlyAction {
+public class MarketModifyAction extends AdminOnlyAction {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
