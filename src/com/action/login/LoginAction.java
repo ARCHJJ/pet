@@ -15,7 +15,6 @@ public class LoginAction implements CommandAction{
 	public String requestPro(HttpServletRequest request,
 			HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		System.out.println(request.getParameter("userid"));
 		String userid = request.getParameter("userid");
 		String password = request.getParameter("password");
 		

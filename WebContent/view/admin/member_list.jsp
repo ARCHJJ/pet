@@ -37,14 +37,14 @@
 					<td>${item.phone }</td>
 					<td>${item.gender }</td>
 					<td>${item.power }</td>
-					<td><button class="ui button" onclick="update_pro(${item.email });">수정</button></td>
-					<td><button class="ui button" onclick="delete_pro(${item.email });">삭제</button></td>
+					<td><button class="ui button" onclick="update_pro('${item.email}', '${item.password}', '${item.name}', '${item.address1}', '${item.address2}', '${item.phone}', '${ item.gender}', ${item.power});">수정</button></td>
+					<td><button class="ui button" onclick="delete_pro('${item.email}');">삭제</button></td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
 	
-	<div class="ui modal first">
+	<div class="ui modal first" id="modal_insert">
 		<i class="close icon"></i>
 		<div class="header">멤버 정보 추가</div>
 		<div class="image content">
@@ -72,7 +72,7 @@
 		</div>
 	</div>
 	
-	<div class="ui modal second">
+	<div class="ui modal second" id="modal_update">
 		<i class="close icon"></i>
 		<div class="header">정보 수정</div>
 		<div class="image content">
@@ -82,11 +82,22 @@
 			<div class="description">
 				<div class="ui header">정보 수정</div>
 				<div class="ui input focus">
-					<form name="register_form" method="post">
-						<input type="hidden" name="idx" id="idx"/>
-						이메일 <input type="text" name="pro_name" id="pro_name" maxlength="20" onfocus="javascript:changeBorder('pro_name')" />
+					<form name="modify_form" method="post"  action="memberModify.do">
+						이메일<input type="text" name="email" id="email" readonly="readonly"/>
 						<br>
-						패스워드 <input type="text" name="pro_email" id="pro_email" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						패스워드 <input type="text" name="password" id="password" maxlength="20" onfocus="javascript:changeBorder('pro_name')" />
+						<br>
+						이름 <input type="text" name="name" id="name" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						<br>
+						주소1 <input type="text" name="address1" id="address1" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						<br>
+						주소2 <input type="text" name="address2" id="address2" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						<br>
+						전화 <input type="text" name="phone" id="phone" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						<br>
+						성별 <input type="text" name="gender" id="gender" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						<br>
+						권한 <input type="text" name="power" id="power" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 					</form>
 				</div>
 				<p>수정 하시겠습니까?</p>
