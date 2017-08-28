@@ -9,17 +9,22 @@
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="ReservBean" type="com.model.mymenu.user.ReservBean" />
 	
+	<select id="getReservList" parameterClass="String" resultClass="ReservBean">
+		SELECT * FROM reservation
+			WHERE
+				member_email = #userid#
+	</select>
+	
 	<select id="getReservInfo" parameterClass="String" resultClass="ReservBean">
 		SELECT * FROM reservation
 			WHERE
 				member_email = #userid#
 	</select>
 	
-	<delete id="deleteReservInfo" parameterClass="HashMap">
+	<delete id="deleteReservInfo" parameterClass="String">
 		DELETE FROM reservation
 			WHERE 
-				member_email = #userid# AND
-				rev_idx = #select_rev_idx#
+				rev_idx = #rev_idx#
 	</delete>
 	
 	<select id="getWriteInfo" parameterClass="String" resultClass="ReservBean">
