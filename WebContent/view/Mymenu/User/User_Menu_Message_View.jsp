@@ -36,5 +36,36 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<button class="ui violet basic button" type="button" onclick="sendMessage('${ub.email}');">메시지 작성</button>
+	
+	<div class="ui modal second" id="modal_send">
+		<i class="close icon"></i>
+		<div class="header">메시지 작성</div>
+		<div class="image content">
+			<div class="ui medium image">
+				<img src="img/logo.gif">
+			</div>
+			<div class="description">
+				<div class="ui header">메시지 작성</div>
+				<div class="ui input focus">
+					<form name="send_form" method="post"  action="User_Menu_Message_Send.do">
+						송신자<input type="text" name="sender_email" id="sender_email" readonly="readonly"/>
+						<br>
+						수신자 <input type="text" name="receiver_email" id="receiver_email" maxlength="20" />
+						<br>
+						내용 <textarea name="content" id="content" rows="10" cols="50" maxlength="500"></textarea>
+						<br>
+					</form>
+				</div>
+				<p>전송 하시겠습니까?</p>
+			</div>
+		</div>
+		<div class="actions">
+			<div class="ui black deny button">취소</div>
+			<div class="ui positive right labeled icon button" onclick="send_Message();">
+				전송 <i class="checkmark icon"></i>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

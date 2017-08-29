@@ -14,4 +14,9 @@
 		WHERE
 			receiver_email = #userid#
 	</select>
+	
+	<insert id="sendMessage" parameterClass="Hashmap">
+		INSERT INTO message(receiver_email, sender_email, content, date)
+			VALUES(#receiver_email#, #sender_email#, #content#, SYSDATE())
+	</insert>
 </sqlMap>

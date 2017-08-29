@@ -1,3 +1,12 @@
+/* 메시지 전송*/
+function sendMessage(sender_email){
+	$('#sender_email').val(sender_email);
+	$('#modal_send').modal('show');
+}
+function send_Message() {
+	document.send_form.submit();
+}
+
 /* 예약 삭제 */
 function delReserv(rev_idx) {
 	if (confirm("삭제 하시겠습니까?")) {
