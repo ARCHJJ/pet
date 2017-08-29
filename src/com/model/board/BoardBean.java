@@ -3,19 +3,19 @@ package com.model.board;
 import java.sql.Date;
 
 public class BoardBean {
-	private int index;
+	private int idx;
 	private int board_type;
 	private String email;
 	private Date date;
 	private String file;
 	private String title;
 	private String content;
-	
-	public int getIndex() {
-		return index;
+
+	public int getIdx() {
+		return idx;
 	}
-	public void setIndex(int index) {
-		this.index = index;
+	public void setIdx(int idx) {
+		this.idx = idx;
 	}
 	public int getBoard_type() {
 		return board_type;

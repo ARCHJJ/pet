@@ -2,38 +2,69 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
 
 <sqlMap namespace="BoardDao">
-	<typeAlias alias="Integer" type="java.lang.Integer" />
 	<typeAlias alias="String" type="java.lang.String" />
-	<typeAlias alias="HashMap" type="java.util.HashMap" />
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="BoardBean" type="com.model.board.BoardBean" />
 	
-	<select id="getList" parameterClass="ArrayList" resultClass="BoardBean">
-		SELECT board_type,index,email,title,date
-			FROM board
-			ORDER BY index DESC
+							<!-- 게시판 게시물 select 하는 부분 -->
+	<select id="getBoardList_all" parameterClass="Integer" resultClass="BoardBean">
+		SELECT * FROM board 
+		WHERE board_type = #board_type#
 	</select>
 	
-	<insert id="insertWrite" parameterClass="ArrayList">
-		INSERT INTO board(board_type,index,email,title,file,content,date) 
-			VALUES(?,?,?,?,?,?,sysdate)
-	</insert>
-	
-	<select id="getView" parameterClass="ArrayList" resultClass="BoardBean">
-		SELECT board_type,index,email,title,date,file,content 
-			FROM board WHERE index=?
+	<select id="getBoardList_title" parameterClass="Integer" resultClass="BoardBean">
+		SELECT * FROM board 
+		WHERE title LIKE ? 
+		AND board_type = #board_type#
 	</select>
 	
-	<update id="modify" parameterClass="ArrayList" resultClass="Integer">
-		UPDATE board 
-			SET title=?, content=?
-			WHERE board_type=? AND
-			index=?
-	</update>
+	<select id="getBoardList_content" parameterClass="Integer" resultClass="BoardBean">
+		SELECT * FROM board 
+		WHERE content LIKE ? 
+		AND board_type = #board_type#
+	</select>
 	
-	<delete id="delete" parameterClass="ArrayList" resultClass="Integer">
-		DELETE FROM board
-			WHERE board_type=? AND
-			index=?
-	</delete>
+	<select id="getBoardList_two" parameterClass="Integer" resultClass="BoardBean">
+		SELECT * FROM board 
+		WHERE title LIKE ? 
+		OR content LIKE ? 
+		AND board_type = #board_type#
+	</select>
+	
+	<select id="getBoardList_email" parameterClass="Integer" resultClass="BoardBean">
+		SELECT * FROM board 
+		WHERE email LIKE ? 
+		AND board_type = #board_type#
+	</select>
+	
+			<!-- 게시물 갯수 select 하는 부분 -->
+	<select id="getBoardCount_all" parameterClass="Integer" resultClass="BoardBean">
+		SELECT count(*) FROM board 
+		WHERE board_type = #board_type#
+	</select>
+	
+	<select id="getBoardCount_title" parameterClass="Integer" resultClass="BoardBean">
+		SELECT count(*) FROM board 
+		WHERE title LIKE ? 
+		AND board_type = #board_type#
+	</select>
+	
+	<select id="getBoardCount_content" parameterClass="Integer" resultClass="BoardBean">
+		SELECT count(*) FROM board 
+		WHERE content LIKE ? 
+		AND board_type = #board_type#
+	</select>
+	
+	<select id="getBoardCount_two" parameterClass="Integer" resultClass="BoardBean">
+		SELECT count(*) FROM board 
+		WHERE title LIKE ? 
+		OR content LIKE ? 
+		AND board_type = #board_type#
+	</select>
+	
+	<select id="getBoardCount_email" parameterClass="Integer" resultClass="BoardBean">
+		SELECT count(*) FROM board 
+		WHERE email LIKE ? 
+		AND board_type = #board_type#
+	</select>
 </sqlMap>
