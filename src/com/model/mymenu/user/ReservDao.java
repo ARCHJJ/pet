@@ -37,7 +37,6 @@ public class ReservDao extends DaoCore{
 			param.put("timeofrev", timeofrev);
 			param.put("date", date);
 			param.put("cctvid", cctvid);
-			
 			getSqlMapClient().update("ReservDao.updateReserv", param);
 			
 		}catch(Exception e){

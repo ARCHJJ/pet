@@ -7,20 +7,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.action.CommonAction;
 import com.model.login.LoginBean;
-import com.model.mymenu.user.UserBean;
-import com.model.mymenu.user.WriteDao;
-import com.model.board.BoardBean;
+import com.model.mymenu.user.MessageDao;
+import com.model.mymenu.user.MessageBean;
 
-public class User_Menu_Write_View extends CommonAction{
+public class User_Menu_Message_View extends CommonAction{
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		String userid = ((LoginBean) request.getSession().getAttribute("session")).getEmail();
 		
-		ArrayList<BoardBean> bblist = new ArrayList<BoardBean>();
-		bblist=WriteDao.getInstance().getWriteList(userid);
+		ArrayList<MessageBean> mblist = new ArrayList<MessageBean>();
 		
-		request.getSession().setAttribute("bblist", bblist);
+		mblist = MessageDao.getInstance().getMessageList(userid);
+		request.getSession().setAttribute("mblist", mblist);
 		
-		return "view/Mymenu/User/User_Menu_Write_View.jsp";
+		return "view/Mymenu/User/User_Menu_Message_View.jsp";
 	}
+
 }

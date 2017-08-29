@@ -38,7 +38,7 @@
 								<ul>
 									<li><a href="User_Menu_Reserv.do">예약정보</a></li>
 									<li><a href="User_Menu_Write.do">게시글관리</a></li>
-									<li><a href="">메시지확인</a></li>
+									<li><a href="User_Menu_Message.do">메시지확인</a></li>
 									<li><a href="User_Menu_Person.do">개인정보</a></li>
 								</ul>
 							</li>

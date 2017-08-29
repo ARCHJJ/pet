@@ -33,6 +33,8 @@
 
 	<!--  <sqlMap resource="com/model/sqlMap/baseDao.xml"/>-->
 	<sqlMap resource="com/model/sqlMap/LoginDao.xml"/>
+	<sqlMap resource="com/model/sqlMap/MessageDao.xml"/>
+	<sqlMap resource="com/model/sqlMap/WriteDao.xml"/>
 	<sqlMap resource="com/model/sqlMap/MarketDao.xml"/>
 	<sqlMap resource="com/model/sqlMap/UserDao.xml"/>
 	<sqlMap resource="com/model/sqlMap/ReservDao.xml"/>
