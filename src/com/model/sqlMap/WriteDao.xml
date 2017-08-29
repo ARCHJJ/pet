@@ -14,4 +14,10 @@
 				email = #userid#
 	</select>
 
+	<delete id="deleteWriteInfo" parameterClass="Integer">
+		DELETE FROM board
+			WHERE 
+				idx = #idx#
+	</delete>
+	
 </sqlMap>

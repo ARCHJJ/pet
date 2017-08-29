@@ -4,10 +4,7 @@ function delReserv(rev_idx) {
 		jQuery.ajax({
 			type : "post",
 			url : "User_Menu_Reserv_Delete.do",
-			data : {
-				rev_idx : rev_idx
-			},
-			// dataType: "json",
+			data : { rev_idx : rev_idx },
 			success : function(data) {
 				alert("예약이 취소 되었습니다.");
 				location.reload();
@@ -59,10 +56,27 @@ function delInfo(email) {
 			type : "post",
 			url : "User_Menu_Person_Delete.do",
 			data : { email : email },
-			// dataType: "json",
 			success : function(data) {
 				alert("탈퇴 되었습니다.");
 				location.href="main.do";
+			},
+			error : function error(xhr, status, error) {
+				alert(error);
+			}
+		});
+	}
+}
+
+/* 작성한 글 삭제 */
+function delWrite(idx) {
+	if (confirm("정말 삭제 하시겠습니까?")) {
+		jQuery.ajax({
+			type : "post",
+			url : "User_Menu_Write_Delete.do",
+			data : { idx : idx },
+			success : function(data) {
+				alert("삭제 되었습니다.");
+				location.reload();
 			},
 			error : function error(xhr, status, error) {
 				alert(error);

@@ -18,5 +18,13 @@ public class WriteDao extends DaoCore{
 		}
 		return bblist;
 	}
+	
+	public void deleteWriteInfo(int index) {
+		try{
+			getSqlMapClient().delete("WriteDao.deleteWriteInfo", index);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 }
 
