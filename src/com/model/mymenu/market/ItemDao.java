@@ -1,19 +1,23 @@
 package com.model.mymenu.market;
 
+import java.util.ArrayList;
+
+import org.json.simple.ItemList;
+
 import com.model.dao.DaoCore;
 
 public class ItemDao extends DaoCore{
 	private static ItemDao instance = new ItemDao();
 	public static ItemDao getInstance() {return instance;}
 	
-	public ItemBean getItemInfoValid(String email) {
-		ItemBean ib = new ItemBean();
+	public ArrayList<ItemBean> getItemList(String email) {
+		ArrayList<ItemBean> itemlist = new ArrayList<ItemBean>();
 		try {
-			ib = (ItemBean) getSqlMapClient().queryForObject("ItemDao.getItemInfoValid", email);
+			itemlist = (ArrayList<ItemBean>) getSqlMapClient().queryForList("ItemDao.getItemList", email);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return ib;
+		return itemlist;
 	}
 
 }
