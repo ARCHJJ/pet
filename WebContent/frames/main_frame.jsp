@@ -37,11 +37,9 @@
 							<li><a href="#">마이메뉴</a>
 								<ul>
 									<li><a href="User_Menu_Reserv.do">예약정보</a></li>
-									<li><a href="User_Menu_Monitor.do">동물모니터링</a></li>
 									<li><a href="User_Menu_Write.do">게시글관리</a></li>
 									<li><a href="">메시지확인</a></li>
-									<li><a href="User_Menu_Person.do">개인정보수정</a></li>
-									<li><a href="">비밀번호변경</a></li>
+									<li><a href="User_Menu_Person.do">개인정보</a></li>
 								</ul>
 							</li>
 						</c:if>
