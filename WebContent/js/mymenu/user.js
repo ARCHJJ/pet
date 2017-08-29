@@ -18,6 +18,23 @@ function delReserv(rev_idx){
 		}); 	
 	}
 };
+
+/* 예약 변경 */
+function updateReserv(rev_idx, member_email, market_id, service, pets, timeofrev, date, cctvid){
+	$('#rev_idx').val(rev_idx);
+	$('#member_email').val(member_email);
+	$('#market_id').val(market_id);
+	$('#service').val(service);
+	$('#pets').val(pets);
+	$('#timeofrev').val(timeofrev);
+	$('#date').val(date);
+	$('#cctvid').val(cctvid);
+	$('#modal_update').modal('show');
+}
+function update_Reserv(){
+	document.modify_form.submit();
+}
+
 /* 개인정보 수정 */
 function upInfo(){				
 	if(confirm("정말 변경 하시겠습니까?")){
@@ -25,12 +42,6 @@ function upInfo(){
 		alert("변경 되었습니다.");
 	}
 }
-
-/* 예약 수정 */
-function modirev(){
-	
-}
-
 /* 회원 탈퇴 */
 function outInfo(){
 	if(confirm("정말 탈퇴 하시겠습니까?")){
@@ -45,4 +56,3 @@ function modipass(userid, rev_idx){		//비밀번호 변경
 	var userid;
 	var rev_idx;
 }
-

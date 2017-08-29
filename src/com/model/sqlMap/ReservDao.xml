@@ -27,6 +27,14 @@
 				rev_idx = #rev_idx#
 	</delete>
 	
+	<update id="updateReserv" parameterClass="HashMap">
+		UPDATE reservation
+			SET
+				service = #service#, pets = #pets#, timeofrev = #timeofrev#, date = #date#, cctvid = #cctvid#
+		WHERE
+			rev_idx = #rev_idx#
+	</update>
+	
 	<select id="getWriteInfo" parameterClass="String" resultClass="ReservBean">
 		SELECT * FROM reservation
 			WHERE

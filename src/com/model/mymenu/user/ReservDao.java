@@ -28,6 +28,22 @@ public class ReservDao extends DaoCore{
 		}
 		return rb;
 	}
+	public void updateReserv(int rev_idx, int service, String pets, String timeofrev, String date, String cctvid) {
+		try{
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("rev_idx", rev_idx);
+			param.put("service", service);
+			param.put("pets", pets);
+			param.put("timeofrev", timeofrev);
+			param.put("date", date);
+			param.put("cctvid", cctvid);
+			
+			getSqlMapClient().update("ReservDao.updateReserv", param);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 	
 	public void deleteReservInfo(String rev_idx) {
 		try{
