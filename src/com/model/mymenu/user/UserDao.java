@@ -38,5 +38,31 @@ public class UserDao extends DaoCore{
 		}
 		return ub;
 	}
+	public void updateUser(String email, String password, String address1, String address2, String phone, String gender, String name) {
+		try{
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("email", email);
+			param.put("password", password);
+			param.put("address1", address1);
+			param.put("address2", address2);
+			param.put("phone", phone);
+			param.put("gender", gender);
+			param.put("name", name);
+			
+			getSqlMapClient().update("UserDao.updateUser", param);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
+	public void deleteInfo(String email) {
+		// TODO Auto-generated method stub
+		try{
+			getSqlMapClient().delete("UserDao.deleteInfo", email);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 }
 
