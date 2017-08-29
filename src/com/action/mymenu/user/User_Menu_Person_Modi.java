@@ -13,18 +13,12 @@ import com.model.mymenu.user.UserDao;
 public class User_Menu_Person_Modi extends CommonAction {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		String address1 = request.getParameter("address1");
-		String address2 = request.getParameter("address2");
-		String phone = request.getParameter("phone");
+		String userid = ((LoginBean) request.getSession().getAttribute("session")).getEmail();
 
-		updateUser(email, password, address1, address2, phone);
+		UserBean ub = UserDao.getInstance().getUserInfo(userid);
 		
-		return "User_Menu_Person.do";
-	}
+		request.getSession().setAttribute("ub", ub);
 
-	private void updateUser(String email, String password, String address1, String address2, String phone) {
-		UserDao.getInstance().updateUser(email, password, address1, address2, phone);
+		return "view/Mymenu/User/User_Menu_Person_Modi.jsp";
 	}
 }
