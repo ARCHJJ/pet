@@ -40,6 +40,5 @@
 	<sqlMap resource="com/model/sqlMap/ReservDao.xml"/>
 	<sqlMap resource="com/model/sqlMap/ItemDao.xml"/>
 	<sqlMap resource="com/model/sqlMap/AdminDao.xml"/>
-	<!--	
-	<sqlMap resource="com/model/sqlMap/BoardDao.xml"/> -->
+	<sqlMap resource="com/model/sqlMap/BoardDao.xml"/>
 </sqlMapConfig>
