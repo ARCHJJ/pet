@@ -1,5 +1,7 @@
 package com.action.mymenu.market;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,10 +14,11 @@ public class Market_Menu_Item_Action extends CommonAction{
 	public String requestPro(HttpServletRequest request, 
 			HttpServletResponse response) throws Throwable {
 		String userid = ((LoginBean) request.getSession().getAttribute("session")).getEmail();
-
-		ItemBean ib = ItemDao.getInstance().getItemInfoValid(userid);
 		
-		request.getSession().setAttribute("ib", ib);
+		ArrayList<ItemBean> itemlist = new ArrayList<ItemBean>();
+		itemlist = ItemDao.getInstance().getItemList(userid);
+		
+		request.getSession().setAttribute("itemlist", itemlist);
 		return "view/Mymenu/Market/Market_Menu_Item_View.jsp";
 	}
 }

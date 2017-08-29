@@ -13,5 +13,13 @@
 			WHERE
 				email = #email#
 	</select>
+	
+	<update id="updateMarket" parameterClass="HashMap">
+		UPDATE market
+			SET
+				market_name = #market_name#,	description = #description#, photos = #photos#, pets = #pets#,	address = #address#,	classes = #classes#, service = #service#
+		WHERE
+			market_id = #market_id#
+	</update>
 </sqlMap>
 
