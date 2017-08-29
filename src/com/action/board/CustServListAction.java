@@ -9,13 +9,13 @@ import com.controller.CommandAction;
 import com.model.board.BoardBean;
 import com.model.board.BoardDao;
 
-public class KinListAction implements CommandAction {
+public class CustServListAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, 
 			HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		int board_type = 3;
+		int board_type = 2;
 		
 		ArrayList<BoardBean> bblist = new ArrayList<BoardBean>();
 		
@@ -23,6 +23,6 @@ public class KinListAction implements CommandAction {
 		
 		request.getSession().setAttribute("bblist", bblist);
 		
-	    return "view/Board/Board_View.jsp";
+		return "view/Board/Board_View.jsp";
 	}
 }
