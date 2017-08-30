@@ -16,5 +16,13 @@
 				WHERE email = #email#
 				)
 	</select>
+	
+	<update id="updateItem" parameterClass="HashMap">
+		UPDATE item
+			SET
+				name = #name#, description = #description#, photos = #photos#, price = #price#
+		WHERE
+			idx = #idx# AND market_id = #market_id#
+	</update>
 </sqlMap>
 
