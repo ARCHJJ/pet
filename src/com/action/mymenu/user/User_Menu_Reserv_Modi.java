@@ -16,14 +16,13 @@ public class User_Menu_Reserv_Modi extends CommonAction {
 		int service = Integer.parseInt(request.getParameter("service"));	
 		String pets = request.getParameter("pets");		
 		String timeofrev = request.getParameter("timeofrev");	
-		String date = request.getParameter("date");		
 		String cctvid = request.getParameter("cctvid");
 		
-		updateReserv(rev_idx, service, pets, timeofrev, date, cctvid);
+		updateReserv(rev_idx, service, pets, timeofrev, cctvid);
 		
 		return "User_Menu_Reserv.do";
 	}
-	private void updateReserv(int rev_idx, int service, String pets, String timeofrev, String date, String cctvid) {
-		ReservDao.getInstance().updateReserv(rev_idx, service, pets, timeofrev, date, cctvid);
+	private void updateReserv(int rev_idx, int service, String pets, String timeofrev, String cctvid) {
+		ReservDao.getInstance().updateReserv(rev_idx, service, pets, timeofrev, cctvid);
 	}
 }

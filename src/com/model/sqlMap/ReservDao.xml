@@ -30,7 +30,7 @@
 	<update id="updateReserv" parameterClass="HashMap">
 		UPDATE reservation
 			SET
-				service = #service#, pets = #pets#, timeofrev = #timeofrev#, date = #date#, cctvid = #cctvid#
+				service = #service#, pets = #pets#, timeofrev = #timeofrev#, date = SYSDATE(), cctvid = #cctvid#
 		WHERE
 			rev_idx = #rev_idx#
 	</update>

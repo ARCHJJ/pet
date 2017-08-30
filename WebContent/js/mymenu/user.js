@@ -34,7 +34,6 @@ function updateReserv(rev_idx, member_email, market_id, service, pets,
 	$('#service').val(service);
 	$('#pets').val(pets);
 	$('#timeofrev').val(timeofrev);
-	$('#date').val(date);
 	$('#cctvid').val(cctvid);
 	$('#modal_update').modal('show');
 }
