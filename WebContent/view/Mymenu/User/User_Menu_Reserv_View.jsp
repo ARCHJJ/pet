@@ -76,6 +76,8 @@
 						<br>
 						예약시간 <input type="text" name="timeofrev" id="timeofrev" maxlength="20" />
 						<br>
+						예약날짜 <input type="text" name="date" id="date" maxlength="20" />
+						<br>
 						CCTV <input type="text" name="cctvid" id="cctvid" maxlength="20" />
 						<br>
 					</form>
