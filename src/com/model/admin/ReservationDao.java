@@ -23,5 +23,12 @@ public class ReservationDao extends DaoCore {
 		return null;
 	}
 
+
+	public void updateReservation(int market_id, String email, String market_name, String description, String photos,
+			int pets, String address, int classes, int service) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }

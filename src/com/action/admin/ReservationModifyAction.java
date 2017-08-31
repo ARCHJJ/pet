@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.action.AdminOnlyAction;
 import com.model.admin.MarketDao;
 import com.model.admin.MemberDao;
+import com.model.admin.ReservationDao;
 
 public class ReservationModifyAction extends AdminOnlyAction {
 
