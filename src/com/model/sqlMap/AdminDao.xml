@@ -7,7 +7,9 @@
 	<typeAlias alias="HashMap" type="java.util.HashMap" />
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="UserBean" type="com.model.mymenu.user.UserBean" />
+	<typeAlias alias="MarketBean" type="com.model.mymenu.market.MarketBean" />
 	
+	<!--Admin/User  -->
 	<select id="getMemberList" resultClass="UserBean">
 		SELECT * FROM member 
 			ORDER BY power desc
@@ -26,4 +28,32 @@
 			WHERE 
 				email = #email#
 	</delete>
+	
+	
+	<!-- Admin/market  -->
+	<select id="getMarketList" resultClass="MarketBean">
+		SELECT * FROM market 
+			ORDER BY market_id
+	</select>
+	
+	<delete id="deleteMarket" parameterClass="Integer">
+		DELETE FROM market 
+			WHERE 
+				market_id = #market_id#
+	</delete>
+	
+	<update id="updateMarket" parameterClass="HashMap">
+		UPDATE market
+			SET
+				email = #email#, 
+				market_name = #market_name#, 
+				description = #description#,	
+				photos = #photos#,	
+				pets = #pets#, 
+				address = #address#, 
+				classes = #classes#,
+				service = #service#
+		WHERE
+			market_id = #market_id#
+	</update>
 </sqlMap>

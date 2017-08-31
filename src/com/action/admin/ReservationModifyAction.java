@@ -5,8 +5,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.action.AdminOnlyAction;
 import com.model.admin.MarketDao;
+import com.model.admin.MemberDao;
 
-public class MarketModifyAction extends AdminOnlyAction {
+public class ReservationModifyAction extends AdminOnlyAction {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -21,11 +22,11 @@ public class MarketModifyAction extends AdminOnlyAction {
 		int service = Integer.parseInt(request.getParameter("service"));
 		
 		updateMarket(market_id, email, market_name, description, photos, pets, address,classes, service);
-		return "marketmanage.do";
+		return "reservationmanage.do";
 	}
 
 	private void updateMarket(int market_id, String email, String market_name, String description, String photos, int pets, String address, int classes, int service) {
-		MarketDao.getInstance().updateMarket(market_id, email, market_name,description, photos, pets, address, classes, service);
+		ReservationDao.getInstance().updateReservation(market_id, email, market_name,description, photos, pets, address, classes, service);
 	}
 
 }

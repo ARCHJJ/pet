@@ -4,17 +4,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.action.AdminOnlyAction;
-import com.model.admin.MarketDao;
+import com.model.admin.ReservationDao;
 
-public class MarketDeleteAction extends AdminOnlyAction {
+public class ReservationDeleteAction extends AdminOnlyAction {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		int market_id = Integer.parseInt(request.getParameter("market_id"));
+		int rev_idx = Integer.parseInt(request.getParameter("rev_idx"));
 
-		MarketDao.getInstance().deleteMarket(market_id);
+		ReservationDao.getInstance().deleteReservation(rev_idx);
 
-		return "marketmanage.do";
+		return "reservationmanage.do";
 	}
 
 }

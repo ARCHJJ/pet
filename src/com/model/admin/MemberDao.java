@@ -55,24 +55,5 @@ public class MemberDao extends DaoCore {
 		}
 	}
 
-	//마켓 리스트 호출
-	public ArrayList<MarketBean> getMarketList() {
-		ArrayList<MarketBean> marketlist = new ArrayList<MarketBean>();
-		try {
-			marketlist = (ArrayList<MarketBean>) getSqlMapClient().queryForList("AdminDao.getMarketList");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return marketlist;
-
-	}
-	//마켓 삭제
-	public void deleteMarket(int market_id) {
-		try {
-			getSqlMapClient().delete("AdminDao.deleteMarket", market_id);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
+	
 }

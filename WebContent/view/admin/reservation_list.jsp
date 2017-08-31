@@ -8,35 +8,37 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
-<link rel="stylesheet" type="text/css" href="css/admin/market.css">
+<link rel="stylesheet" type="text/css" href="css/admin/member.css">
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
-
-<script type="text/javascript" src="js/admin/market.js"></script>
+<script type="text/javascript" src="js/admin/member.js"></script>
 </head>
 <body>
 	<div align="center">
+		<div id="addpro" class="ui positive right labeled icon button" onclick="insert_req();">멤버 추가하기</div>
 		<table>
 			<tr>
-				<th>마켓id</td>
-				<th>마켓 이름</td>
-				<th>마켓 종류</td>
-				<th>애완동물 종류</td>
-				<th>서비스 종류</td>
-				<th>수정</td>
-				<th>삭제</td>
+				<th>이메일</th>
+				<th>이름</th>
+				<th>주소</th>
+				<th>전화</th>
+				<th>성별</th>
+				<th>권한</th>
+				<th>수정</th>
+				<th>삭제</th>
 			</tr>
-			<c:forEach items="${marketlist}" var="item">
+			<c:forEach items="${memberlist}" var="item">
 				<tr>
-					<td>${item.market_id }</td>
-					<td>${item.market_name }</td>
-					<td>${item.classes }</td>
-					<td>${item.pets }</td>
-					<td>${item.service }</td>
-					<td><button class="ui button" onclick="update_pro(${item.market_id },'${item.email }','${item.market_name }','${item.description }','${item.photos }','${item.pets }','${item.address }','${item.classes }','${item.service }');">수정</button></td>
-					<td><button class="ui button" onclick="delete_pro(${item.market_id });">삭제</button></td>
+					<td>${item.email }</td>
+					<td>${item.name }</td>
+					<td>${item.address1 } ${item.address2 }</td>
+					<td>${item.phone }</td>
+					<td>${item.gender }</td>
+					<td>${item.power }</td>
+					<td><button class="ui button" onclick="update_pro('${item.email}', '${item.password}', '${item.name}', '${item.address1}', '${item.address2}', '${item.phone}', '${ item.gender}', ${item.power});">수정</button></td>
+					<td><button class="ui button" onclick="delete_pro('${item.email}');">삭제</button></td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -80,25 +82,22 @@
 			<div class="description">
 				<div class="ui header">정보 수정</div>
 				<div class="ui input focus">
-					<form name="modify_form" method="post"  action="marketModify.do">
-						마켓id<input type="text" name="market_id" id="market_id" readonly="readonly"/>
+					<form name="modify_form" method="post"  action="memberModify.do">
+						이메일<input type="text" name="email" id="email" readonly="readonly"/>
 						<br>
-						관리자메일 <input type="text" name="email" id="email" maxlength="20" onfocus="javascript:changeBorder('pro_name')" />
+						패스워드 <input type="text" name="password" id="password" maxlength="20" onfocus="javascript:changeBorder('pro_name')" />
 						<br>
-						이름 <input type="text" name="market_name" id="market_name" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						이름 <input type="text" name="name" id="name" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 						<br>
-						설명 <input type="text" name="description" id="description" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						주소1 <input type="text" name="address1" id="address1" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 						<br>
-						사진 <input type="text" name="photos" id="photos" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						주소2 <input type="text" name="address2" id="address2" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 						<br>
-						펫종류 <input type="text" name="pets" id="pets" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						전화 <input type="text" name="phone" id="phone" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 						<br>
-						주소 <input type="text" name="address" id=address maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						성별 <input type="text" name="gender" id="gender" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 						<br>
-						마켓 종류 <input type="text" name="classes" id="classes" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
-						<br>
-						서비스종류 <input type="text" name="service" id="service" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
-						
+						권한 <input type="text" name="power" id="power" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 					</form>
 				</div>
 				<p>수정 하시겠습니까?</p>

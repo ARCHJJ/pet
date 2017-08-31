@@ -14,11 +14,11 @@ function changeBorder(type){
 		pro_email.style.border = "1px solid green";
 	}
 }
-/*마켓추가 모달*/
+/*멤버추가 모달*/
 function insert_req(){
 	$('#modal_insert').modal('show');
 }
-/*마켓추가 처리*/
+/*멤버추가 처리*/
 function insert_pro_register(){
 	var pro_name = $('#pro_name2').val();
 	var pro_email = $('#pro_email2').val();
@@ -44,34 +44,32 @@ function insert_pro_register(){
 	}); 
 }
 
-/*마켓업데이트 모달*/
-function update_pro(market_id, email, market_name, description, photos, pets, address, classes, service){
+/*멤버업데이트 모달*/
+function update_pro(email, password, name, address1, address2, phone, gender, power){
 	alert('asdf');
-	$('#market_id').val(market_id);
 	$('#email').val(email);
-	$('#market_name').val(market_name);
-	$('#description').val(description);
-	$('#photos').val(photos);
-	$('#pets').val(pets);
-	$('#address').val(address);
-	$('#classes').val(classes);
-	$('#service').val(service);
-	
+	$('#password').val(password);
+	$('#name').val(name);
+	$('#address1').val(address1);
+	$('#address2').val(address2);
+	$('#phone').val(phone);
+	$('#gender').val(gender);
+	$('#power').val(power);
 	$('#modal_update').modal('show');
 };
 
-/*마켓업데이트 처리*/
+/*멤버업데이트 처리*/
 function update_pro_register(){
 	document.modify_form.submit();
 }
 
-/*마켓삭제*/
-function delete_pro(market_id){
+/*멤버삭제*/
+function delete_pro(email){
 	if(confirm("해당 사용자를 삭제 하시겠습니까?")){
 		jQuery.ajax({
 			type: "post",
-			url: "marketDelete.do",
-			data: {market_id: market_id},
+			url: "memberDelete.do",
+			data: {email: email},
 			success:
 				function(data){
 					alert("삭제 되었습니다.");
