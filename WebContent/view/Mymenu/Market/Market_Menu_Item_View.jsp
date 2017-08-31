@@ -46,8 +46,9 @@
 						<td>${itemlist.description }</td>
 						<td>${itemlist.photos }</td>
 						<td>${itemlist.price }</td>
-						<td><button class="ui small  button" onclick="upInfo('${itemlist.idx }','${itemlist.market_id }','${itemlist.name }','${itemlist.description }','${itemlist.photos }','${itemlist.price }')">
+						<td><button class="ui small button" onclick="upInfo('${itemlist.idx }','${itemlist.market_id }','${itemlist.name }','${itemlist.description }','${itemlist.photos }','${itemlist.price }')">
 						수정</button></td>
+						<td><button class="ui small button" onclick="deleteItem('${itemlist.idx}');">삭제</button></td>
 					</tr>
 				</c:forEach>
 			</div>
@@ -55,14 +56,43 @@
 		<tfoot class="full-width">
 			<tr>
 				<th></th>
-				<th colspan="7">
+				<th colspan="8">
 					<div class="ui right floated small primary labeled icon button">
-						<i class="ui primary button"></i> 상품 추가
+						<button class="ui primary button" onclick="addItem('${mb.market_id}');" >상품 추가</button> 
 					</div>
 				</th>
 			</tr>
 		</tfoot>
 	</table>
+	<div class="ui modal first" id="modal_insert">
+		<i class="close icon"></i>
+		<div class="header">상품 추가</div>
+		<div class="image content">
+			<div class="description">
+				<div class="ui header">상품 추가</div>
+				<div class="ui input focus">
+					<form name="insert_form" method="post"  action="mymenu_shop_item_insert.do">
+						마켓 번호<input type="text" name="market_id" id="market_id" readonly="readonly"/>
+						<br>
+						상품 이름<input type="text" name="name" id="name" maxlength="20"/>
+						<br>
+						상품 설명 <input type="text" name="description" id="description" maxlength="20" />
+						<br>
+						상품 사진 <input type="text" name="photos" id="photos" maxlength="20" />
+						<br>
+						상품 가격 <input type="text" name="price" id="price" maxlength="20" />
+					</form>
+				</div>
+				<p>추가 하시겠습니까?</p>
+			</div>
+		</div>
+		<div class="actions">
+			<div class="ui black deny button">취소</div>
+			<div class="ui positive right labeled icon button" onclick="add_item();">
+				추가 <i class="checkmark icon"></i>
+			</div>
+		</div>
+	</div>
 	<div class="ui modal second" id="modal_update">
 		<i class="close icon"></i>
 		<div class="header">상품 정보 수정</div>
@@ -94,5 +124,6 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
 </html>

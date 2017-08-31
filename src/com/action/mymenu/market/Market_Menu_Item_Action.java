@@ -9,6 +9,8 @@ import com.action.CommonAction;
 import com.model.login.LoginBean;
 import com.model.mymenu.market.ItemBean;
 import com.model.mymenu.market.ItemDao;
+import com.model.mymenu.market.MarketBean;
+import com.model.mymenu.market.MarketDao;
 
 public class Market_Menu_Item_Action extends CommonAction{
 	public String requestPro(HttpServletRequest request, 
@@ -17,8 +19,10 @@ public class Market_Menu_Item_Action extends CommonAction{
 		
 		ArrayList<ItemBean> itemlist = new ArrayList<ItemBean>();
 		itemlist = ItemDao.getInstance().getItemList(userid);
+		MarketBean mb = MarketDao.getInstance().isMarketInfoValid(userid);
 		
 		request.getSession().setAttribute("itemlist", itemlist);
+		request.getSession().setAttribute("mb", mb);
 		return "view/Mymenu/Market/Market_Menu_Item_View.jsp";
 	}
 }

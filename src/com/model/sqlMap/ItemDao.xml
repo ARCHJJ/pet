@@ -24,5 +24,16 @@
 		WHERE
 			idx = #idx# AND market_id = #market_id#
 	</update>
+	
+	<insert id="insertItem" parameterClass="HashMap">
+		INSERT INTO item (market_id, name, description, photos, price)
+				VALUES (#market_id#, #name#, #description#, #photos#, #price#)
+	</insert>
+	
+	<delete id="deleteItemInfo" parameterClass="String">
+		DELETE FROM item
+			WHERE 
+				idx = #idx#
+	</delete>
 </sqlMap>
 
