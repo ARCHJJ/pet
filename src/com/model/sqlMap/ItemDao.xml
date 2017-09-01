@@ -22,7 +22,7 @@
 			SET
 				name = #name#, description = #description#, photos = #photos#, price = #price#
 		WHERE
-			idx = #idx# AND market_id = #market_id#
+			idx = #idx#
 	</update>
 	
 	<insert id="insertItem" parameterClass="HashMap">

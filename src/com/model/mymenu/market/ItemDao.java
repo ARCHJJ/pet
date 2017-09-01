@@ -19,12 +19,11 @@ public class ItemDao extends DaoCore{
 		return itemlist;
 	}
 	
-	public void updateItem(int idx, String market_id, String name, String description, String photos,
+	public void updateItem(int idx, String name, String description, String photos,
 			String price) {
 		try {
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("idx", idx);
-			param.put("market_id", market_id);
 			param.put("name", name);
 			param.put("description", description);
 			param.put("photos", photos);

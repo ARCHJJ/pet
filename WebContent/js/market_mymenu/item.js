@@ -23,9 +23,8 @@ function deleteItem(idx){
 	}
 };
 
-function upInfo(idx , market_id, name, description, photos, price) {
+function upInfo(idx , name, description, photos, price) {
 	$('#idx').val(idx);
-	$('#market_id').val(market_id);
 	$('#name').val(name);
 	$('#description').val(description);
 	$('#photos').val(photos);
