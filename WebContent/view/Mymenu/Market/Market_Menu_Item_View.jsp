@@ -35,20 +35,17 @@
 			<div class="grouped fields">
 				<c:forEach items="${itemlist}" var="itemlist">
 					<tr>
-						<td class="collapsing">
-							<div class="ui radio checkbox">
-								<input type="radio" name="field"> <label></label>
-							</div>
-						</td>
 						<td>${itemlist.idx }</td>
 						<td>${itemlist.market_id }</td>
 						<td>${itemlist.name }</td>
 						<td>${itemlist.description }</td>
 						<td>${itemlist.photos }</td>
 						<td>${itemlist.price }</td>
-						<td><button class="ui small button" onclick="upInfo('${itemlist.idx }','${itemlist.market_id }','${itemlist.name }','${itemlist.description }','${itemlist.photos }','${itemlist.price }')">
-						수정</button></td>
-						<td><button class="ui small button" onclick="deleteItem('${itemlist.idx}');">삭제</button></td>
+						<td><button class="ui small button"
+								onclick="upInfo('${itemlist.idx }','${itemlist.market_id }','${itemlist.name }','${itemlist.description }','${itemlist.photos }','${itemlist.price }')">
+								수정</button></td>
+						<td><button class="ui small button"
+								onclick="deleteItem('${itemlist.idx}');">삭제</button></td>
 					</tr>
 				</c:forEach>
 			</div>
@@ -58,7 +55,8 @@
 				<th></th>
 				<th colspan="8">
 					<div class="ui right floated small primary labeled icon button">
-						<button class="ui primary button" onclick="addItem('${mb.market_id}');" >상품 추가</button> 
+						<button class="ui primary button"
+							onclick="addItem('${mb.market_id}');">상품 추가</button>
 					</div>
 				</th>
 			</tr>
@@ -71,16 +69,15 @@
 			<div class="description">
 				<div class="ui header">상품 추가</div>
 				<div class="ui input focus">
-					<form name="insert_form" method="post"  action="mymenu_shop_item_insert.do">
-						마켓 번호<input type="text" name="market_id" id="market_id" readonly="readonly"/>
-						<br>
-						상품 이름<input type="text" name="name" id="name" maxlength="20"/>
-						<br>
-						상품 설명 <input type="text" name="description" id="description" maxlength="20" />
-						<br>
-						상품 사진 <input type="text" name="photos" id="photos" maxlength="20" />
-						<br>
-						상품 가격 <input type="text" name="price" id="price" maxlength="20" />
+					<form name="insert_form" method="post"
+						action="mymenu_shop_item_insert.do">
+						마켓 번호<input type="text" name="market_id" id="market_id"
+							readonly="readonly" /> <br> 상품 이름<input type="text"
+							name="name" id="name" maxlength="20" /> <br> 상품 설명 <input
+							type="text" name="description" id="description" maxlength="20" />
+						<br> 상품 사진 <input type="text" name="photos" id="photos"
+							maxlength="20" /> <br> 상품 가격 <input type="text"
+							name="price" id="price" maxlength="20" />
 					</form>
 				</div>
 				<p>추가 하시겠습니까?</p>
@@ -88,7 +85,8 @@
 		</div>
 		<div class="actions">
 			<div class="ui black deny button">취소</div>
-			<div class="ui positive right labeled icon button" onclick="add_item();">
+			<div class="ui positive right labeled icon button"
+				onclick="add_item();">
 				추가 <i class="checkmark icon"></i>
 			</div>
 		</div>
@@ -100,18 +98,16 @@
 			<div class="description">
 				<div class="ui header">상품 정보 수정</div>
 				<div class="ui input focus">
-					<form name="modify_form" method="post"  action="mymenu_shop_item_modi.do">
-						상품 번호<input type="text" name="idx" id="idx" readonly="readonly"/>
-						<br>
-						마켓 번호<input type="text" name="market_id" id="market_id" readonly="readonly"/>
-						<br>
-						상품 이름<input type="text" name="name" id="name" maxlength="20"/>
-						<br>
-						상품 설명 <input type="text" name="description" id="description" maxlength="20" />
-						<br>
-						상품 사진 <input type="text" name="photos" id="photos" maxlength="20" />
-						<br>
-						상품 가격 <input type="text" name="price" id="price" maxlength="20" />
+					<form name="modify_form" method="post"
+						action="mymenu_shop_item_modi.do">
+						상품 번호<input type="text" name="idx" id="idx" readonly="readonly" />
+						<br> 마켓 번호<input type="text" name="market_id" id="market_id"
+							readonly="readonly" /> <br> 상품 이름<input type="text"
+							name="name" id="name" maxlength="20" /> <br> 상품 설명 <input
+							type="text" name="description" id="description" maxlength="20" />
+						<br> 상품 사진 <input type="text" name="photos" id="photos"
+							maxlength="20" /> <br> 상품 가격 <input type="text"
+							name="price" id="price" maxlength="20" />
 					</form>
 				</div>
 				<p>수정 하시겠습니까?</p>
@@ -119,11 +115,12 @@
 		</div>
 		<div class="actions">
 			<div class="ui black deny button">취소</div>
-			<div class="ui positive right labeled icon button" onclick="update_Info();">
+			<div class="ui positive right labeled icon button"
+				onclick="update_Info();">
 				수정 <i class="checkmark icon"></i>
 			</div>
 		</div>
 	</div>
-	
+
 </body>
 </html>

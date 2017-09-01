@@ -15,6 +15,16 @@
 				member_email = #userid#
 	</select>
 	
+	<select id="getMarketReservList" parameterClass="String" resultClass="ReservBean">
+		SELECT * FROM reservation
+			WHERE
+				market_id = (
+				SELECT market_id
+				FROM market
+				WHERE email = #email#
+				)
+	</select>
+	
 	<select id="getReservInfo" parameterClass="String" resultClass="ReservBean">
 		SELECT * FROM reservation
 			WHERE
