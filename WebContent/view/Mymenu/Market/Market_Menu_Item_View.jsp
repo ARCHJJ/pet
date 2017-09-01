@@ -21,7 +21,6 @@
 	<table class="ui compact celled definition table">
 		<thead class="full-width">
 			<tr>
-				<th></th>
 				<th>상품 번호</th>
 				<th>마켓 번호</th>
 				<th>상품 이름</th>
