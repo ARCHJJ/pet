@@ -16,8 +16,13 @@
 		ORDER BY date desc
 	</select>
 	
-	<insert id="sendMessage" parameterClass="Hashmap">
+	<insert id="sendMessage" parameterClass="HashMap">
 		INSERT INTO message(receiver_email, sender_email, content, date)
 			VALUES(#receiver_email#, #sender_email#, #content#, SYSDATE())
 	</insert>
+	
+	<delete id="deleteMessage" parameterClass="HashMap">
+		DELETE FROM message
+			WHERE receiver_email = #receiver_email# AND sender_email = #sender_email# AND date = #date#
+	</delete>
 </sqlMap>

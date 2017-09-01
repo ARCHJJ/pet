@@ -33,4 +33,18 @@ public class MessageDao extends DaoCore{
 			e.printStackTrace();
 		}
 	}
+	
+	public void deleteMessage(String receiver_email, String sender_email, String date) {
+		try{
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("receiver_email", receiver_email);
+			param.put("sender_email", sender_email);
+			param.put("date", date);
+			
+			getSqlMapClient().delete("MessageDao.deleteMessage", param);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 }
