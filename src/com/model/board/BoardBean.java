@@ -10,7 +10,7 @@ public class BoardBean {
 	private String file;
 	private String title;
 	private String content;
-
+	
 	public int getIdx() {
 		return idx;
 	}
@@ -53,4 +53,6 @@ public class BoardBean {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	
 }

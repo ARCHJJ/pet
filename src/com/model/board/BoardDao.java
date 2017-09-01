@@ -1,6 +1,8 @@
 package com.model.board;
 
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.model.dao.DaoCore;
 
@@ -17,4 +19,26 @@ public class BoardDao extends DaoCore {
 		}
 		return Bb;
 	}
+	
+	//public int getBoardCount_all(int board_type) throws Exception {
+	//	return (int) getSqlMapClient().queryForObject("BoardDao.getBoardCount_all", board_type);
+	//}
+	
+	public void writeBoard(int board_type, String email, String title, String file, String content, Date date) {
+		try{
+			HashMap<String, Object> param = new HashMap<String, Object>();	
+			param.put("board_type", board_type);
+			param.put("email", email);
+			param.put("title", title);
+			param.put("file", file);
+			param.put("content", content);
+			param.put("date", date);
+			
+			getSqlMapClient().insert("BoardDao.writeBoard", param);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
 }

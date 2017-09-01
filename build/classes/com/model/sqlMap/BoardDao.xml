@@ -10,18 +10,21 @@
 	<select id="getBoardList_all" parameterClass="Integer" resultClass="BoardBean">
 		SELECT * FROM board 
 		WHERE board_type = #board_type#
+		ORDER BY idx DESC
 	</select>
 	
 	<select id="getBoardList_title" parameterClass="Integer" resultClass="BoardBean">
 		SELECT * FROM board 
 		WHERE title LIKE ? 
 		AND board_type = #board_type#
+		ORDER BY idx DESC
 	</select>
 	
 	<select id="getBoardList_content" parameterClass="Integer" resultClass="BoardBean">
 		SELECT * FROM board 
 		WHERE content LIKE ? 
 		AND board_type = #board_type#
+		ORDER BY idx DESC
 	</select>
 	
 	<select id="getBoardList_two" parameterClass="Integer" resultClass="BoardBean">
@@ -29,12 +32,14 @@
 		WHERE title LIKE ? 
 		OR content LIKE ? 
 		AND board_type = #board_type#
+		ORDER BY idx DESC
 	</select>
 	
 	<select id="getBoardList_email" parameterClass="Integer" resultClass="BoardBean">
 		SELECT * FROM board 
 		WHERE email LIKE ? 
 		AND board_type = #board_type#
+		ORDER BY idx DESC
 	</select>
 	
 			<!-- 게시물 갯수 select 하는 부분 -->
@@ -67,4 +72,9 @@
 		WHERE email LIKE ? 
 		AND board_type = #board_type#
 	</select>
+	
+	<insert id="writeBoard" parameterClass="Hashmap">
+		INSERT INTO board(board_type, email, title, file, content, date, hit)
+			VALUES(#board_type#, #email#, #title#, #file#, #content#, SYSDATE(), 0)
+	</insert>
 </sqlMap>

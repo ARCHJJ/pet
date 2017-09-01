@@ -1,0 +1,19 @@
+@CHARSET "EUC-KR";
+
+table { width: 400px; }
+table, th {
+	width: 75px;
+    padding: 7px;
+    text-align: center;
+}
+
+td {
+	width: 320px;
+	padding: 3px;
+	text-align: center;
+}
+
+.style1 { height: 1px; bgcolor: #DDDDDD; }
+.style2 { colspan: 4; width: 400px; }
+.style3 { height: 1px; bgcolor: #82B5DF; }
+.content { width: 400px; height: 200px; colspan: 2}

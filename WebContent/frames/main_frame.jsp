@@ -27,10 +27,10 @@
 					<ul id="nav">
 						<li><a href="#">커뮤니티</a>
 							<ul>
-								<li><a href="notice.do">공지사항</a></li>
-								<li><a href="customer_service.do">고객센터</a></li>
-								<li><a href="kin.do">지식인</a></li>
-								<li><a href="freeboard.do">자유게시판</a></li>
+								<li><a href="board_notice.do">공지사항</a></li>
+								<li><a href="board_customer_service.do">고객센터</a></li>
+								<li><a href="board_kin.do">지식인</a></li>
+								<li><a href="board_freeboard.do">자유게시판</a></li>
 							</ul> 
 						</li>
 						<c:if test="${session.power eq 100}">

@@ -1,0 +1,22 @@
+@CHARSET "EUC-KR";
+
+table {
+	border-collapse: collapse;
+	width: 70%;
+	margin: auto;
+}
+table, th {
+    border: 1px solid black;
+    padding: 7px;
+    text-align: center;
+}
+
+td {
+	border: 1px solid black;
+	padding: 3px;
+	text-align: center;
+}
+
+p { margin-top: 5px; }
+
+textarea { cols: 50; rows: 13; }
