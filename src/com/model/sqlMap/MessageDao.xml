@@ -13,6 +13,7 @@
 		SELECT * FROM message
 		WHERE
 			receiver_email = #userid#
+		ORDER BY date desc
 	</select>
 	
 	<insert id="sendMessage" parameterClass="Hashmap">
