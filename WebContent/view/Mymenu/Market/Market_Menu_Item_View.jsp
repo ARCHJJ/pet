@@ -28,6 +28,7 @@
 				<th>상품 사진</th>
 				<th>상품 가격</th>
 				<th>상품 수정</th>
+				<th>상품 삭제</th>
 			</tr>
 		</thead>
 		<tbody>
