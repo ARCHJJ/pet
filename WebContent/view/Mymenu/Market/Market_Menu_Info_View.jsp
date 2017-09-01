@@ -72,19 +72,15 @@
 			<div class="description">
 				<div class="ui header">매장정보 수정</div>
 				<div class="ui input focus">
-					<form name="modify_form" method="post"
-						action="mymenu_shop_info_modi.do">
-						마켓id<input type="text" name="market_id" id="market_id"
-							readonly="readonly" /> <br> 매장이름<input type="text"
-							name="market_name" id="market_name" maxlength="20" /> <br>
-						설명 <input type="text" name="description" id="description"
-							maxlength="20" /> <br> 사진 <input type="text" name="photos"
-							id="photos" maxlength="20" /> <br> 애완동물 종류 <input
-							type="text" name="pets" id="pets" maxlength="20" /> <br> 주소
-						<input type="text" name="address" id="address" maxlength="20" />
-						<br> 방 수 <input type="text" name="classes" id="classes"
-							maxlength="20" /> <br> 서비스종류 <input type="text"
-							name="service" id="service" maxlength="20" /> <br>
+					<form name="modify_form" method="post" action="mymenu_shop_info_modi.do">
+						마켓id<input type="text" name="market_id" id="market_id"	readonly="readonly" /> <br> 
+						매장 이름<input type="text" name="market_name" id="market_name" maxlength="20" /> <br>
+						매장 설명 <input type="text" name="description" id="description" maxlength="20" /> <br> 
+						매장 사진 <input type="text" name="photos"	id="photos" maxlength="20" /> <br> 
+						애완동물 종류 <input type="text" name="pets" id="pets" maxlength="20" /> <br> 
+						매장 주소	<input type="text" name="address" id="address" maxlength="20" /> <br> 
+						매장 종류 <input type="text" name="classes" id="classes" maxlength="20" /> <br> 
+						매장 서비스 <input type="text" name="service" id="service" maxlength="20" /> <br>
 					</form>
 				</div>
 				<p>수정 하시겠습니까?</p>
