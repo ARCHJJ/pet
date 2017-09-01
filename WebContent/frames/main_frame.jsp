@@ -48,9 +48,8 @@
 								<ul>
 									<li><a href="mymenu_shop_item.do">물품관리</a></li>
 									<li><a href="">모니터링</a></li>
-									<li><a href="">상품등록/관리</a></li>
 									<li><a href="">예약현황관리</a></li>
-									<li><a href="">메시지확인</a></li>
+									<li><a href="User_Menu_Message.do">메시지확인</a></li>
 									<li><a href="mymenu_shop_info.do">매장정보수정</a></li>
 								</ul>
 							</li>
