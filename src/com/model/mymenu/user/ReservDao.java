@@ -4,15 +4,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.model.dao.DaoCore;
+import com.model.mymenu.user.Reserv_MarketBean;
 
 public class ReservDao extends DaoCore{
 	private static ReservDao instance = new ReservDao();
 	public static ReservDao getInstance(){return instance;}
 	
-	public ArrayList<ReservBean> getReservList(String userid) {
-		ArrayList<ReservBean> rblist = new ArrayList<ReservBean>();
+	public ArrayList<Reserv_MarketBean> getReservList(String userid) {
+		ArrayList<Reserv_MarketBean> rblist = new ArrayList<Reserv_MarketBean>();
 		try{
-			rblist = (ArrayList<ReservBean>) getSqlMapClient().queryForList("ReservDao.getReservList", userid);
+			rblist = (ArrayList<Reserv_MarketBean>) getSqlMapClient().queryForList("ReservDao.getReservList", userid);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -29,10 +30,10 @@ public class ReservDao extends DaoCore{
 		return rblist;
 	}
 	
-	public ReservBean getReservInfo(String userid) {
-		ReservBean rb = new ReservBean();
+	public Reserv_MarketBean getReservInfo(String userid) {
+		Reserv_MarketBean rb = new Reserv_MarketBean();
 		try{
-			rb = (ReservBean) getSqlMapClient().queryForObject("ReservDao.getReservInfo", userid);
+			rb = (Reserv_MarketBean) getSqlMapClient().queryForObject("ReservDao.getReservInfo", userid);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

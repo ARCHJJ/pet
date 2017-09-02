@@ -23,7 +23,7 @@
 		<thead>
 			<tr>
 				<td>예약번호</td>
-				<td>매장번호</td>
+				<td>매장명</td>
 				<td>서비스</td>
 				<td>동물</td>
 				<td>예약시간</td>
@@ -35,9 +35,9 @@
 				<tbody>
 					<tr>
 						<td>${item.rev_idx }</td>
-						<td>${item.market_id }</td>
-						<td>${item.service }</td>
-						<td>${item.pets }</td>
+						<td>${item.market_name }</td>
+						<td>${item.reservation_service }</td>
+						<td>${item.reservation_pets }</td>
 						<td>${item.timeofrev }</td>
 						<td>${item.date }</td>
 						<td><form name="cctv_view">
@@ -45,7 +45,7 @@
 									onClick="location.href='User_Menu_Monitor_View.do'">
 							</form></td>
 						<td><button class="ui violet basic button"
-								onClick="updateReserv('${item.rev_idx}', '${item.member_email }', '${item.market_id }', '${item.service }', '${item.pets }', '${item.timeofrev }', '${item.date }', '${item.cctvid }')">예약수정</button>
+								onClick="updateReserv('${item.rev_idx}', '${item.member_email }', '${item.market_name }', '${item.reservation_service }', '${item.reservation_pets }', '${item.timeofrev }', '${item.date }', '${item.cctvid }')">예약수정</button>
 							<br>
 							<button class="ui red basic button"
 								onClick="delReserv(${item.rev_idx });">예약취소</button></td>
@@ -68,11 +68,11 @@
 						<br>
 						고객<input type="text" name="member_email" id="member_email" readonly="readonly"/>
 						<br>
-						매장번호 <input type="text" name="market_id" id="market_id" maxlength="20" readonly="readonly"/>
+						매장명 <input type="text" name="market_name" id="market_name" maxlength="20" readonly="readonly"/>
 						<br>
-						서비스 <input type="text" name="service" id="service" maxlength="20" />
+						서비스 <input type="text" name="reservation_service" id="reservation_service" maxlength="20" />
 						<br>
-						동물 <input type="text" name="pets" id="pets" maxlength="20" />
+						동물 <input type="text" name="reservation_pets" id="reservation_pets" maxlength="20" />
 						<br>
 						예약시간 <input type="text" name="timeofrev" id="timeofrev" maxlength="20" />
 						<br>

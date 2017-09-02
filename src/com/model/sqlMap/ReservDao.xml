@@ -8,11 +8,12 @@
 	<typeAlias alias="ArrayList" type="java.util.ArrayList" />
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="ReservBean" type="com.model.mymenu.user.ReservBean" />
+	<typeAlias alias="Reserv_MarketBean" type="com.model.mymenu.user.Reserv_MarketBean" />
 	
-	<select id="getReservList" parameterClass="String" resultClass="ReservBean">
-		SELECT * FROM reservation
+	<select id="getReservList" parameterClass="String" resultClass="Reserv_MarketBean">
+		SELECT * FROM reserv_market
 			WHERE
-				member_email = #userid#
+				member_email = #userid# 
 	</select>
 	
 	<select id="getMarketReservList" parameterClass="String" resultClass="ReservBean">
@@ -25,10 +26,10 @@
 				)
 	</select>
 	
-	<select id="getReservInfo" parameterClass="String" resultClass="ReservBean">
-		SELECT * FROM reservation
+	<select id="getReservInfo" parameterClass="String" resultClass="Reserv_MarketBean">
+		SELECT * FROM reserv_market
 			WHERE
-				member_email = #userid#
+				member_email = #userid# 
 	</select>
 	
 	<delete id="deleteReservInfo" parameterClass="String">

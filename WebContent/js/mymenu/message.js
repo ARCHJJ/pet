@@ -7,6 +7,7 @@ function send_Message() {
 	document.send_form.submit();
 }
 
+/* 메시지 삭제 */
 function delMessage(receiver, sender, date){
 	if (confirm("해당 메시지를 삭제 하시겠습니까?")) {
 		jQuery.ajax({

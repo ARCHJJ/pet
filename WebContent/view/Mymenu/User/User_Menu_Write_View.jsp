@@ -35,7 +35,12 @@
 			<tbody>
 				<tr>
 					<td>${item.idx }</td>
-					<td>${item.board_type }</td>
+					<td><c:choose>
+							<c:when test="${item.board_type == 1}">공지사항</c:when>
+							<c:when test="${item.board_type == 2}">고객센터</c:when>
+							<c:when test="${item.board_type == 3}">지식인</c:when>
+							<c:when test="${item.board_type == 4}">자유게시판</c:when>
+						</c:choose></td>
 					<td>${item.date }</td>
 					<td>${item.title }</td>
 					<td>${item.file }</td>
