@@ -5,70 +5,56 @@
 
 <html>
  <head>
- <script>  // 자바 스크립트 시작
-
-function writeCheck()
-  {
-  var form = document.write_form;
-
-   if( !form.title.value )   // form 에 있는 title 값이 없을 때
-   {
-    alert( "제목을 적어주세요" ); // 경고창 띄움
-    form.title.focus();   // form 에 있는 title 위치로 이동
-    return;
-   }
- 
-  if( !form.content.value )
-   {
-    alert( "내용을 적어주세요" );
-    form.content.focus();
-    return;
-   }
- 
-  form.submit();
-  }
- 
-<%
-	String email = (String) session.getAttribute("email");
-%>
-</script>
+ <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>커뮤니티</title>
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-<link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="css/board/form.css">
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script type="text/javascript" src="ckeditor_custom/ckeditor.js" ></script>
 <script type="text/javascript" src="js/board/board.js"></script>
  </head>
  <body>
-	<div class="ui modal first" id="write_form">
-		<i class="close icon"></i>
-		<div class="header">글쓰기</div>
-		<div class="image content">
-			<div class="description">
-				<div class="ui header">글쓰기</div>
-				<div class="ui input focus">
-					<form name="writeform" method="post" action="board_write.do">
-						게시물 종류<input type="hidden" name="board_type" value="${board_type }" maxlength="20" />
-						제목<input type="text" name="title" id="title" />
-						<br>
-						이메일<input type="text" name="email" id="email" value="${email }" maxlength="20" readonly="readonly" />
-						<br>
-						파일명<input type="file" name="name" id="name" maxlength="20" />
-						<br>
-						내용 <textarea name="content" id="content"></textarea>
-						<br>
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="actions">
-			<div class="ui black deny button" OnClick="javascript:history.back(-1)">취소</div>
-			<div class="ui positive right labeled icon button" OnClick="javascript:writeCheck();">
-				등록 <i class="checkmark icon"></i>
-			</div>
-		</div>
-	</div>
+     <form name="writeform" method=post action="board_write.do">
+     <table id="form1">
+     <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
+      <td width="5"><img src="img/table_left.gif" width="5" height="30" /></td>
+      <td>글쓰기</td>
+      <td width="5"><img src="img/table_right.gif" width="5" height="30" /></td>
+     </tr>
+    </table>
+   <table id="form2">
+     <tr>
+     <td><input type="hidden" name="board_type" id="board_type" size="5" value="${board_type }"></td>
+     </tr>
+     <tr>
+      <td>제목</td>
+      <td><input type="text" name="title" id="title" size="50" maxlength="100"></td>
+     </tr>
+     <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
+    <tr>
+      <td>작성자</td>
+      <td><input type="text" name="email" id="email" readonly="readonly" size="50" maxlength="50" value="${email }"></td>
+     </tr>
+      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
+    <tr>
+      <td>파일명</td>
+      <td><input type="file" name="file" id="file" size="50" maxlength="50">(최대 5M)</td>
+     </tr>
+      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
+     <tr>
+      <td>내용</td>
+      <td><textarea name="content" id="content" cols="50" rows="13"></textarea></td>
+     </tr>
+     <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
+     <tr height="1" bgcolor="#82B5DF"><td colspan="4"></td></tr>
+</table>
+</form>
+     <p align="center">
+     <button class="ui blue basic button" OnClick="writeCheck('${board_type}', '${title }', '${email }', '${file }', '${content }')">등록</button>
+      <button class="ui red basic button" OnClick="javascript:history.back(-1)">취소</button>
+     </p>
 </body> 
 </html>

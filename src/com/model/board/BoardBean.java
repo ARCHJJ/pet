@@ -6,7 +6,7 @@ public class BoardBean {
 	private int idx;
 	private int board_type;
 	private String email;
-	private Date date;
+	private String date;
 	private String file;
 	private String title;
 	private String content;
@@ -29,10 +29,10 @@ public class BoardBean {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public String getFile() {

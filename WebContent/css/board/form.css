@@ -1,0 +1,9 @@
+@CHARSET "EUC-KR";
+
+#form1, #form2 {
+	border-collapse: collapse; 
+	width: 35%;
+	margin: auto;
+}
+
+#form2 td { align: center; }

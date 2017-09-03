@@ -12,8 +12,3 @@ td {
 	padding: 3px;
 	text-align: center;
 }
-
-.style1 { height: 1px; bgcolor: #DDDDDD; }
-.style2 { colspan: 4; width: 400px; }
-.style3 { height: 1px; bgcolor: #82B5DF; }
-.content { width: 400px; height: 200px; colspan: 2}

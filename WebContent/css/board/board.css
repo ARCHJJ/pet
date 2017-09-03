@@ -3,7 +3,6 @@
 table {
 	border-collapse: collapse;
 	width: 70%;
-	margin: auto;
 }
 table, th {
     border: 1px solid black;
