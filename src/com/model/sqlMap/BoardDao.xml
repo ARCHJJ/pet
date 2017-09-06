@@ -2,7 +2,9 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
 
 <sqlMap namespace="BoardDao">
+	<typeAlias alias="Integer" type="java.lang.Integer" />
 	<typeAlias alias="String" type="java.lang.String" />
+	<typeAlias alias="HashMap" type="java.util.HashMap" />
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="BoardBean" type="com.model.board.BoardBean" />
 	
@@ -43,6 +45,11 @@
 		ORDER BY idx DESC
 	</select>
 	
+	<update id="increase_hit" parameterClass="Integer">
+		UPDATE board SET hit = hit + 1
+		WHERE idx = #idx#
+	</update>
+	
 			<!-- 게시물 갯수 select 하는 부분 -->
 	<select id="getBoardCount_all" parameterClass="Integer" resultClass="BoardBean">
 		SELECT count(*) FROM board 
@@ -80,14 +87,15 @@
 	</select>
 
 	<insert id="writeBoard" parameterClass="Hashmap">
-		INSERT INTO board(board_type, email, title, file, content, date)
-			VALUES(#board_type#, #email#, #title#, #file#, #content#, SYSDATE())
+		INSERT INTO board(board_type, email, title, file, content, date, hit)
+			VALUES(#board_type#, #email#, #title#, #file#, #content#, SYSDATE(), 0)
 	</insert>
 
 	<update id="updateBoard" parameterClass="Hashmap">
 		UPDATE board
-		SET title = #title#, file = #file#, content = #content#, date = SYSDATE()
+		SET title = #title#, email = #email#, file = #file#, content = #content#, date = SYSDATE()
 		WHERE idx = #idx#
+		AND board_type = #board_type#
 	</update>
 	
 	<delete id="deleteBoard" parameterClass="Integer">

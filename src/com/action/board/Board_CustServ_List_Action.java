@@ -20,7 +20,6 @@ public class Board_CustServ_List_Action implements CommandAction {
 		ArrayList<BoardBean> bblist = new ArrayList<BoardBean>();
 		
 		bblist = BoardDao.getInstance().getBoardList_all(board_type);
-		
 		request.setAttribute("bblist", bblist);
 		request.setAttribute("board_type", board_type);
 		//request.setAttribute("totalCount", totalCount);

@@ -19,6 +19,14 @@ public class BoardDao extends DaoCore {
 		}
 		return Bb;
 	}
+
+	public void increase_hit(int idx) {
+		try{
+			getSqlMapClient().update("BoardDao.increase_hit", idx);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 	
 	public void writeBoard(int board_type, String email, String title, String file, String content) {
 		try{
@@ -35,25 +43,25 @@ public class BoardDao extends DaoCore {
 		}
 	}
 	
-	public ArrayList<BoardBean> getView(int idx) {
-		ArrayList<BoardBean> Bb = new ArrayList<BoardBean>();
+	public BoardBean getView(int idx) {
+		BoardBean bb = new BoardBean();
 		try {
-			Bb = (ArrayList<BoardBean>) getSqlMapClient().queryForList("BoardDao.getView", idx);
+			bb = (BoardBean) getSqlMapClient().queryForObject("BoardDao.getView", idx);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return Bb;
+		return bb;
 	}
 	
-	public void updateBoard(int board_type, int idx, String title, String file, String content, String date) {
+	public void updateBoard(int idx, int board_type, String title, String email, String file, String content) {
 		try{
 			HashMap<String, Object> param = new HashMap<String, Object>();
-			param.put("board_type", board_type);
 			param.put("idx", idx);
+			param.put("board_type", board_type);
 			param.put("title", title);
+			param.put("email", email);
 			param.put("file", file);
 			param.put("content", content);
-			param.put("date", date);
 			getSqlMapClient().update("BoardDao.updateBoard", param);
 			
 		}catch(Exception e){

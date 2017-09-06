@@ -1,8 +1,5 @@
 package com.action.board;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,17 +16,16 @@ public class Board_Write_Action extends CommonAction {
 		String title = request.getParameter("title");
 		String file = request.getParameter("file");
 		String content = request.getParameter("content");
-		Date date =	(Date) new SimpleDateFormat("yyyy-mm-dd").parse(request.getParameter("date"));
-		
-		writeBoard(board_type, email, title, file, content, date);
+
+		writeBoard(board_type, email, title, file, content);
 		request.setAttribute("board_type", board_type);
 		return "view/Board/Board_WriteOk.jsp";
 	}
 
-	private void writeBoard(int board_type, String email, String title, String file, String content, Date date) {
+	private void writeBoard(int board_type, String email, String title, String file, String content) {
 		// TODO Auto-generated method stub
 		
-		BoardDao.getInstance().writeBoard(board_type, email, title, file, content, date);
+		BoardDao.getInstance().writeBoard(board_type, email, title, file, content);
 		
 	}
 	

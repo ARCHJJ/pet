@@ -1,7 +1,5 @@
 package com.model.board;
 
-import java.sql.Date;
-
 public class BoardBean {
 	private int idx;
 	private int board_type;
@@ -10,6 +8,7 @@ public class BoardBean {
 	private String file;
 	private String title;
 	private String content;
+	private int hit;
 	
 	public int getIdx() {
 		return idx;
@@ -53,6 +52,10 @@ public class BoardBean {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
-	
+	public int getHit() {
+		return hit;
+	}
+	public void setHit(int hit) {
+		this.hit = hit;
+	}
 }
