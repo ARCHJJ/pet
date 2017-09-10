@@ -25,31 +25,50 @@ function writeCheck(board_type, title, email, file, content)
 	form.submit();
 }
 
-function updateForm(idx) {
+function getView(idx, board_type) {
+	var form = document.writeform;
+	
 	$('#idx').val(idx);
-	window.location.href = "board_update_form.do?idx=" + idx;
+	$('#board_type').val(board_type);	
+	window.location.href = "board_view.do?idx=" + idx + "&board_type=" + board_type;
+	form.submit();
 }
 
-function updateCheck(board_type, idx, title, email, file, content) 
-{
-	  var form = document.modifyform;
-
-	   if( !form.title.value )   // form 에 있는 title 값이 없을 때
-	   {
-	    alert( "제목을 적어주세요" ); // 경고창 띄움
-	    form.title.focus();   // form 에 있는 title 위치로 이동
-	    return;
-	   }
-	 
-	  if( !form.content.value )
-	   {
-	    alert( "내용을 적어주세요" );
-	    form.content.focus();
-	    return;
-	   }
+function updateForm(idx, board_type, email) {
+	$('#idx').val(idx);
+	$('#board_type').val(board_type);
+	$('#email').val(email);
 	
-	window.location.href = "board_update.do?idx=" + idx;
-	  form.submit();
+	window.location.href = "board_update_form.do?idx=" + idx 
+	+ "&board_type=" + board_type + "&email=" + email;
+}
+
+function updateCheck(idx, board_type, title, email) 
+{
+	var form = document.modifyform;
+	if( !form.title.value )   // form 에 있는 title 값이 없을 때
+	{
+		alert( "제목을 적어주세요" ); // 경고창 띄움
+		form.title.focus();   // form 에 있는 title 위치로 이동
+		return;
+	}
+
+	if( !form.content.value )
+	{
+		alert( "내용을 적어주세요" );
+		form.content.focus();
+		return;
+	}
+	
+	form.submit();
+	$('#idx').val(idx);
+	$('#board_type').val(board_type);
+	$('#title').val(title);
+	$('#email').val(email);
+	$('#file').val(file);
+	$('#content').val(content);
+	window.location.href = "board_update.do?idx=" + idx + "&board_type=" + board_type
+	+ "&title=" + title + "&email=" + email;
 }
 
 function deleteBoard(idx) {

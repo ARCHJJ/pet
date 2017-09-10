@@ -53,11 +53,10 @@ public class BoardDao extends DaoCore {
 		return bb;
 	}
 	
-	public void updateBoard(int idx, int board_type, String title, String email, String file, String content) {
+	public void updateBoard(int idx, String title, String email, String file, String content) {
 		try{
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("idx", idx);
-			param.put("board_type", board_type);
 			param.put("title", title);
 			param.put("email", email);
 			param.put("file", file);
