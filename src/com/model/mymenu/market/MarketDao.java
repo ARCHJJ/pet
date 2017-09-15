@@ -1,5 +1,6 @@
 package com.model.mymenu.market;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.model.dao.DaoCore;
@@ -39,4 +40,16 @@ public class MarketDao extends DaoCore {
 			e.printStackTrace();
 		}
 	}
+
+	public ArrayList<MarketBean> searchMarketList(String word) {
+		// TODO Auto-generated method stub
+		ArrayList<MarketBean> marketList = new ArrayList<MarketBean>();
+		try {
+			marketList = (ArrayList<MarketBean>) getSqlMapClient().queryForList("MarketDao.searchMarketList", "%"+word+"%");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return marketList;
+	}
+	
 }

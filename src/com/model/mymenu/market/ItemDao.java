@@ -59,4 +59,14 @@ public class ItemDao extends DaoCore{
 		}
 	}
 
+	public ArrayList<ItemBean> searchItemList(String word) {
+		ArrayList<ItemBean> itemlist = new ArrayList<ItemBean>();
+		try {
+			itemlist = (ArrayList<ItemBean>) getSqlMapClient().queryForList("ItemDao.searchItemList", "%"+word+"%");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return itemlist;
+	}
+
 }

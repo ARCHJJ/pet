@@ -35,5 +35,11 @@
 			WHERE 
 				idx = #idx#
 	</delete>
+	
+	<select id="searchItemList" parameterClass="String" resultClass="ItemBean">
+		SELECT * FROM item
+			WHERE
+				name = #word#
+	</select>
 </sqlMap>
 
