@@ -66,6 +66,7 @@
 								</ul>
 							</li>
 						</c:if>
+						<li><a href="search.do">검색</a></li>
 					</ul>
 				</div>
 
