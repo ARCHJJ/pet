@@ -22,23 +22,58 @@
 	<table class="ui orange table">
 		<thead>
 			<tr>
-				<td>사진</td>
-				<td>매장명</td>
-				<td>매장설명</td>
-				<td>동물</td>
-				<td>서비스</td>
-				<td>주소</td>
 			</tr>
-			<c:forEach items="${mblist}" var="item">
+		<tbody>
+			<tr>
+				<td>매장 사진</td>
+				<td>${mf.photos }</td>
+			</tr>
+			<tr>
+				<td>매장주인 email</td>
+				<td>${mf.market_email }</td>
+			</tr>
+			<tr>
+				<td>매장 이름</td>
+				<td>${mf.market_name }</td>
+			</tr>
+			<tr>
+				<td>매장 설명</td>
+				<td>${mf.description }</td>
+			</tr>
+			<tr>
+				<td>매장에서 지원하는 펫</td>
+				<td>${mf.pets }</td>
+			</tr>
+			<tr>
+				<td>매장 주소</td>
+				<td>${mf.address }</td>
+			</tr>
+			<tr>
+				<td>매장 종류</td>
+				<td>${mf.classes }</td>
+			</tr>
+			<tr>
+				<td>매장 서비스</td>
+				<td>${mf.service }</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="ui orange table">
+		<thead>
+			<tr>
+				<td>날짜</td>
+				<td>작성자</td>
+				<td>order</td>
+				<td>글(후기)</td>
+			</tr>
+			<c:forEach items="${mflist}" var="item">
 				<tbody>
 					<tr>
-						<td>${item.photos }</td>
-						<td>${item.market_name }</td>
-						<td>${item.description }</td>
-						<td>${item.pets }</td>
-						<td>${item.service }</td>
-						<td>${item.address }</td>
-						<td><input type="button" value="상세정보 보기" onclick="view_market(${item.market_id });"></td>
+						<td>${item.date }</td>
+						<td>${item.writer_email }</td>
+						<td>${item.order }</td>
+						<td>${item.content }</td>
+					</tr>
 			</c:forEach>
 		</tbody>
 	</table>
