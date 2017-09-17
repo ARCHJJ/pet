@@ -1,10 +1,10 @@
 package com.model.mymenu.user;
 
 public class MessageBean {
-	String receiver_email;
-	String sender_email;
-	String content;
-	String date;
+	private String receiver_email;
+	private String sender_email;
+	private String content;
+	private String date;
 	
 	public String getReceiver_email() {
 		return receiver_email;
