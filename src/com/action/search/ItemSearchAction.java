@@ -14,7 +14,7 @@ public class ItemSearchAction extends CommonAction {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		
-		String word = request.getParameter("word");
+		String word = request.getParameter("word2");
 
 		ArrayList<ItemBean> iblist = new ArrayList<ItemBean>();
 		iblist=ItemDao.getInstance().searchItemList(word);

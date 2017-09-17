@@ -25,7 +25,7 @@
 	<select id="searchMarketList" parameterClass="String" resultClass="MarketBean">
 		SELECT * FROM market
 			WHERE
-				market_name = #word#
+				market_name LIKE #word#
 	</select>
 	
 </sqlMap>

@@ -39,7 +39,7 @@
 	<select id="searchItemList" parameterClass="String" resultClass="ItemBean">
 		SELECT * FROM item
 			WHERE
-				name = #word#
+				name LIKE #word#
 	</select>
 </sqlMap>
 
