@@ -26,35 +26,35 @@
 		<tbody>
 			<tr>
 				<td>매장 사진</td>
-				<td>${mf.photos }</td>
+				<td>${mb.photos }</td>
 			</tr>
 			<tr>
 				<td>매장주인 email</td>
-				<td>${mf.market_email }</td>
+				<td>${mb.email }</td>
 			</tr>
 			<tr>
 				<td>매장 이름</td>
-				<td>${mf.market_name }</td>
+				<td>${mb.market_name }</td>
 			</tr>
 			<tr>
 				<td>매장 설명</td>
-				<td>${mf.description }</td>
+				<td>${mb.description }</td>
 			</tr>
 			<tr>
 				<td>매장에서 지원하는 펫</td>
-				<td>${mf.pets }</td>
+				<td>${mb.pets }</td>
 			</tr>
 			<tr>
 				<td>매장 주소</td>
-				<td>${mf.address }</td>
+				<td>${mb.address }</td>
 			</tr>
 			<tr>
 				<td>매장 종류</td>
-				<td>${mf.classes }</td>
+				<td>${mb.classes }</td>
 			</tr>
 			<tr>
 				<td>매장 서비스</td>
-				<td>${mf.service }</td>
+				<td>${mb.service }</td>
 			</tr>
 		</tbody>
 	</table>

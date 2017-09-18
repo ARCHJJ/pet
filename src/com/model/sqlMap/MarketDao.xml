@@ -7,6 +7,7 @@
 	<typeAlias alias="HashMap" type="java.util.HashMap" />
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="MarketBean" type="com.model.mymenu.market.MarketBean" />
+	<typeAlias alias="Market_addfeedbackBean" type="com.model.search.Market_addfeedbackBean" />
 	
 	<select id="isMarketInfoValid" parameterClass="String" resultClass="MarketBean">
 		SELECT * FROM market
@@ -14,10 +15,16 @@
 				email = #email#
 	</select>
 	
+	<select id="getMarketInfo" parameterClass="Integer" resultClass="MarketBean">
+		SELECT * FROM market
+			WHERE
+				market_id = #idx#
+	</select>
+	
 	<update id="updateMarket" parameterClass="HashMap">
 		UPDATE market
 			SET
-				market_name = #market_name#, description = #description#, photos = #photos#, pets = #pets#,	address = #address#,	classes = #classes#, service = #service#
+				market_name = #market_name#, description = #description#, photos = #photos#, pets = #pets#,	address = #address#, classes = #classes#, service = #service#
 		WHERE
 			market_id = #market_id#
 	</update>
@@ -28,5 +35,10 @@
 				market_name LIKE #word#
 	</select>
 	
+	<select id="getmarketEvaluate" parameterClass="Integer" resultClass="Market_addfeedbackBean">
+		SELECT * FROM market_addfeedback
+			WHERE
+				market_id = #idx#
+	</select>
 </sqlMap>
 

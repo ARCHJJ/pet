@@ -2,10 +2,14 @@ package com.model.search;
 
 public class Market_addfeedbackBean {
 	private int market_id;
+	
+	// market_feedback Table
 	private int order;
-	private int writer_email;
+	private String writer_email;
 	private String content;
 	private String date;
+	
+	// market Table
 	private String market_email;
 	private String market_name;
 	private String description;
@@ -27,10 +31,10 @@ public class Market_addfeedbackBean {
 	public void setOrder(int order) {
 		this.order = order;
 	}
-	public int getWriter_email() {
+	public String getWriter_email() {
 		return writer_email;
 	}
-	public void setWriter_email(int writer_email) {
+	public void setWriter_email(String writer_email) {
 		this.writer_email = writer_email;
 	}
 	public String getContent() {

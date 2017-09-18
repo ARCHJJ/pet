@@ -33,12 +33,11 @@
 				<tbody>
 					<tr>
 						<td>${item.photos }</td>
-						<td>${item.market_name }</td>
+						<td><a href="#" onclick="view_market(${item.market_id })" style="color: 0099CC">${item.market_name }</a></td>
 						<td>${item.description }</td>
 						<td>${item.pets }</td>
 						<td>${item.service }</td>
 						<td>${item.address }</td>
-						<td><input type="button" value="상세정보 보기" onclick="view_market(${item.market_id });"></td>
 			</c:forEach>
 		</tbody>
 	</table>
