@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.model.dao.DaoCore;
-import com.model.search.Market_addfeedbackBean;
+import com.model.search.Market_feedbackBean;
 
 public class MarketDao extends DaoCore {
 	private static MarketDao instance = new MarketDao();
@@ -63,10 +63,10 @@ public class MarketDao extends DaoCore {
 		return marketList;
 	}
 	
-	public ArrayList<Market_addfeedbackBean> getmarketEvaluate(int idx) {
-		ArrayList<Market_addfeedbackBean> mflist = new ArrayList<Market_addfeedbackBean>();
+	public ArrayList<Market_feedbackBean> getmarketEvaluate(int idx) {
+		ArrayList<Market_feedbackBean> mflist = new ArrayList<Market_feedbackBean>();
 		try{
-			mflist = (ArrayList<Market_addfeedbackBean>) getSqlMapClient().queryForList("MarketDao.getmarketEvaluate", idx);
+			mflist = (ArrayList<Market_feedbackBean>) getSqlMapClient().queryForList("MarketDao.getmarketEvaluate", idx);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

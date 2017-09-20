@@ -9,7 +9,7 @@ import com.action.CommonAction;
 import com.controller.CommandAction;
 import com.model.mymenu.market.MarketBean;
 import com.model.mymenu.market.MarketDao;
-import com.model.search.Market_addfeedbackBean;
+import com.model.search.Market_feedbackBean;
 
 public class Select_Market_View implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -19,7 +19,7 @@ public class Select_Market_View implements CommandAction{
 		MarketBean mb = new MarketBean();
 		mb = MarketDao.getInstance().getMarketInfo(idx);
 		
-		ArrayList<Market_addfeedbackBean> mflist =  new ArrayList<Market_addfeedbackBean>();
+		ArrayList<Market_feedbackBean> mflist =  new ArrayList<Market_feedbackBean>();
 		mflist = MarketDao.getInstance().getmarketEvaluate(idx);
 		
 		request.getSession().setAttribute("mb", mb);

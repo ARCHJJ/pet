@@ -61,17 +61,17 @@
 	<table class="ui orange table">
 		<thead>
 			<tr>
+				<td>order</td>
 				<td>날짜</td>
 				<td>작성자</td>
-				<td>order</td>
 				<td>글(후기)</td>
 			</tr>
 			<c:forEach items="${mflist}" var="item">
 				<tbody>
 					<tr>
-						<td>${item.date }</td>
-						<td>${item.writer_email }</td>
 						<td>${item.order }</td>
+						<td>${item.date }</td>
+						<td>${item.email }</td>
 						<td>${item.content }</td>
 					</tr>
 			</c:forEach>

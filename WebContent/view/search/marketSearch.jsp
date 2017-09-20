@@ -19,6 +19,7 @@
 
 </head>
 <body>
+	<input type="submit" name="compare" value="비교하기">
 	<table class="ui orange table">
 		<thead>
 			<tr>
@@ -28,6 +29,7 @@
 				<td>동물</td>
 				<td>서비스</td>
 				<td>주소</td>
+				<td>비교</td>
 			</tr>
 			<c:forEach items="${mblist}" var="item">
 				<tbody>
@@ -38,6 +40,8 @@
 						<td>${item.pets }</td>
 						<td>${item.service }</td>
 						<td>${item.address }</td>
+						<td><input type="checkbox" name="select" value="비교"></td>
+					</tr>
 			</c:forEach>
 		</tbody>
 	</table>
