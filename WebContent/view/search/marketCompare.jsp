@@ -20,8 +20,6 @@
 <body>
 	<table class="ui orange table">
 		<thead>
-			<tr>
-			</tr>
 		<tbody>
 			<tr>
 				<td>매장주인 email</td>

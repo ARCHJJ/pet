@@ -16,13 +16,15 @@
 <script type="text/javascript"
 	src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <script type="text/javascript" src="js/search/search.js"></script>
+<script type="text/javascript" src="js/reservation/reservation.js"></script>
 
 </head>
 <body>
+	<form name="reserv_go_form" method="post" action="Reservation.do">
+		<button onclick="reserv()" id="market_id" name="market_id" value="${mb.market_id }">예약하기</button>
+	</form>
 	<table class="ui orange table">
 		<thead>
-			<tr>
-			</tr>
 		<tbody>
 			<tr>
 				<td>매장 사진</td>
