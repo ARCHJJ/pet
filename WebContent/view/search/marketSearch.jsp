@@ -19,7 +19,6 @@
 
 </head>
 <body>
-	<input type="submit" name="compare" value="비교하기">
 	<table class="ui orange table">
 		<thead>
 			<tr>
@@ -31,19 +30,24 @@
 				<td>주소</td>
 				<td>비교</td>
 			</tr>
-			<c:forEach items="${mblist}" var="item">
-				<tbody>
-					<tr>
-						<td>${item.photos }</td>
-						<td><a href="#" onclick="view_market(${item.market_id })" style="color: 0099CC">${item.market_name }</a></td>
-						<td>${item.description }</td>
-						<td>${item.pets }</td>
-						<td>${item.service }</td>
-						<td>${item.address }</td>
-						<td><input type="checkbox" name="select" value="비교"></td>
-					</tr>
-			</c:forEach>
+			<form name="market_compare_form" method="post" action="market_compareAction.do">
+				<c:forEach items="${mblist}" var="item">
+					<tbody>
+						<tr>
+							<td>${item.photos }</td>
+							<td><a href="#" onclick="view_market(${item.market_id })"
+								style="color: 0099CC">${item.market_name }</a></td>
+							<td>${item.description }</td>
+							<td>${item.pets }</td>
+							<td>${item.service }</td>
+							<td>${item.address }</td>
+							<td><input type="checkbox" name="selectMarket"
+								value="${item.market_id }"></td>
+						</tr>
+				</c:forEach>
+			</form>
 		</tbody>
 	</table>
+	<input type="submit" value="비교하기" onclick="compare_market()">
 </body>
 </html>

@@ -18,7 +18,6 @@
 
 </head>
 <body>
-
 	<form name="market_search_form" method="post" action="market_searchAction.do">
 		매장검색 : <input type="text" name="word" id="word" />
 	</form>
