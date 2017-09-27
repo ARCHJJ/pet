@@ -8,6 +8,7 @@
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="ReservBean" type="com.model.mymenu.user.ReservBean" />
 	<typeAlias alias="Reserv_MarketBean" type="com.model.mymenu.user.Reserv_MarketBean" />
+	<typeAlias alias="Market_addserviceBean" type="com.model.reservation.Market_addserviceBean" />
 	
 	<select id="getReservList" parameterClass="String" resultClass="Reserv_MarketBean">
 		SELECT * FROM reserv_market
@@ -49,7 +50,6 @@
 		SELECT * FROM reservation
 			WHERE
 				member_email = #userid# AND
-				
 	</select>
 	
 	<select id="getMonitorInfo" parameterClass="String" resultClass="ReservBean">
@@ -57,6 +57,14 @@
 			WHERE
 				member_email = #userid# AND
 				cctvid = #cctvid#
+	</select>
+	
+	<!-- 예약을 하기위한 페이지 정보를 select -->
+	<select id="needReservInfo" parameterClass="HashMap" resultClass="Market_addserviceBean">
+		SELECT * FROM market_addservice
+			WHERE
+				market_id = #market_id# AND
+				service_name = #service_name#
 	</select>
 	
 </sqlMap>

@@ -5,42 +5,47 @@ import java.util.HashMap;
 
 import com.model.dao.DaoCore;
 import com.model.mymenu.user.Reserv_MarketBean;
+import com.model.reservation.Market_addserviceBean;
 
-public class ReservDao extends DaoCore{
+public class ReservDao extends DaoCore {
 	private static ReservDao instance = new ReservDao();
-	public static ReservDao getInstance(){return instance;}
-	
+
+	public static ReservDao getInstance() {
+		return instance;
+	}
+
 	public ArrayList<Reserv_MarketBean> getReservList(String userid) {
 		ArrayList<Reserv_MarketBean> rblist = new ArrayList<Reserv_MarketBean>();
-		try{
+		try {
 			rblist = (ArrayList<Reserv_MarketBean>) getSqlMapClient().queryForList("ReservDao.getReservList", userid);
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return rblist;
 	}
-	
+
 	public ArrayList<ReservBean> getMarketReservList(String email) {
 		ArrayList<ReservBean> rblist = new ArrayList<ReservBean>();
-		try{
+		try {
 			rblist = (ArrayList<ReservBean>) getSqlMapClient().queryForList("ReservDao.getMarketReservList", email);
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return rblist;
 	}
-	
+
 	public Reserv_MarketBean getReservInfo(String userid) {
 		Reserv_MarketBean rb = new Reserv_MarketBean();
-		try{
+		try {
 			rb = (Reserv_MarketBean) getSqlMapClient().queryForObject("ReservDao.getReservInfo", userid);
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return rb;
 	}
+
 	public void updateReserv(int rev_idx, int service, String pets, String timeofrev, String date, String cctvid) {
-		try{
+		try {
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("rev_idx", rev_idx);
 			param.put("service", service);
@@ -49,17 +54,32 @@ public class ReservDao extends DaoCore{
 			param.put("date", date);
 			param.put("cctvid", cctvid);
 			getSqlMapClient().update("ReservDao.updateReserv", param);
-			
-		}catch(Exception e){
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void deleteReservInfo(String rev_idx) {
-		try{
+		try {
 			getSqlMapClient().delete("ReservDao.deleteReservInfo", rev_idx);
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	// 예약하기위해 정보를 불러오는 쿼리
+	public Market_addserviceBean needReservInfo(int market_id, String service_name) {
+		Market_addserviceBean mb = new Market_addserviceBean();
+		try {
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("market_id", market_id);
+			param.put("service_name", service_name);
+			
+			mb = (Market_addserviceBean) getSqlMapClient().queryForObject("ReservDao.needReservInfo", param);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mb;
 	}
 }

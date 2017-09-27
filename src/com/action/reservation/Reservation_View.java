@@ -15,7 +15,9 @@ public class Reservation_View extends CommonAction{
 
 		int idx = Integer.parseInt(request.getParameter("market_id"));
 		
-		ArrayList<Market_serviceBean> mblist = Market_serviceDao.getInstance().getreservinfo(idx);
+		ArrayList<Market_serviceBean> mblist = new ArrayList<Market_serviceBean>();
+		mblist = Market_serviceDao.getInstance().getreservinfo(idx);
+		
 		request.getSession().setAttribute("mblist", mblist);
 		
 		return "view/reservation/reservation.jsp";
