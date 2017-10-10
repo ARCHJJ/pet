@@ -26,7 +26,6 @@ public class User_Menu_Message_Send extends CommonAction {
 		return "User_Menu_Message.do";
 	}
 	private void sendMessage(String receiver_email, String sender_email, String content) {
-		Date date = new Date();
 		MessageDao.getInstance().sendMessage(receiver_email, sender_email, content);
 	}
 }

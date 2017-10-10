@@ -26,6 +26,6 @@ public class Reservation_Do_View extends CommonAction{
 		request.getSession().setAttribute("ub", ub);
 		request.getSession().setAttribute("mb", mb);
 
-		return "view/reservation/reserv_select";
+		return "view/reservation/reserv_select.jsp";
 	}
 }

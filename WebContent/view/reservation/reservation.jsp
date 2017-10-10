@@ -36,13 +36,11 @@
 						<td>${item.name }</td>
 						<td>${item.price }</td>
 						<td>${item.description }</td>
-						<td><form name="reserv_select_form" method="post" action="Reservation_select.do">
-								<button onclick="reserv_page()" id="reserv_page" name="reserv_page" value="${item.market_id}, '${item.name }'">예약하기</button>
-							</form></td>
+						<td><button onclick="reserv_page('${item.market_id}', '${item.name}')" id="reserv_page" name="reserv_page">예약하기</button></td>
 					</tr>
 			</c:forEach>
-		</tbody>
+			</tbody>
 	</table>
-	
+
 </body>
 </html>

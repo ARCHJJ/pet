@@ -82,4 +82,21 @@ public class ReservDao extends DaoCore {
 		}
 		return mb;
 	}
+	
+	// 예약입력정보를 db에 등록하는 쿼리
+	public void submitReserv(String member_email, int market_id, int service, String pets, String timeofrev, int cctvid) {
+		try{
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("member_email", member_email);
+			param.put("market_id", market_id);
+			param.put("pets", pets);
+			param.put("timeofrev", timeofrev);
+			param.put("cctvid", cctvid);
+			
+			getSqlMapClient().insert("ReservDao.submitReserv", param);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 }

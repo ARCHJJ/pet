@@ -20,7 +20,6 @@
 </head>
 <body>
 
-<!--
 	<table class="ui orange table">
 		<thead>
 		<tbody>
@@ -49,16 +48,17 @@
 				<td><input type="text" id="pet" name="pet"></td>
 			</tr>
 			<tr>
-				<td>예약시간</td>
-				<td><input type="text" id="time" name="time"></td>
+				<td>예약희망시간</td>
+				<td><input type="text" id="time" name="time"> 입력형식  ex) 201710102330</td>
+				
 			</tr>
 			<tr>
 				<td>고객주소</td>
-				<td><input type="text" id="address" name="address" value="${ub.address}"></td>
+				<td><input type="text" id="user_address" name="user_address" value="${ub.address1} ${ub.address2}"></td>
 			</tr>
 		</tbody>
 	</table>
-	<input type="button" onclick="reserv_confirm_form('${ub.email}', 'address', '${mb.service_name }', 'pet', 'time', '${mb.price }')">
+	<input type="button" onclick="reserv_confirm_form('${ub.email}', '${mb.market_id}', '${ub.address1}', '${ub.address2}', '11', '123', 000, '${mb.price }')" value="예약하기">
 	
 	<div class="ui modal second" id="modal_reserv">
 		<i class="close icon"></i>
@@ -95,7 +95,6 @@
 			</div>
 		</div>
 	</div>
--->
 
 </body>
 

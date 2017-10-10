@@ -5,15 +5,21 @@ function reserv() {
 }
 
 /* 예약 정보 입력 페이지로 이동 */
-function reserv_page() {
-	document.reserv_select_form.submit();
+function reserv_page(market_id, name) {
+	var form = document.writeform;
+
+	$('#market_id').val(market_id);
+	$('#name').val(name);
+	window.location.href = "Reservation_select.do?market_id=" + market_id + "&name=" + name;
+	form.submit();
 }
 
-function reserv_confirm_form(email, address, service_name, pet, time, price){
+function reserv_confirm_form(email, market_id, address1, address2, service_name, pets, time, price){
 	$('#member_email').val(email);
-	$('#address').val(address);
+	$('#market_id').val(market_id);
+	$('#address').val(address1+" "+address2);
 	$('#reservation_service').val(service_name);
-	$('#reservation_pets').val(pet);
+	$('#reservation_pets').val(pets);
 	$('#timeofrev').val(time);
 	$('#price').val(price);
 	$('#modal_reserv').modal('show');
