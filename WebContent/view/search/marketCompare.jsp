@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -29,9 +29,12 @@
 			</tr>
 			<tr>
 				<td>매장 이름</td>
-				<td><a href="#" onclick="view_market(${mb1.market_id })" style="color: 0099CC">${mb1.market_name }</a></td>
-				<td><a href="#" onclick="view_market(${mb2.market_id })" style="color: 0099CC">${mb2.market_name }</a></td>
-				<td><a href="#" onclick="view_market(${mb3.market_id })" style="color: 0099CC">${mb3.market_name }</a></td>
+				<td><a href="#" onclick="view_market(${mb1.market_id })"
+					style="color: 0099CC">${mb1.market_name }</a></td>
+				<td><a href="#" onclick="view_market(${mb2.market_id })"
+					style="color: 0099CC">${mb2.market_name }</a></td>
+				<td><a href="#" onclick="view_market(${mb3.market_id })"
+					style="color: 0099CC">${mb3.market_name }</a></td>
 			</tr>
 			<tr>
 				<td>매장 설명</td>
@@ -47,9 +50,15 @@
 			</tr>
 			<tr>
 				<td>매장에서 지원하는 펫</td>
-				<td>${mb1.pets }</td>
-				<td>${mb2.pets }</td>
-				<td>${mb3.pets }</td>
+				<td><c:if test="${mb1.pet_dog == 1}">개 </c:if> <c:if
+						test="${mb1.pet_cat == 1}">고양이 </c:if> <c:if
+						test="${mb1.pet_etc == 1}">기타 </c:if></td>
+				<td><c:if test="${mb2.pet_dog == 1}">개 </c:if> <c:if
+						test="${mb2.pet_cat == 1}">고양이 </c:if> <c:if
+						test="${mb2.pet_etc == 1}">기타 </c:if></td>
+				<td><c:if test="${mb3.pet_dog == 1}">개 </c:if> <c:if
+						test="${mb3.pet_cat == 1}">고양이 </c:if> <c:if
+						test="${mb3.pet_etc == 1}">기타 </c:if></td>
 			</tr>
 			<tr>
 				<td>매장 주소</td>
@@ -59,15 +68,45 @@
 			</tr>
 			<tr>
 				<td>매장 종류</td>
-				<td>${mb1.classes }</td>
-				<td>${mb2.classes }</td>
-				<td>${mb3.classes }</td>
+				<td><c:if test="${mb1.cl_hospital == 1}">병원 </c:if> <c:if
+						test="${mb1.cl_market == 1}">상점 </c:if> <c:if
+						test="${mb1.cl_beauty == 1}">미용샵 </c:if> <c:if
+						test="${mb1.cl_hotel == 1}">호텔 </c:if></td>
+				<td><c:if test="${mb2.cl_hospital == 1}">병원 </c:if> <c:if
+						test="${mb2.cl_market == 1}">상점 </c:if> <c:if
+						test="${mb2.cl_beauty == 1}">미용샵 </c:if> <c:if
+						test="${mb2.cl_hotel == 1}">기타 </c:if></td>
+				<td><c:if test="${mb3.cl_hospital == 1}">병원 </c:if> <c:if
+						test="${mb3.cl_market == 1}">상점 </c:if> <c:if
+						test="${mb3.cl_beauty == 1}">미용샵 </c:if> <c:if
+						test="${mb3.cl_hotel == 1}">기타 </c:if></td>
 			</tr>
 			<tr>
 				<td>매장 서비스</td>
-				<td>${mb1.service }</td>
-				<td>${mb2.service }</td>
-				<td>${mb3.service }</td>
+				<td><c:if test="${mb1.ser_doctor == 1}">의사상담 </c:if>
+							<c:if test="${mb1.ser_surgery == 1}">수술 </c:if>
+							<c:if test="${mb1.ser_lodge == 1}">???? </c:if>
+							<c:if test="${mb1.ser_buypet == 1}">펫분양 </c:if>
+							<c:if test="${mb1.ser_buystuff == 1}">펫용품 </c:if>
+							<c:if test="${mb1.ser_hair == 1}">털손질 </c:if>
+							<c:if test="${mb1.ser_bath == 1}">목욕 </c:if>
+							<c:if test="${mb1.ser_rent == 1}">숙박 </c:if></td>
+				<td><c:if test="${mb2.ser_doctor == 1}">의사상담 </c:if>
+							<c:if test="${mb2.ser_surgery == 1}">수술 </c:if>
+							<c:if test="${mb2.ser_lodge == 1}">???? </c:if>
+							<c:if test="${mb2.ser_buypet == 1}">펫분양 </c:if>
+							<c:if test="${mb2.ser_buystuff == 1}">펫용품 </c:if>
+							<c:if test="${mb2.ser_hair == 1}">털손질 </c:if>
+							<c:if test="${mb2.ser_bath == 1}">목욕 </c:if>
+							<c:if test="${mb2.ser_rent == 1}">숙박 </c:if></td>
+				<td><c:if test="${mb3.ser_doctor == 1}">의사상담 </c:if>
+							<c:if test="${mb3.ser_surgery == 1}">수술 </c:if>
+							<c:if test="${mb3.ser_lodge == 1}">???? </c:if>
+							<c:if test="${mb3.ser_buypet == 1}">펫분양 </c:if>
+							<c:if test="${mb3.ser_buystuff == 1}">펫용품 </c:if>
+							<c:if test="${mb3.ser_hair == 1}">털손질 </c:if>
+							<c:if test="${mb3.ser_bath == 1}">목욕 </c:if>
+							<c:if test="${mb3.ser_rent == 1}">숙박 </c:if></td>
 			</tr>
 		</tbody>
 	</table>

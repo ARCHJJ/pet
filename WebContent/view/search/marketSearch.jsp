@@ -26,7 +26,7 @@
 				<td>매장명</td>
 				<td>매장설명</td>
 				<td>동물</td>
-				<td>서비스</td>
+				<td>서비스, 물품</td>
 				<td>주소</td>
 				<td>비교</td>
 			</tr>
@@ -38,8 +38,21 @@
 							<td><a href="#" onclick="view_market(${item.market_id })"
 								style="color: 0099CC">${item.market_name }</a></td>
 							<td>${item.description }</td>
-							<td>${item.pets }</td>
-							<td>${item.service }</td>
+							<td>
+							<c:if test="${item.pet_dog == 1}">개 </c:if>
+							<c:if test="${item.pet_cat == 1}">고양이 </c:if>
+							<c:if test="${item.pet_etc == 1}">기타 </c:if>
+							</td>
+							<td>
+							<c:if test="${item.ser_doctor == 1}">의사상담 </c:if>
+							<c:if test="${item.ser_surgery == 1}">수술 </c:if>
+							<c:if test="${item.ser_lodge == 1}">???? </c:if>
+							<c:if test="${item.ser_buypet == 1}">펫분양 </c:if>
+							<c:if test="${item.ser_buystuff == 1}">펫용품 </c:if>
+							<c:if test="${item.ser_hair == 1}">털손질 </c:if>
+							<c:if test="${item.ser_bath == 1}">목욕 </c:if>
+							<c:if test="${item.ser_rent == 1}">숙박 </c:if>
+							</td>
 							<td>${item.address }</td>
 							<td><input type="checkbox" name="selectMarket"
 								value="${item.market_id }"></td>

@@ -68,5 +68,15 @@ public class ItemDao extends DaoCore{
 		}
 		return itemlist;
 	}
+	
+	public ArrayList<ItemBean> getreservinfo(int idx) {
+		ArrayList<ItemBean> mb = new ArrayList<ItemBean>();
+		try{
+			mb = (ArrayList<ItemBean>) getSqlMapClient().queryForList("Market_serviceDao.getreservinfo", idx);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return mb;
+	}
 
 }

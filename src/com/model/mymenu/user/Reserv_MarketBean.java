@@ -18,10 +18,7 @@ public class Reserv_MarketBean {
 	private String market_name;
 	private String market_description;
 	private String market_photos;
-	private int market_pets;
 	private String address;
-	private int classes;
-	private int market_service;
 	
 	public int getMarket_id() {
 		return market_id;
@@ -95,29 +92,11 @@ public class Reserv_MarketBean {
 	public void setMarket_photos(String market_photos) {
 		this.market_photos = market_photos;
 	}
-	public int getMarket_pets() {
-		return market_pets;
-	}
-	public void setMarket_pets(int market_pets) {
-		this.market_pets = market_pets;
-	}
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
-	}
-	public int getClasses() {
-		return classes;
-	}
-	public void setClasses(int classes) {
-		this.classes = classes;
-	}
-	public int getMarket_service() {
-		return market_service;
-	}
-	public void setMarket_service(int market_service) {
-		this.market_service = market_service;
 	}
 }
 	

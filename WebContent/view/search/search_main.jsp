@@ -18,16 +18,15 @@
 
 </head>
 <body>
-	<form name="market_search_form" method="post" action="market_searchAction.do">
-		매장검색 : <input type="text" name="word" id="word" />
-	</form>
-	<input type="submit" value="검색" onclick="search_market()">
+	<form name="search_form" method="post" action="searchAction.do"> 
+		<select name="combobox"> 
+			<option value="1">매장</option> 
+			<option value="2">물품, 서비스</option> 
+		</select> 
+		<input type="text" name="word" id="word1" />
+	</form> 
+	<input type="submit" value="검색" onclick="searchaction()">
 	<br><br>
 
-	<form name="item_search_form" method="post" action="item_searchAction.do">
-		물품검색 : <input type="text" name="word2" id="word2" />
-	</form>
-	<input type="submit" value="검색" onclick="search_item()">
-	<br><br>
 </body>
 </html>

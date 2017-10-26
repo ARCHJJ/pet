@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.action.CommonAction;
-import com.model.reservation.Market_serviceBean;
-import com.model.reservation.Market_serviceDao;
+import com.model.mymenu.market.ItemBean;
+import com.model.mymenu.market.ItemDao;
 
 public class Reservation_View extends CommonAction{
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -15,8 +15,8 @@ public class Reservation_View extends CommonAction{
 
 		int idx = Integer.parseInt(request.getParameter("market_id"));
 		
-		ArrayList<Market_serviceBean> mblist = new ArrayList<Market_serviceBean>();
-		mblist = Market_serviceDao.getInstance().getreservinfo(idx);
+		ArrayList<ItemBean> mblist = new ArrayList<ItemBean>();
+		mblist = ItemDao.getInstance().getreservinfo(idx);
 		
 		request.getSession().setAttribute("mblist", mblist);
 		

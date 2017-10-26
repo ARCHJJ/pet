@@ -1,10 +1,6 @@
 /* 검색어 전송 */
-function search_market() {
-	document.market_search_form.submit();
-}
-
-function search_item() {
-	document.item_search_form.submit();
+function searchaction() {
+	document.search_form.submit();
 }
 
 /* 매장 상세 보기 (매장 기본정보 + 후기 등) */
