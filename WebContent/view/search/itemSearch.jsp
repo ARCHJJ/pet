@@ -23,21 +23,22 @@
 		<thead>
 			<tr>
 				<td>번호</td>
+				<td>판매처</td>
 				<td>사진</td>
 				<td>물품, 서비스명</td>
 				<td>설명</td>
-				<td>판매처</td>
 				<td>가격</td>
 			</tr>
 			<c:forEach items="${iblist}" var="item">
 				<tbody>
 					<tr>
 						<td>${item.idx }</td>
+						<td>${item.market_id }</td>
 						<td>${item.photos }</td>
 						<td>${item.name }</td>
 						<td>${item.description }</td>
-						<td>${item.market_id }</td>
 						<td>${item.price }</td>
+					</tr>
 			</c:forEach>
 		</tbody>
 	</table>

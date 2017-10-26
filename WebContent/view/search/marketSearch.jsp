@@ -46,12 +46,12 @@
 							<td>
 							<c:if test="${item.ser_doctor == 1}">의사상담 </c:if>
 							<c:if test="${item.ser_surgery == 1}">수술 </c:if>
-							<c:if test="${item.ser_lodge == 1}">???? </c:if>
+							<c:if test="${item.ser_lodge == 1}">애완호텔(장기) </c:if>
 							<c:if test="${item.ser_buypet == 1}">펫분양 </c:if>
 							<c:if test="${item.ser_buystuff == 1}">펫용품 </c:if>
 							<c:if test="${item.ser_hair == 1}">털손질 </c:if>
 							<c:if test="${item.ser_bath == 1}">목욕 </c:if>
-							<c:if test="${item.ser_rent == 1}">숙박 </c:if>
+							<c:if test="${item.ser_rent == 1}">애완호텔(단기) </c:if>
 							</td>
 							<td>${item.address }</td>
 							<td><input type="checkbox" name="selectMarket"

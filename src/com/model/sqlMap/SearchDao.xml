@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SearchDao">
+	<typeAlias alias="Integer" type="java.lang.Integer" />
+	<typeAlias alias="String" type="java.lang.String" />
+	<typeAlias alias="HashMap" type="java.util.HashMap" />
+	<typeAlias alias="Date" type="java.util.Date" />
+	<typeAlias alias="Market_addserviceBean" type="com.model.reservation.Market_addserviceBean" />
+		
+	<select id="getSelectedOption" parameterClass="String" resultClass="Market_addserviceBean">
+      select *
+         from market_addservice
+         	<dynamic prepend="WHERE">
+         		<isNotEmpty property="selectOption" prepend="and">
+	               <isEqual property="selectOption" compareValue="0">
+	                  cl_market = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="1">
+	                  cl_beauty = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="2">
+	                  cl_hotel = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="3">
+	                  cl_hospital = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="4">
+	                  ser_buypet = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="5">
+	                  ser_buystuff = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="6">
+	                  ser_hair = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="7">
+	                  ser_bath = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="8">
+	                  ser_rent = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="9">
+	                  ser_lodge = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="10">
+	                  ser_doctor = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="11">
+	                  ser_surgery = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="12">
+	                  pet_dog = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="13">
+	                  pet_cat = 1
+	               </isEqual>
+	               <isEqual property="selectOption" compareValue="14">
+	                  pet_etc = 1
+	               </isEqual>
+	            </isNotEmpty>
+         	</dynamic>
+   </select>
+	
+</sqlMap>

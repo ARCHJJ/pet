@@ -85,28 +85,28 @@
 				<td>매장 서비스</td>
 				<td><c:if test="${mb1.ser_doctor == 1}">의사상담 </c:if>
 							<c:if test="${mb1.ser_surgery == 1}">수술 </c:if>
-							<c:if test="${mb1.ser_lodge == 1}">???? </c:if>
+							<c:if test="${mb1.ser_lodge == 1}">애완호텔(장기) </c:if>
 							<c:if test="${mb1.ser_buypet == 1}">펫분양 </c:if>
 							<c:if test="${mb1.ser_buystuff == 1}">펫용품 </c:if>
 							<c:if test="${mb1.ser_hair == 1}">털손질 </c:if>
 							<c:if test="${mb1.ser_bath == 1}">목욕 </c:if>
-							<c:if test="${mb1.ser_rent == 1}">숙박 </c:if></td>
+							<c:if test="${mb1.ser_rent == 1}">애완호텔(단기) </c:if></td>
 				<td><c:if test="${mb2.ser_doctor == 1}">의사상담 </c:if>
 							<c:if test="${mb2.ser_surgery == 1}">수술 </c:if>
-							<c:if test="${mb2.ser_lodge == 1}">???? </c:if>
+							<c:if test="${mb2.ser_lodge == 1}">애완호텔(장기) </c:if>
 							<c:if test="${mb2.ser_buypet == 1}">펫분양 </c:if>
 							<c:if test="${mb2.ser_buystuff == 1}">펫용품 </c:if>
 							<c:if test="${mb2.ser_hair == 1}">털손질 </c:if>
 							<c:if test="${mb2.ser_bath == 1}">목욕 </c:if>
-							<c:if test="${mb2.ser_rent == 1}">숙박 </c:if></td>
+							<c:if test="${mb2.ser_rent == 1}">애완호텔(단기) </c:if></td>
 				<td><c:if test="${mb3.ser_doctor == 1}">의사상담 </c:if>
 							<c:if test="${mb3.ser_surgery == 1}">수술 </c:if>
-							<c:if test="${mb3.ser_lodge == 1}">???? </c:if>
+							<c:if test="${mb3.ser_lodge == 1}">애완호텔(장기) </c:if>
 							<c:if test="${mb3.ser_buypet == 1}">펫분양 </c:if>
 							<c:if test="${mb3.ser_buystuff == 1}">펫용품 </c:if>
 							<c:if test="${mb3.ser_hair == 1}">털손질 </c:if>
 							<c:if test="${mb3.ser_bath == 1}">목욕 </c:if>
-							<c:if test="${mb3.ser_rent == 1}">숙박 </c:if></td>
+							<c:if test="${mb3.ser_rent == 1}">애완호텔(단기) </c:if></td>
 			</tr>
 		</tbody>
 	</table>
