@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-<%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="decorator"
+	uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@ taglib prefix="page" uri="http://www.opensymphony.com/sitemesh/page"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -8,12 +10,14 @@
 <meta charset="UTF-8">
 <title><decorator:title /></title>
 <link rel="stylesheet" type="text/css" href="frames/main_frame.css" />
-<link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css"
+	href="Semantic-UI-CSS-master/semantic.min.css">
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="frames/main_frame.js"></script>
 <!-- <script type="text/javascript" src="js/common.js"></script> -->
-<script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script type="text/javascript"
+	src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <decorator:head />
 </head>
 <body onload="<decorator:getProperty property='body.onload'/>">
@@ -31,8 +35,7 @@
 								<li><a href="board_customer_service.do">고객센터</a></li>
 								<li><a href="board_kin.do">지식인</a></li>
 								<li><a href="board_freeboard.do">자유게시판</a></li>
-							</ul> 
-						</li>
+							</ul></li>
 						<c:if test="${session.power eq 100}">
 							<li><a href="#">마이메뉴</a>
 								<ul>
@@ -40,8 +43,7 @@
 									<li><a href="User_Menu_Write.do">게시글관리</a></li>
 									<li><a href="User_Menu_Message.do">메시지확인</a></li>
 									<li><a href="User_Menu_Person.do">개인정보</a></li>
-								</ul>
-							</li>
+								</ul></li>
 						</c:if>
 						<c:if test="${session.power eq 200}">
 							<li><a href="#">매장메뉴</a>
@@ -51,10 +53,9 @@
 									<li><a href="mymenu_shop_reserv.do">예약현황관리</a></li>
 									<li><a href="User_Menu_Message.do">메시지확인</a></li>
 									<li><a href="mymenu_shop_info.do">매장정보수정</a></li>
-								</ul>
-							</li>
-						</c:if> 
-						 <!-- 관리자메뉴 --> 
+								</ul></li>
+						</c:if>
+						<!-- 관리자메뉴 -->
 						<c:if test="${session.power eq 300}">
 							<li><a href="#">매장메뉴</a>
 								<ul>
@@ -63,8 +64,7 @@
 									<li><a href="noticemanage.do">공지사항관리</a></li>
 									<li><a href="csmanage.do">고객센터관리</a></li>
 									<li><a href="reservemanage.do">예약현황관리</a></li>
-								</ul>
-							</li>
+								</ul></li>
 						</c:if>
 						<li><a href="search.do">검색</a></li>
 					</ul>
@@ -103,6 +103,65 @@
 		</div>
 	</div>
 
+	<div class="ui modal">
+		<i class="close icon"></i>
+		<div class="header">회원가입 폼</div>
+		<div class="image content">
+			<div class="ui medium image">
+				<img src="img/logo.gif">
+			</div>
+			<div class="description">
+				<div class="ui header">익명 건의함 시스템 회원가입</div>
+				<p>본 시스템은 영남대 컴퓨터공학과 재학중인 학생만 이용이 가능합니다.</p>
+				<div class="ui input focus">
+					<form name="register_form" method="post" action="register.do">
+						<table>
+							<tr>
+								<td>Email</td>
+								<td><input type="text" name="userid" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>패스워드</td>
+								<td><input type="password" name="passwd" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>이름</td>
+								<td><input type="text" name="username" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>주소</td>
+								<td><input type="text" name="address1" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>세부주소</td>
+								<td><input type="text" name="address2" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>핸드폰</td>
+								<td><input type="text" name="phone" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>성별</td>
+								<td><select name="gender">
+										<option value="man">남</option>
+										<option value="woman">여</option>
+								</select></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<p>가입하시겠습니까?</p>
+			</div>
+		</div>
+		<div class="actions">
+			<div class="ui black deny button">취소</div>
+			<div class="ui positive right labeled icon button"
+				onclick="registerCheck();">
+				가입 <i class="checkmark icon"></i>
+			</div>
+		</div>
+	</div>
+
 	<div class="ui modal first">
 		<i class="close icon"></i>
 		<div class="header">로그인</div>
@@ -114,9 +173,8 @@
 				<div class="ui header">로그인 폼</div>
 				<div class="ui fluid input">
 					<form name="login_form" method="post" action="login.do">
-						아이디(이메일) : <input type="text" name="userid" /> <br>
-						<br> 비밀번호 : <input type="text" name="password" /> <br>
-						<br>
+						아이디(이메일) : <input type="text" name="userid" /> <br> <br>
+						비밀번호 : <input type="text" name="password" /> <br> <br>
 					</form>
 				</div>
 			</div>
