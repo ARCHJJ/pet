@@ -62,7 +62,7 @@
 				<td>주소</td>
 				<td>비교</td>
 			</tr>
-			<form name="market_compare_form" method="post" action="market_compareAction.do">
+			<form name="market_compare_form2" method="post" action="market_compareAction.do">
 				<c:forEach items="${mslist}" var="item">
 					<tbody>
 					<c:if test="${item.is_market == 1}">
@@ -70,7 +70,7 @@
 							<td>${item.photos }</td>
 							<td><a href="#" onclick="view_market(${item.market_id })"
 								style="color: 0099CC">${item.market_name }</a></td>
-							<td>${item.description }</td>
+							<td>${item.market_description }</td>
 							<td>
 							<c:if test="${item.pet_dog == 1}">개 </c:if>
 							<c:if test="${item.pet_cat == 1}">고양이 </c:if>
@@ -95,10 +95,10 @@
 			</form>
 		</tbody>
 	</table>
+	<input type="submit" value="비교하기" onclick="compare_market2()">
 	<table class="ui orange table">
 		<thead>
 			<tr>
-				<td>번호</td>
 				<td>판매처</td>
 				<td>사진</td>
 				<td>물품, 서비스명</td>
@@ -109,11 +109,10 @@
 				<tbody>
 				<c:if test="${item.is_market == 0}">
 					<tr>
-						<td>${item.idx }</td>
 						<td>${item.market_id }</td>
 						<td>${item.photos }</td>
-						<td>${item.name }</td>
-						<td>${item.description }</td>
+						<td>${item.service_name }</td>
+						<td>${item.service_description }</td>
 						<td>${item.price }</td>
 					</tr>
 				</c:if>
