@@ -15,4 +15,10 @@
 				password = #password#
 	</select>
 	
+	
+	<insert id="insertMember" parameterClass="HashMap">
+		insert into member (email, password, address1, address2, phone, gender, power, name)
+			values(#email#, #password#, #address1#, #address2#, #phone#, #gender#, #power#, #name#)
+	</insert>
+	
 </sqlMap>
