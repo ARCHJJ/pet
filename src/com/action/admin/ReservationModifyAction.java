@@ -12,22 +12,23 @@ public class ReservationModifyAction extends AdminOnlyAction {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		int rev_idx = Integer.parseInt(request.getParameter("rev_idx"));
+		String member_email = request.getParameter("email");
 		int market_id = Integer.parseInt(request.getParameter("market_id"));
-		String email = request.getParameter("email");
-		String market_name = request.getParameter("market_name");
-		String description = request.getParameter("description");
-		String photos = request.getParameter("photos");
-		int pets = Integer.parseInt(request.getParameter("pets"));
-		String address = request.getParameter("address");
-		int classes = Integer.parseInt(request.getParameter("classes"));
 		int service = Integer.parseInt(request.getParameter("service"));
+		int pets = Integer.parseInt(request.getParameter("pets"));
+		String timeofrev = request.getParameter("timeofrev");
+		String date = request.getParameter("date");
+		int cctvid = Integer.parseInt(request.getParameter("cctvid"));
 		
-		updateMarket(market_id, email, market_name, description, photos, pets, address,classes, service);
+		updateReservation(rev_idx, member_email, market_id, service, pets, timeofrev, date, cctvid);
 		return "reservationmanage.do";
 	}
 
-	private void updateMarket(int market_id, String email, String market_name, String description, String photos, int pets, String address, int classes, int service) {
-		ReservationDao.getInstance().updateReservation(market_id, email, market_name,description, photos, pets, address, classes, service);
+	private void updateReservation(int rev_idx, String member_email, int market_id, int service, int pets, String timeofrev, String date, int cctvid) {
+		ReservationDao.getInstance().updateReservation(rev_idx, member_email, market_id, service, pets, timeofrev, date, cctvid);
 	}
+
+	
 
 }

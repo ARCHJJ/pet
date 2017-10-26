@@ -45,16 +45,15 @@ function insert_pro_register(){
 }
 
 /*멤버업데이트 모달*/
-function update_pro(email, password, name, address1, address2, phone, gender, power){
-	alert('asdf');
-	$('#email').val(email);
-	$('#password').val(password);
-	$('#name').val(name);
-	$('#address1').val(address1);
-	$('#address2').val(address2);
-	$('#phone').val(phone);
-	$('#gender').val(gender);
-	$('#power').val(power);
+function update_pro(rev_idx, member_email, market_id, service, pets, timeofrev, date, cctvid){
+	$('#rev_idx').val(rev_idx);
+	$('#member_email').val(member_email);
+	$('#market_id').val(market_id);
+	$('#service').val(service);
+	$('#pets').val(pets);
+	$('#timeofrev').val(timeofrev);
+	$('#date').val(date);
+	$('#cctvid').val(cctvid);
 	$('#modal_update').modal('show');
 };
 
@@ -64,12 +63,12 @@ function update_pro_register(){
 }
 
 /*멤버삭제*/
-function delete_pro(email){
+function delete_pro(rev_idx){
 	if(confirm("해당 사용자를 삭제 하시겠습니까?")){
 		jQuery.ajax({
 			type: "post",
-			url: "memberDelete.do",
-			data: {email: email},
+			url: "reservDelete.do",
+			data: {rev_idx: rev_idx},
 			success:
 				function(data){
 					alert("삭제 되었습니다.");
