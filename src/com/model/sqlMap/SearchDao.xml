@@ -7,59 +7,22 @@
 	<typeAlias alias="HashMap" type="java.util.HashMap" />
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="Market_addserviceBean" type="com.model.reservation.Market_addserviceBean" />
+	<typeAlias alias="Market_Bean" type="com.model.mymenu.market.MarketBean" />
 		
-	<select id="getSelectedOption" parameterClass="String" resultClass="Market_addserviceBean">
+	<select id="getSelectedOption" parameterClass="Hashmap" resultClass="Market_addserviceBean">
       select *
          from market_addservice
-         	<dynamic prepend="WHERE">
-         		<isNotEmpty property="selectOption" prepend="and">
-	               <isEqual property="selectOption" compareValue="0">
-	                  cl_market = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="1">
-	                  cl_beauty = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="2">
-	                  cl_hotel = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="3">
-	                  cl_hospital = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="4">
-	                  ser_buypet = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="5">
-	                  ser_buystuff = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="6">
-	                  ser_hair = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="7">
-	                  ser_bath = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="8">
-	                  ser_rent = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="9">
-	                  ser_lodge = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="10">
-	                  ser_doctor = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="11">
-	                  ser_surgery = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="12">
-	                  pet_dog = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="13">
-	                  pet_cat = 1
-	               </isEqual>
-	               <isEqual property="selectOption" compareValue="14">
-	                  pet_etc = 1
-	               </isEqual>
-	            </isNotEmpty>
-         	</dynamic>
+         	where (cl_market = #cl_market# and cl_beauty = #cl_beauty# and cl_hotel = #cl_hotel# and cl_hospital = #cl_hospital#) or
+         		(ser_buypet = #ser_buypet# and ser_buystuff = #ser_buystuff# and ser_hair = #ser_hair# and ser_bath = #ser_bath# and ser_rent = #ser_rent# and ser_lodge = #ser_lodge# and ser_doctor = #ser_doctor# and ser_surgery = #ser_surgery#) or
+         		(pet_dog = #pet_dog# and pet_cat = #pet_cat# and pet_etc = #pet_etc#)
    </select>
+	
+	<select id="SelectMarketOption" parameterClass="Hashmap" resultClass="MarketBean">
+      select *
+         from market
+         	where (cl_market = #cl_market# and cl_beauty = #cl_beauty# and cl_hotel = #cl_hotel# and cl_hospital = #cl_hospital#) or
+         		(ser_buypet = #ser_buypet# and ser_buystuff = #ser_buystuff# and ser_hair = #ser_hair# and ser_bath = #ser_bath# and ser_rent = #ser_rent# and ser_lodge = #ser_lodge# and ser_doctor = #ser_doctor# and ser_surgery = #ser_surgery#) or
+         		(pet_dog = #pet_dog# and pet_cat = #pet_cat# and pet_etc = #pet_etc#)
+	</select>
 	
 </sqlMap>

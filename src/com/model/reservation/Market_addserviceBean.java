@@ -5,10 +5,12 @@ public class Market_addserviceBean {
 	private String service_name;
 	private int price;
 	private String service_description;
+	private String item_photos;
+	
 	private String market_email;
 	private String market_name;
 	private String market_description;
-	private String photos;
+	private String market_photos;
 	private String address;
 	private int pet_dog;
 	private int pet_cat;
@@ -27,6 +29,12 @@ public class Market_addserviceBean {
 	private int ser_surgery;
 	private int is_market;
 	
+	public String getItem_photos() {
+		return item_photos;
+	}
+	public void setItem_photos(String item_photos) {
+		this.item_photos = item_photos;
+	}
 	public int getIs_market() {
 		return is_market;
 	}
@@ -165,11 +173,11 @@ public class Market_addserviceBean {
 	public void setMarket_description(String market_description) {
 		this.market_description = market_description;
 	}
-	public String getPhotos() {
-		return photos;
+	public String getMarket_photos() {
+		return market_photos;
 	}
-	public void setPhotos(String photos) {
-		this.photos = photos;
+	public void setMarket_photos(String market_photos) {
+		this.market_photos = market_photos;
 	}
 	public String getAddress() {
 		return address;
