@@ -6,6 +6,7 @@
 	<typeAlias alias="String" type="java.lang.String" />
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="ItemBean" type="com.model.mymenu.market.ItemBean" />
+	<typeAlias alias="Market_addserviceBean" type="com.model.reservation.Market_addserviceBean" />
 	
 	<select id="getItemList" parameterClass="String" resultClass="ItemBean">
 		SELECT * FROM item
@@ -36,10 +37,10 @@
 				idx = #idx#
 	</delete>
 	
-	<select id="searchItemList" parameterClass="String" resultClass="ItemBean">
-		SELECT * FROM item
+	<select id="searchItemList" parameterClass="String" resultClass="Market_addserviceBean">
+		SELECT * FROM Market_addservice
 			WHERE
-				name LIKE #word#
+				service_name LIKE #word#
 	</select>
 </sqlMap>
 

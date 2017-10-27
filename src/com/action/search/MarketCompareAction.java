@@ -31,9 +31,9 @@ public class MarketCompareAction extends CommonAction {
 		mb2 = MarketDao.getInstance().getMarketInfo(idx[1]);
 		mb3 = MarketDao.getInstance().getMarketInfo(idx[2]);
 
-		request.getSession().setAttribute("mb1", mb1);
-		request.getSession().setAttribute("mb2", mb2);
-		request.getSession().setAttribute("mb3", mb3);
+		request.setAttribute("mb1", mb1);
+		request.setAttribute("mb2", mb2);
+		request.setAttribute("mb3", mb3);
 
 		return "view/search/marketCompare.jsp";
 	}

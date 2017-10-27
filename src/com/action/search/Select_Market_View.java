@@ -22,8 +22,8 @@ public class Select_Market_View implements CommandAction{
 		ArrayList<Market_feedbackBean> mflist =  new ArrayList<Market_feedbackBean>();
 		mflist = MarketDao.getInstance().getmarketEvaluate(idx);
 		
-		request.getSession().setAttribute("mb", mb);
-		request.getSession().setAttribute("mflist", mflist);
+		request.setAttribute("mb", mb);
+		request.setAttribute("mflist", mflist);
 		
 		return "view/search/marketInfoView.jsp";
 	}

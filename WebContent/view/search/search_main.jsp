@@ -104,8 +104,7 @@
 			<c:forEach items="${mslist}" var="item">
 				<tbody>
 					<tr>
-						<td><a href="#" onclick="view_market(${item.market_id })"
-								style="color: 0099CC">${item.market_name }</a></td>
+						<td><a href="#" onclick="view_market(${item.market_id })" style="color: 0099CC">${item.market_name }</a></td>
 						<td>${item.item_photos }</td>
 						<td>${item.service_name }</td>
 						<td>${item.service_description }</td>

@@ -21,8 +21,8 @@ public class User_Menu_Message_View extends CommonAction{
 		UserBean ub = UserDao.getInstance().getUserInfo(userid);
 		
 		mblist = MessageDao.getInstance().getMessageList(userid);
-		request.getSession().setAttribute("mblist", mblist);
-		request.getSession().setAttribute("ub", ub);
+		request.setAttribute("mblist", mblist);
+		request.setAttribute("ub", ub);
 		
 		return "view/Mymenu/User/User_Menu_Message_View.jsp";
 	}

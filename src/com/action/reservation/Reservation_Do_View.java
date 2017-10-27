@@ -23,8 +23,8 @@ public class Reservation_Do_View extends CommonAction{
 		Market_addserviceBean mb = new Market_addserviceBean();
 		mb = ReservDao.getInstance().needReservInfo(idx, name);
 
-		request.getSession().setAttribute("ub", ub);
-		request.getSession().setAttribute("mb", mb);
+		request.setAttribute("ub", ub);
+		request.setAttribute("mb", mb);
 
 		return "view/reservation/reserv_select.jsp";
 	}

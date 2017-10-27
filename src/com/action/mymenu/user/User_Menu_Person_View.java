@@ -15,7 +15,7 @@ public class User_Menu_Person_View extends CommonAction{
 		
 		UserBean ub = UserDao.getInstance().getUserInfo(userid);
 		
-		request.getSession().setAttribute("ub", ub);
+		request.setAttribute("ub", ub);
 		
 		return "view/Mymenu/User/User_Menu_Person_View.jsp";
 	}

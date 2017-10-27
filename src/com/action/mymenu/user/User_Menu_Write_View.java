@@ -19,7 +19,7 @@ public class User_Menu_Write_View extends CommonAction{
 		ArrayList<BoardBean> bblist = new ArrayList<BoardBean>();
 		bblist=WriteDao.getInstance().getWriteList(userid);
 		
-		request.getSession().setAttribute("bblist", bblist);
+		request.setAttribute("bblist", bblist);
 		
 		return "view/Mymenu/User/User_Menu_Write_View.jsp";
 	}

@@ -18,7 +18,7 @@ public class Reservation_View extends CommonAction{
 		ArrayList<ItemBean> mblist = new ArrayList<ItemBean>();
 		mblist = ItemDao.getInstance().getreservinfo(idx);
 		
-		request.getSession().setAttribute("mblist", mblist);
+		request.setAttribute("mblist", mblist);
 		
 		return "view/reservation/reservation.jsp";
 	}

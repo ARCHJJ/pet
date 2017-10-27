@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.model.dao.DaoCore;
+import com.model.reservation.Market_addserviceBean;
 
 public class ItemDao extends DaoCore{
 	private static ItemDao instance = new ItemDao();
@@ -59,10 +60,10 @@ public class ItemDao extends DaoCore{
 		}
 	}
 
-	public ArrayList<ItemBean> searchItemList(String word) {
-		ArrayList<ItemBean> itemlist = new ArrayList<ItemBean>();
+	public ArrayList<Market_addserviceBean> searchItemList(String word) {
+		ArrayList<Market_addserviceBean> itemlist = new ArrayList<Market_addserviceBean>();
 		try {
-			itemlist = (ArrayList<ItemBean>) getSqlMapClient().queryForList("ItemDao.searchItemList", "%"+word+"%");
+			itemlist = (ArrayList<Market_addserviceBean>) getSqlMapClient().queryForList("ItemDao.searchItemList", "%"+word+"%");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
