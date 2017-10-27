@@ -11,6 +11,9 @@
 <script type="text/javascript"
 	src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <script type="text/javascript" src="js/market_mymenu/market.js"></script>
+<script type="text/javascript" src="js/market_mymenu/image.js"></script>
+<script type="text/javascript">
+</script>
 </head>
 <body>
 
@@ -38,29 +41,33 @@
 			</tr>
 			<tr>
 				<td>매장 사진</td>
-				<td>${mb.photos }</td>
-			</tr>
-			<tr>
-				<td>매장에서 지원하는 펫</td>
-				<td>${mb.pets }</td>
+				<td></td>
 			</tr>
 			<tr>
 				<td>매장 주소</td>
 				<td>${mb.address }</td>
 			</tr>
 			<tr>
+				<td>매장에서 지원하는 펫</td>
+				<td>${mb.pet_dog }, ${mb.pet_cat }, ${mb.pet_etc }</td>
+			</tr>
+			<tr>
 				<td>매장 종류</td>
-				<td>${mb.classes }</td>
+				<td>${mb.cl_market }, ${mb.cl_beauty }, ${mb.cl_hotel }, ${mb.cl_hospital }</td>
 			</tr>
 			<tr>
 				<td>매장 서비스</td>
-				<td>${mb.service }</td>
+				<td>${mb.ser_buypet }, ${mb.ser_buystuff }, ${mb.ser_hair }, ${mb.ser_bath }, 
+					${mb.ser_rent }, ${mb.ser_lodge }, ${mb.ser_doctor }, ${mb.ser_surgery }</td>
 			</tr>
 		</tbody>
 	</table>
 	<div id="button">
 		<button class="ui primary basic button" type="button"
-			onclick="upInfo('${mb.market_id }','${mb.market_name }','${mb.description }','${mb.photos }','${mb.pets }','${mb.address }','${mb.classes }','${mb.service }')">수정하기</button>
+			onclick="upInfo('${mb.market_id }','${mb.market_name }','${mb.description }','${mb.photos }','${mb.address }',
+			${mb.pet_dog },${mb.pet_cat },${mb.pet_etc },${mb.cl_market }, ${mb.cl_beauty }, ${mb.cl_hotel }, ${mb.cl_hospital },
+			${mb.ser_buypet }, ${mb.ser_buystuff }, ${mb.ser_hair }, ${mb.ser_bath }, 
+			${mb.ser_rent }, ${mb.ser_lodge }, ${mb.ser_doctor }, ${mb.ser_surgery })">수정하기</button>
 	</div>
 	<div class="ui modal second" id="modal_update">
 		<i class="close icon"></i>
@@ -76,11 +83,11 @@
 						마켓id<input type="text" name="market_id" id="market_id"	readonly="readonly" /> <br> 
 						매장 이름<input type="text" name="market_name" id="market_name" maxlength="20" /> <br>
 						매장 설명 <input type="text" name="description" id="description" maxlength="20" /> <br> 
-						매장 사진 <input type="text" name="photos"	id="photos" maxlength="20" /> <br> 
-						애완동물 종류 <input type="text" name="pets" id="pets" maxlength="20" /> <br> 
-						매장 주소	<input type="text" name="address" id="address" maxlength="20" /> <br> 
-						매장 종류 <input type="text" name="classes" id="classes" maxlength="20" /> <br> 
-						매장 서비스 <input type="text" name="service" id="service" maxlength="20" /> <br>
+						매장 사진 <input type="text" name="photos" id="photos" maxlength="20" /> <br>
+						매장 주소 <input type="text" name="address" id="address" maxlength="20" />	<br> 
+						애완동물 종류  <br> 
+						매장 종류  <br> 
+						매장 서비스 <br>
 					</form>
 				</div>
 				<p>수정 하시겠습니까?</p>

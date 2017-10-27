@@ -33,18 +33,32 @@ public class MarketDao extends DaoCore {
 		return mb;
 	}
 
-	public void updateMarket(String market_id, String market_name, String description, String photos, String pets,
-			String address, String classes, String service) {
+	public void updateMarket(String market_id, String market_name, String description, String photos, String address,
+			String pet_dog, String pet_cat, String pet_etc, String cl_market, String cl_beauty, String cl_hotel, String cl_hospital,
+			String ser_buypet, String ser_buystuff, String ser_hair, String ser_bath, String ser_rent, String ser_lodge, String ser_doctor,
+			String ser_surgery) {
 		try {
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("market_id", market_id);
 			param.put("market_name", market_name);
 			param.put("description", description);
 			param.put("photos", photos);
-			param.put("pets", pets);
 			param.put("address", address);
-			param.put("classes", classes);
-			param.put("service", service);
+			param.put("pet_dog", pet_dog);
+			param.put("pet_cat", pet_cat);
+			param.put("pet_etc", pet_etc);
+			param.put("cl_market", cl_market);
+			param.put("cl_beauty", cl_beauty);
+			param.put("cl_hotel", cl_hotel);
+			param.put("cl_hospital", cl_hospital);
+			param.put("ser_buypet", ser_buypet);
+			param.put("ser_buystuff", ser_buystuff);
+			param.put("ser_hair", ser_hair);
+			param.put("ser_bath", ser_bath);
+			param.put("ser_rent", ser_rent);
+			param.put("ser_lodge", ser_lodge);
+			param.put("ser_doctor", ser_doctor);
+			param.put("ser_surgery", ser_surgery);
 
 			getSqlMapClient().update("MarketDao.updateMarket", param);
 		} catch (Exception e) {
@@ -56,18 +70,20 @@ public class MarketDao extends DaoCore {
 		// TODO Auto-generated method stub
 		ArrayList<MarketBean> marketList = new ArrayList<MarketBean>();
 		try {
-			marketList = (ArrayList<MarketBean>) getSqlMapClient().queryForList("MarketDao.searchMarketList", "%"+word+"%");
-		}catch(Exception e) {
+			marketList = (ArrayList<MarketBean>) getSqlMapClient().queryForList("MarketDao.searchMarketList",
+					"%" + word + "%");
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return marketList;
 	}
-	
+
 	public ArrayList<Market_feedbackBean> getmarketEvaluate(int idx) {
 		ArrayList<Market_feedbackBean> mflist = new ArrayList<Market_feedbackBean>();
-		try{
-			mflist = (ArrayList<Market_feedbackBean>) getSqlMapClient().queryForList("MarketDao.getmarketEvaluate", idx);
-		}catch(Exception e){
+		try {
+			mflist = (ArrayList<Market_feedbackBean>) getSqlMapClient().queryForList("MarketDao.getmarketEvaluate",
+					idx);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return mflist;
