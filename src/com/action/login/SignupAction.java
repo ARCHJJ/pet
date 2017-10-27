@@ -19,7 +19,6 @@ public class SignupAction implements CommandAction {
 		int power = 100;
 		String name = request.getParameter("name");
 		
-		System.out.println(email+password+address1+address2+phone+gender+power+name);
 
 		insertMember(email, password, address1, address2, phone, gender, power, name);
 		return "main.do";
