@@ -6,12 +6,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.action.CommonAction;
+import com.controller.CommandAction;
 import com.model.mymenu.market.MarketBean;
 import com.model.mymenu.market.MarketDao;
 
-public class MarketCompareAction extends CommonAction {
-	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-
+public class MarketCompareAction implements CommandAction{
+	public String requestPro(HttpServletRequest request,
+			HttpServletResponse response) throws Throwable {
+		
 		int[] idx = new int[3];
 		int i = 0;
 		

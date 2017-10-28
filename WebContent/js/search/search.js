@@ -26,24 +26,9 @@ function compare_market() {
 	}
 	if (num > 3) {
 		alert("3개까지 선택 가능합니다.");
-	} else if (num <=0 ) {
+	} else if (num <= 0 ) {
 		alert("선택된 것이 없습니다.");	
 	} else {
 		document.market_compare_form.submit();
-	}
-}
-
-/* 체크된 비교 대상 매장 전송 */
-function compare_market2() {
-	var num = 0;
-	var selCheck = document.getElementsByName("selectMarket");
-	for (var i = 0; i < selCheck.length; i++) {
-		if (selCheck[i].checked)
-			num++;
-	}
-	if (num > 3 || num <= 0) {
-		alert("범위를 초과했습니다. (1~3개까지 선택 가능)");
-	} else {
-		document.market_compare_form2.submit();
 	}
 }

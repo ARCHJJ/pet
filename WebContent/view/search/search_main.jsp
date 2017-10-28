@@ -62,7 +62,7 @@
 				<td>주소</td>
 				<td>비교</td>
 			</tr>
-			<form name="market_compare_form2" method="post" action="market_compareAction.do">
+			<form name="market_compare_form" method="post" action="market_compareAction.do">
 				<c:forEach items="${mblist}" var="item">
 					<tbody>
 						<tr>
@@ -91,7 +91,7 @@
 			</form>
 		</tbody>
 	</table>
-	<input type="submit" value="비교하기" onclick="compare_market2()">
+	<input type="submit" value="비교하기" onclick="compare_market()">
 	<table class="ui orange table">
 		<thead>
 			<tr>

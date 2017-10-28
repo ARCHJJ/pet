@@ -6,12 +6,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.action.CommonAction;
+import com.controller.CommandAction;
 import com.model.mymenu.market.MarketBean;
 import com.model.reservation.Market_addserviceBean;
 import com.model.search.SearchDao;
 
-public class SelectsearchAction extends CommonAction {
-	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+public class SelectsearchAction implements CommandAction{
+
+	@Override
+	public String requestPro(HttpServletRequest request,
+			HttpServletResponse response) throws Throwable {
 		
 		String word = request.getParameter("word");
 		int check[] = new int[16];

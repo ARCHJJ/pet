@@ -6,14 +6,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.action.CommonAction;
+import com.controller.CommandAction;
 import com.model.mymenu.market.ItemBean;
 import com.model.mymenu.market.ItemDao;
 import com.model.mymenu.market.MarketBean;
 import com.model.mymenu.market.MarketDao;
 import com.model.reservation.Market_addserviceBean;
 
-public class SearchAction extends CommonAction {
-	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+public class SearchAction implements CommandAction{
+
+	@Override
+	public String requestPro(HttpServletRequest request,
+			HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 
 		String word = request.getParameter("word");
