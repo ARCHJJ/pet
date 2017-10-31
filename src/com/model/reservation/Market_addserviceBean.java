@@ -1,6 +1,7 @@
 package com.model.reservation;
 
 public class Market_addserviceBean {
+	private int item_idx;
 	private int market_id;
 	private String service_name;
 	private int price;
@@ -28,7 +29,13 @@ public class Market_addserviceBean {
 	private int ser_doctor;
 	private int ser_surgery;
 	private int is_market;
-	
+
+	public int getItem_idx() {
+		return item_idx;
+	}
+	public void setItem_idx(int item_idx) {
+		this.item_idx = item_idx;
+	}
 	public String getItem_photos() {
 		return item_photos;
 	}

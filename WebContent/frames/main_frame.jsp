@@ -10,14 +10,12 @@
 <meta charset="UTF-8">
 <title><decorator:title /></title>
 <link rel="stylesheet" type="text/css" href="frames/main_frame.css" />
-<link rel="stylesheet" type="text/css"
-	href="Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="frames/main_frame.js"></script>
 <!-- <script type="text/javascript" src="js/common.js"></script> -->
-<script type="text/javascript"
-	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script type="text/javascript"	src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <decorator:head />
 </head>
 <body onload="<decorator:getProperty property='body.onload'/>">
@@ -108,14 +106,14 @@
 		<div class="header">로그인</div>
 		<div class="image content">
 			<div class="ui medium image">
-				<img src="img/logo.gif">
+				<!-- <img src="img/logo.gif"> -->
 			</div>
 			<div class="description">
 				<div class="ui header">로그인 폼</div>
 				<div class="ui fluid input">
 					<form name="login_form" method="post" action="login.do">
 						아이디(이메일) : <input type="text" name="userid" /> <br> <br>
-						비밀번호 : <input type="text" name="password" /> <br> <br>
+						비밀번호 : <input type="password" name="password" /> <br> <br>
 					</form>
 				</div>
 			</div>
@@ -135,7 +133,7 @@
 		<div class="header">회원가입 폼</div>
 		<div class="image content">
 			<div class="ui medium image">
-				<img src="img/logo.gif">
+				<!-- <img src="img/logo.gif"> -->
 			</div>
 			<div class="description">
 				<div class="ui header">시스템 회원가입</div>

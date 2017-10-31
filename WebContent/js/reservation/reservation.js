@@ -1,3 +1,13 @@
+$(function() {
+	 $('#datetimepicker1').datetimepicker({
+	 });
+});
+
+/* { 
+		language : 'ko', // 화면에 출력될 언어를 한국어로 설정한다.
+		//pickTime : false, // 사용자로부터 시간 선택을 허용하려면 true를 설정하거나 pickTime 옵션을 생략한다.
+		defalutDate : new Date() // 기본값으로 오늘 날짜를 입력한다. 기본값을 해제하려면 defaultDate 옵션을// 생략한다.
+}*/
 
 /* 예약목록 페이지로 이동 */
 function reserv() {
@@ -22,9 +32,15 @@ function reserv_confirm_form(email, market_id, address1, address2, service_name,
 	$('#reservation_pets').val(pets);
 	$('#timeofrev').val(time);
 	$('#price').val(price);
+	
 	$('#modal_reserv').modal('show');
 }
 
 function reserv_submit(){
-	document.submit_form.submit();
+	  if(confirm("예약 하시겠습니까?")) {
+		  document.submit_form.submit();
+      } else {
+          return false;
+      }
+	
 }

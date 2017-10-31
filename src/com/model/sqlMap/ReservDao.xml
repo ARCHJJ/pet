@@ -67,7 +67,7 @@
 				service_name = #service_name#
 	</select>
 	
-	
+	<!--예약하기버튼클릭시  -->
 	<insert id="submitReserv" parameterClass="HashMap">
 		INSERT INTO reservation(member_email, market_id, service, pets, timeofrev, date, cctvid)
 			VALUES(#member_email#, #market_id#, #service#, #pets#, #timeofrev#, SYSDATE(), 0)
