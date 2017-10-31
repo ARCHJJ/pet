@@ -14,7 +14,8 @@ public class Market_Menu_Info_Action extends CommonAction {
 		String userid =  ((LoginBean) request.getSession().getAttribute("session")).getEmail();
 
 		MarketBean mb = MarketDao.getInstance().isMarketInfoValid(userid);
-		request.getSession().setAttribute("mb", mb);
+		request.setAttribute("mb", mb);
+		
 		return "view/Mymenu/Market/Market_Menu_Info_View.jsp";
 	}
 }

@@ -21,8 +21,8 @@ public class Market_Menu_Item_Action extends CommonAction{
 		itemlist = ItemDao.getInstance().getItemList(userid);
 		MarketBean mb = MarketDao.getInstance().isMarketInfoValid(userid);
 		
-		request.getSession().setAttribute("itemlist", itemlist);
-		request.getSession().setAttribute("mb", mb);
+		request.setAttribute("itemlist", itemlist);
+		request.setAttribute("mb", mb);
 		return "view/Mymenu/Market/Market_Menu_Item_View.jsp";
 	}
 }

@@ -34,10 +34,8 @@ public class MarketDao extends DaoCore {
 		return mb;
 	}
 
-	public void updateMarket(String market_id, String market_name, String description, String photos, String address,
-			String pet_dog, String pet_cat, String pet_etc, String cl_market, String cl_beauty, String cl_hotel, String cl_hospital,
-			String ser_buypet, String ser_buystuff, String ser_hair, String ser_bath, String ser_rent, String ser_lodge, String ser_doctor,
-			String ser_surgery) {
+	public void updateMarket(String market_id, String market_name, String description, String photos, String address, int cl_market, int cl_beauty, int cl_hotel, int cl_hospital,
+			int ser_buypet, int ser_buystuff, int ser_hair, int ser_bath, int ser_rent, int ser_lodge, int ser_doctor, int ser_surgery, int pet_dog, int pet_cat, int pet_etc) {
 		try {
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("market_id", market_id);

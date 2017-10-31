@@ -21,7 +21,7 @@ public class Market_Menu_Reserv_Action extends CommonAction{
 		ArrayList<ReservBean> rblist = new ArrayList<ReservBean>();
 		rblist = ReservDao.getInstance().getMarketReservList(userid);
 		
-		request.getSession().setAttribute("rblist", rblist);
+		request.setAttribute("rblist", rblist);
 		return "view/Mymenu/Market/Market_Menu_Reserv_View.jsp";
 	}
 }
