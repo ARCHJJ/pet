@@ -8,7 +8,7 @@ public class Reserv_MarketBean {
 	private int rev_idx;
 	private String member_email;
 	private int reservation_service;
-	private int reservation_pets;
+	private String reservation_pets;
 	private String timeofrev;
 	private String date;
 	private int cctvid;
@@ -44,10 +44,10 @@ public class Reserv_MarketBean {
 	public void setReservation_service(int reservation_service) {
 		this.reservation_service = reservation_service;
 	}
-	public int getReservation_pets() {
+	public String getReservation_pets() {
 		return reservation_pets;
 	}
-	public void setReservation_pets(int reservation_pets) {
+	public void setReservation_pets(String reservation_pets) {
 		this.reservation_pets = reservation_pets;
 	}
 	public String getTimeofrev() {
