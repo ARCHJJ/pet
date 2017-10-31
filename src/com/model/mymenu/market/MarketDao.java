@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.model.dao.DaoCore;
+import com.model.reservation.Market_addserviceBean;
 import com.model.search.Market_feedbackBean;
 
 public class MarketDao extends DaoCore {
@@ -64,18 +65,6 @@ public class MarketDao extends DaoCore {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	public ArrayList<MarketBean> searchMarketList(String word) {
-		// TODO Auto-generated method stub
-		ArrayList<MarketBean> marketList = new ArrayList<MarketBean>();
-		try {
-			marketList = (ArrayList<MarketBean>) getSqlMapClient().queryForList("MarketDao.searchMarketList",
-					"%" + word + "%");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return marketList;
 	}
 
 	public ArrayList<Market_feedbackBean> getmarketEvaluate(int idx) {

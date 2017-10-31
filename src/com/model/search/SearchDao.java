@@ -12,79 +12,8 @@ public class SearchDao extends DaoCore {
 	public static SearchDao getInstance() {
 		return instance;
 	}
-		
-	public ArrayList<Market_addserviceBean> getSelectedOption(int[] arr) {
-		ArrayList<Market_addserviceBean> mslist = new ArrayList<Market_addserviceBean>();
-		HashMap<String, Object> param = new HashMap<String, Object>();
-		try {
-			if(arr[0]==1)
-				param.put("cl_market", 1);
-			else
-				param.put("cl_market", 0);
-			if(arr[1]==1)
-				param.put("cl_beauty", 1);
-			else
-				param.put("cl_beauty", 0);
-			if(arr[2]==1)
-				param.put("cl_hotel", 1);
-			else
-				param.put("cl_hotel", 0);
-			if(arr[3]==1)
-				param.put("cl_hospital", 1);
-			else
-				param.put("cl_hospital", 0);
-			if(arr[4]==1)
-				param.put("ser_buypet", 1);
-			else
-				param.put("ser_buypet", 0);
-			if(arr[5]==1)
-				param.put("ser_buystuff", 1);
-			else
-				param.put("ser_buystuff", 0);
-			if(arr[6]==1)
-				param.put("ser_hair", 1);
-			else
-				param.put("ser_hair", 0);
-			if(arr[7]==1)
-				param.put("ser_bath", 1);
-			else
-				param.put("ser_bath", 0);
-			if(arr[8]==1)
-				param.put("ser_rent", 1);
-			else
-				param.put("ser_rent", 0);
-			if(arr[9]==1)
-				param.put("ser_lodge", 1);
-			else
-				param.put("ser_lodge", 0);
-			if(arr[10]==1)
-				param.put("ser_doctor", 1);
-			else
-				param.put("ser_doctor", 0);
-			if(arr[11]==1)
-				param.put("ser_surgery", 1);
-			else
-				param.put("ser_surgery", 0);
-			if(arr[12]==1)
-				param.put("pet_dog", 1);
-			else
-				param.put("pet_dog", 0);
-			if(arr[13]==1)
-				param.put("pet_cat", 1);
-			else
-				param.put("pet_cat", 0);
-			if(arr[14]==1)
-				param.put("pet_etc", 1);
-			else
-				param.put("pet_etc", 0);
-			mslist = (ArrayList<Market_addserviceBean>) getSqlMapClient().queryForList("SearchDao.getSelectedOption", param);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return mslist;
-	}
-	
-	public ArrayList<MarketBean> SelectMarketOption(int[] arr) {
+
+	public ArrayList<MarketBean> SelectMarketOption(int[] arr, String word) {
 		ArrayList<MarketBean> mblist = new ArrayList<MarketBean>();
 		HashMap<String, Object> param = new HashMap<String, Object>();
 		try {
@@ -148,10 +77,94 @@ public class SearchDao extends DaoCore {
 				param.put("pet_etc", 1);
 			else
 				param.put("pet_etc", 0);
+			
+			int count=0;
+			for(int i = 0; i < 15; i++) {
+				if(arr[i]==1)
+					count++;
+			}
+			if(count == 0)
+				param.put("word", word);
+			else
+				param.put("word", "%"+word+"%");
 			mblist = (ArrayList<MarketBean>) getSqlMapClient().queryForList("SearchDao.SelectMarketOption", param);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return mblist;
 	}
+	
+	public ArrayList<Market_addserviceBean> getSelectedOption(int[] arr, String word) {
+		ArrayList<Market_addserviceBean> mslist = new ArrayList<Market_addserviceBean>();
+		HashMap<String, Object> param = new HashMap<String, Object>();
+		try {
+			if(arr[0]==1)
+				param.put("cl_market", 1);
+			else
+				param.put("cl_market", 0);
+			if(arr[1]==1)
+				param.put("cl_beauty", 1);
+			else
+				param.put("cl_beauty", 0);
+			if(arr[2]==1)
+				param.put("cl_hotel", 1);
+			else
+				param.put("cl_hotel", 0);
+			if(arr[3]==1)
+				param.put("cl_hospital", 1);
+			else
+				param.put("cl_hospital", 0);
+			if(arr[4]==1)
+				param.put("ser_buypet", 1);
+			else
+				param.put("ser_buypet", 0);
+			if(arr[5]==1)
+				param.put("ser_buystuff", 1);
+			else
+				param.put("ser_buystuff", 0);
+			if(arr[6]==1)
+				param.put("ser_hair", 1);
+			else
+				param.put("ser_hair", 0);
+			if(arr[7]==1)
+				param.put("ser_bath", 1);
+			else
+				param.put("ser_bath", 0);
+			if(arr[8]==1)
+				param.put("ser_rent", 1);
+			else
+				param.put("ser_rent", 0);
+			if(arr[9]==1)
+				param.put("ser_lodge", 1);
+			else
+				param.put("ser_lodge", 0);
+			if(arr[10]==1)
+				param.put("ser_doctor", 1);
+			else
+				param.put("ser_doctor", 0);
+			if(arr[11]==1)
+				param.put("ser_surgery", 1);
+			else
+				param.put("ser_surgery", 0);
+			if(arr[12]==1)
+				param.put("pet_dog", 1);
+			else
+				param.put("pet_dog", 0);
+			if(arr[13]==1)
+				param.put("pet_cat", 1);
+			else
+				param.put("pet_cat", 0);
+			if(arr[14]==1)
+				param.put("pet_etc", 1);
+			else
+				param.put("pet_etc", 0);
+			param.put("word", "%"+word+"%");
+			mslist = (ArrayList<Market_addserviceBean>) getSqlMapClient().queryForList("SearchDao.getSelectedOption", param);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mslist;
+	}
+	
+
 }

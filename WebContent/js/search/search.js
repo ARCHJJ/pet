@@ -3,9 +3,6 @@ function searchaction() {
 	document.search_form.submit();
 }
 
-function checkbox_submit() {
-	document.select_search_form.submit();
-}
 
 /* 매장 상세 보기 (매장 기본정보 + 후기 등) */
 function view_market(market_id) {

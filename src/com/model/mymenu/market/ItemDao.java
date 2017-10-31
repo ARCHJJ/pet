@@ -60,15 +60,6 @@ public class ItemDao extends DaoCore{
 		}
 	}
 
-	public ArrayList<Market_addserviceBean> searchItemList(String word) {
-		ArrayList<Market_addserviceBean> itemlist = new ArrayList<Market_addserviceBean>();
-		try {
-			itemlist = (ArrayList<Market_addserviceBean>) getSqlMapClient().queryForList("ItemDao.searchItemList", "%"+word+"%");
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return itemlist;
-	}
 	
 	public ArrayList<ItemBean> getreservinfo(int idx) {
 		ArrayList<ItemBean> mb = new ArrayList<ItemBean>();

@@ -29,11 +29,6 @@
 			market_id = #market_id#
 	</update>
 	
-	<select id="searchMarketList" parameterClass="String" resultClass="MarketBean">
-		SELECT * FROM market
-			WHERE
-				market_name LIKE #word#
-	</select>
 	
 	<select id="getmarketEvaluate" parameterClass="Integer" resultClass="Market_feedbackBean">
 		SELECT * FROM Market_feedback

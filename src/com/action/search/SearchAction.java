@@ -12,6 +12,7 @@ import com.model.mymenu.market.ItemDao;
 import com.model.mymenu.market.MarketBean;
 import com.model.mymenu.market.MarketDao;
 import com.model.reservation.Market_addserviceBean;
+import com.model.search.SearchDao;
 
 public class SearchAction implements CommandAction{
 
@@ -38,10 +39,10 @@ public class SearchAction implements CommandAction{
 			}
 		}
 		
-		int value = Integer.parseInt(request.getParameter("combobox"));
-		if (value == 1) {
-			ArrayList<MarketBean> mblist = new ArrayList<MarketBean>();
-			mblist = MarketDao.getInstance().searchMarketList(word);
+		ArrayList<MarketBean> mblist = new ArrayList<MarketBean>();
+		mblist = SearchDao.getInstance().SelectMarketOption(check, word);
+		ArrayList<Market_addserviceBean> iblist = new ArrayList<Market_addserviceBean>();
+			iblist = SearchDao.getInstance().getSelectedOption(check, word);
 
 			request.setAttribute("check", check[0]);
 			request.setAttribute("check1", check[1]);
@@ -60,30 +61,8 @@ public class SearchAction implements CommandAction{
 			request.setAttribute("check14", check[14]);
 			request.setAttribute("word", word);
 			request.setAttribute("mblist", mblist);
-			return "view/search/search_main.jsp";
-		} else {
-			ArrayList<Market_addserviceBean> iblist = new ArrayList<Market_addserviceBean>();
-			iblist = ItemDao.getInstance().searchItemList(word);
-
-			request.setAttribute("check", check[0]);
-			request.setAttribute("check1", check[1]);
-			request.setAttribute("check2", check[2]);
-			request.setAttribute("check3", check[3]);
-			request.setAttribute("check4", check[4]);
-			request.setAttribute("check5", check[5]);
-			request.setAttribute("check6", check[6]);
-			request.setAttribute("check7", check[7]);
-			request.setAttribute("check8", check[8]);
-			request.setAttribute("check9", check[9]);
-			request.setAttribute("check10", check[10]);
-			request.setAttribute("check11", check[11]);
-			request.setAttribute("check12", check[12]);
-			request.setAttribute("check13", check[13]);
-			request.setAttribute("check14", check[14]);
-			request.setAttribute("word", word);
 			request.setAttribute("mslist", iblist);
 			return "view/search/search_main.jsp";
-		}
 	}
 
 }

@@ -19,117 +19,138 @@
    </select>
    -->
 	 
+	 <select id="SelectMarketOption" parameterClass="Hashmap" resultClass="MarketBean">
+      select *
+         from market
+        	where
+         	(1=1
+            <dynamic prepend="and">
+	           <isEqual property="cl_market" compareValue="1" prepend="or">
+	           		cl_market = 1
+	           </isEqual>
+	           <isEqual property="cl_beauty" compareValue="1" prepend="or">
+	           		cl_beauty = 1
+	           </isEqual>
+	           <isEqual property="cl_hotel" compareValue="1" prepend="or">
+	           		cl_hotel = 1
+	           </isEqual>
+	           <isEqual property="cl_hospital" compareValue="1" prepend="or">
+	           		cl_hospital = 1
+	           </isEqual>
+            </dynamic>
+            )
+            and (1=1
+            <dynamic prepend="and">
+	           <isEqual property="ser_buypet" compareValue="1" prepend="or">
+	           		ser_buypet = 1
+	           </isEqual>
+	           <isEqual property="ser_buystuff" compareValue="1" prepend="or">
+	           		ser_buystuff = 1
+	           </isEqual>
+	           <isEqual property="ser_hair" compareValue="1" prepend="or">
+	           		ser_hair = 1
+	           </isEqual>
+	           <isEqual property="ser_bath" compareValue="1" prepend="or">
+	           		ser_bath = 1
+	           </isEqual>
+	           <isEqual property="ser_rent" compareValue="1" prepend="or">
+	           		ser_rent = 1
+	           </isEqual>
+	           <isEqual property="ser_lodge" compareValue="1" prepend="or">
+	           		ser_lodge = 1
+	           </isEqual>
+	           <isEqual property="ser_doctor" compareValue="1" prepend="or">
+	           		ser_doctor = 1
+	           </isEqual>
+	           <isEqual property="ser_surgery" compareValue="1" prepend="or">
+	           		ser_surgery = 1
+	           </isEqual>
+            </dynamic>
+            )
+            and (1=1
+            <dynamic prepend="and">
+	           <isEqual property="pet_dog" compareValue="1" prepend="or">
+	           		pet_dog = 1
+	           </isEqual>
+	           <isEqual property="pet_cat" compareValue="1" prepend="or">
+	           		pet_cat = 1
+	           </isEqual>
+	           <isEqual property="pet_etc" compareValue="1" prepend="or">
+	           		pet_etc = 1
+	           </isEqual>
+            </dynamic>
+            )
+            <dynamic prepend="and">
+				market_name LIKE #word#
+	        </dynamic>
+	</select>
+	
 	<select id="getSelectedOption" parameterClass="HashMap" resultClass="Market_addserviceBean">
       select *
          from market_addservice
-            <dynamic prepend="where">
-	           <isEqual property="cl_market" compareValue="1" prepend="and">
+         	where
+         	(1=1
+            <dynamic prepend="and">
+	           <isEqual property="cl_market" compareValue="1" prepend="or">
 	           		cl_market = 1
 	           </isEqual>
-	           <isEqual property="cl_beauty" compareValue="1" prepend="and">
+	           <isEqual property="cl_beauty" compareValue="1" prepend="or">
 	           		cl_beauty = 1
 	           </isEqual>
-	           <isEqual property="cl_hotel" compareValue="1" prepend="and">
+	           <isEqual property="cl_hotel" compareValue="1" prepend="or">
 	           		cl_hotel = 1
 	           </isEqual>
-	           <isEqual property="cl_hospital" compareValue="1" prepend="and">
+	           <isEqual property="cl_hospital" compareValue="1" prepend="or">
 	           		cl_hospital = 1
 	           </isEqual>
             </dynamic>
-            <dynamic prepend="or">
-	           <isEqual property="ser_buypet" compareValue="1" prepend="and">
+            )
+            and (1=1
+            <dynamic prepend="and">
+	           <isEqual property="ser_buypet" compareValue="1" prepend="or">
 	           		ser_buypet = 1
 	           </isEqual>
-	           <isEqual property="ser_buystuff" compareValue="1" prepend="and">
+	           <isEqual property="ser_buystuff" compareValue="1" prepend="or">
 	           		ser_buystuff = 1
 	           </isEqual>
-	           <isEqual property="ser_hair" compareValue="1" prepend="and">
+	           <isEqual property="ser_hair" compareValue="1" prepend="or">
 	           		ser_hair = 1
 	           </isEqual>
-	           <isEqual property="ser_bath" compareValue="1" prepend="and">
+	           <isEqual property="ser_bath" compareValue="1" prepend="or">
 	           		ser_bath = 1
 	           </isEqual>
-	           <isEqual property="ser_rent" compareValue="1" prepend="and">
+	           <isEqual property="ser_rent" compareValue="1" prepend="or">
 	           		ser_rent = 1
 	           </isEqual>
-	           <isEqual property="ser_lodge" compareValue="1" prepend="and">
+	           <isEqual property="ser_lodge" compareValue="1" prepend="or">
 	           		ser_lodge = 1
 	           </isEqual>
-	           <isEqual property="ser_doctor" compareValue="1" prepend="and">
+	           <isEqual property="ser_doctor" compareValue="1" prepend="or">
 	           		ser_doctor = 1
 	           </isEqual>
-	           <isEqual property="ser_surgery" compareValue="1" prepend="and">
+	           <isEqual property="ser_surgery" compareValue="1" prepend="or">
 	           		ser_surgery = 1
 	           </isEqual>
             </dynamic>
-            <dynamic prepend="or">
-	           <isEqual property="pet_dog" compareValue="1" prepend="and">
+            )
+            and (1=1
+            <dynamic prepend="and">
+	           <isEqual property="pet_dog" compareValue="1" prepend="or">
 	           		pet_dog = 1
 	           </isEqual>
-	           <isEqual property="pet_cat" compareValue="1" prepend="and">
+	           <isEqual property="pet_cat" compareValue="1" prepend="or">
 	           		pet_cat = 1
 	           </isEqual>
-	           <isEqual property="pet_etc" compareValue="1" prepend="and">
+	           <isEqual property="pet_etc" compareValue="1" prepend="or">
 	           		pet_etc = 1
 	           </isEqual>
             </dynamic>
-            
+            )
+            <dynamic prepend="and">
+				service_name LIKE #word#
+	        </dynamic>
    </select> 
 	
-	<select id="SelectMarketOption" parameterClass="Hashmap" resultClass="MarketBean">
-      select *
-         from market
-            <dynamic prepend="where">
-	           <isEqual property="cl_market" compareValue="1" prepend="and">
-	           		cl_market = 1
-	           </isEqual>
-	           <isEqual property="cl_beauty" compareValue="1" prepend="and">
-	           		cl_beauty = 1
-	           </isEqual>
-	           <isEqual property="cl_hotel" compareValue="1" prepend="and">
-	           		cl_hotel = 1
-	           </isEqual>
-	           <isEqual property="cl_hospital" compareValue="1" prepend="and">
-	           		cl_hospital = 1
-	           </isEqual>
-            </dynamic>
-            <dynamic prepend="or">
-	           <isEqual property="ser_buypet" compareValue="1" prepend="and">
-	           		ser_buypet = 1
-	           </isEqual>
-	           <isEqual property="ser_buystuff" compareValue="1" prepend="and">
-	           		ser_buystuff = 1
-	           </isEqual>
-	           <isEqual property="ser_hair" compareValue="1" prepend="and">
-	           		ser_hair = 1
-	           </isEqual>
-	           <isEqual property="ser_bath" compareValue="1" prepend="and">
-	           		ser_bath = 1
-	           </isEqual>
-	           <isEqual property="ser_rent" compareValue="1" prepend="and">
-	           		ser_rent = 1
-	           </isEqual>
-	           <isEqual property="ser_lodge" compareValue="1" prepend="and">
-	           		ser_lodge = 1
-	           </isEqual>
-	           <isEqual property="ser_doctor" compareValue="1" prepend="and">
-	           		ser_doctor = 1
-	           </isEqual>
-	           <isEqual property="ser_surgery" compareValue="1" prepend="and">
-	           		ser_surgery = 1
-	           </isEqual>
-            </dynamic>
-            <dynamic prepend="or">
-	           <isEqual property="pet_dog" compareValue="1" prepend="and">
-	           		pet_dog = 1
-	           </isEqual>
-	           <isEqual property="pet_cat" compareValue="1" prepend="and">
-	           		pet_cat = 1
-	           </isEqual>
-	           <isEqual property="pet_etc" compareValue="1" prepend="and">
-	           		pet_etc = 1
-	           </isEqual>
-            </dynamic>
-	</select>
+	
 	
 </sqlMap>

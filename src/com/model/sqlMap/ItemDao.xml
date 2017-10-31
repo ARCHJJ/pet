@@ -37,10 +37,5 @@
 				idx = #idx#
 	</delete>
 	
-	<select id="searchItemList" parameterClass="String" resultClass="Market_addserviceBean">
-		SELECT * FROM Market_addservice
-			WHERE
-				service_name LIKE #word#
-	</select>
 </sqlMap>
 
