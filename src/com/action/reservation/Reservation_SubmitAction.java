@@ -16,7 +16,7 @@ public class Reservation_SubmitAction extends CommonAction {
 		String pets = request.getParameter("pets");
 		String timeofrev = request.getParameter("timeofrev");
 		int cctvid = 0;
-
+		
 		submit(userid, market_id, service, pets, timeofrev, cctvid);
 		
 		return "User_Menu_Reserv.do";

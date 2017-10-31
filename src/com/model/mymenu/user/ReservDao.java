@@ -92,6 +92,7 @@ public class ReservDao extends DaoCore {
 			param.put("pets", pets);
 			param.put("timeofrev", timeofrev);
 			param.put("cctvid", cctvid);
+			param.put("service", service);
 			
 			getSqlMapClient().insert("ReservDao.submitReserv", param);
 			
