@@ -5,7 +5,7 @@ public class ReservBean {
 	private String member_email;
 	private int market_id;
 	private int service;
-	private int pets;
+	private String pets;
 	private String timeofrev;
 	private String date;
 	private int cctvid;
@@ -34,10 +34,10 @@ public class ReservBean {
 	public void setService(int service) {
 		this.service = service;
 	}
-	public int getPets() {
+	public String getPets() {
 		return pets;
 	}
-	public void setPets(int pets) {
+	public void setPets(String pets) {
 		this.pets = pets;
 	}
 	public String getTimeofrev() {
