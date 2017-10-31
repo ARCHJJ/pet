@@ -29,7 +29,7 @@ public class Market_Menu_Info_Modify_Action extends CommonAction {
 		String ser_surgery = request.getParameter("ser_surgery");
 		*/
 		
-		String market_id = request.getParameter("market_id");
+		int market_id = Integer.parseInt(request.getParameter("market_id"));
 		String market_name = request.getParameter("market_name");
 		String description = request.getParameter("description");
 		String photos = request.getParameter("photos");
@@ -59,7 +59,7 @@ public class Market_Menu_Info_Modify_Action extends CommonAction {
 		return "mymenu_shop_info.do";
 	}
 
-	private void updateMarket(String market_id, String market_name, String description, String photos, String address, int cl_market, int cl_beauty, int cl_hotel, int cl_hospital,
+	private void updateMarket(int market_id, String market_name, String description, String photos, String address, int cl_market, int cl_beauty, int cl_hotel, int cl_hospital,
 			int ser_buypet, int ser_buystuff, int ser_hair, int ser_bath, int ser_rent, int ser_lodge, int ser_doctor, int ser_surgery, int pet_dog, int pet_cat, int pet_etc) {
 		// TODO Auto-generated method stub
 		MarketDao.getInstance().updateMarket(market_id, market_name, description, photos, address, cl_market, cl_beauty,

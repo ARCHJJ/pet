@@ -42,7 +42,7 @@
 			</tr>
 			<tr>
 				<td>매장 사진</td>
-				<td></td>
+				<td>${mb.photos }</td>
 			</tr>
 			<tr>
 				<td>매장 주소</td>
@@ -64,13 +64,13 @@
 			<tr>
 				<td>매장 서비스</td>
 				<td><c:if test="${mb.ser_doctor == 1}">의사상담 </c:if>
-							<c:if test="${mb.ser_surgery == 1}">수술 </c:if>
-							<c:if test="${mb.ser_lodge == 1}">애완호텔(장기) </c:if>
-							<c:if test="${mb.ser_buypet == 1}">펫분양 </c:if>
-							<c:if test="${mb.ser_buystuff == 1}">펫용품 </c:if>
-							<c:if test="${mb.ser_hair == 1}">털손질 </c:if>
-							<c:if test="${mb.ser_bath == 1}">목욕 </c:if>
-							<c:if test="${mb.ser_rent == 1}">애완호텔(단기) </c:if></td>
+					<c:if test="${mb.ser_surgery == 1}">수술 </c:if>
+					<c:if test="${mb.ser_lodge == 1}">애완호텔(장기) </c:if>
+					<c:if test="${mb.ser_buypet == 1}">펫분양 </c:if>
+					<c:if test="${mb.ser_buystuff == 1}">펫용품 </c:if>
+					<c:if test="${mb.ser_hair == 1}">털손질 </c:if>
+					<c:if test="${mb.ser_bath == 1}">목욕 </c:if>
+					<c:if test="${mb.ser_rent == 1}">애완호텔(단기) </c:if></td>
 			</tr>
 		</tbody>
 	</table>

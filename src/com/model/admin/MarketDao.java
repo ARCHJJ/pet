@@ -39,7 +39,8 @@ public class MarketDao extends DaoCore {
 	}
 
 	//마케 수정
-	public void updateMarket(int market_id, String email, String market_name, String description, String photos, int pets, String address, int classes, int service) {
+	public void updateMarket(int market_id, String email, String market_name, String description, String photos, String address, int cl_market, int cl_beauty, int cl_hotel, int cl_hospital,
+			int ser_buypet, int ser_buystuff, int ser_hair, int ser_bath, int ser_rent, int ser_lodge, int ser_doctor, int ser_surgery, int pet_dog, int pet_cat, int pet_etc) {
 		try {
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("market_id", market_id);
@@ -47,10 +48,22 @@ public class MarketDao extends DaoCore {
 			param.put("market_name", market_name);
 			param.put("description", description);
 			param.put("photos", photos);
-			param.put("pets", pets);
 			param.put("address", address);
-			param.put("classes", classes);
-			param.put("service", service);
+			param.put("pet_dog", pet_dog);
+			param.put("pet_cat", pet_cat);
+			param.put("pet_etc", pet_etc);
+			param.put("cl_market", cl_market);
+			param.put("cl_beauty", cl_beauty);
+			param.put("cl_hotel", cl_hotel);
+			param.put("cl_hospital", cl_hospital);
+			param.put("ser_buypet", ser_buypet);
+			param.put("ser_buystuff", ser_buystuff);
+			param.put("ser_hair", ser_hair);
+			param.put("ser_bath", ser_bath);
+			param.put("ser_rent", ser_rent);
+			param.put("ser_lodge", ser_lodge);
+			param.put("ser_doctor", ser_doctor);
+			param.put("ser_surgery", ser_surgery);
 
 			getSqlMapClient().update("AdminDao.updateMarket", param);
 		} catch (Exception e) {
