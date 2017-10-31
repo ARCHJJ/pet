@@ -32,10 +32,10 @@
 				<tr>
 					<td>${item.market_id }</td>
 					<td>${item.market_name }</td>
-					<td>${item.classes }</td>
-					<td>${item.pets }</td>
-					<td>${item.service }</td>
-					<td><button class="ui button" onclick="update_pro(${item.market_id },'${item.email }','${item.market_name }','${item.description }','${item.photos }','${item.pets }','${item.address }','${item.classes }','${item.service }');">수정</button></td>
+					<td>${item.cl_market }${item.cl_beauty }${item.cl_hotel }${item.cl_hospital }</td>
+					<td>${item.pet_dog }${item.pet_cat }${item.pet_etc }</td>
+					<td>${item.ser_buypet }</td>
+					<td><button class="ui button" onclick="update_pro(${item.market_id },'${item.email }','${item.market_name }','${item.description }','${item.photos }','${item.pet_dog }','${item.address }','${item.cl_hospital }','${item.ser_buypet }');">수정</button></td>
 					<td><button class="ui button" onclick="delete_pro(${item.market_id });">삭제</button></td>
 				</tr>
 			</c:forEach>

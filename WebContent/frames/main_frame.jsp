@@ -27,6 +27,8 @@
 				</div>
 				<div id="menu">
 					<ul id="nav">
+						<li><a href="search.do">검색</a></li>
+						
 						<li><a href="#">커뮤니티</a>
 							<ul>
 								<li><a href="board_notice.do">공지사항</a></li>
@@ -34,8 +36,9 @@
 								<li><a href="board_kin.do">지식인</a></li>
 								<li><a href="board_freeboard.do">자유게시판</a></li>
 							</ul></li>
+							
 						<c:if test="${session.power eq 100}">
-							<li><a href="#">마이메뉴</a>
+							<li><a href="#">마이 메뉴</a>
 								<ul>
 									<li><a href="User_Menu_Reserv.do">예약정보</a></li>
 									<li><a href="User_Menu_Write.do">게시글관리</a></li>
@@ -43,8 +46,9 @@
 									<li><a href="User_Menu_Person.do">개인정보</a></li>
 								</ul></li>
 						</c:if>
+						
 						<c:if test="${session.power eq 200}">
-							<li><a href="#">매장메뉴</a>
+							<li><a href="#">매장 관리</a>
 								<ul>
 									<li><a href="mymenu_shop_item.do">물품관리</a></li>
 									<li><a href="">모니터링</a></li>
@@ -53,18 +57,20 @@
 									<li><a href="mymenu_shop_info.do">매장정보수정</a></li>
 								</ul></li>
 						</c:if>
+						
 						<!-- 관리자메뉴 -->
 						<c:if test="${session.power eq 300}">
-							<li><a href="#">관리자 메뉴</a>
+							<li><a href="#">시스템 관리</a>
 								<ul>
 									<li><a href="marketmanage.do">매장관리</a></li>
 									<li><a href="membermanage.do">회원관리</a></li>
+									<li><a href="reservemanage.do">예약현황관리</a></li>
 									<li><a href="noticemanage.do">공지사항관리</a></li>
 									<li><a href="csmanage.do">고객센터관리</a></li>
-									<li><a href="reservemanage.do">예약현황관리</a></li>
-								</ul></li>
+								</ul>
+							</li>
 						</c:if>
-						<li><a href="search.do">검색</a></li>
+						
 					</ul>
 				</div>
 

@@ -72,6 +72,7 @@ function delete_pro(rev_idx){
 			success:
 				function(data){
 					alert("삭제 되었습니다.");
+					history.back();
 					location.reload();
 				},
 			error: 
