@@ -16,6 +16,7 @@
 <script type="text/javascript" src="frames/main_frame.js"></script>
 <!-- <script type="text/javascript" src="js/common.js"></script> -->
 <script type="text/javascript"	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <decorator:head />
 </head>
 <body onload="<decorator:getProperty property='body.onload'/>">
@@ -160,12 +161,14 @@
 								<td><input type="text" name="name" maxlength="20" /></td>
 							</tr>
 							<tr>
-								<td>주소</td>
-								<td><input type="text" name="address1" maxlength="20" /></td>
+								<td>우편번호</td>
+								<td><input type="text" name="address1"  id="sample4_postcode" placeholder="우편번호" maxlength="20"/>
+									<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+								</td>
 							</tr>
 							<tr>
-								<td>세부주소</td>
-								<td><input type="text" name="address2" maxlength="20" /></td>
+								<td>주소</td>
+								<td><input type="text" name="address2" id="sample4_roadAddress" placeholder="도로명주소" maxlength="20" /></td>
 							</tr>
 							<tr>
 								<td>핸드폰</td>

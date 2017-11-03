@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MarketDao">
+	<typeAlias alias="Integer" type="java.lang.Integer" />
+	<typeAlias alias="String" type="java.lang.String" />
+	<typeAlias alias="HashMap" type="java.util.HashMap" />
+	<typeAlias alias="Date" type="java.util.Date" />
+	<typeAlias alias="MarketBean" type="com.model.mymenu.market.MarketBean" />
+	<typeAlias alias="Market_feedbackBean" type="com.model.search.Market_feedbackBean" />
+	
+	<select id="isMarketInfoValid" parameterClass="String" resultClass="MarketBean">
+		SELECT * FROM market
+			WHERE
+				email = #email#
+	</select>
+	
+	<select id="getMarketInfo" parameterClass="Integer" resultClass="MarketBean">
+		SELECT * FROM market
+			WHERE
+				market_id = #idx#
+	</select>
+			
+	<update id="updateMarket" parameterClass="HashMap">
+		UPDATE market
+			SET
+				market_name = #market_name#, description = #description#, photos = #photos#, pet_dog = #pet_dog#, pet_cat = #pet_cat#, cl_market = #cl_market#, 
+				cl_beauty = #cl_beauty#, cl_hotel = #cl_hotel#, cl_hospital = #cl_hospital#, ser_buypet = #ser_buypet#, ser_buystuff = #ser_buystuff#, ser_hair = #ser_hair#, 
+				ser_bath = #ser_bath#, ser_rent = #ser_rent#, ser_lodge = #ser_lodge#, ser_doctor = #ser_doctor#, ser_surgery = #ser_surgery#
+		WHERE
+			market_id = #market_id#
+	</update>
+	
+	
+	<select id="getmarketEvaluate" parameterClass="Integer" resultClass="Market_feedbackBean">
+		SELECT * FROM Market_feedback
+			WHERE
+				market_id = #idx#
+	</select>
+</sqlMap>
+

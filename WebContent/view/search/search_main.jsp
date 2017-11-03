@@ -13,8 +13,8 @@
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript"
-	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script type="text/javascript"	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+	
 <script type="text/javascript" src="js/search/search.js"></script>
 
 </head>
@@ -26,11 +26,17 @@
 			<option value="2">물품, 서비스</option> 
 		</select> 
 	-->
-		<input type="text" name="word" id="word" value="${word}"/>
-		<input type="submit" value="검색" onclick="searchaction()">
-		<br><br>
-	
 		<table>
+			<tr>
+				<td>검색어</td>
+				<td><input type="text" name="word" id="word" value="${word}"/>
+					<input type="submit" value="검색" onclick="searchaction()"></td>
+			</tr>
+			<tr>
+				<td>위치기반</td>
+				<td><input type="text" name="address" id="address" value="${address }">
+					<input type="button" onclick="sample4_execDaumPostcode()" value="주소 검색"></td>
+			</tr>
 			<tr><td><input type="checkbox" name="selectOption" value="0" onclick="searchaction()" <c:if test="${check == 1}">checked</c:if>>펫 샵</td>
 				<td><input type="checkbox" name="selectOption" value="1" onclick="searchaction()" <c:if test="${check1 == 1}">checked</c:if>>미용</td>
 				<td><input type="checkbox" name="selectOption" value="2" onclick="searchaction()" <c:if test="${check2 == 1}">checked</c:if>>호텔</td>

@@ -13,7 +13,7 @@ public class SearchDao extends DaoCore {
 		return instance;
 	}
 
-	public ArrayList<MarketBean> SelectMarketOption(int[] arr, String word) {
+	public ArrayList<MarketBean> SelectMarketOption(int[] arr, String word, String address) {
 		ArrayList<MarketBean> mblist = new ArrayList<MarketBean>();
 		HashMap<String, Object> param = new HashMap<String, Object>();
 		try {
@@ -87,6 +87,8 @@ public class SearchDao extends DaoCore {
 				param.put("word", word);
 			else
 				param.put("word", "%"+word+"%");
+			
+			param.put("address", address);
 			mblist = (ArrayList<MarketBean>) getSqlMapClient().queryForList("SearchDao.SelectMarketOption", param);
 		} catch (Exception e) {
 			e.printStackTrace();
