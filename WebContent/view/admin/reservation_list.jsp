@@ -23,7 +23,8 @@
 				<th>idx</th>
 				<th>신청자email</th>
 				<th>마켓id</th>
-				<th>예약서비스</th>
+				<th>마켓명</th>
+				<th>예약서비스/물품</th>
 				<th>동물종류</th>
 				<th>이용시간</th>
 				<th>예약한시각</th>
@@ -36,18 +37,20 @@
 					<td>${item.rev_idx }</td>
 					<td>${item.member_email }</td>
 					<td>${item.market_id }</td>
-					<td>${item.service }</td>
-					<td>${item.pets }</td>
+					<td>${item.market_name }</td>
+					<td>${item.item_name }</td>
+					<td>${item.reservation_pets }</td>
 					<td>${item.timeofrev }</td>
 					<td>${item.date }</td>
 					<td>${item.cctvid }</td>
-					<td><button class="ui button" onclick="update_pro('${item.rev_idx}', '${item.member_email}', '${item.market_id}', '${item.service}','${item.pets}', '${item.timeofrev}', '${item.date}', '${ item.cctvid}');">수정</button></td>
+					<td><button class="ui button" onclick="update_pro('${item.rev_idx}', '${item.member_email }', '${item.market_id }', '${item.market_name }', '${item.item_name }', '${item.reservation_pets }', '${item.timeofrev }', '${item.date }',  '${item.cctvid }');">수정</button></td>
 					<td><button class="ui button" onclick="delete_pro('${item.rev_idx}');">삭제</button></td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
 	
+	<!-- 
 	<div class="ui modal first" id="modal_insert">
 		<i class="close icon"></i>
 		<div class="header">예약 정보 추가</div>
@@ -75,7 +78,8 @@
 			</div>
 		</div>
 	</div>
-	
+	 -->
+	 
 	<div class="ui modal second" id="modal_update">
 		<i class="close icon"></i>
 		<div class="header">예약 수정</div>
@@ -89,9 +93,11 @@
 					<form name="modify_form" method="post"  action="reserveModify.do">
 						idx<input type="text" name="rev_idx" id="rev_idx" readonly="readonly"/>
 						<br>
-						신청자email <input type="text" name="member_email" id="member_email" maxlength="20" onfocus="javascript:changeBorder('pro_name')" />
+						신청자 email <input type="text" name="member_email" id="member_email" maxlength="20" onfocus="javascript:changeBorder('pro_name')" />
 						<br>
-						마켓id <input type="text" name="market_id" id="market_id" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						마켓 id <input type="text" name="market_id" id="market_id" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						<br>
+						마켓 이름 <input type="text" name="market_name" id="market_name" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 						<br>
 						예약서비스 <input type="text" name="service" id="service" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 						<br>

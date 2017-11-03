@@ -56,7 +56,7 @@
 				<div class="ui input focus">
 					<form name="register_form" method="post">
 						<input type="hidden" name="idx" id="idx"/>
-						이메일 <input type="text" name="pro_name" id="pro_name2" maxlength="20" onfocus="javascript:changeBorder('pro_name')" />
+						이메일 <input type="text" name="pro_name" id="pro_name2" maxlength="25" onfocus="javascript:changeBorder('pro_name')" />
 						<br>
 						패스워드 <input type="text" name="pro_email" id="pro_email2" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 					</form>
@@ -83,11 +83,11 @@
 				<div class="ui header">정보 수정</div>
 				<div class="ui input focus">
 					<form name="modify_form" method="post"  action="memberModify.do">
-						이메일<input type="text" name="email" id="email" readonly="readonly"/>
+						이메일<input type="text" name="email" id="email" maxlength="25" readonly="readonly"/>
 						<br>
-						패스워드 <input type="text" name="password" id="password" maxlength="20" onfocus="javascript:changeBorder('pro_name')" />
+						패스워드 <input type="text" name="password" id="password" maxlength="12" readonly="readonly" onfocus="javascript:changeBorder('pro_name')" />
 						<br>
-						이름 <input type="text" name="name" id="name" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						이름 <input type="text" name="name" id="name" maxlength="14" onfocus="javascript:changeBorder('pro_email')" />
 						<br>
 						주소1 <input type="text" name="address1" id="address1" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 						<br>
@@ -97,7 +97,7 @@
 						<br>
 						성별 <input type="text" name="gender" id="gender" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
 						<br>
-						권한 <input type="text" name="power" id="power" maxlength="20" onfocus="javascript:changeBorder('pro_email')" />
+						권한 <input type="text" name="power" id="power" maxlength="10" onfocus="javascript:changeBorder('pro_email')" />
 					</form>
 				</div>
 				<p>수정 하시겠습니까?</p>

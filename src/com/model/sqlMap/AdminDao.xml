@@ -9,6 +9,7 @@
 	<typeAlias alias="UserBean" type="com.model.mymenu.user.UserBean" />
 	<typeAlias alias="MarketBean" type="com.model.mymenu.market.MarketBean" />
 	<typeAlias alias="ReservBean" type="com.model.mymenu.user.ReservBean" />
+	<typeAlias alias="Reserv_MarketBean" type="com.model.mymenu.user.Reserv_MarketBean" />
 	
 	<!--Admin/User  -->
 	<select id="getMemberList" resultClass="UserBean">
@@ -55,8 +56,8 @@
 	
 	
 	<!-- Admin/reservation  -->
-	<select id="getReservationList" resultClass="ReservBean">
-		SELECT * FROM reservation 
+	<select id="getReservationList" resultClass="Reserv_MarketBean">
+		SELECT * FROM reserv_market
 			ORDER BY rev_idx desc
 	</select>
 	

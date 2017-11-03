@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import com.model.dao.DaoCore;
 import com.model.mymenu.user.ReservBean;
+import com.model.mymenu.user.Reserv_MarketBean;
 import com.model.mymenu.user.UserBean;
 
 public class ReservationDao extends DaoCore {
@@ -24,10 +25,10 @@ public class ReservationDao extends DaoCore {
 		
 	}
 
-	public ArrayList<ReservBean> getReservationList() {
-		ArrayList<ReservBean> reservationlist = new ArrayList<ReservBean>();
+	public ArrayList<Reserv_MarketBean> getReservationList() {
+		ArrayList<Reserv_MarketBean> reservationlist = new ArrayList<Reserv_MarketBean>();
 		try {
-			reservationlist = (ArrayList<ReservBean>) getSqlMapClient().queryForList("AdminDao.getReservationList");
+			reservationlist = (ArrayList<Reserv_MarketBean>) getSqlMapClient().queryForList("AdminDao.getReservationList");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

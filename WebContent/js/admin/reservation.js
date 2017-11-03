@@ -14,11 +14,13 @@ function changeBorder(type){
 		pro_email.style.border = "1px solid green";
 	}
 }
-/*멤버추가 모달*/
+
+/*
+//멤버추가 모달
 function insert_req(){
 	$('#modal_insert').modal('show');
 }
-/*멤버추가 처리*/
+//멤버추가 처리
 function insert_pro_register(){
 	var pro_name = $('#pro_name2').val();
 	var pro_email = $('#pro_email2').val();
@@ -34,7 +36,7 @@ function insert_pro_register(){
 					alert("시스템 오류 발생하였습니다. ");
 				}else{
 					alert("추가 되었습니다. ");
-					location.href="membermanage.do";
+					location.href="reservemanage.do";
 				}
 			}, 
 		error: 
@@ -43,19 +45,21 @@ function insert_pro_register(){
 			} 
 	}); 
 }
+*/
 
 /*멤버업데이트 모달*/
-function update_pro(rev_idx, member_email, market_id, service, pets, timeofrev, date, cctvid){
+function update_pro(rev_idx, member_email, market_id, market_name, service, pets, timeofrev, date, cctvid){
 	$('#rev_idx').val(rev_idx);
 	$('#member_email').val(member_email);
 	$('#market_id').val(market_id);
+	$('#market_name').val(market_name);
 	$('#service').val(service);
 	$('#pets').val(pets);
 	$('#timeofrev').val(timeofrev);
 	$('#date').val(date);
 	$('#cctvid').val(cctvid);
 	$('#modal_update').modal('show');
-};
+}
 
 /*멤버업데이트 처리*/
 function update_pro_register(){
@@ -64,15 +68,15 @@ function update_pro_register(){
 
 /*멤버삭제*/
 function delete_pro(rev_idx){
-	if(confirm("해당 사용자를 삭제 하시겠습니까?")){
+	if(confirm("해당 예약정보를 삭제 하시겠습니까?")){
 		jQuery.ajax({
 			type: "post",
-			url: "reservDelete.do",
+			url: "reserveDelete.do",
 			data: {rev_idx: rev_idx},
 			success:
 				function(data){
 					alert("삭제 되었습니다.");
-					history.back();
+					//history.back();
 					location.reload();
 				},
 			error: 

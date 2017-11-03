@@ -46,7 +46,6 @@ function insert_pro_register(){
 
 /*멤버업데이트 모달*/
 function update_pro(email, password, name, address1, address2, phone, gender, power){
-	alert('asdf');
 	$('#email').val(email);
 	$('#password').val(password);
 	$('#name').val(name);
