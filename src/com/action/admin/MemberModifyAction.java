@@ -19,11 +19,19 @@ public class MemberModifyAction extends AdminOnlyAction {
 		int power = Integer.parseInt(request.getParameter("power"));
 		String name = request.getParameter("name");
 		
-		updateMember(email, password, address1, address2, phone, gender,power, name);
+		if(password != "")
+			updateMember(email, password, address1, address2, phone, gender, power, name);
+		else
+			updateMember(email, address1, address2, phone, gender, power, name);
+			
+		
 		return "membermanage.do";
 	}
 	private void updateMember(String email, String password, String address1, String address2, String phone, String gender, int power, String name) {
-		MemberDao.getInstance().updateMember(email, password, address1, address2, phone, gender, power, name);
+		MemberDao.getInstance().updateMember_a(email, password, address1, address2, phone, gender, power, name);
+	}
+	private void updateMember(String email, String address1, String address2, String phone, String gender, int power, String name) {
+		MemberDao.getInstance().updateMember_b(email, address1, address2, phone, gender, power, name);
 	}
 	
 }

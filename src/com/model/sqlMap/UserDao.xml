@@ -22,10 +22,17 @@
 			email = #email#
 	</update>
 	
-	<update id="updateUser" parameterClass="HashMap">
+	<update id="updateUser_a" parameterClass="HashMap">
 		UPDATE member
 			SET
-				password = #password#, address1 = #address1#, address2 = #address2#, phone = #phone#, gender = #gender#, name = #name#
+				password = HEX(AES_ENCRYPT('$password$', 'enckey12')), address1 = #address1#, address2 = #address2#, phone = #phone#, gender = #gender#, name = #name#
+			WHERE
+				email = #email#
+	</update>
+	<update id="updateUser_b" parameterClass="HashMap">
+		UPDATE member
+			SET
+				address1 = #address1#, address2 = #address2#, phone = #phone#, gender = #gender#, name = #name#
 			WHERE
 				email = #email#
 	</update>

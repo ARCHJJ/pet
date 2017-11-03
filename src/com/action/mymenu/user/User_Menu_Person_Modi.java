@@ -17,12 +17,18 @@ public class User_Menu_Person_Modi extends CommonAction {
 		String gender = request.getParameter("gender");		
 		String name = request.getParameter("name");
 
-		updateUser(email, password, address1, address2, phone, gender, name);
-		
+		if(password != "")
+			updateUser(email, password, address1, address2, phone, gender, name);
+		else
+			updateUser(email, address1, address2, phone, gender, name);
+			
 		return "User_Menu_Person.do";
 	}
 
 	private void updateUser(String email, String password, String address1, String address2, String phone, String gender, String name) {
-		UserDao.getInstance().updateUser(email, password, address1, address2, phone, gender, name);
+		UserDao.getInstance().updateUser_a(email, password, address1, address2, phone, gender, name);
+	}
+	private void updateUser(String email, String address1, String address2, String phone, String gender, String name) {
+		UserDao.getInstance().updateUser_b(email, address1, address2, phone, gender, name);
 	}
 }

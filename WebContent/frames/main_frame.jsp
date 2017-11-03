@@ -177,8 +177,8 @@
 							<tr>
 								<td>성별</td>
 								<td><select name="gender">
-										<option value="man">남</option>
-										<option value="woman">여</option>
+										<option value="남">남</option>
+										<option value="여">여</option>
 								</select></td>
 							</tr>
 						</table>

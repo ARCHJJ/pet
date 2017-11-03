@@ -42,7 +42,7 @@
 	</table>
 	<br>
 	<form name="User_button">
-		<button class="ui violet basic button" type="button" onclick="upInfo('${ub.email}', '${ub.password }', '${ub.name }', '${ub.address1 }', '${ub.address2 }', '${ub.phone }', '${ub.gender }', '${ub.power }');">개인정보 수정</button>
+		<button class="ui violet basic button" type="button" onclick="upInfo('${ub.email}', '${ub.name }', '${ub.address1 }', '${ub.address2 }', '${ub.phone }', '${ub.gender }', '${ub.power }');">개인정보 수정</button>
 		<button class="ui violet basic button" type="button" onclick="delInfo('${ub.email}');">회원탈퇴</button>
 	</form>
 	<div class="ui modal second" id="modal_update">

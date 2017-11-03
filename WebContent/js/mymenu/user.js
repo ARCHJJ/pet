@@ -1,8 +1,7 @@
 
 /* 개인정보 수정 */
-function upInfo(email, password, name, address1, address2, phone, gender, power) {
+function upInfo(email, name, address1, address2, phone, gender, power) {
 	$('#email').val(email);
-	$('#password').val(password);
 	$('#name').val(name);
 	$('#address1').val(address1);
 	$('#address2').val(address2);

@@ -37,7 +37,7 @@ public class MemberDao extends DaoCore {
 	}
 
 	//사용자 수정
-	public void updateMember(String email, String password, String address1, String address2, String phone,	String gender, int power, String name) {
+	public void updateMember_a(String email, String password, String address1, String address2, String phone,	String gender, int power, String name) {
 		try {
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("email", email);
@@ -49,7 +49,23 @@ public class MemberDao extends DaoCore {
 			param.put("power", power);
 			param.put("name", name);
 
-			getSqlMapClient().update("AdminDao.updateMember", param);
+			getSqlMapClient().update("AdminDao.updateMember_a", param);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void updateMember_b(String email, String address1, String address2, String phone,	String gender, int power, String name) {
+		try {
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("email", email);
+			param.put("address1", address1);
+			param.put("address2", address2);
+			param.put("phone", phone);
+			param.put("gender", gender);
+			param.put("power", power);
+			param.put("name", name);
+
+			getSqlMapClient().update("AdminDao.updateMember_b", param);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

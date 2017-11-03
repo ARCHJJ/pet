@@ -17,10 +17,18 @@
 			ORDER BY power desc
 	</select>
 	
-	<update id="updateMember" parameterClass="HashMap">
+	<update id="updateMember_a" parameterClass="HashMap">
 		UPDATE member
 			SET
-				password = #password#,	address1 = #address1#, address2 = #address2#, phone = #phone#,	gender = #gender#,	power = #power#, name = #name#
+				password = HEX(AES_ENCRYPT('$password$', 'enckey12')),	address1 = #address1#, address2 = #address2#, phone = #phone#,	gender = #gender#,	power = #power#, name = #name#
+		WHERE
+			email = #email#
+	</update>
+	
+	<update id="updateMember_b" parameterClass="HashMap">
+		UPDATE member
+			SET
+				address1 = #address1#, address2 = #address2#, phone = #phone#,	gender = #gender#,	power = #power#, name = #name#
 		WHERE
 			email = #email#
 	</update>

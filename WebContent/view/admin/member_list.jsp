@@ -40,7 +40,7 @@
 					<td>${item.phone }</td>
 					<td>${item.gender }</td>
 					<td>${item.power }</td>
-					<td><button class="ui button" onclick="update_pro('${item.email}', '${item.password}', '${item.name}', '${item.address1}', '${item.address2}', '${item.phone}', '${ item.gender}', ${item.power});">수정</button></td>
+					<td><button class="ui button" onclick="update_pro('${item.email}', '${item.name}', '${item.address1}', '${item.address2}', '${item.phone}', '${ item.gender}', ${item.power});">수정</button></td>
 					<td><button class="ui button" onclick="delete_pro('${item.email}');">삭제</button></td>
 					<td><button class="ui button" onclick="insert_market('${item.email}'); " >마켓 할당</button></td>
 				</tr>
@@ -89,7 +89,7 @@
 					<form name="modify_form" method="post"  action="memberModify.do">
 						이메일<input type="text" name="email" id="email" maxlength="25" readonly="readonly"/>
 						<br>
-						패스워드 <input type="text" name="password" id="password" maxlength="12" readonly="readonly" onfocus="javascript:changeBorder('pro_name')" />
+						패스워드 <input type="text" name="password" id="password" maxlength="12" onfocus="javascript:changeBorder('pro_name')" />
 						<br>
 						이름 <input type="text" name="name" id="name" maxlength="14" onfocus="javascript:changeBorder('pro_email')" />
 						<br>

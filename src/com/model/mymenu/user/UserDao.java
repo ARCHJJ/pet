@@ -38,7 +38,7 @@ public class UserDao extends DaoCore{
 		}
 		return ub;
 	}
-	public void updateUser(String email, String password, String address1, String address2, String phone, String gender, String name) {
+	public void updateUser_a(String email, String password, String address1, String address2, String phone, String gender, String name) {
 		try{
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("email", email);
@@ -49,7 +49,23 @@ public class UserDao extends DaoCore{
 			param.put("gender", gender);
 			param.put("name", name);
 			
-			getSqlMapClient().update("UserDao.updateUser", param);
+			getSqlMapClient().update("UserDao.updateUser_a", param);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	public void updateUser_b(String email, String address1, String address2, String phone, String gender, String name) {
+		try{
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("email", email);
+			param.put("address1", address1);
+			param.put("address2", address2);
+			param.put("phone", phone);
+			param.put("gender", gender);
+			param.put("name", name);
+			
+			getSqlMapClient().update("UserDao.updateUser_b", param);
 			
 		}catch(Exception e){
 			e.printStackTrace();
