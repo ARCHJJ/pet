@@ -45,6 +45,23 @@ function insert_pro_register(){
 }
 
 /*마켓업데이트 모달*/
+function update_pro(market_id) {
+	jQuery.ajax({
+		type: "post",
+		url: "mymenu_shop_info.do",
+		data: {market_id: market_id},
+		success:
+			function(data){
+				window.location.href = "mymenu_shop_info.do?market_id=" + market_id;
+			},
+		error: 
+			function error(xhr,status,error){
+				alert(error);
+			} 
+	});
+};
+
+/*
 function update_pro(market_id, email, market_name, description, photos, address, pet_dog, pet_cat, pet_etc, cl_market, cl_beauty, cl_hotel, cl_hospital, ser_buypet, ser_buystuff, ser_hair, ser_bath, ser_rent, ser_lodge, ser_doctor, ser_surgery) {
 	$('#market_id').val(market_id);
 	$('#email').val(email);
@@ -69,12 +86,15 @@ function update_pro(market_id, email, market_name, description, photos, address,
 	$('#ser_surgery').val(ser_surgery);
 	
 	$('#modal_update').modal('show');
-};
+}
+*/
 
-/*마켓업데이트 처리*/
+/*
+//마켓업데이트 처리
 function update_pro_register(){
 	document.modify_form.submit();
 }
+*/
 
 /*마켓삭제*/
 function delete_pro(market_id){

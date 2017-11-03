@@ -47,9 +47,12 @@
 							<c:if test="${item.ser_hair == 1}">털손질 </c:if>
 							<c:if test="${item.ser_bath == 1}">목욕 </c:if>
 							<c:if test="${item.ser_rent == 1}">애완호텔(단기) </c:if></td>
+			<!-- 
 					<td><button class="ui button" onclick="update_pro(${item.market_id },'${item.email }','${item.market_name }','${item.description }','${item.photos }','${item.address }',
 							${item.pet_dog },${item.pet_cat },${item.pet_etc },${item.cl_market }, ${item.cl_beauty }, ${item.cl_hotel }, ${item.cl_hospital },
 							${item.ser_buypet }, ${item.ser_buystuff }, ${item.ser_hair }, ${item.ser_bath }, ${item.ser_rent }, ${item.ser_lodge }, ${item.ser_doctor }, ${item.ser_surgery })">수정</button></td>
+			-->
+					<td><button class="ui button" onclick="update_pro(${item.market_id });">수정</button></td>
 					<td><button class="ui button" onclick="delete_pro(${item.market_id });">삭제</button></td>
 				</tr>
 			</c:forEach>
@@ -84,6 +87,8 @@
 		</div>
 	</div>
 	
+	
+	<!-- 
 	<div class="ui modal second" id="modal_update">
 		<i class="close icon"></i>
 		<div class="header">정보 수정</div>
@@ -123,8 +128,8 @@
 						<input type="checkbox" name="selectOption" value="5" <c:if test="${('ser_buystuff') == '1' }">checked</c:if>>펫 물품
 						<input type="checkbox" name="selectOption" value="6" <c:if test="${('ser_hair') == '1' }">checked</c:if>>털 손질
 						<input type="checkbox" name="selectOption" value="7" <c:if test="${('ser_bath') == '1' }">checked</c:if>>애완 목욕
-						<input type="checkbox" name="selectOption" value="8" <c:if test="${('ser_rent') == '1' }">checked</c:if>>애완호텔(단기이용)	<!-- rent -->
-						<input type="checkbox" name="selectOption" value="9" <c:if test="${('ser_lodge') == '1' }">checked</c:if>>애완호텔(장기이용)	<!-- lodge -->
+						<input type="checkbox" name="selectOption" value="8" <c:if test="${('ser_rent') == '1' }">checked</c:if>>애완호텔(단기이용)	
+						<input type="checkbox" name="selectOption" value="9" <c:if test="${('ser_lodge') == '1' }">checked</c:if>>애완호텔(장기이용)	
 						<input type="checkbox" name="selectOption" value="10" <c:if test="${('ser_doctor') == '1' }">checked</c:if>>의사상담
 						<input type="checkbox" name="selectOption" value="11" <c:if test="${('ser_surgery') == '1' }">checked</c:if>>동물수술
 					</form>
@@ -139,5 +144,6 @@
 			</div>
 		</div>
 	</div>
+	 -->
 </body>
 </html>
