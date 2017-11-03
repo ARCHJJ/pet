@@ -116,3 +116,9 @@ function deleteBoard(idx, board_type) {
 		});
 	}
 }
+
+function boardSearch(pagenum){
+	
+	
+	
+}

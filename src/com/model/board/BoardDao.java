@@ -10,14 +10,28 @@ public class BoardDao extends DaoCore {
 	private static BoardDao instance = new BoardDao();
 	public static BoardDao getInstance() {return instance;}
 	
-	public ArrayList<BoardBean> getBoardList_all(int board_type) {
+	public ArrayList<BoardBean> getBoardList_all(int board_type, int page) {
 		ArrayList<BoardBean> Bb = new ArrayList<BoardBean>();
 		try {
-			Bb = (ArrayList<BoardBean>) getSqlMapClient().queryForList("BoardDao.getBoardList_all", board_type);
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("board_type", board_type);
+			param.put("startrow", ((page-1)*10));
+			param.put("get_record", 10);
+			Bb = (ArrayList<BoardBean>) getSqlMapClient().queryForList("BoardDao.getBoardList_all", param);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		return Bb;
+	}
+	
+	public int getBoardCount(int board_type) {
+		int count = -1;
+		try {
+			count = (int) getSqlMapClient().queryForObject("BoardDao.getBoardCount", board_type);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return count;
 	}
 
 	public void increase_hit(int idx) {

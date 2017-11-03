@@ -7,83 +7,79 @@
 	<typeAlias alias="HashMap" type="java.util.HashMap" />
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="BoardBean" type="com.model.board.BoardBean" />
-	
-							<!-- 게시판 게시물 select 하는 부분 -->
-							
-	<select id="getBoardList_all" parameterClass="Integer" resultClass="BoardBean">
-		SELECT * FROM board 
-		WHERE board_type = #board_type#
-		ORDER BY idx DESC
+
+	<!-- 게시판 게시물 select 하는 부분 -->
+	<select id="getBoardList_all" parameterClass="HashMap" resultClass="BoardBean">
+		SELECT * FROM board
+			WHERE board_type = #board_type#
+				ORDER BY idx DESC limit #startrow#, #get_record#
+				<!-- start_view 번 레코드부터 count개 추출 -->
 	</select>
-	
+
 	<select id="getBoardList_title" parameterClass="Integer" resultClass="BoardBean">
-		SELECT * FROM board 
-		WHERE title LIKE ? 
-		AND board_type = #board_type#
-		ORDER BY idx DESC
+		SELECT * FROM board
+			WHERE title LIKE ? AND board_type = #board_type#
+				ORDER BY idx DESC
 	</select>
-	
+
 	<select id="getBoardList_content" parameterClass="Integer" resultClass="BoardBean">
-		SELECT * FROM board 
-		WHERE content LIKE ? 
-		AND board_type = #board_type#
-		ORDER BY idx DESC
+		SELECT * FROM board
+			WHERE content LIKE ? AND board_type = #board_type#
+				ORDER BY idx DESC
 	</select>
-	
+
 	<select id="getBoardList_two" parameterClass="Integer" resultClass="BoardBean">
-		SELECT * FROM board 
-		WHERE title LIKE ? 
-		OR content LIKE ? 
-		AND board_type = #board_type#
-		ORDER BY idx DESC
+		SELECT * FROM board
+			WHERE title LIKE ? OR content LIKE ? AND board_type = #board_type#
+				ORDER BY idx DESC
 	</select>
-	
+
 	<select id="getBoardList_email" parameterClass="Integer" resultClass="BoardBean">
-		SELECT * FROM board 
-		WHERE email LIKE ? 
-		AND board_type = #board_type#
-		ORDER BY idx DESC
+		SELECT * FROM board
+			WHERE email LIKE ?
+				AND board_type = #board_type#
+					ORDER BY idx DESC
 	</select>
-	
+
 	<update id="increase_hit" parameterClass="Integer">
 		UPDATE board SET hit = hit + 1
-		WHERE idx = #idx#
+			WHERE idx = #idx#
 	</update>
-	
-			<!-- 게시물 갯수 select 하는 부분 -->
-	<select id="getBoardCount_all" parameterClass="Integer" resultClass="int">
+
+	<select id="getBoardCount" parameterClass="Integer" resultClass="int">
 		SELECT count(*) FROM board 
 		WHERE board_type = #board_type#
 	</select>
-	
+
 	<select id="getBoardCount_title" parameterClass="Integer" resultClass="BoardBean">
-		SELECT count(*) FROM board 
-		WHERE title LIKE ? 
-		AND board_type = #board_type#
+		SELECT count(*) FROM board
+			WHERE title LIKE ?
+				AND board_type = #board_type#
 	</select>
-	
+
 	<select id="getBoardCount_content" parameterClass="Integer" resultClass="BoardBean">
-		SELECT count(*) FROM board 
-		WHERE content LIKE ? 
-		AND board_type = #board_type#
+		SELECT count(*) FROM board
+			WHERE content LIKE ?
+				AND board_type = #board_type#
 	</select>
-	
+
 	<select id="getBoardCount_two" parameterClass="Integer" resultClass="BoardBean">
-		SELECT count(*) FROM board 
-		WHERE title LIKE ? 
-		OR content LIKE ? 
-		AND board_type = #board_type#
+		SELECT count(*) FROM board
+			WHERE title LIKE ?
+				OR content LIKE ?
+				AND board_type = #board_type#
 	</select>
-	
-	<select id="getBoardCount_email" parameterClass="Integer" resultClass="BoardBean">
-		SELECT count(*) FROM board 
-		WHERE email LIKE ? 
-		AND board_type = #board_type#
+
+	<select id="getBoardCount_email" parameterClass="Integer"
+		resultClass="BoardBean">
+		SELECT count(*) FROM board
+			WHERE email LIKE ?
+				AND board_type = #board_type#
 	</select>
-	
+
 	<select id="getView" parameterClass="Integer" resultClass="BoardBean">
 		SELECT * FROM board
-		WHERE idx = #idx#
+			WHERE idx = #idx#
 	</select>
 
 	<insert id="writeBoard" parameterClass="Hashmap">
@@ -92,14 +88,13 @@
 	</insert>
 
 	<update id="updateBoard" parameterClass="Hashmap">
-		UPDATE board
-		SET title = #title#, email = #email#, file = #file#, content = #content#, date = SYSDATE()
-		WHERE idx = #idx#
+		UPDATE board SET title = #title#, email = #email#, file = #file#, content = #content#, date = SYSDATE()
+			WHERE idx = #idx#
 	</update>
-	
+
 	<delete id="deleteBoard" parameterClass="Integer">
 		DELETE FROM board
-		WHERE idx = #idx#
+			WHERE idx = #idx#
 	</delete>
-	
+
 </sqlMap>

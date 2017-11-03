@@ -15,14 +15,22 @@ public class Board_CustServ_List_Action implements CommandAction {
 	public String requestPro(HttpServletRequest request, 
 			HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
+		int page;
+		if(request.getParameter("sel_page") != null)
+			page = Integer.parseInt(request.getParameter("sel_page"));
+		else
+			page = 1;
+		int count;
 		int board_type = 2;
-		//int totalCount = BoardDao.getInstance().getBoardCount_all(board_type);
-		ArrayList<BoardBean> bblist = new ArrayList<BoardBean>();
 		
-		bblist = BoardDao.getInstance().getBoardList_all(board_type);
+		count = BoardDao.getInstance().getBoardCount(board_type);
+		
+		ArrayList<BoardBean> bblist = new ArrayList<BoardBean>();
+		bblist = BoardDao.getInstance().getBoardList_all(board_type, page);
+		
+		request.setAttribute("rowcount", count/10 + 1);
 		request.setAttribute("bblist", bblist);
 		request.setAttribute("board_type", board_type);
-		//request.setAttribute("totalCount", totalCount);
 				
 		return "view/Board/Board_View.jsp";
 	}
