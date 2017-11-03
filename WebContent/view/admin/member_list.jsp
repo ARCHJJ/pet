@@ -17,7 +17,9 @@
 </head>
 <body>
 	<div align="center">
+		<!--
 		<div id="addpro" class="ui positive right labeled icon button" onclick="insert_req();">멤버 추가하기</div>
+		-->
 		<table>
 			<tr>
 				<th>이메일</th>
