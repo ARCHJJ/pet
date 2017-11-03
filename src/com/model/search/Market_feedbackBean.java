@@ -2,7 +2,7 @@ package com.model.search;
 
 public class Market_feedbackBean {
 	private int market_id;
-	private int order;
+	private int idx;
 	private String email;
 	private String content;
 	private String date;
@@ -13,11 +13,11 @@ public class Market_feedbackBean {
 	public void setMarket_id(int market_id) {
 		this.market_id = market_id;
 	}
-	public int getOrder() {
-		return order;
+	public int getIdx() {
+		return idx;
 	}
-	public void setOrder(int order) {
-		this.order = order;
+	public void setIdx(int idx) {
+		this.idx = idx;
 	}
 	public String getemail() {
 		return email;

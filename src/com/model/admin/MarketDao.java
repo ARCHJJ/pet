@@ -81,9 +81,14 @@ public class MarketDao extends DaoCore {
 	}
 
 	// 마켓 코멘트 입력
-	public void insertComment(String comment) {
+	public void insertComment(String content, int market_id, String email) {
 		try {
-			getSqlMapClient().insert("MarketDao.insertComment");
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("content", content);
+			param.put("market_id", market_id);
+			param.put("email", email);
+			
+			getSqlMapClient().insert("MarketDao.insertComment", param);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -105,7 +110,7 @@ public class MarketDao extends DaoCore {
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("order", order);
 			param.put("content", content);
-
+			System.out.println("debug2  "+content);
 			getSqlMapClient().update("MarketDao.updateComment", param);
 		} catch (Exception e) {
 			e.printStackTrace();

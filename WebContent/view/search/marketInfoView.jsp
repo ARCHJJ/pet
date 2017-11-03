@@ -7,21 +7,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-<link rel="stylesheet" type="text/css"
-	href="Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
 <link rel="stylesheet" type="text/css" href="css/search/search.css" />
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript"
-	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <script type="text/javascript" src="js/search/search.js"></script>
 <script type="text/javascript" src="js/reservation/reservation.js"></script>
 
 </head>
 <body>
 	<form name="reserv_go_form" method="post" action="Reservation.do">
-		<button onclick="reserv()" id="market_id" name="market_id" value="${mb.market_id }">예약하기</button>
+		<button onclick="reserv()" id="market_id" name="market_id"
+			value="${mb.market_id }">예약하기</button>
 	</form>
 	<table class="ui orange table">
 		<thead>
@@ -61,14 +60,14 @@
 			</tr>
 			<tr>
 				<td>매장 서비스</td>
-				<td><c:if test="${mb1.ser_doctor == 1}">의사상담 </c:if>
-							<c:if test="${mb1.ser_surgery == 1}">수술 </c:if>
-							<c:if test="${mb1.ser_lodge == 1}">애완호텔(장기) </c:if>
-							<c:if test="${mb1.ser_buypet == 1}">펫분양 </c:if>
-							<c:if test="${mb1.ser_buystuff == 1}">펫용품 </c:if>
-							<c:if test="${mb1.ser_hair == 1}">털손질 </c:if>
-							<c:if test="${mb1.ser_bath == 1}">목욕 </c:if>
-							<c:if test="${mb1.ser_rent == 1}">애완호텔(단기) </c:if></td>
+				<td><c:if test="${mb1.ser_doctor == 1}">의사상담 </c:if> <c:if
+						test="${mb1.ser_surgery == 1}">수술 </c:if> <c:if
+						test="${mb1.ser_lodge == 1}">애완호텔(장기) </c:if> <c:if
+						test="${mb1.ser_buypet == 1}">펫분양 </c:if> <c:if
+						test="${mb1.ser_buystuff == 1}">펫용품 </c:if> <c:if
+						test="${mb1.ser_hair == 1}">털손질 </c:if> <c:if
+						test="${mb1.ser_bath == 1}">목욕 </c:if> <c:if
+						test="${mb1.ser_rent == 1}">애완호텔(단기) </c:if></td>
 			</tr>
 		</tbody>
 	</table>
@@ -78,13 +77,14 @@
 				<tr>
 					<td>댓글작성</td>
 					<td><textarea name="content" id="content"></textarea></td>
-					<td><button onclick="insert_comment();">댓글 작성</button>
+					<td><button onclick="insert_comment();" id="insert_btn">댓글 작성</button>
 				</tr>
 				<tr>
-					<td>order</td>
-					<td>날짜</td>
 					<td>작성자</td>
-					<td>글(후기)</td>
+					<td>후기 내용</td>
+					<td>작성일</td>
+					<td>수정</td>
+					<td>삭제</td>
 				</tr>
 			</thead>
 			<tbody>
@@ -93,12 +93,43 @@
 						<td>${item.email }</td>
 						<td>${item.content }</td>
 						<td>${item.date }</td>
-						<td><button onclick="modify_comment(${item.order });">수정</button></td>
-						<td><button onclick="delete_comment(${item.order });">삭제</button></td>
+						<td><a id="update_btn" onclick="modal1(${item.idx }, ${item.email })">수정</a></td>
+						<td><a id="delete_btn" onclick="modal2(${item.idx }, ${item.email })">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+		
+		<input type="hidden" name="market_id" value="${mb.market_id }">
 	</form>
+	
+
+	<div class="ui modal" id="comment_update">
+		<i class="close icon"></i>
+		<div class="header">코멘트 수정</div>
+		<div class="content">
+			<div class="description">
+				<textarea name="content_update" id="content_update"></textarea>
+			</div>
+		</div>
+		<div class="actions">
+			<div class="ui button">Cancel</div>
+			<div class="ui button" onclick="update_comment();">OK</div>
+		</div>
+	</div>
+
+	<div class="ui tiny modal" id="comment_delete">
+		<i class="close icon"></i>
+		<div class="header">코멘트 삭제</div>
+		<div class="content">
+			<p>삭제하시겠습니까?</p>
+		</div>
+		<div class="actions">
+			<div class="ui negative button">No</div>
+			<div class="ui positive right labeled icon button" onclick="delete_comment();">
+				Yes <i class="checkmark icon" ></i>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

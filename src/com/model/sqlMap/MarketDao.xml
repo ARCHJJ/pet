@@ -40,7 +40,7 @@
 	
 	
 	<!--마켓 댓글 쓰기  -->
-	<insert id="insertComment" parameterClass="String">
+	<insert id="insertComment" parameterClass="HashMap">
 		insert into 
 			market_feedback (market_id, email, content) 
 				values (#market_id#, #email#, #content#)
@@ -52,14 +52,14 @@
 			SET
 				content=#content#
 			WHERE
-				order = #order#
+				idx = #order#
 	</update>
 	
 	<!--마켓 댓글 삭제  -->
 	<delete id="deleteComment" parameterClass="Integer">
 		DELETE FROM market_feedback 
 			WHERE 
-				order = #order#
+				idx = #order#
 	</delete>
 </sqlMap>
 
