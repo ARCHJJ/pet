@@ -12,7 +12,9 @@ public class MarketInsertAction extends AdminOnlyAction {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		
-		String email=(String) request.getParameter("email");
+		String email = request.getParameter("email");
+		
+		System.out.println("debug "+ email);
 		
 		MarketDao.getInstance().insertMarket(email);
 		return "";
