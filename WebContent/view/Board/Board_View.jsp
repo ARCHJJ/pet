@@ -20,29 +20,29 @@
 </head>
 <body>
 	<form name="viewform" method=post action="board_view.do">
-	<table id="boardList">
-		<tr>
-			<th>글번호</th>
-			<th>제목</th>
-			<th>작성자</th>
-			<th>작성일</th>
-			<th>조회수</th>
-		</tr>
-	<c:forEach items="${bblist }" var="board">
-		<tr>
-		<td>${board.idx }</td>
-		<td><a href="#" OnClick="getView('${board.idx}','${board.board_type }')" style="color: 0099CC">${board.title }</a></td>
-		<td>${board.email }</td>
-		<td>​${board.date }</td>
-		<td>${board.hit }</td>
-		</tr>
-	</c:forEach>
-</table>
-</form>
-<c:if test="${board_type eq 3 || board_type eq 4 || session.power eq 300}">
-<p align="center">
-<button class="ui blue basic button" OnClick="writeForm('${board_type}')">글쓰기</button>
-</p>
-</c:if>
+		<table id="boardList">
+			<tr>
+				<th>글번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>작성일</th>
+				<th>조회수</th>
+			</tr>
+			<c:forEach items="${bblist }" var="board">
+				<tr>
+					<td>${board.idx }</td>
+					<td><a href="#" OnClick="getView('${board.idx}','${board.board_type }')" style="color: 0099CC">${board.title }</a></td>
+					<td>${board.email }</td>
+					<td>​${board.date }</td>
+					<td>${board.hit }</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</form>
+	<c:if test="${board_type eq 3 || board_type eq 4 || session.power eq 300}">
+		<p align="center">
+			<button class="ui blue basic button" OnClick="writeForm('${board_type}')">글쓰기</button>
+		</p>
+	</c:if>
 </body>
 </html>

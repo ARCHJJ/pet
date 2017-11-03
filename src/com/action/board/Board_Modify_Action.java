@@ -17,6 +17,7 @@ public class Board_Modify_Action extends CommonAction {
 		String file = request.getParameter("file");
 		String content = request.getParameter("content");
 		int idx = Integer.parseInt(request.getParameter("idx"));
+		
 		updateboard(idx, title, email, file, content);
 		request.setAttribute("board_type", board_type);
 		return "board_view.do";

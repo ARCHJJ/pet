@@ -18,51 +18,46 @@
 <script type="text/javascript" src="js/board/board.js"></script>
 </head>
 <body>
-     <form name="detail_view" method="post">
-     <table id="form1">
-          <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
-      <td width="5"><img src="img/table_left.gif" width="5" height="30" /></td>
-      <td>게시물 상세정보</td>
-      <td width="5"><img src="img/table_right.gif" width="5" height="30" /></td>
-     </tr>
-    </table>
-    <table id="form2">
-     <tr>
-     <td><input type="hidden" name="board_type" id="board_type" size="5" value="${board_type }"></td>
-     </tr>
-	<tr>
-	<th>제목</th>		<td>${bb.title }</td>
-	</tr>
-	<tr height="1" bgcolor="#DDDDDD"><td colspan="4" width="400"></td></tr>
-	<tr>
-	<th>작성자</th>	<td>${bb.email }</td>
-	</tr>
-	<tr height="1" bgcolor="#DDDDDD"><td colspan="4" width="400"></td></tr>
-	<tr>
-	<th>작성일</th>	<td>${bb.date }</td>
-	</tr>
-	<tr height="1" bgcolor="#DDDDDD"><td colspan="4" width="400"></td></tr>
-	<tr>
-	<th>조회수</th>	<td>${bb.hit }</td>
-	</tr>
-	<tr height="1" bgcolor="#DDDDDD"><td colspan="4" width="400"></td></tr>
-	<tr>
-	<th>내용</th>		<td width="400" height="200" colspan="2">${bb.content }</td>
-	</tr>
-	<tr height="1" bgcolor="#DDDDDD"><td colspan="4" width="400"></td></tr>
-	<tr>
-	<th>파일</th>		<td>${bb.file }</td>
-	</tr>
-    <tr height="1" bgcolor="#DDDDDD"><td colspan="4"></td></tr>
-    <tr height="1" bgcolor="#82B5DF"><td colspan="4"></td></tr>
-</table>
-</form>
-<p align="center">
-<button class="ui blue basic button" OnClick="javascript:history.back(-1)">목록</button> 
-<c:if test="${session.email == bb.email }">
-<button class="ui violet basic button" OnClick="updateForm('${idx}', '${board_type }','${bb.title }', '${bb.email }')">수정</button>
-<button class="ui red basic button" OnClick="deleteBoard('${idx}')">삭제</button>
-</c:if>
-</p>
+	<form name="detail_view" method="post">
+		<table class="ui orange table">
+			<tr>
+				<td><input type="hidden" name="board_type" id="board_type" size="5" value="${board_type }"></td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td>${bb.title }</td>
+			</tr>
+			<tr>
+				<th>작성자</th>
+				<td>${bb.email }</td>
+			</tr>
+			<tr>
+				<th>작성일</th>
+				<td>${bb.date }</td>
+			</tr>
+			<tr>
+				<th>조회수</th>
+				<td>${bb.hit }</td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td>${bb.content }</td>
+			</tr>
+			<tr>
+				<th>파일</th>
+				<td>${bb.file }</td>
+			</tr>
+		</table>
+	</form>
+	<p align="center">
+		<button class="ui blue basic button" OnClick="javascript:history.back(-1)">목록</button>
+		<c:if test="${session.email == bb.email }">
+			<button class="ui violet basic button" OnClick="updateForm('${idx}', '${board_type }','${bb.title }', '${bb.email }')">수정</button>
+			<button class="ui red basic button" OnClick="deleteBoard('${idx}')">삭제</button>
+		</c:if>
+		<c:if test="${session.power eq 300 }">
+			<button class="ui red basic button" OnClick="deleteBoard('${idx}')">삭제</button>
+		</c:if>
+	</p>
 </body>
 </html>

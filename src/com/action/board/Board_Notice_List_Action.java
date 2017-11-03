@@ -17,16 +17,15 @@ public class Board_Notice_List_Action implements CommandAction {
 		// TODO Auto-generated method stub
 		int board_type = 1;
 		
-		int page = 1; // ÇöÀç ÆäÀÌÁö ¹øÈ£
-		int displayRowCount = 10; // ÇÑ ÆäÀÌÁö¿¡ Ãâ·ÂµÉ °Ô½Ã¹° °¹¼ö
-		int countPage = 10; // ÇÑ È­¸é¿¡ Ãâ·ÂµÉ ÆäÀÌÁö ¼ö
-		int startPage = ((page - 1) / 10) * 10 + 1; // ½ÃÀÛ ÆäÀÌÁö ¹øÈ£
-		int endPage = startPage + countPage - 1; // Á¾·á ÆäÀÌÁö ¹øÈ£
-		//int totalCount = BoardDao.getInstance().getBoardCount_all(board_type); // ÃÑ °Ô½Ã¹° ¼ö
-		//int totalPage = totalCount / displayRowCount; // ÃÑ ÆäÀÌÁö °¹¼ö
+		int page = 1; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+		int displayRowCount = 10; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Âµï¿½ ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½ï¿½ï¿½
+		int countPage = 10; // ï¿½ï¿½ È­ï¿½é¿¡ ï¿½ï¿½Âµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+		int startPage = ((page - 1) / 10) * 10 + 1; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+		int endPage = startPage + countPage - 1; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+		//int totalCount = BoardDao.getInstance().getBoardCount_all(board_type); // ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½
+		//int totalPage = totalCount / displayRowCount; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 		ArrayList<BoardBean> bblist = new ArrayList<BoardBean>();
-		
 		bblist = BoardDao.getInstance().getBoardList_all(board_type);
 		
 		request.setAttribute("bblist", bblist);
