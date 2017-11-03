@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -24,10 +25,10 @@
 			<tr>
 				<td>예약번호</td>
 				<td>매장명</td>
-				<td>서비스</td>
+				<td>서비스/물품</td>
 				<td>동물</td>
 				<td>예약시간</td>
-				<td>날짜</td>
+				<td>예약접수날짜</td>
 				<td>CCTV</td>
 				<td>비고</td>
 			</tr>
@@ -36,7 +37,7 @@
 					<tr>
 						<td>${item.rev_idx }</td>
 						<td>${item.market_name }</td>
-						<td>${item.reservation_service }</td>
+						<td>${item.item_name }</td>
 						<td>${item.reservation_pets }</td>
 						<td>${item.timeofrev }</td>
 						<td>${item.date }</td>
@@ -45,7 +46,7 @@
 									onClick="location.href='User_Menu_Monitor_View.do'">
 							</form></td>
 						<td><button class="ui violet basic button"
-								onClick="updateReserv('${item.rev_idx}', '${item.member_email }', '${item.market_name }', '${item.reservation_service }', '${item.reservation_pets }', '${item.timeofrev }', '${item.date }', '${item.cctvid }')">예약수정</button>
+								onClick="updateReserv('${item.rev_idx}', '${item.member_email }', '${item.market_name }', '${item.item_name }', '${item.reservation_pets }', '${item.timeofrev }', '${item.date }', '${item.cctvid }')">예약수정</button>
 							<br>
 							<button class="ui red basic button"
 								onClick="delReserv(${item.rev_idx });">예약취소</button></td>
@@ -70,13 +71,13 @@
 						<br>
 						매장명 <input type="text" name="market_name" id="market_name" maxlength="20" readonly="readonly"/>
 						<br>
-						서비스 <input type="text" name="reservation_service" id="reservation_service" maxlength="20" />
+						서비스/물품 <input type="text" name="reservation_service" id="reservation_service" maxlength="20" readonly="readonly"/>
 						<br>
 						동물 <input type="text" name="reservation_pets" id="reservation_pets" maxlength="20" />
 						<br>
-						예약시간 <input type="text" name="timeofrev" id="timeofrev" maxlength="20" />
+						예약변경할 시간 <input type="text" name="timeofrev" id="timeofrev" maxlength="20" />
 						<br>
-						예약날짜 <input type="text" name="date" id="date" maxlength="20" />
+						예약접수날짜 <input type="text" name="date" id="date" maxlength="20" />
 						<br>
 						CCTV <input type="text" name="cctvid" id="cctvid" maxlength="20" />
 						<br>

@@ -3,11 +3,12 @@ package com.model.mymenu.user;
 public class Reserv_MarketBean {
 	// key
 	private int market_id;
+	private int reservation_service;
+	private int item_idx;
 	
 	// reservation table
 	private int rev_idx;
 	private String member_email;
-	private int reservation_service;
 	private String reservation_pets;
 	private String timeofrev;
 	private String date;
@@ -20,6 +21,42 @@ public class Reserv_MarketBean {
 	private String market_photos;
 	private String address;
 	
+	//item table
+	private String item_name;
+	private String description;
+	private String photos;
+	private String price;
+	
+	public int getItem_idx() {
+		return item_idx;
+	}
+	public void setItem_idx(int item_idx) {
+		this.item_idx = item_idx;
+	}
+	public String getItem_name() {
+		return item_name;
+	}
+	public void setItem_name(String item_name) {
+		this.item_name = item_name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getPhotos() {
+		return photos;
+	}
+	public void setPhotos(String photos) {
+		this.photos = photos;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
 	public int getMarket_id() {
 		return market_id;
 	}

@@ -25,7 +25,7 @@
 	<table class="ui orange table">
 		<thead>
 			<tr>
-				<td>서비스명</td>
+				<td>서비스/물품명</td>
 				<td>가격</td>
 				<td>설명</td>
 				<td>예약</td>
