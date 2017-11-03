@@ -71,4 +71,13 @@ public class MarketDao extends DaoCore {
 		}
 	}
 
+	//마켓 삽입
+	public void insertMarket(String email) {
+		try {
+			getSqlMapClient().queryForObject("AdminDao.insertMarket");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }

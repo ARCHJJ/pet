@@ -31,6 +31,10 @@
 				email = #email#
 	</delete>
 	
+	<insert id="insertMarket" parameterClass="String">
+		insert into market (email) values (#email#)
+	</insert>
+	
 	
 	<!-- Admin/market  -->
 	<select id="getMarketList" resultClass="MarketBean">

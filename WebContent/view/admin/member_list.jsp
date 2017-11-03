@@ -28,6 +28,7 @@
 				<th>권한</th>
 				<th>수정</th>
 				<th>삭제</th>
+				<th>마켓 할당</th>
 			</tr>
 			<c:forEach items="${memberlist}" var="item">
 				<tr>
@@ -39,6 +40,7 @@
 					<td>${item.power }</td>
 					<td><button class="ui button" onclick="update_pro('${item.email}', '${item.password}', '${item.name}', '${item.address1}', '${item.address2}', '${item.phone}', '${ item.gender}', ${item.power});">수정</button></td>
 					<td><button class="ui button" onclick="delete_pro('${item.email}');">삭제</button></td>
+					<td><button class="ui button" onclick="insert_market('${item.email}'); " >마켓 할당</button></td>
 				</tr>
 			</c:forEach>
 		</table>

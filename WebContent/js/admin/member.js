@@ -57,6 +57,27 @@ function update_pro(email, password, name, address1, address2, phone, gender, po
 	$('#modal_update').modal('show');
 };
 
+function insert_market(email){
+	if(confirm("사용자에게 마켓을 할당 하겠습니까?")){
+		jQuery.ajax({
+			type: "post",
+			url: "marketInsert.do",
+			data: {email: email},
+			success:
+				function(data){
+					alert("추가되었습니다.");
+					location.reload();
+				},
+			error: 
+				function error(xhr,status,error){
+					alert(error);
+				} 
+		});
+	}
+	
+}
+
+
 /*멤버업데이트 처리*/
 function update_pro_register(){
 	document.modify_form.submit();

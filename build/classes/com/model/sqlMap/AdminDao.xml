@@ -9,6 +9,7 @@
 	<typeAlias alias="UserBean" type="com.model.mymenu.user.UserBean" />
 	<typeAlias alias="MarketBean" type="com.model.mymenu.market.MarketBean" />
 	<typeAlias alias="ReservBean" type="com.model.mymenu.user.ReservBean" />
+	<typeAlias alias="Reserv_MarketBean" type="com.model.mymenu.user.Reserv_MarketBean" />
 	
 	<!--Admin/User  -->
 	<select id="getMemberList" resultClass="UserBean">
@@ -30,6 +31,10 @@
 				email = #email#
 	</delete>
 	
+	<insert id="insertMarket" parameterClass="String">
+		insert into market (email) values (#email#)
+	</insert>
+	
 	
 	<!-- Admin/market  -->
 	<select id="getMarketList" resultClass="MarketBean">
@@ -46,22 +51,17 @@
 	<update id="updateMarket" parameterClass="HashMap">
 		UPDATE market
 			SET
-				email = #email#, 
-				market_name = #market_name#, 
-				description = #description#,	
-				photos = #photos#,	
-				pets = #pets#, 
-				address = #address#, 
-				classes = #classes#,
-				service = #service#
+				email = #email#, market_name = #market_name#, description = #description#, photos = #photos#, pet_dog = #pet_dog#, pet_cat = #pet_cat#, cl_market = #cl_market#, 
+				cl_beauty = #cl_beauty#, cl_hotel = #cl_hotel#, cl_hospital = #cl_hospital#, ser_buypet = #ser_buypet#, ser_buystuff = #ser_buystuff#, ser_hair = #ser_hair#, 
+				ser_bath = #ser_bath#, ser_rent = #ser_rent#, ser_lodge = #ser_lodge#, ser_doctor = #ser_doctor#, ser_surgery = #ser_surgery#
 		WHERE
 			market_id = #market_id#
 	</update>
 	
 	
 	<!-- Admin/reservation  -->
-	<select id="getReservationList" resultClass="ReservBean">
-		SELECT * FROM reservation 
+	<select id="getReservationList" resultClass="Reserv_MarketBean">
+		SELECT * FROM reserv_market
 			ORDER BY rev_idx desc
 	</select>
 	
