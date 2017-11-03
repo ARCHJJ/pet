@@ -50,13 +50,13 @@
 		</table>
 	</form>
 	<p align="center">
-		<button class="ui blue basic button" OnClick="javascript:history.back(-1)">목록</button>
+		<button class="ui blue basic button" OnClick="view_board('${board_type }')">목록</button>
 		<c:if test="${session.email == bb.email }">
 			<button class="ui violet basic button" OnClick="updateForm('${idx}', '${board_type }','${bb.title }', '${bb.email }')">수정</button>
-			<button class="ui red basic button" OnClick="deleteBoard('${idx}')">삭제</button>
+			<button class="ui red basic button" OnClick="deleteBoard('${idx}', '${board_type }')">삭제</button>
 		</c:if>
 		<c:if test="${session.power eq 300 }">
-			<button class="ui red basic button" OnClick="deleteBoard('${idx}')">삭제</button>
+			<button class="ui red basic button" OnClick="deleteBoard('${idx}', '${board_type }')">삭제</button>
 		</c:if>
 	</p>
 </body>

@@ -19,15 +19,24 @@ public class Board_Write_Action extends CommonAction {
 
 		writeBoard(board_type, email, title, file, content);
 		request.setAttribute("board_type", board_type);
-		return "view/Board/Board_WriteOk.jsp";
+		if (board_type == 1) {
+			return "board_notice.do";
+		}
+		else if (board_type == 2) {
+			return "board_customer_service.do";
+		}
+		else if (board_type == 3) {
+			return "board_kin.do";
+		}
+		else {
+			return "board_freeboard.do";
+		}
+		
 	}
 
 	private void writeBoard(int board_type, String email, String title, String file, String content) {
 		// TODO Auto-generated method stub
-		
 		BoardDao.getInstance().writeBoard(board_type, email, title, file, content);
-		
 	}
 	
-
 }

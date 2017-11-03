@@ -11,8 +11,8 @@ public class Board_Delete_Action extends CommonAction {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		int idx = Integer.parseInt(request.getParameter("idx"));
+		
 		BoardDao.getInstance().deleteBoard(idx);
-		return "main.do";
+		return "";
 	}
-
 }

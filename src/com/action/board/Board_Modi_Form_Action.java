@@ -15,8 +15,10 @@ public class Board_Modi_Form_Action extends CommonAction{
 		// TODO Auto-generated method stub
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		String email =  ((LoginBean) request.getSession().getAttribute("session")).getEmail();
+		
 		BoardBean bb = new BoardBean();
 		bb = BoardDao.getInstance().getView(idx);
+		
 		request.setAttribute("bb", bb);
 		request.setAttribute("idx", idx);
 		request.setAttribute("email", email);

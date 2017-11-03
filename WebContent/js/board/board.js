@@ -64,7 +64,42 @@ function updateCheck(idx, board_type, title, email, file, content)
 	form.submit();
 }
 
-function deleteBoard(idx) {
+function view_board(board_type){
+	var str;
+	switch(board_type){
+	case "1":
+		str = "board_notice.do";
+		break;
+	case "2":
+		str = "board_customer_service.do";
+		break;
+	case "3":
+		str = "board_kin.do";
+		break;
+	case "4":
+		str = "board_freeboard.do";
+		break;
+	}
+	
+	location.href = str;
+}
+
+function deleteBoard(idx, board_type) {
+	var str;
+	switch(board_type){
+	case "1":
+		str = "board_notice.do";
+		break;
+	case "2":
+		str = "board_customer_service.do";
+		break;
+	case "3":
+		str = "board_kin.do";
+		break;
+	case "4":
+		str = "board_freeboard.do";
+		break;
+	}
 	if (confirm("삭제 하시겠습니까?")) {
 		jQuery.ajax({
 			type : "post",
@@ -72,7 +107,7 @@ function deleteBoard(idx) {
 			data : { idx : idx },
 			success : function(data) {
 				alert("게시물이 삭제되었습니다.");
-				location.reload();
+				location.href = str;
 			},
 			error : function error(xhr, status, error) {
 				alert(error);

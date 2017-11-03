@@ -17,8 +17,8 @@ public class Board_FreeBoard_List_Action implements CommandAction {
 		// TODO Auto-generated method stub
 		int board_type = 4;
 		//int totalCount = BoardDao.getInstance().getBoardCount_all(board_type);
+	
 		ArrayList<BoardBean> bblist = new ArrayList<BoardBean>();
-		
 		bblist = BoardDao.getInstance().getBoardList_all(board_type);
 		
 		request.setAttribute("bblist", bblist);
