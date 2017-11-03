@@ -24,14 +24,13 @@ public class SearchAction implements CommandAction{
 		String address = request.getParameter("address");
 		//address 가공
 		
-		String address_after[] = address.split(" ");
-        
-		address="";
+		if(address!=""){
+			String address_after[] = address.split(" ");
+			address="";
+	        for(int i=0 ; i<2 ; i++)
+	            address=address+address_after[i]+" ";
+		}
 		
-        for(int i=0 ; i<2 ; i++)
-        {
-            address=address+address_after[i]+" ";
-        }
 
 
 		String word = request.getParameter("word");

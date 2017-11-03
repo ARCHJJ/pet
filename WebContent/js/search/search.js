@@ -78,3 +78,22 @@ function compare_market() {
 		document.market_compare_form.submit();
 	}
 }
+
+
+//댓글작성
+function insert_comment(){
+	document.comment_form.action="insertComment.do";
+	document.comment_form.submit();
+}
+
+//댓글수정
+function update_comment(order){
+	document.comment_form.action="updateComment.do";
+	document.comment_form.submit();
+}
+
+//댓글삭제
+function delete_comment(order){
+	document.comment_form.action="deleteComment.do";
+	document.comment_form.submit();
+}

@@ -71,10 +71,42 @@ public class MarketDao extends DaoCore {
 		}
 	}
 
-	//마켓 삽입
+	// 마켓 삽입
 	public void insertMarket(String email) {
 		try {
-			getSqlMapClient().queryForObject("AdminDao.insertMarket");
+			getSqlMapClient().insert("AdminDao.insertMarket");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	// 마켓 코멘트 입력
+	public void insertComment(String comment) {
+		try {
+			getSqlMapClient().insert("MarketDao.insertComment");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// 마켓 코멘트 삭제
+	public void deleteComment(int order) {
+		try {
+			getSqlMapClient().delete("MarketDao.deleteComment", order);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	// 마켓 코멘트 수정
+	public void updateComment(int order, String content) {
+		try {
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("order", order);
+			param.put("content", content);
+
+			getSqlMapClient().update("MarketDao.updateComment", param);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

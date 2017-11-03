@@ -72,24 +72,33 @@
 			</tr>
 		</tbody>
 	</table>
-	<table class="ui orange table">
-		<thead>
-			<tr>
-				<td>order</td>
-				<td>날짜</td>
-				<td>작성자</td>
-				<td>글(후기)</td>
-			</tr>
-			<c:forEach items="${mflist}" var="item">
-				<tbody>
+	<form name="comment_form" method="post">
+		<table class="ui orange table">
+			<thead>
+				<tr>
+					<td>댓글작성</td>
+					<td><textarea name="content" id="content"></textarea></td>
+					<td><button onclick="insert_comment();">댓글 작성</button>
+				</tr>
+				<tr>
+					<td>order</td>
+					<td>날짜</td>
+					<td>작성자</td>
+					<td>글(후기)</td>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${mflist}" var="item">
 					<tr>
-						<td>${item.order }</td>
-						<td>${item.date }</td>
 						<td>${item.email }</td>
 						<td>${item.content }</td>
+						<td>${item.date }</td>
+						<td><button onclick="modify_comment(${item.order });">수정</button></td>
+						<td><button onclick="delete_comment(${item.order });">삭제</button></td>
 					</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+				</c:forEach>
+			</tbody>
+		</table>
+	</form>
 </body>
 </html>
