@@ -36,7 +36,7 @@ public class ReservationDao extends DaoCore {
 	}
 
 
-	public void updateReservation(int rev_idx, String member_email, int market_id, int service, int pets, String timeofrev, String date, int cctvid) {
+	public void updateReservation(int rev_idx, String member_email, int market_id, int service, String pets, String timeofrev, String date, int cctvid) {
 		try {
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("rev_idx", rev_idx);

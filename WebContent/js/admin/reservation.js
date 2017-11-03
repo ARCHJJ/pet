@@ -48,7 +48,8 @@ function insert_pro_register(){
 */
 
 /*멤버업데이트 모달*/
-function update_pro(rev_idx, member_email, market_id, market_name, service, pets, timeofrev, date, cctvid){
+function update_pro(item_idx, rev_idx, member_email, market_id, market_name, service, pets, timeofrev, date, cctvid){
+	$('#item_idx ').val(item_idx);
 	$('#rev_idx').val(rev_idx);
 	$('#member_email').val(member_email);
 	$('#market_id').val(market_id);
