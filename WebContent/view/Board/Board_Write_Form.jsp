@@ -52,9 +52,10 @@
      <tr height="1" bgcolor="#82B5DF"><td colspan="4"></td></tr>
 </table>
 </form>
+
      <p align="center">
      <button class="ui blue basic button" OnClick="writeCheck('${board_type}', '${title }', '${email }', '${file }', '${content }')">등록</button>
-      <button class="ui red basic button" OnClick="javascript:history.back(-1)">취소</button>
+      <button class="ui red basic button" OnClick="javascript:history.back(-1)">취소</button>     
      </p>
 </body> 
 </html>

@@ -6,7 +6,7 @@ function writeForm(board_type) {
 function writeCheck(board_type, title, email, file, content)
 {
 	  var form = document.writeform;
-
+	  
 	   if( !form.title.value )   // form 에 있는 title 값이 없을 때
 	   {
 	    alert( "제목을 적어주세요" ); // 경고창 띄움
@@ -43,7 +43,7 @@ function updateForm(idx, board_type, email) {
 	+ "&board_type=" + board_type + "&email=" + email;
 }
 
-function updateCheck(idx, board_type, title, email) 
+function updateCheck(idx, board_type, title, email, file, content) 
 {
 	var form = document.modifyform;
 	if( !form.title.value )   // form 에 있는 title 값이 없을 때
@@ -59,16 +59,9 @@ function updateCheck(idx, board_type, title, email)
 		form.content.focus();
 		return;
 	}
-	
-	form.submit();
-	$('#idx').val(idx);
-	$('#board_type').val(board_type);
-	$('#title').val(title);
-	$('#email').val(email);
-	$('#file').val(file);
-	$('#content').val(content);
 	window.location.href = "board_update.do?idx=" + idx + "&board_type=" + board_type
-	+ "&title=" + title + "&email=" + email;
+	+ "&title=" + title + "&email=" + email + "&file=" + file + "&content=" + content;
+	form.submit();
 }
 
 function deleteBoard(idx) {

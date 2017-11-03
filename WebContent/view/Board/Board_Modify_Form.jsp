@@ -27,6 +27,7 @@
     </table>
    <table id="form2">
      <tr>
+     <td><input type="hidden" name="idx" id="idx" size="5" value="${bb.idx }"></td>
      <td><input type="hidden" name="board_type" id="board_type" size="5" value="${bb.board_type }"></td>
      </tr>
      <tr>
@@ -53,7 +54,7 @@
 </table>
 </form>
     <p align="center">
-      <button class="ui violet basic button" OnClick="updateCheck('${bb.idx}', '${bb.board_type }', '${bb.title }', '${email }')">수정</button>
+      <button class="ui violet basic button" OnClick="updateCheck('${bb.idx}', '${bb.board_type }', '${bb.title }', '${email }', '${bb.file }', '${bb.content }')">수정</button>
       <button class="ui red basic button" OnClick="javascript:history.back(-1)">취소</button>
 	</p>
 </body>

@@ -1,6 +1,5 @@
 package com.model.board;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -36,7 +35,7 @@ public class BoardDao extends DaoCore {
 			param.put("title", title);
 			param.put("file", file);
 			param.put("content", content);
-			
+			System.out.println(param);
 			getSqlMapClient().insert("BoardDao.writeBoard", param);
 		}catch(Exception e){
 			e.printStackTrace();

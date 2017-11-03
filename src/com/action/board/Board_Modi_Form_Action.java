@@ -13,7 +13,7 @@ public class Board_Modi_Form_Action extends CommonAction{
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		int idx = Integer.parseInt(request.getParameter("idx"));	
+		int idx = Integer.parseInt(request.getParameter("idx"));
 		String email =  ((LoginBean) request.getSession().getAttribute("session")).getEmail();
 		BoardBean bb = new BoardBean();
 		bb = BoardDao.getInstance().getView(idx);
