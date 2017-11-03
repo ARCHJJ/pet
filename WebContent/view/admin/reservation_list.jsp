@@ -17,7 +17,9 @@
 </head>
 <body>
 	<div align="center">
+		<!--  
 		<div id="addpro" class="ui positive right labeled icon button" onclick="insert_req();">예약 추가하기</div>
+		-->
 		<table>
 			<tr>
 				<th>idx</th>
@@ -98,23 +100,23 @@
 							</tr>
 							<tr>
 								<td>신청자 email</td>	
-							 	<td><input type="text" name="member_email" id="member_email" maxlength="20" onfocus="javascript:changeBorder('pro_name')" /></td>
+							 	<td><input type="text" name="member_email" id="member_email" maxlength="20" onfocus="javascript:changeBorder('pro_name')" readonly="readonly"/></td>
 							</tr>
 							<tr>
 								<td>마켓 id</td>
-								<td><input type="text" name="market_id" id="market_id" maxlength="20" onfocus="javascript:changeBorder('pro_email')" /></td>
+								<td><input type="text" name="market_id" id="market_id" maxlength="20" onfocus="javascript:changeBorder('pro_email')" readonly="readonly"/></td>
 							</tr>
 							<tr>
 								<td>마켓 이름</td>
-								<td><input type="text" name="market_name" id="market_name" maxlength="20" onfocus="javascript:changeBorder('pro_email')" /></td>
+								<td><input type="text" name="market_name" id="market_name" maxlength="20" onfocus="javascript:changeBorder('pro_email')" readonly="readonly"/></td>
 							</tr>
 							<tr>
 								<td>예약서비스/물품</td>
-								<td><input type="text" name="service" id="service" maxlength="20" onfocus="javascript:changeBorder('pro_email')" /></td>
+								<td><input type="text" name="service" id="service" maxlength="20" onfocus="javascript:changeBorder('pro_email')" readonly="readonly"/></td>
 							</tr>
 							<tr>
 								<td>동물종류</td>
-								<td><input type="text" name="pets" id="pets" maxlength="20" onfocus="javascript:changeBorder('pro_email')" /></td>
+								<td><input type="text" name="pets" id="pets" maxlength="20" onfocus="javascript:changeBorder('pro_email')" readonly="readonly"/></td>
 							</tr>
 							<tr>
 								<td>이용시간</td>
@@ -122,7 +124,7 @@
 							</tr>
 							<tr>
 								<td>예약한시각</td>
-								<td><input type="text" name="date" id="date" maxlength="20" onfocus="javascript:changeBorder('pro_email')" /></td>
+								<td><input type="text" name="date" id="date" maxlength="20" onfocus="javascript:changeBorder('pro_email')" readonly="readonly"/></td>
 							</tr>
 							<tr>
 								<td>cctvid</td>
