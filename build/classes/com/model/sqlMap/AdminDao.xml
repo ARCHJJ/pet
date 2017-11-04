@@ -41,9 +41,17 @@
 	
 	<!-- 마켓 할당  -->
 	<insert id="insertMarket" parameterClass="String">
-		insert into market (email) values (#email#)
+		insert into market (email, pet_dog, pet_cat, pet_etc, cl_market, cl_beauty, cl_hotel, cl_hospital, ser_buypet, ser_buystuff, ser_hair, ser_bath, ser_lodge, ser_rent, ser_doctor, ser_surgery) 
+			values (#email#, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 	</insert>
 	
+	<update id="updatePower" parameterClass="HashMap">
+		UPDATE member
+			SET
+				power = #power#
+		WHERE
+			email = #email#
+	</update>
 	
 	<!-- Admin/market  -->
 	<select id="getMarketList" resultClass="MarketBean">
