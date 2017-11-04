@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.action.AdminOnlyAction;
 import com.model.admin.MarketDao;
+import com.model.admin.MemberDao;
 
 public class MarketInsertAction extends AdminOnlyAction {
 
@@ -14,9 +15,8 @@ public class MarketInsertAction extends AdminOnlyAction {
 		
 		String email = request.getParameter("email");
 		
-		System.out.println("debug "+ email);
-		
 		MarketDao.getInstance().insertMarket(email);
+		MemberDao.getInstance().updatePower(email, 200);
 		return "";
 	}
 

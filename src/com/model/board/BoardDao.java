@@ -13,7 +13,7 @@ public class BoardDao extends DaoCore {
 	public ArrayList<BoardBean> getBoardList_all(int board_type, int page) {
 		ArrayList<BoardBean> Bb = new ArrayList<BoardBean>();
 		try {
-			HashMap<String, Object> param = new HashMap<String, Object>();
+			HashMap<String, Integer> param = new HashMap<String, Integer>();
 			param.put("board_type", board_type);
 			param.put("startrow", ((page-1)*10));
 			param.put("get_record", 10);

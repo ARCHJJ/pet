@@ -48,7 +48,7 @@
 
 	<select id="getBoardCount" parameterClass="Integer" resultClass="int">
 		SELECT count(*) FROM board 
-		WHERE board_type = #board_type#
+			WHERE board_type = #board_type#
 	</select>
 
 	<select id="getBoardCount_title" parameterClass="Integer" resultClass="BoardBean">
