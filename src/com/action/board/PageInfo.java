@@ -16,6 +16,8 @@ public class PageInfo {
 	PageInfo(int count, int page){
 		this.count = count;
 		this.page = page;
+		prevPage = page-1;
+		nextPage = page+1;
 		maxPage = (count-1)/10 + 1;
 	}
 	
@@ -55,6 +57,9 @@ public class PageInfo {
 	}
 
 	public int getPrevPage() {
+		if(prevPage <= 0) {
+			prevPage = 1;
+		}
 		return prevPage;
 	}
 
@@ -63,6 +68,9 @@ public class PageInfo {
 	}
 
 	public int getNextPage() {
+		if(nextPage > maxPage) {
+			nextPage = maxPage;
+		}
 		return nextPage;
 	}
 

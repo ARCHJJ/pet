@@ -15,11 +15,14 @@ public class Board_View_Action implements CommandAction {
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		int board_type = Integer.parseInt(request.getParameter("board_type"));
 		BoardDao.getInstance().increase_hit(idx);
+		
 		BoardBean bb = new BoardBean();
 		bb = BoardDao.getInstance().getView(idx);
+		
 		request.setAttribute("bb", bb);
 		request.setAttribute("idx", idx);
 		request.setAttribute("board_type", board_type);
+		
 		return "view/Board/Board_Detail_View.jsp";
 	}
 

@@ -35,6 +35,19 @@ public class MemberDao extends DaoCore {
 			e.printStackTrace();
 		}
 	}
+	
+	public void updatePower(String email, int power) {
+		// TODO Auto-generated method stub
+		try {
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("email", email);
+			param.put("power", power);
+			
+			getSqlMapClient().update("AdminDao.updatePower", param);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	//사용자 수정
 	public void updateMember_a(String email, String password, String address1, String address2, String phone,	String gender, int power, String name) {
@@ -70,6 +83,5 @@ public class MemberDao extends DaoCore {
 			e.printStackTrace();
 		}
 	}
-
 	
 }
