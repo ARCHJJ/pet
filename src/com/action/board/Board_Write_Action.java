@@ -17,16 +17,29 @@ public class Board_Write_Action extends CommonAction {
 		String file = request.getParameter("file");
 		String content = request.getParameter("content");
 
+		String str = "main.do";
+		switch (board_type) {
+		case 1:
+			str = "board_notice.do";
+			break;
+		case 2:
+			str = "board_customer_service.do";
+			break;
+		case 3:
+			str = "board_kin.do";
+			break;
+		case 4:
+			str = "board_freeboard.do";
+			break;
+		}
+		
 		writeBoard(board_type, email, title, file, content);
-		request.setAttribute("board_type", board_type);
-		return "view/Board/Board_WriteOk.jsp";
+		return str;
 	}
 
 	private void writeBoard(int board_type, String email, String title, String file, String content) {
 		// TODO Auto-generated method stub
-		
 		BoardDao.getInstance().writeBoard(board_type, email, title, file, content);
-		
 	}
 	
 

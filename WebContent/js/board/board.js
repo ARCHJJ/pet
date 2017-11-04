@@ -86,16 +86,16 @@ function view_board(board_type) {
 function deleteBoard(idx, board_type) {
 	var str;
 	switch (board_type) {
-	case "1":
+	case 1:
 		str = "board_notice.do";
 		break;
-	case "2":
+	case 2:
 		str = "board_customer_service.do";
 		break;
-	case "3":
+	case 3:
 		str = "board_kin.do";
 		break;
-	case "4":
+	case 4:
 		str = "board_freeboard.do";
 		break;
 	}
@@ -117,8 +117,35 @@ function deleteBoard(idx, board_type) {
 	}
 }
 
-function boardSearch(pagenum){
+function boardSearch(board_type, page){
 	
+	var str;
+	switch (board_type) {
+	case "1":
+		str = "board_notice.do";
+		break;
+	case "2":
+		str = "board_customer_service.do";
+		break;
+	case "3":
+		str = "board_kin.do";
+		break;
+	case "4":
+		str = "board_freeboard.do";
+		break;
+	}
 	
-	
+	jQuery.ajax({
+		type : "post",
+		url : str,
+		data : {
+			page : page
+		},
+		success : function(data) {
+			location.href = str + "?page=" + page;
+		},
+		error : function error(xhr, status, error) {
+			alert(error);
+		}
+	});
 }

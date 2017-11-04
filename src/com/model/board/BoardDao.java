@@ -89,4 +89,5 @@ public class BoardDao extends DaoCore {
 			e.printStackTrace();
 		}
 	}
+
 }

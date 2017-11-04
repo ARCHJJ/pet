@@ -15,12 +15,9 @@ public class Board_FreeBoard_List_Action implements CommandAction {
 	public String requestPro(HttpServletRequest request, 
 			HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		
-		
-		
 		int page;
-		if(request.getParameter("sel_page") != null)
-			page = Integer.parseInt(request.getParameter("sel_page"));
+		if(request.getParameter("page") != null)
+			page = Integer.parseInt(request.getParameter("page"));
 		else
 			page = 1;
 		int count;
@@ -29,18 +26,13 @@ public class Board_FreeBoard_List_Action implements CommandAction {
 		//레코드 총 개수
 		count = BoardDao.getInstance().getBoardCount(board_type);
 		
-		PageInfo pageInfo = new PageInfo(count, page).getPageInfo();
-		
-		/* 최대 페이지보다 큰 페이지 접근 */
-		if(page > pageInfo.getMaxPage()){
-			return "Board_View.do?page="+pageInfo.getMaxPage();
-		}
-		
-		
+		PageInfo pageInfo = new PageInfo(count, page);
+
+		//board_type의 page페이지의 레코드를 가져올 BoardDao
 		ArrayList<BoardBean> bblist = new ArrayList<BoardBean>();
 		bblist = BoardDao.getInstance().getBoardList_all(board_type, page);
 		
-		request.setAttribute("count", count/10 + 1);
+		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("bblist", bblist);
 		request.setAttribute("board_type", board_type);
 

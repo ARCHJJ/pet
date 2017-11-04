@@ -38,15 +38,15 @@
 		</c:forEach>
 	</table>
 	<div class="navigater">
-		<a href="#" onclick="boardSearch(1)" class="arrow"><<</a>
-		<a href="#" onclick="boardSearch(${pageInfo.prevPage})" class="arrow"><</a>
+		<a href="#" onclick="boardSearch('${board_type }', 1)" class="arrow"> << </a>
+		<a href="#" onclick="boardSearch('${board_type }', '${pageInfo.prevPage}')" class="arrow"> < </a>
 		<span class="pages">
 			<c:forEach begin="${pageInfo.firstPage}" end="${pageInfo.endPage}" var="pages">
-				<a href="#" onclick="boardSearch(${pages})" class="${pages}page">${pages}</a>
+				<a href="#" onclick="boardSearch('${board_type }', '${pages}')" class="${pages}page">${pages}</a>
 			</c:forEach>
 		</span>
-		<a href="#" onclick="boardSearch(${pageInfo.nextPage})"class="arrow">></a>
-		<a href="#" onclick="boardSearch(${pageInfo.maxPage})" class="arrow">>></a>
+		<a href="#" onclick="boardSearch('${board_type }', '${pageInfo.nextPage}')"class="arrow"> > </a>
+		<a href="#" onclick="boardSearch('${board_type }', '${pageInfo.maxPage}')" class="arrow"> >> </a>
     </div>
 	<c:if
 		test="${board_type eq 3 || board_type eq 4 || session.power eq 300}">
