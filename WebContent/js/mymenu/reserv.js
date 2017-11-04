@@ -18,9 +18,7 @@ function delReserv(rev_idx) {
 	}
 };
 
-/* 예약 변경 */
-function updateReserv(rev_idx, member_email, market_name, reservation_service,
-		reservation_pets, timeofrev, date, cctvid) {
+function updateReserv(rev_idx, member_email, market_name, reservation_service, reservation_pets, timeofrev, date, cctvid) {
 	$('#rev_idx').val(rev_idx);
 	$('#member_email').val(member_email);
 	$('#market_name').val(market_name);

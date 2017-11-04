@@ -20,9 +20,9 @@
 		SELECT * FROM reservation
 			WHERE
 				market_id = (
-				SELECT market_id
-				FROM market
-				WHERE email = #email#
+					SELECT market_id
+						FROM market
+							WHERE email = #email#
 				)
 	</select>
 	
@@ -40,8 +40,7 @@
 	
 	<update id="updateReserv" parameterClass="HashMap">
 		UPDATE reservation
-			SET
-				service = #service#, pets = #pets#, timeofrev = #timeofrev#, date = SYSDATE(), cctvid = #cctvid#
+			SET pets = #pets#, timeofrev = #timeofrev#, date = SYSDATE(), cctvid = #cctvid#
 		WHERE
 			rev_idx = #rev_idx#
 	</update>

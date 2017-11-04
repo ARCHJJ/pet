@@ -65,22 +65,40 @@
 				<div class="ui header">예약정보 수정</div>
 				<div class="ui input focus">
 					<form name="modify_form" method="post"  action="User_Menu_Reserv_Modi.do">
-						예약번호<input type="text" name="rev_idx" id="rev_idx" readonly="readonly"/>
-						<br>
-						고객<input type="text" name="member_email" id="member_email" readonly="readonly"/>
-						<br>
-						매장명 <input type="text" name="market_name" id="market_name" maxlength="20" readonly="readonly"/>
-						<br>
-						서비스/물품 <input type="text" name="reservation_service" id="reservation_service" maxlength="20" readonly="readonly"/>
-						<br>
-						동물 <input type="text" name="reservation_pets" id="reservation_pets" maxlength="20" />
-						<br>
-						예약변경할 시간 <input type="text" name="timeofrev" id="timeofrev" maxlength="20" />
-						<br>
-						예약접수날짜 <input type="text" name="date" id="date" maxlength="20" />
-						<br>
-						CCTV <input type="text" name="cctvid" id="cctvid" maxlength="20" />
-						<br>
+						<table>
+							<tr>
+								<td>예약번호</td>
+								<td><input type="text" name="rev_idx" id="rev_idx" readonly="readonly"/></td>
+							</tr>
+							<tr>
+								<td>고객이름</td>	
+							 	<td><input type="text" name="member_email" id="member_email" maxlength="20" onfocus="javascript:changeBorder('pro_name')" readonly="readonly"/></td>
+							</tr>
+							<tr>
+								<td>마켓 이름</td>
+								<td><input type="text" name="market_name" id="market_name" maxlength="20" onfocus="javascript:changeBorder('pro_email')" readonly="readonly"/></td>
+							</tr>
+							<tr>
+								<td>예약서비스/물품</td>
+								<td><input type="text" name="reservation_service" id="reservation_service" maxlength="20" onfocus="javascript:changeBorder('pro_email')" readonly="readonly"/></td>
+							</tr>
+							<tr>
+								<td>동물종류</td>
+								<td><input type="text" name="reservation_pets" id="reservation_pets" maxlength="20" onfocus="javascript:changeBorder('pro_email')" /></td>
+							</tr>
+							<tr>
+								<td>이용시간</td>
+								<td><input type="text" name="timeofrev" id="timeofrev" maxlength="20" onfocus="javascript:changeBorder('pro_email')" /></td>
+							</tr>
+							<tr>
+								<td>예약접수날짜</td>
+								<td><input type="text" name="date" id="date" maxlength="20" onfocus="javascript:changeBorder('pro_email')" readonly="readonly"/></td>
+							</tr>
+							<tr>
+								<td>CCTV</td>
+								<td><input type="text" name="cctvid" id="cctvid" maxlength="20" onfocus="javascript:changeBorder('pro_email')" readonly="readonly"/></td>
+							</tr>
+						</table>
 					</form>
 				</div>
 				<p>수정 하시겠습니까?</p>
