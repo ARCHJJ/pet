@@ -56,19 +56,39 @@
 				<div class="ui header">개인정보 수정</div>
 				<div class="ui input focus">
 					<form name="modify_form" method="post"  action="User_Menu_Person_Modi.do">
-						이메일<input type="text" name="email" id="email" readonly="readonly"/>
-						<br>
-						비밀번호 <input type="text" name="password" id="password" maxlength="20" />
-						<br>
-						이름 <input type="text" name="name" id="name" maxlength="20" />
-						<br>
-						주소1 <input type="text" name="address1" id="address1" maxlength="20" />
-						<br>
-						주소2 <input type="text" name="address2" id="address2" maxlength="20" />
-						<br>
-						전화 <input type="text" name="phone" id="phone" maxlength="20" />
-						<br>
-						성별 <input type="text" name="gender" id="gender" maxlength="20" />
+						<table border="1">
+							<tr>
+								<td>이메일</td>
+								<td><input type="text" name="email" id="email" readonly="readonly"/></td>
+							</tr>
+							<tr>
+								<td>비밀번호</td>
+								<td><input type="text" name="password" id="password" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>이름</td>
+								<td><input type="text" name="name" id="name" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>주소1</td>
+								<td>
+									<input type="text" name="address1" id="address1" value="${address1 }">
+									<input type="button" onclick="sample4_execDaumPostcode()" value="주소 검색">
+								</td>
+							</tr>
+							<tr>
+								<td>주소2</td>
+								<td><input type="text" name="address2" id="address2" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>전화</td>
+								<td><input type="text" name="phone" id="phone" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>성별</td>
+								<td><input type="text" name="gender" id="gender" maxlength="20" /></td>
+							</tr>
+						</table>
 						<br>
 					</form>
 				</div>

@@ -92,29 +92,61 @@
 				<div class="ui header">매장정보 수정</div>
 				<div class="ui input focus">
 					<form name="modify_form" method="post" action="mymenu_shop_info_modi.do">
-						마켓id <input type="text" name="market_id" id="market_id"	readonly="readonly" /> <br> 
-						매장 이름<input type="text" name="market_name" id="market_name" maxlength="20" /> <br>
-						매장 설명 <input type="text" name="description" id="description" maxlength="20" /> <br> 
-						매장 사진 <input type="text" name="photos" id="photos" maxlength="20" /> <br>
-						매장 주소 <input type="text" name="address" id="address" maxlength="20" />	<br> 
-						매장 종류
-						<input type="checkbox" name="selectOption" value="0" <c:if test="${mb.cl_market == 1}">checked</c:if>>펫 샵
-						<input type="checkbox" name="selectOption" value="1" <c:if test="${mb.cl_beauty == 1}">checked</c:if>>미용
-						<input type="checkbox" name="selectOption" value="2" <c:if test="${mb.cl_hotel == 1}">checked</c:if>>호텔
-						<input type="checkbox" name="selectOption" value="3" <c:if test="${mb.cl_hospital == 1}">checked</c:if>>병원
-						<br>서비스
-						<input type="checkbox" name="selectOption" value="4" <c:if test="${mb.ser_buypet == 1}">checked</c:if>>펫 구매
-						<input type="checkbox" name="selectOption" value="5" <c:if test="${mb.ser_buystuff == 1}">checked</c:if>>펫 물품
-						<input type="checkbox" name="selectOption" value="6" <c:if test="${mb.ser_hair == 1}">checked</c:if>>털 손질
-						<input type="checkbox" name="selectOption" value="7" <c:if test="${mb.ser_bath == 1}">checked</c:if>>애완 목욕
-						<input type="checkbox" name="selectOption" value="8" <c:if test="${mb.ser_rent == 1}">checked</c:if>>애완호텔(단기이용)	<!-- rent -->
-						<input type="checkbox" name="selectOption" value="9" <c:if test="${mb.ser_lodge == 1}">checked</c:if>>애완호텔(장기이용)	<!-- lodge -->
-						<input type="checkbox" name="selectOption" value="10" <c:if test="${mb.ser_doctor == 1}">checked</c:if>>의사상담
-						<input type="checkbox" name="selectOption" value="11" <c:if test="${mb.ser_surgery == 1}">checked</c:if>>동물수술
-						<br>주 동물
-						<input type="checkbox" name="selectOption" value="12" <c:if test="${mb.pet_dog == 1}">checked</c:if>>개
-						<input type="checkbox" name="selectOption" value="13" <c:if test="${mb.pet_cat == 1}">checked</c:if>>고앙이
-						<input type="checkbox" name="selectOption" value="14" <c:if test="${mb.pet_etc == 1}">checked</c:if>>기타
+						<table>
+							<tr>
+								<td>마켓id</td>
+								<td><input type="text" name="market_id" id="market_id"	readonly="readonly" /></td>
+							</tr>
+							<tr>
+								<td>매장 이름</td>
+								<td><input type="text" name="market_name" id="market_name" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>매장 설명</td>
+								<td><input type="text" name="description" id="description" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>매장 사진</td>
+								<td><input type="text" name="photos" id="photos" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td>매장 주소</td>
+								<td>
+									<input type="text" name="address" id="address" maxlength="40" />
+									<input type="button" onclick="sample4_execDaumPostcode()" value="주소 검색">
+								</td>
+							</tr>
+							<tr>
+								<td>매장 종류</td>
+								<td>
+									<input type="checkbox" name="selectOption" value="0" <c:if test="${mb.cl_market == 1}">checked</c:if>>펫 샵
+									<input type="checkbox" name="selectOption" value="1" <c:if test="${mb.cl_beauty == 1}">checked</c:if>>미용
+									<input type="checkbox" name="selectOption" value="2" <c:if test="${mb.cl_hotel == 1}">checked</c:if>>호텔
+									<input type="checkbox" name="selectOption" value="3" <c:if test="${mb.cl_hospital == 1}">checked</c:if>>병원
+								</td>
+							</tr>
+							<tr>
+								<td>서비스</td>
+								<td>
+									<input type="checkbox" name="selectOption" value="4" <c:if test="${mb.ser_buypet == 1}">checked</c:if>>펫 구매
+									<input type="checkbox" name="selectOption" value="5" <c:if test="${mb.ser_buystuff == 1}">checked</c:if>>펫 물품
+									<input type="checkbox" name="selectOption" value="6" <c:if test="${mb.ser_hair == 1}">checked</c:if>>털 손질
+									<input type="checkbox" name="selectOption" value="7" <c:if test="${mb.ser_bath == 1}">checked</c:if>>애완 목욕
+									<input type="checkbox" name="selectOption" value="8" <c:if test="${mb.ser_rent == 1}">checked</c:if>>애완호텔(단기이용)	<!-- rent -->
+									<input type="checkbox" name="selectOption" value="9" <c:if test="${mb.ser_lodge == 1}">checked</c:if>>애완호텔(장기이용)	<!-- lodge -->
+									<input type="checkbox" name="selectOption" value="10" <c:if test="${mb.ser_doctor == 1}">checked</c:if>>의사상담
+									<input type="checkbox" name="selectOption" value="11" <c:if test="${mb.ser_surgery == 1}">checked</c:if>>동물수술
+								</td>
+							</tr>
+							<tr>
+								<td>주 동물</td>
+								<td>
+									<input type="checkbox" name="selectOption" value="12" <c:if test="${mb.pet_dog == 1}">checked</c:if>>개
+									<input type="checkbox" name="selectOption" value="13" <c:if test="${mb.pet_cat == 1}">checked</c:if>>고앙이
+									<input type="checkbox" name="selectOption" value="14" <c:if test="${mb.pet_etc == 1}">checked</c:if>>기타
+								</td>
+							</tr>
+						</table>
 					</form>
 				</div>
 				<p>수정 하시겠습니까?</p>
