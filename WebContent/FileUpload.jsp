@@ -15,7 +15,7 @@
 
 	// 웹서버 컨테이너 경로
 	// 파일 저장 경로(ex : /home/tour/web/ROOT/upload)
-	String savePath = application.getRealPath("/upload");
+	String savePath = application.getRealPath("/upload/");
 
 	// 업로드 파일명
 	String uploadFile = "";
@@ -49,7 +49,7 @@
 		File newFile = new File(savePath + newFileName);
 
 		// 파일명 rename
-		/* if (!oldFile.renameTo(newFile)) {
+		if (!oldFile.renameTo(newFile)) {
 
 			// rename이 되지 않을경우 강제로 파일을 복사하고 기존파일은 삭제
 
@@ -63,9 +63,13 @@
 
 			fin.close();
 			fout.close();
-		} */
-
+			oldFile.delete();
+		}
+	
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
 %>
+
+<META http-equiv=refresh content="0;url=mymenu_shop_info.do">
+

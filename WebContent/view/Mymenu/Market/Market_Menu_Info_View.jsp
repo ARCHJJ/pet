@@ -112,11 +112,6 @@
 								<td><input type="text" name="description" id="description" maxlength="20" /></td>
 							</tr>
 							<tr>
-								<td>매장 사진</td>
-								<td>
-								</td>
-							</tr>
-							<tr>
 								<td>매장 주소</td>
 								<td>
 									<input type="text" name="address" id="address" maxlength="40" />
