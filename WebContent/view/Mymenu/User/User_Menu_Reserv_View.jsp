@@ -8,8 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>예약정보 확인</title>
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-<link rel="stylesheet" type="text/css"
-	href="Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
 <link rel="stylesheet" type="text/css" href="css/mymenu/menu.css" />
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
@@ -87,8 +86,8 @@
 								<td><input type="text" name="reservation_pets" id="reservation_pets" maxlength="20" onfocus="javascript:changeBorder('pro_email')" /></td>
 							</tr>
 							<tr>
-								<td>이용시간</td>
-								<td><input type="text" name="timeofrev" id="timeofrev" maxlength="20" onfocus="javascript:changeBorder('pro_email')" /></td>
+								<td>예약희망시간</td>
+								<td><input type="text" name="timeofrev" id="timeofrev" maxlength="20" onfocus="javascript:changeBorder('pro_email')" readonly="readonly"/></td>
 							</tr>
 							<tr>
 								<td>예약접수날짜</td>
