@@ -19,15 +19,15 @@
 
 </head>
 <body>
-	<table>
-		<tr>
+	<table class="ui celled table">
+		<thead><tr>
 			<th>글번호</th>
 			<th>제목</th>
 			<th>작성자</th>
 			<th>작성일</th>
 			<th>조회수</th>
-		</tr>
-		<c:forEach items="${bblist }" var="board">
+		</tr></thead>
+		<tbody><c:forEach items="${bblist }" var="board">
 			<tr>
 				<td>${board.idx }</td>
 				<td><a href="#" OnClick="getView('${board.idx}','${board.board_type }')" style="color: 0099CC">${board.title }</a></td>
@@ -35,8 +35,24 @@
 				<td>​${board.date }</td>
 				<td>${board.hit }</td>
 			</tr>
-		</c:forEach>
+		</c:forEach></tbody>
+		<tfoot>
+			<tr><th colspan="5">
+				<div class="ui right floated pagination menu">
+		        <a class="icon item" onclick="boardSearch('${board_type }', '${pageInfo.prevPage}')">
+		          <i class="left chevron icon"></i>
+		        </a>
+		        <c:forEach begin="${pageInfo.firstPage}" end="${pageInfo.endPage}" var="pages">
+		        	<a class="item" onclick="boardSearch('${board_type }', '${pages}')">${pages}</a>
+		        </c:forEach>
+		        <a class="icon item" onclick="boardSearch('${board_type }', '${pageInfo.nextPage}')">
+		          <i class="right chevron icon"></i>
+		        </a>
+		      </div>
+	      </th></tr>
+		</tfoot>
 	</table>
+	<!-- 
 	<div class="navigater">
 		<a href="#" onclick="boardSearch('${board_type }', 1)" class="arrow"> << </a>
 		<a href="#" onclick="boardSearch('${board_type }', '${pageInfo.prevPage}')" class="arrow"> < </a>
@@ -48,8 +64,8 @@
 		<a href="#" onclick="boardSearch('${board_type }', '${pageInfo.nextPage}')"class="arrow"> > </a>
 		<a href="#" onclick="boardSearch('${board_type }', '${pageInfo.maxPage}')" class="arrow"> >> </a>
     </div>
-	<c:if
-		test="${board_type eq 3 || board_type eq 4 || session.power eq 300}">
+     -->
+	<c:if test="${board_type eq 3 || board_type eq 4 || session.power eq 300}">
 		<p align="center">
 			<button class="ui blue basic button"
 				OnClick="writeForm('${board_type}')">글쓰기</button>

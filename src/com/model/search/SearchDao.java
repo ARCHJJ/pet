@@ -88,7 +88,7 @@ public class SearchDao extends DaoCore {
 			else
 				param.put("word", "%"+word+"%");
 			
-			param.put("address", address);
+			param.put("address", "%"+address+"%");
 			mblist = (ArrayList<MarketBean>) getSqlMapClient().queryForList("SearchDao.SelectMarketOption", param);
 		} catch (Exception e) {
 			e.printStackTrace();

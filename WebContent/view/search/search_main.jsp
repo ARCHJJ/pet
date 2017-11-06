@@ -6,13 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-<link rel="stylesheet" type="text/css"
-	href="Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
 <link rel="stylesheet" type="text/css" href="css/search/search.css" />
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript"	src="Semantic-UI-CSS-master/semantic.min.js"></script>
 	
 <script type="text/javascript" src="js/search/search.js"></script>
@@ -26,18 +23,26 @@
 			<option value="2">물품, 서비스</option> 
 		</select> 
 	-->
-		<table>
+		<table class="ui celled table">
 			<tr>
 				<td>검색어</td>
-				<td><input type="text" name="word" id="word" value="${word}"/>
-					<input type="submit" value="검색" onclick="searchaction()"></td>
+				<td colspan="8"><div class="ui input focus">
+  						<input type="text" placeholder="Search word" name="word" id="word" style="margin-left: 15px" value="${word}" />
+					</div>
+					<button class="ui primary button" value="검색" onclick="searchaction()">검색</button>
+				</td>
 			</tr>
 			<tr>
 				<td>위치기반</td>
-				<td><input type="text" name="address" id="address" value="${address }">
-					<input type="button" onclick="sample4_execDaumPostcode()" value="주소 검색"></td>
+				<td colspan="8"><div class="ui input focus">
+  						<input type="text" placeholder="주소입력" name="address" id="address" style="margin-left: 15px" value="${address }" />
+					</div>
+					<button class="ui primary button" onclick="sample4_execDaumPostcode()" value="주소찾기">주소 찾기</button>
+				</td>
 			</tr>
-			<tr><td><input type="checkbox" name="selectOption" value="0" onclick="searchaction()" <c:if test="${check == 1}">checked</c:if>>펫 샵</td>
+			<tr>
+				<th rowspan="3">상세검색</th>
+				<td><input type="checkbox" name="selectOption" value="0" onclick="searchaction()" <c:if test="${check == 1}">checked</c:if>>펫 샵</td>
 				<td><input type="checkbox" name="selectOption" value="1" onclick="searchaction()" <c:if test="${check1 == 1}">checked</c:if>>미용</td>
 				<td><input type="checkbox" name="selectOption" value="2" onclick="searchaction()" <c:if test="${check2 == 1}">checked</c:if>>호텔</td>
 				<td><input type="checkbox" name="selectOption" value="3" onclick="searchaction()" <c:if test="${check3 == 1}">checked</c:if>>병원</td></tr>
