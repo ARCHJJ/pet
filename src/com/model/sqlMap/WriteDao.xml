@@ -8,10 +8,11 @@
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="BoardBean" type="com.model.board.BoardBean" />
 
-	<select id="getWriteList" parameterClass="String" resultClass="BoardBean">
+	<select id="getWriteList" parameterClass="HashMap" resultClass="BoardBean">
 		SELECT * FROM board
 			WHERE
 				email = #userid#
+					ORDER BY idx DESC limit #startrow#, #get_record#
 	</select>
 
 	<delete id="deleteWriteInfo" parameterClass="Integer">
@@ -19,5 +20,10 @@
 			WHERE 
 				idx = #idx#
 	</delete>
+	
+	<select id="getBoardCount" parameterClass="String" resultClass="int">
+		SELECT count(*) FROM board 
+			WHERE email = #userid#
+	</select>
 	
 </sqlMap>

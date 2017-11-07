@@ -19,8 +19,8 @@
 
 </head>
 <body>
-	<table class="ui orange table">
-		<thead>
+	<table class="ui compact celled definition table">
+		<thead class="full-width">
 			<tr>
 				<td>예약번호</td>
 				<td>매장명</td>
@@ -41,14 +41,13 @@
 						<td>${item.timeofrev }</td>
 						<td>${item.date }</td>
 						<td><form name="cctv_view">
-								<input type="button" name="cctvView" value="CCTV 확인"
-									onClick="location.href='User_Menu_Monitor_View.do'">
-							</form></td>
-						<td><button class="ui violet basic button"
-								onClick="updateReserv('${item.rev_idx}', '${item.member_email }', '${item.market_name }', '${item.item_name }', '${item.reservation_pets }', '${item.timeofrev }', '${item.date }', '${item.cctvid }')">예약수정</button>
+								<input type="button" name="cctvView" value="CCTV 확인" onClick="location.href='User_Menu_Monitor_View.do'">
+							</form>
+						</td>
+						<td><button class="ui violet basic button" onClick="updateReserv('${item.rev_idx}', '${item.member_email }', '${item.market_name }', '${item.item_name }', '${item.reservation_pets }', '${item.timeofrev }', '${item.date }', '${item.cctvid }')">예약수정</button>
 							<br>
-							<button class="ui red basic button"
-								onClick="delReserv(${item.rev_idx });">예약취소</button></td>
+							<button class="ui red basic button" onClick="delReserv(${item.rev_idx });">예약취소</button>
+						</td>
 					</tr>
 			</c:forEach>
 		</tbody>

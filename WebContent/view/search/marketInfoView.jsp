@@ -19,8 +19,7 @@
 </head>
 <body>
 	<form name="reserv_go_form" method="post" action="Reservation.do">
-		<button onclick="reserv()" id="market_id" name="market_id"
-			value="${mb.market_id }">예약하기</button>
+		<button class="ui positive basic button" onclick="reserv()" id="market_id" name="market_id" value="${mb.market_id }">예약하기</button>
 	</form>
 	<table class="ui orange table">
 		<thead>
@@ -77,7 +76,7 @@
 				<tr>
 					<td>댓글작성</td>
 					<td><textarea name="content" id="content"></textarea></td>
-					<td><button onclick="insert_comment();" id="insert_btn">댓글 작성</button>
+					<td><button class="ui secondary basic button" onclick="insert_comment();" id="insert_btn">댓글 작성</button></td>
 				</tr>
 				<tr>
 					<td>작성자</td>

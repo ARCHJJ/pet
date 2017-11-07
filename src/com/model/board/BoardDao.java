@@ -15,7 +15,7 @@ public class BoardDao extends DaoCore {
 		try {
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("board_type", board_type);
-			param.put("startrow", ((page-1)*10));
+			param.put("startrow", (page-1)*10);
 			param.put("get_record", 10);
 			Bb = (ArrayList<BoardBean>) getSqlMapClient().queryForList("BoardDao.getBoardList_all", param);
 		}catch(Exception e) {

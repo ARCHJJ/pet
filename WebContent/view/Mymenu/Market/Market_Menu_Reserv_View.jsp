@@ -41,13 +41,10 @@
 					<td>${rblist.timeofrev }</td>
 					<td>${rblist.date }</td>
 					<td>${rblist.cctvid }</td>
-					<td><button class="ui small button"
-							onclick="delReserv('${rblist.rev_idx}');">삭제</button></td>
+					<td><button class="ui small button" onclick="delReserv('${rblist.rev_idx}');">삭제</button></td>
 				</tr>
 			</c:forEach>
 		</tbody>
-		<tfoot>
-		</tfoot>
 	</table>
 </body>
 </html>

@@ -16,3 +16,21 @@ function delWrite(idx) {
 		});
 	}
 }
+
+function boardSearch(page){
+	
+	var str = "User_Menu_Write.do";
+	jQuery.ajax({
+		type : "post",
+		url : str,
+		data : {
+			page : page
+		},
+		success : function(data) {
+			location.href = str + "?page=" + page;
+		},
+		error : function error(xhr, status, error) {
+			alert(error);
+		}
+	});
+}

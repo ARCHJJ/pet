@@ -39,12 +39,9 @@
 						<td>${itemlist.photos }</td>
 						<td>${itemlist.price }</td>
 						<td>
-						<button class="ui small button"	
-						onclick="upInfo('${itemlist.idx }', '${itemlist.name }',
-						'${itemlist.description }', '${itemlist.photos }', '${itemlist.price }')">수정</button>
+							<button class="ui small button"	onclick="upInfo('${itemlist.idx }', '${itemlist.name }', '${itemlist.description }', '${itemlist.photos }', '${itemlist.price }')">수정</button>
 						</td>
-						<td><button class="ui small button"
-								onclick="deleteItem('${itemlist.idx}');">삭제</button></td>
+						<td><button class="ui small button" onclick="deleteItem('${itemlist.idx}');">삭제</button></td>
 					</tr>
 				</c:forEach>
 		</tbody>

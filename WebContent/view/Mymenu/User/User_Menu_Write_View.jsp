@@ -31,8 +31,8 @@
 				<td>비고</td>
 			</tr>
 		</thead>
-		<c:forEach items="${bblist}" var="item">
-			<tbody>
+		<tbody>
+			<c:forEach items="${bblist}" var="item">
 				<tr>
 					<td>${item.idx }</td>
 					<td><c:choose>
@@ -45,12 +45,25 @@
 					<td>${item.title }</td>
 					<td>${item.file }</td>
 					<td>${item.content }</td>
-					<td><button class="ui red basic button"
-							onClick="delWrite(${item.idx });">삭제</button></td>
+					<td><button class="ui red basic button" onClick="delWrite(${item.idx });">삭제</button></td>
 				</tr>
-		</c:forEach>
-
+			</c:forEach>
 		</tbody>
+		<tfoot>
+			<tr><th colspan="7">
+				<div class="ui right floated pagination menu">
+		        <a class="icon item" onclick="boardSearch('${pageInfo.prevPage}')">
+		          <i class="left chevron icon"></i>
+		        </a>
+		        <c:forEach begin="${pageInfo.firstPage}" end="${pageInfo.endPage}" var="pages">
+		        	<a class="item" onclick="boardSearch('${pages}')">${pages}</a>
+		        </c:forEach>
+		        <a class="icon item" onclick="boardSearch('${pageInfo.nextPage}')">
+		          <i class="right chevron icon"></i>
+		        </a>
+		      </div>
+	      </th></tr>
+		</tfoot>
 	</table>
 </body>
 </html>

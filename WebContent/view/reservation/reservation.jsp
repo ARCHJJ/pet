@@ -36,7 +36,7 @@
 						<td>${item.name }</td>
 						<td>${item.price }</td>
 						<td>${item.description }</td>
-						<td><button onclick="reserv_page('${item.market_id}', '${item.name}')" id="reserv_page" name="reserv_page">예약하기</button></td>
+						<td><button class="ui positive basic button" onclick="reserv_page('${item.market_id}', '${item.name}')" id="reserv_page" name="reserv_page">예약하기</button></td>
 					</tr>
 			</c:forEach>
 			</tbody>

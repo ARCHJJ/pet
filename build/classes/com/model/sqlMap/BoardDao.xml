@@ -16,6 +16,36 @@
 				<!-- start_view 번 레코드부터 count개 추출 -->
 	</select>
 
+	<select id="getBoardCount" parameterClass="Integer" resultClass="int">
+		SELECT count(*) FROM board 
+			WHERE board_type = #board_type#
+	</select>
+
+	<update id="increase_hit" parameterClass="Integer">
+		UPDATE board SET hit = hit + 1
+			WHERE idx = #idx#
+	</update>
+
+	<select id="getView" parameterClass="Integer" resultClass="BoardBean">
+		SELECT * FROM board
+			WHERE idx = #idx#
+	</select>
+	
+	<insert id="writeBoard" parameterClass="Hashmap">
+		INSERT INTO board(board_type, email, title, file, content, date, hit)
+			VALUES(#board_type#, #email#, #title#, #file#, #content#, SYSDATE(), 0)
+	</insert>
+
+	<update id="updateBoard" parameterClass="Hashmap">
+		UPDATE board SET title = #title#, email = #email#, file = #file#, content = #content#, date = SYSDATE()
+			WHERE idx = #idx#
+	</update>
+
+	<delete id="deleteBoard" parameterClass="Integer">
+		DELETE FROM board
+			WHERE idx = #idx#
+	</delete>
+
 	<select id="getBoardList_title" parameterClass="Integer" resultClass="BoardBean">
 		SELECT * FROM board
 			WHERE title LIKE ? AND board_type = #board_type#
@@ -39,16 +69,6 @@
 			WHERE email LIKE ?
 				AND board_type = #board_type#
 					ORDER BY idx DESC
-	</select>
-
-	<update id="increase_hit" parameterClass="Integer">
-		UPDATE board SET hit = hit + 1
-			WHERE idx = #idx#
-	</update>
-
-	<select id="getBoardCount" parameterClass="Integer" resultClass="int">
-		SELECT count(*) FROM board 
-		WHERE board_type = #board_type#
 	</select>
 
 	<select id="getBoardCount_title" parameterClass="Integer" resultClass="BoardBean">
@@ -76,25 +96,5 @@
 			WHERE email LIKE ?
 				AND board_type = #board_type#
 	</select>
-
-	<select id="getView" parameterClass="Integer" resultClass="BoardBean">
-		SELECT * FROM board
-			WHERE idx = #idx#
-	</select>
-
-	<insert id="writeBoard" parameterClass="Hashmap">
-		INSERT INTO board(board_type, email, title, file, content, date, hit)
-			VALUES(#board_type#, #email#, #title#, #file#, #content#, SYSDATE(), 0)
-	</insert>
-
-	<update id="updateBoard" parameterClass="Hashmap">
-		UPDATE board SET title = #title#, email = #email#, file = #file#, content = #content#, date = SYSDATE()
-			WHERE idx = #idx#
-	</update>
-
-	<delete id="deleteBoard" parameterClass="Integer">
-		DELETE FROM board
-			WHERE idx = #idx#
-	</delete>
 
 </sqlMap>

@@ -13,7 +13,7 @@ public class PageInfo {
 	int end;	//끝의 레코두
 	int maxPage;	//최대 표시되는 페이지 수
 	
-	PageInfo(int count, int page){
+	public PageInfo(int count, int page){
 		this.count = count;
 		this.page = page;
 		prevPage = page-1;

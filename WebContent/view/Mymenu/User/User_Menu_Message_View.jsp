@@ -19,29 +19,28 @@
 
 </head>
 <body>
-	<table class="ui orange table">
-		<thead>
+	<table class="ui compact celled definition table">
+		<thead class="full-width">
 			<tr>
-				<td>송신자</td>
-				<td>내용</td>
-				<td>날짜</td>
-				<td>비고</td>
+				<th>송신자</th>
+				<th>내용</th>
+				<th>날짜</th>
+				<th>비고</th>
 			</tr>
+		</thead>
+		<tbody>
 			<c:forEach items="${mblist}" var="item">
-				<tbody>
-					<tr>
-						<td>${item.sender_email }</td>
-						<td>${item.content }</td>
-						<td>${item.date }</td>
-						<td><button class="ui red basic button"
-								onClick="delMessage('${item.receiver_email }', '${item.sender_email }', '${item.date }');">삭제</button>
-						</td>
-					</tr>
+				<tr>
+					<td>${item.sender_email }</td>
+					<td>${item.content }</td>
+					<td>${item.date }</td>
+					<td><button class="ui red basic button" onClick="delMessage('${item.receiver_email }', '${item.sender_email }', '${item.date }');">삭제</button>
+					</td>
+				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-	<button class="ui violet basic button" type="button"
-		onclick="sendMessage('${ub.email}');">메시지 작성</button>
+	<button class="ui violet basic button" type="button" onclick="sendMessage('${ub.email}');">메시지 작성</button>
 
 	<div class="ui modal second" id="modal_send">
 		<i class="close icon"></i>
@@ -59,8 +58,7 @@
 							readonly="readonly" /> <br> 수신자 <input type="text"
 							name="receiver_email" id="receiver_email" maxlength="20" /> <br>
 						내용
-						<textarea name="content" id="content" rows="10" cols="50"
-							maxlength="500"></textarea>
+						<textarea name="content" id="content" rows="10" cols="50" maxlength="500"></textarea>
 						<br>
 					</form>
 				</div>

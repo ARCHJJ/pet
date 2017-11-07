@@ -41,24 +41,31 @@
 				</td>
 			</tr>
 			<tr>
-				<th rowspan="3">상세검색</th>
+				<td rowspan="3">상세검색</td>
 				<td><input type="checkbox" name="selectOption" value="0" onclick="searchaction()" <c:if test="${check == 1}">checked</c:if>>펫 샵</td>
 				<td><input type="checkbox" name="selectOption" value="1" onclick="searchaction()" <c:if test="${check1 == 1}">checked</c:if>>미용</td>
 				<td><input type="checkbox" name="selectOption" value="2" onclick="searchaction()" <c:if test="${check2 == 1}">checked</c:if>>호텔</td>
-				<td><input type="checkbox" name="selectOption" value="3" onclick="searchaction()" <c:if test="${check3 == 1}">checked</c:if>>병원</td></tr>
+				<td><input type="checkbox" name="selectOption" value="3" onclick="searchaction()" <c:if test="${check3 == 1}">checked</c:if>>병원</td>
+				<td colspan="4"></td>
+			</tr>
 					
-			<tr><td><input type="checkbox" name="selectOption" value="4" onclick="searchaction()" <c:if test="${check4 == 1}">checked</c:if>>펫 구매</td>
+			<tr>
+				<td><input type="checkbox" name="selectOption" value="4" onclick="searchaction()" <c:if test="${check4 == 1}">checked</c:if>>펫 구매</td>
 				<td><input type="checkbox" name="selectOption" value="5" onclick="searchaction()" <c:if test="${check5 == 1}">checked</c:if>>펫 물품</td>
 				<td><input type="checkbox" name="selectOption" value="6" onclick="searchaction()" <c:if test="${check6 == 1}">checked</c:if>>털 손질</td>
 				<td><input type="checkbox" name="selectOption" value="7" onclick="searchaction()" <c:if test="${check7 == 1}">checked</c:if>>애완 목욕</td>
 				<td><input type="checkbox" name="selectOption" value="8" onclick="searchaction()" <c:if test="${check8 == 1}">checked</c:if>>애완호텔(단기이용)</td>	<!-- rent -->
 				<td><input type="checkbox" name="selectOption" value="9" onclick="searchaction()" <c:if test="${check9 == 1}">checked</c:if>>애완호텔(장기이용)</td>	<!-- lodge -->
 				<td><input type="checkbox" name="selectOption" value="10" onclick="searchaction()" <c:if test="${check10 == 1}">checked</c:if>>의사상담</td>
-				<td><input type="checkbox" name="selectOption" value="11" onclick="searchaction()" <c:if test="${check11 == 1}">checked</c:if>>동물수술</td></tr>
+				<td><input type="checkbox" name="selectOption" value="11" onclick="searchaction()" <c:if test="${check11 == 1}">checked</c:if>>동물수술</td>
+			</tr>
 				
-			<tr><td><input type="checkbox" name="selectOption" value="12" onclick="searchaction()" <c:if test="${check12 == 1}">checked</c:if>>개</td>
+			<tr>
+				<td><input type="checkbox" name="selectOption" value="12" onclick="searchaction()" <c:if test="${check12 == 1}">checked</c:if>>개</td>
 				<td><input type="checkbox" name="selectOption" value="13" onclick="searchaction()" <c:if test="${check13 == 1}">checked</c:if>>고앙이</td>
-				<td><input type="checkbox" name="selectOption" value="14" onclick="searchaction()" <c:if test="${check14 == 1}">checked</c:if>>기타</td></tr>
+				<td><input type="checkbox" name="selectOption" value="14" onclick="searchaction()" <c:if test="${check14 == 1}">checked</c:if>>기타</td>
+				<td colspan="5"></td>
+			</tr>
 		</table>
 	</form>
 	
@@ -98,11 +105,14 @@
 							<td>${item.address }</td>
 							<td><input type="checkbox" name="selectMarket" value="${item.market_id }"></td>
 						</tr>
+					</tbody>
 				</c:forEach>
 			</form>
-		</tbody>
 	</table>
-	<input type="submit" value="비교하기" onclick="compare_market()">
+	<button class="ui active button" value="비교하기" onclick="compare_market()">
+  		<i class="check icon"></i>
+  			선택 매장 비교하기
+	</button>
 	<table class="ui orange table">
 		<thead>
 			<tr>

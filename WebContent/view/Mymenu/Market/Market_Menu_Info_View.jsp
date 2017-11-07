@@ -20,8 +20,6 @@
 </script>
 </head>
 <body>
-
-	매장 상세정보
 	<table class="ui orange table">
 		<thead>
 			<tr>
