@@ -43,10 +43,8 @@
 			</tr>
 			<tr>
 				<td>매장 사진</td>
-				<td><form name="fileForm" id="fileForm" method="POST" action="FileUpload.jsp" enctype="multipart/form-data">
-					<input type="file" name="uploadFile" id="uploadFile">
-					<input type="submit" value="전송">
-				</td>
+				<td>${mb.photos }</td>
+				
 			</tr>
 			<tr>
 				<td>매장 주소</td>
@@ -109,6 +107,9 @@
 								<td>매장 설명</td>
 								<td><input type="text" name="description" id="description" maxlength="20" /></td>
 							</tr>
+							<tr>
+								<td>매장 사진</td>
+								<td><input type="text" name="photos" id="photos" maxlength="20" /></td>
 							<tr>
 								<td>매장 주소</td>
 								<td>
