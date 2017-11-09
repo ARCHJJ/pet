@@ -15,6 +15,7 @@
 <script type="text/javascript"
 	src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <script type="text/javascript" src="js/market_mymenu/market.js"></script>
+<script type="text/javascript" src="js/market_mymenu/image.js"></script>
 <script type="text/javascript">
 </script>
 </head>
@@ -108,12 +109,6 @@
 								<td>매장 설명</td>
 								<td><input type="text" name="description" id="description" maxlength="20" /></td>
 							</tr>
-							<!--<tr>
-								<td>매장 사진</td>
-								<td>
-									 <input type="file" name="uploadFile" id="uploadFile"> 
-								</td>
-							</tr>-->
 							<tr>
 								<td>매장 주소</td>
 								<td>

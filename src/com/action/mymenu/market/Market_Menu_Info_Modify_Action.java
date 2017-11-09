@@ -5,10 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.action.CommonAction;
 import com.model.mymenu.market.MarketDao;
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import java.util.*;
-import java.io.*;
 
 public class Market_Menu_Info_Modify_Action extends CommonAction {
 
@@ -56,35 +52,6 @@ public class Market_Menu_Info_Modify_Action extends CommonAction {
 			}
 		}
 		
-		/*String realFolder = "";
-		int maxSize = 1024*1024*5;
-		String encType = "UTF-8";
-		String savefile = "uploadFile";
-		MultipartRequest multi = new MultipartRequest(request,realFolder,maxSize,encType,new DefaultFileRenamePolicy());
-
-		int market_id = Integer.parseInt(multi.getParameter("market_id"));
-		String market_name = multi.getParameter("market_name");
-		String description = multi.getParameter("description");
-		String photos = multi.getParameter("photos");
-		Enum files = (Enum) multi.getFileNames();
-		String address = multi.getParameter("address");
-		
-		int check[] = new int[16];
-		
-		if(multi.getParameterValues("selectOption") != null) {
-			String checkBoxes[] = multi.getParameterValues("selectOption");
-			for (int i = 0; i < 16; i++) {
-				for (int j = 0; j < checkBoxes.length; j++) {
-					if (i == Integer.parseInt(checkBoxes[j])) {
-						check[i] = 1;
-						break;
-					}
-				}
-				if (check[i] != 1) {
-					check[i] = 0;
-				}
-			}
-		}*/
 
 		updateMarket(market_id, market_name, description, photos, address, check[0], check[1], check[2], check[3], check[4],
 				check[5], check[6], check[7], check[8], check[9], check[10], check[11], check[12], check[13], check[14]);
