@@ -43,7 +43,7 @@
 			</tr>
 			<tr>
 				<td>매장 사진</td>
-				<td>${mb.photos }</td>
+				</td>
 				
 			</tr>
 			<tr>
@@ -93,7 +93,7 @@
 			<div class="description">
 				<div class="ui header">매장정보 수정</div>
 				<div class="ui input focus">
-					<form name="modify_form" method="post" action="mymenu_shop_info_modi.do">
+					<form name="modify_form" method="post" action="mymenu_shop_info_modi.do" enctype="multipart/form-data">
 						<table>
 							<tr>
 								<td>마켓id</td>
@@ -109,7 +109,7 @@
 							</tr>
 							<tr>
 								<td>매장 사진</td>
-								<td><input type="text" name="photos" id="photos" maxlength="20" /></td>
+								<td><input type="file" name="uploadFile" id="uploadFile"></td>
 							<tr>
 								<td>매장 주소</td>
 								<td>
