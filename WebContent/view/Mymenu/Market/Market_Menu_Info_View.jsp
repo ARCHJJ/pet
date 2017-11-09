@@ -43,8 +43,7 @@
 			</tr>
 			<tr>
 				<td>매장 사진</td>
-				</td>
-				
+				<td><img src="upload/${mb.photos }" width="200" height="200"></td>
 			</tr>
 			<tr>
 				<td>매장 주소</td>
