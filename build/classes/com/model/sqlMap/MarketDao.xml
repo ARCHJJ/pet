@@ -21,10 +21,20 @@
 				market_id = #idx#
 	</select>
 			
-	<update id="updateMarket" parameterClass="HashMap">
+	<update id="updateMarket_a" parameterClass="HashMap">
 		UPDATE market
 			SET
 				market_name = #market_name#, description = #description#, photos = #photos#, address = #address#, pet_dog = #pet_dog#, pet_cat = #pet_cat#, cl_market = #cl_market#, 
+				cl_beauty = #cl_beauty#, cl_hotel = #cl_hotel#, cl_hospital = #cl_hospital#, ser_buypet = #ser_buypet#, ser_buystuff = #ser_buystuff#, ser_hair = #ser_hair#, 
+				ser_bath = #ser_bath#, ser_rent = #ser_rent#, ser_lodge = #ser_lodge#, ser_doctor = #ser_doctor#, ser_surgery = #ser_surgery#
+		WHERE
+			market_id = #market_id#
+	</update>
+	
+	<update id="updateMarket_b" parameterClass="HashMap">
+		UPDATE market
+			SET
+				market_name = #market_name#, description = #description#, address = #address#, pet_dog = #pet_dog#, pet_cat = #pet_cat#, cl_market = #cl_market#, 
 				cl_beauty = #cl_beauty#, cl_hotel = #cl_hotel#, cl_hospital = #cl_hospital#, ser_buypet = #ser_buypet#, ser_buystuff = #ser_buystuff#, ser_hair = #ser_hair#, 
 				ser_bath = #ser_bath#, ser_rent = #ser_rent#, ser_lodge = #ser_lodge#, ser_doctor = #ser_doctor#, ser_surgery = #ser_surgery#
 		WHERE
