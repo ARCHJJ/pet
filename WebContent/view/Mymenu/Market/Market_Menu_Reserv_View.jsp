@@ -20,11 +20,11 @@
 		<thead class="full-width">
 			<tr>
 				<td>예약번호</td>
-				<td>예약한 이메일</td>
+				<td>고객 이메일</td>
 				<td>물품/서비스</td>
 				<td>동물</td>
 				<td>예약시간</td>
-				<td>날짜</td>
+				<td>접수시간</td>
 				<td>CCTV</td>
 				<td>비고</td>
 			</tr>
