@@ -92,8 +92,8 @@
 						<td>${item.email }</td>
 						<td>${item.content }</td>
 						<td>${item.date }</td>
-						<td><a id="update_btn" onclick="modal1(${item.idx }, ${item.email })">수정</a></td>
-						<td><a id="delete_btn" onclick="modal2(${item.idx }, ${item.email })">삭제</a></td>
+						<td><a id="update_btn" onclick="modal1(${item.idx }, '${item.email }')">수정</a></td>
+						<td><a id="delete_btn" onclick="modal2(${item.idx }, '${item.email }')">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
