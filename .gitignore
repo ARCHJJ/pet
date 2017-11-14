@@ -1,3 +1,4 @@
 build/classes/com/properties/url-mapping.properties
 build/classes/com/action/admin/MarketInsertAction.class
 *.class
+*.class
