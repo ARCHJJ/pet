@@ -120,15 +120,14 @@
 				<div class="ui fluid input">
 					<form name="login_form" method="post" action="login.do">
 						아이디(이메일) : <input type="text" name="userid" /> <br> <br>
-						비밀번호 : <input type="password" name="password" /> <br> <br>
+						비밀번호 : <input type="password" name="password" onkeyup="enterSubmit(event)"/> <br> <br>
 					</form>
 				</div>
 			</div>
 		</div>
 		<div class="actions">
 			<div class="ui black deny button">취소</div>
-			<div class="ui positive right labeled icon button"
-				onclick="loginCheck();">
+			<div class="ui positive right labeled icon button" onclick="loginCheck();" >
 				로그인 <i class="checkmark icon"></i>
 			</div>
 		</div>
