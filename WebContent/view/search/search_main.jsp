@@ -14,6 +14,7 @@
 	
 <script type="text/javascript" src="js/search/search.js"></script>
 
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 </head>
 <body>
 	<form name="search_form" method="post" action="searchAction.do"> 
@@ -35,9 +36,9 @@
 			<tr>
 				<td>위치기반</td>
 				<td colspan="8"><div class="ui input focus">
-  						<input type="text" placeholder="주소입력" name="address" id="address" style="margin-left: 15px" value="${address }" />
+  						<input type="text" placeholder="주소검색" name="address" id="sample2_address" readonly="readonly" style="margin-left: 15px" value="${address }" />
 					</div>
-					<button class="ui primary button" onclick="sample4_execDaumPostcode()" value="주소찾기">주소 찾기</button>
+					<button type="button" class="ui primary button" onclick="sample2_execDaumPostcode()" value="주소찾기">주소 찾기</button>
 				</td>
 			</tr>
 			<tr>
@@ -68,7 +69,9 @@
 			</tr>
 		</table>
 	</form>
-	
+	<div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+		<img src="//t1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
+	</div>
 	<table class="ui orange table">
 		<thead>
 			<tr>
@@ -134,5 +137,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	
 </body>
 </html>
