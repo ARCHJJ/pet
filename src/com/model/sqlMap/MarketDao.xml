@@ -48,7 +48,6 @@
 				market_id = #idx#
 	</select>
 	
-	
 	<!--마켓 댓글 쓰기  -->
 	<insert id="insertComment" parameterClass="HashMap">
 		insert into 

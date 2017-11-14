@@ -149,3 +149,83 @@ function boardSearch(board_type, page){
 		}
 	});
 }
+
+//댓글작성
+function insert_comment() {
+	comment_form.action="insertReply.do";
+	comment_form.submit();
+}
+
+var t_idx;
+var t_email;
+var t_board_id;
+//수정하기
+function modal1(idx, email, board_id) {
+	t_idx = idx;
+	t_email = email;
+	t_board_id = board_id;
+	$('#comment_update').modal('show');
+}
+
+// 삭제하기
+function modal2(idx, email, board_id) {
+	t_idx = idx;
+	t_email = email;
+	t_board_id = board_id;
+	$('#comment_delete').modal('show');
+}
+
+//댓글수정
+function update_comment() {
+	var content = $('#content_update').val();
+	var board_type = $('#board_type').val();
+
+	jQuery.ajax({
+		type : "post",
+		url : "updateReply.do",
+		data : {
+			idx : t_idx,
+			email : t_email,
+			content : content
+		},
+		dataType : "json",
+		success : function(data) {
+			if (data.result == "false1") {
+				alert("자신이 작성한 글만 수정가능합니다.");
+			} else {
+				alert("수정 되었습니다. ");
+				location.href = "board_view.do?idx="+ t_board_id +"&board_type="+ board_type;
+			}
+		},
+		error : function error(xhr, status, error) {
+			alert(error);
+		}
+	});
+}
+
+// 댓글삭제
+function delete_comment() {
+	var board_type = $('#board_type').val();
+	
+	jQuery.ajax({
+		type : "post",
+		url : "deleteReply.do",
+		data : {
+			idx : t_idx,
+			email : t_email
+		},
+		dataType : "json",
+		success : function(data) {
+			if (data.result == "false1") {
+				alert("자신이 작성한 글만 삭제 가능합니다.");
+			} else {
+				alert("삭제 되었습니다. ");
+				location.href = "board_view.do?idx="+ t_board_id +"&board_type="+ board_type;
+			}
+		},
+		error : function error(xhr, status, error) {
+			alert(error);
+		}
+	});
+}
+

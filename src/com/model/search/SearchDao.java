@@ -77,17 +77,7 @@ public class SearchDao extends DaoCore {
 				param.put("pet_etc", 1);
 			else
 				param.put("pet_etc", 0);
-			
-			int count=0;
-			for(int i = 0; i < 15; i++) {
-				if(arr[i]==1)
-					count++;
-			}
-			if(count == 0)
-				param.put("word", word);
-			else
-				param.put("word", "%"+word+"%");
-			
+			param.put("word", "%"+word+"%");
 			param.put("address", "%"+address+"%");
 			mblist = (ArrayList<MarketBean>) getSqlMapClient().queryForList("SearchDao.SelectMarketOption", param);
 		} catch (Exception e) {

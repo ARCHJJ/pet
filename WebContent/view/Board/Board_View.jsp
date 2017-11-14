@@ -27,15 +27,17 @@
 			<th>작성일</th>
 			<th>조회수</th>
 		</tr></thead>
-		<tbody><c:forEach items="${bblist }" var="board">
-			<tr>
-				<td>${board.idx }</td>
-				<td><a href="#" OnClick="getView('${board.idx}','${board.board_type }')" style="color: 0099CC">${board.title }</a></td>
-				<td>${board.email }</td>
-				<td>​${board.date }</td>
-				<td>${board.hit }</td>
-			</tr>
-		</c:forEach></tbody>
+		<tbody>
+			<c:forEach items="${bblist }" var="board">
+				<tr>
+					<td>${board.idx }</td>
+					<td><a href="#" OnClick="getView('${board.idx}','${board.board_type }')" style="color: 0099CC">${board.title }</a></td>
+					<td>${board.email }</td>
+					<td>​${board.date }</td>
+					<td>${board.hit }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
 		<tfoot>
 			<tr><th colspan="5">
 				<div class="ui right floated pagination menu">
