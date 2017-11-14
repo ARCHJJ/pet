@@ -4,6 +4,7 @@
 <%@page import="java.io.File"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -43,7 +44,12 @@
 			</tr>
 			<tr>
 				<td>매장 사진</td>
-				<td><img src="upload/${mb.photos }" width="200" height="200"></td>
+				<td>
+				<!--<c:set var="array" value="${fn:split(mb.photos,',')}" /> -->
+				<c:forTokens items="${mb.photos }" delims="," var="name">
+					<img src="upload/${name }" width="200" height="200"><br>
+				</c:forTokens>
+				</td>
 			</tr>
 			<tr>
 				<td>매장 주소</td>
@@ -108,7 +114,13 @@
 							</tr>
 							<tr>
 								<td>매장 사진</td>
-								<td><input type="file" name="uploadFile" id="uploadFile"></td>
+								<td>
+								<input type="file" name="uploadFile[0]" id="uploadFile1" accept=".jpg, .jpeg, .png">
+								<input type="file" name="uploadFile[1]" id="uploadFile2" accept=".jpg, .jpeg, .png">
+								<input type="file" name="uploadFile[2]" id="uploadFile3" accept=".jpg, .jpeg, .png">
+								<input type="file" name="uploadFile[3]" id="uploadFile4" accept=".jpg, .jpeg, .png">
+								<input type="file" name="uploadFile[4]" id="uploadFile5" accept=".jpg, .jpeg, .png">
+								</td>
 							<tr>
 								<td>매장 주소</td>
 								<td>
