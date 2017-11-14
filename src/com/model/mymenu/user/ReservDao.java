@@ -24,10 +24,10 @@ public class ReservDao extends DaoCore {
 		return rblist;
 	}
 
-	public ArrayList<ReservBean> getMarketReservList(String email) {
-		ArrayList<ReservBean> rblist = new ArrayList<ReservBean>();
+	public ArrayList<Reserv_MarketBean> getMarketReservList(String email) {
+		ArrayList<Reserv_MarketBean> rblist = new ArrayList<Reserv_MarketBean>();
 		try {
-			rblist = (ArrayList<ReservBean>) getSqlMapClient().queryForList("ReservDao.getMarketReservList", email);
+			rblist = (ArrayList<Reserv_MarketBean>) getSqlMapClient().queryForList("ReservDao.getMarketReservList", email);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

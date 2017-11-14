@@ -1,3 +1,18 @@
+//예약수정
+function updateReserv(rev_idx, member_email, market_name, reservation_service, reservation_pets, timeofrev, date, cctvid) {
+	$('#rev_idx').val(rev_idx);
+	$('#member_email').val(member_email);
+	$('#market_name').val(market_name);
+	$('#reservation_service').val(reservation_service);
+	$('#reservation_pets').val(reservation_pets);
+	$('#timeofrev').val(timeofrev);
+	$('#date').val(date);
+	$('#cctvid').val(cctvid);
+	$('#modal_update').modal('show');
+}
+function update_Reserv() {
+	document.modify_form.submit();
+}
 
 /* 예약 삭제 */
 function delReserv(rev_idx) {

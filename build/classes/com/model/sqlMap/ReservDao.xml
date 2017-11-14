@@ -16,8 +16,8 @@
 				member_email = #userid# 
 	</select>
 	
-	<select id="getMarketReservList" parameterClass="String" resultClass="ReservBean">
-		SELECT * FROM reservation
+	<select id="getMarketReservList" parameterClass="String" resultClass="Reserv_MarketBean">
+		SELECT * FROM reserv_market
 			WHERE
 				market_id = (
 					SELECT market_id
