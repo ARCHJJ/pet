@@ -14,7 +14,6 @@ public class Board_Write_Action extends CommonAction {
 		int board_type = Integer.parseInt(request.getParameter("board_type"));	
 		String email = request.getParameter("email");
 		String title = request.getParameter("title");
-		String file = request.getParameter("file");
 		String content = request.getParameter("content");
 
 		String str = "main.do";
@@ -33,13 +32,13 @@ public class Board_Write_Action extends CommonAction {
 			break;
 		}
 		
-		writeBoard(board_type, email, title, file, content);
+		writeBoard(board_type, email, title, content);
 		return str;
 	}
 
-	private void writeBoard(int board_type, String email, String title, String file, String content) {
+	private void writeBoard(int board_type, String email, String title, String content) {
 		// TODO Auto-generated method stub
-		BoardDao.getInstance().writeBoard(board_type, email, title, file, content);
+		BoardDao.getInstance().writeBoard(board_type, email, title, content);
 	}
 	
 

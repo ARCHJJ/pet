@@ -42,13 +42,12 @@ public class BoardDao extends DaoCore {
 		}
 	}
 	
-	public void writeBoard(int board_type, String email, String title, String file, String content) {
+	public void writeBoard(int board_type, String email, String title, String content) {
 		try{
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("board_type", board_type);
 			param.put("email", email);
 			param.put("title", title);
-			param.put("file", file);
 			param.put("content", content);
 			
 			getSqlMapClient().insert("BoardDao.writeBoard", param);
@@ -67,13 +66,12 @@ public class BoardDao extends DaoCore {
 		return bb;
 	}
 	
-	public void updateBoard(int idx, String title, String email, String file, String content) {
+	public void updateBoard(int idx, String title, String email, String content) {
 		try{
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("idx", idx);
 			param.put("title", title);
 			param.put("email", email);
-			param.put("file", file);
 			param.put("content", content);
 			getSqlMapClient().update("BoardDao.updateBoard", param);
 			

@@ -32,12 +32,12 @@
 	</select>
 	
 	<insert id="writeBoard" parameterClass="Hashmap">
-		INSERT INTO board(board_type, email, title, file, content, date, hit)
-			VALUES(#board_type#, #email#, #title#, #file#, #content#, SYSDATE(), 0)
+		INSERT INTO board(board_type, email, title, content, date, hit)
+			VALUES(#board_type#, #email#, #title#, #content#, SYSDATE(), 0)
 	</insert>
 
 	<update id="updateBoard" parameterClass="Hashmap">
-		UPDATE board SET title = #title#, email = #email#, file = #file#, content = #content#, date = SYSDATE()
+		UPDATE board SET title = #title#, email = #email#, content = #content#, date = SYSDATE()
 			WHERE idx = #idx#
 	</update>
 

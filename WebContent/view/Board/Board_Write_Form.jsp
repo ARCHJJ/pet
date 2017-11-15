@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -12,12 +11,13 @@
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
-<script type="text/javascript" src="ckeditor_custom/ckeditor.js"></script>
+<script type="text/javascript"
+	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="js/board/board.js"></script>
 </head>
 <body>
-	<form name="writeform" method=post action="board_write.do">
+	<form name="write_form" method=post action="board_write.do">
 		<input type="hidden" name="board_type" id="board_type" value="${board_type }">
 		<table class="ui celled table" id="form1">
 			<tr style="text-align: center;">
@@ -32,18 +32,33 @@
 				<td><input type="text" name="email" id="email" readonly="readonly" size="100" maxlength="50" value="${email }"></td>
 			</tr>
 			<tr>
-				<td>파일명</td>
-				<td><input type="file" name="file" id="file" size="100" maxlength="50">(최대 5M)</td>
-			</tr>
-			<tr>
 				<td>내용</td>
-				<td><textarea name="content" id="content" cols="100" rows="13"></textarea></td>
+				<td><textarea name="content" id="content" cols="60" rows="10"></textarea></td>
 			</tr>
 		</table>
+		<p align="center">
+			<button type="button" class="ui blue basic button" OnClick="writeCheck('${board_type}', '${email }')">등록</button>
+			<button class="ui red basic button" OnClick="javascript:history.back(-1)">취소</button>
+		</p>
 	</form>
-	<p align="center">
-		<button class="ui blue basic button" OnClick="writeCheck('${board_type}', '${title }', '${email }', '${file }', '${content }')">등록</button>
-		<button class="ui red basic button" OnClick="javascript:history.back(-1)">취소</button>
-	</p>
+	<script>
+    	CKEDITOR.replace('content',{
+            toolbar: [['Source','-','NewPage','Preview','-','Templates'],
+            ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print','SpellChecker', 'Scayt'],
+            ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+            ['Form', 'Checkbox', 'Radio','TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
+            '/',
+            ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+            ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+            ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+            ['Link','Unlink','Anchor'],
+            ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+            '/',
+            ['Styles','Format','Font','FontSize'],
+            ['TextColor','BGColor'],
+            ['Maximize', 'ShowBlocks','-','About']]
+        }
+    );
+	</script>
 </body>
 </html>

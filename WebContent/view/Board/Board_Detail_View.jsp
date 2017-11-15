@@ -42,7 +42,7 @@
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td>${bb.file } ${bb.content }</td>
+				<td>${bb.content }</td>
 			</tr>
 		</table>
 	</form>
@@ -109,8 +109,8 @@
 	<p align="center">
 		<button class="ui blue basic button" OnClick="javascript:history.back(-1)">목록</button>
 		<c:if test="${session.email == bb.email }">
-			<button class="ui violet basic button" OnClick="updateForm('${idx}', '${board_type }','${bb.title }', '${bb.email }')">수정</button>
-			<button class="ui red basic button" OnClick="deleteBoard('${idx}')">삭제</button>
+			<button class="ui violet basic button" OnClick="updateForm('${idx}', '${board_type }', '${bb.title }', '${bb.email }')">수정</button>
+			<button class="ui red basic button" OnClick="deleteBoard('${idx}', '${board_type }')">삭제</button>
 		</c:if>
 	</p>
 </body>

@@ -16,16 +16,14 @@ public class Board_Modify_Action extends CommonAction {
 		int idx = Integer.parseInt(request.getParameter("idx"));
 		int board_type = Integer.parseInt(request.getParameter("board_type"));
 		String title = request.getParameter("title");
-		String file = request.getParameter("file");
 		String content = request.getParameter("content");
-		System.out.println(content);
 		
-		updateboard(idx, title, email, file, content);
+		updateboard(idx, title, email, content);
 		request.setAttribute("board_type", board_type);
 		return "board_view.do";
 	}
 
-	private void updateboard(int idx, String title, String email, String file, String content) {
-		BoardDao.getInstance().updateBoard(idx, title, email, file, content);
+	private void updateboard(int idx, String title, String email, String content) {
+		BoardDao.getInstance().updateBoard(idx, title, email, content);
 	}
 }
