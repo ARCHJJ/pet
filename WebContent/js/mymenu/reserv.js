@@ -1,3 +1,10 @@
+$(function() {
+	 $('#datetimepicker1').datetimepicker({
+		 format: "YYYY-MM-DD hh:mm",
+		 locale: 'ko'
+	 });
+});
+
 /* 예약 삭제 */
 function delReserv(rev_idx) {
 	if (confirm("삭제 하시겠습니까?")) {
