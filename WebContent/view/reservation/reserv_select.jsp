@@ -21,8 +21,6 @@
 </head>
 <body>
 <div class="container">
-    
-</div>
 	<form name="submit_form" method="post" action="Reserv_submit.do">
 		<table class="ui orange table">
 			<thead>
@@ -117,7 +115,7 @@
 			</div>
 		</div>
 	</div> -->
-
+</div>
 </body>
 
 </html>
