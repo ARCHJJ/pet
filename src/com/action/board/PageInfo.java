@@ -30,7 +30,11 @@ public class PageInfo {
 	}
 
 	public int getFirstPage() {
-		firstPage = (1 + (5*(int) Math.floor(page/6)));
+		if(page % 5 != 0)
+			firstPage = (5*(int) Math.floor(page/5)) + 1;
+		else {
+			firstPage = ((int) Math.floor(page/5)-1) * 5 + 1;
+		}
 		endPage = firstPage+4;
 		if(endPage > maxPage) {
 			endPage = maxPage;
