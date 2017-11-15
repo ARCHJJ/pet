@@ -160,8 +160,7 @@
 		</div>
 		<div class="actions">
 			<div class="ui black deny button">취소</div>
-			<div class="ui positive right labeled icon button"
-				onclick="update_Info();">
+			<div class="ui positive right labeled icon button" onclick="update_Info();">
 				수정 <i class="checkmark icon"></i>
 			</div>
 		</div>

@@ -21,11 +21,11 @@
 <body>
 	<table class="ui celled table">
 		<thead><tr>
-			<th>글번호</th>
-			<th>제목</th>
-			<th>작성자</th>
-			<th>작성일</th>
-			<th>조회수</th>
+			<th style="text-align: center;width: 70pt;">글번호</th>
+			<th style="text-align: center;width: 500pt;">제목</th>
+			<th style="text-align: center;width: 200pt;">작성자</th>
+			<th style="text-align: center;width: 150pt;">작성일</th>
+			<th style="text-align: center;width: 70pt;">조회수</th>
 		</tr></thead>
 		<tbody>
 			<c:forEach items="${bblist }" var="board">
@@ -54,19 +54,6 @@
 	      </th></tr>
 		</tfoot>
 	</table>
-	<!-- 
-	<div class="navigater">
-		<a href="#" onclick="boardSearch('${board_type }', 1)" class="arrow"> << </a>
-		<a href="#" onclick="boardSearch('${board_type }', '${pageInfo.prevPage}')" class="arrow"> < </a>
-		<span class="pages">
-			<c:forEach begin="${pageInfo.firstPage}" end="${pageInfo.endPage}" var="pages">
-				<a href="#" onclick="boardSearch('${board_type }', '${pages}')" class="${pages}page">${pages}</a>
-			</c:forEach>
-		</span>
-		<a href="#" onclick="boardSearch('${board_type }', '${pageInfo.nextPage}')"class="arrow"> > </a>
-		<a href="#" onclick="boardSearch('${board_type }', '${pageInfo.maxPage}')" class="arrow"> >> </a>
-    </div>
-     -->
 	<c:if test="${board_type eq 3 || board_type eq 4 || session.power eq 300}">
 		<p align="center">
 			<button class="ui blue basic button"

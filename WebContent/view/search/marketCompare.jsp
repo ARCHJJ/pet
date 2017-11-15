@@ -20,36 +20,35 @@
 <body>
 	<table class="ui orange table">
 		<thead>
+		<tr></tr>
+		</thead>
 		<tbody>
 			<tr>
-				<td>매장 email</td>
-				<td>${mb1.email }</td>
-				<td>${mb2.email }</td>
-				<td>${mb3.email }</td>
+				<th style="text-align: center;width: 90pt;">매장 email</th>
+				<td style="width: 350pt;">${mb1.email }</td>
+				<td style="width: 350pt;">${mb2.email }</td>
+				<td style="width: 350pt;">${mb3.email }</td>
 			</tr>
 			<tr>
-				<td>매장 이름</td>
-				<td><a href="#" onclick="view_market(${mb1.market_id })"
-					style="color: 0099CC">${mb1.market_name }</a></td>
-				<td><a href="#" onclick="view_market(${mb2.market_id })"
-					style="color: 0099CC">${mb2.market_name }</a></td>
-				<td><a href="#" onclick="view_market(${mb3.market_id })"
-					style="color: 0099CC">${mb3.market_name }</a></td>
+				<th style="text-align: center;width: 90pt;">매장 이름</th>
+				<td><a href="#" onclick="view_market(${mb1.market_id })" style="color: 0099CC">${mb1.market_name }</a></td>
+				<td><a href="#" onclick="view_market(${mb2.market_id })" style="color: 0099CC">${mb2.market_name }</a></td>
+				<td><a href="#" onclick="view_market(${mb3.market_id })" style="color: 0099CC">${mb3.market_name }</a></td>
 			</tr>
 			<tr>
-				<td>매장 설명</td>
+				<th style="text-align: center;width: 90pt;">매장 설명</th>
 				<td>${mb1.description }</td>
 				<td>${mb2.description }</td>
 				<td>${mb3.description }</td>
 			</tr>
 			<tr>
-				<td>매장 사진</td>
+				<th style="text-align: center;width: 90pt;">매장 사진</th>
 				<td>${mb1.photos }</td>
 				<td>${mb2.photos }</td>
 				<td>${mb3.photos }</td>
 			</tr>
 			<tr>
-				<td>전문 지원 동물</td>
+				<th style="text-align: center;width: 90pt;">전문 지원 동물</th>
 				<td><c:if test="${mb1.pet_dog == 1}">개 </c:if> <c:if
 						test="${mb1.pet_cat == 1}">고양이 </c:if> <c:if
 						test="${mb1.pet_etc == 1}">기타 </c:if></td>
@@ -61,13 +60,13 @@
 						test="${mb3.pet_etc == 1}">기타 </c:if></td>
 			</tr>
 			<tr>
-				<td>매장 주소</td>
+				<th style="text-align: center;width: 90pt;">매장 주소</th>
 				<td>${mb1.address }</td>
 				<td>${mb2.address }</td>
 				<td>${mb3.address }</td>
 			</tr>
 			<tr>
-				<td>업종</td>
+				<th style="text-align: center;width: 90pt;">업종</th>
 				<td><c:if test="${mb1.cl_hospital == 1}">병원 </c:if> <c:if
 						test="${mb1.cl_market == 1}">상점 </c:if> <c:if
 						test="${mb1.cl_beauty == 1}">미용샵 </c:if> <c:if
@@ -82,7 +81,7 @@
 						test="${mb3.cl_hotel == 1}">기타 </c:if></td>
 			</tr>
 			<tr>
-				<td>매장 서비스</td>
+				<th style="text-align: center;width: 90pt;">매장 서비스</th>
 				<td><c:if test="${mb1.ser_doctor == 1}">의사상담 </c:if>
 							<c:if test="${mb1.ser_surgery == 1}">수술 </c:if>
 							<c:if test="${mb1.ser_lodge == 1}">애완호텔(장기) </c:if>
