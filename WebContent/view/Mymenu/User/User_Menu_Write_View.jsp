@@ -22,7 +22,7 @@
 	<table class="ui orange table">
 		<thead>
 			<tr>
-				<td>index</td>
+				<td>번호</td>
 				<td>게시판종류</td>
 				<td>날짜</td>
 				<td>제목</td>

@@ -26,7 +26,7 @@
 			<thead>
 			<tbody>
 				<tr>
-					<td>매장명</td>
+					<td>매장이름</td>
 					<td>${mb.market_name }</td>
 				</tr>
 				<tr>
@@ -34,11 +34,11 @@
 					<td>${mb.address }</td>
 				</tr>
 				<tr>
-					<td>매장주인 email</td>
+					<td>매장 email</td>
 					<td>${mb.market_email }</td>
 				</tr>
 				<tr>
-					<td>예약 서비스</td>
+					<td>예약 뭎룸/서비스</td>
 					<td>${mb.service_name }</td>
 				</tr>
 				<tr>

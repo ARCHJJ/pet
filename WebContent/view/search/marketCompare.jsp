@@ -22,7 +22,7 @@
 		<thead>
 		<tbody>
 			<tr>
-				<td>매장주인 email</td>
+				<td>매장 email</td>
 				<td>${mb1.email }</td>
 				<td>${mb2.email }</td>
 				<td>${mb3.email }</td>
@@ -49,7 +49,7 @@
 				<td>${mb3.photos }</td>
 			</tr>
 			<tr>
-				<td>매장에서 지원하는 펫</td>
+				<td>전문 지원 동물</td>
 				<td><c:if test="${mb1.pet_dog == 1}">개 </c:if> <c:if
 						test="${mb1.pet_cat == 1}">고양이 </c:if> <c:if
 						test="${mb1.pet_etc == 1}">기타 </c:if></td>
@@ -67,7 +67,7 @@
 				<td>${mb3.address }</td>
 			</tr>
 			<tr>
-				<td>매장 종류</td>
+				<td>업종</td>
 				<td><c:if test="${mb1.cl_hospital == 1}">병원 </c:if> <c:if
 						test="${mb1.cl_market == 1}">상점 </c:if> <c:if
 						test="${mb1.cl_beauty == 1}">미용샵 </c:if> <c:if

@@ -36,7 +36,7 @@
 			<tr>
 				<td>위치기반</td>
 				<td colspan="8"><div class="ui input focus">
-  						<input type="text" placeholder="주소검색" name="address" id="sample2_address" readonly="readonly" style="margin-left: 15px" value="${address }" />
+  						<input type="text" placeholder="주소 찾기 버튼이용" name="address" id="sample2_address" readonly="readonly" style="margin-left: 15px" value="${address }" />
 					</div>
 					<button type="button" class="ui primary button" onclick="sample2_execDaumPostcode()" value="주소찾기">주소 찾기</button>
 				</td>
@@ -78,8 +78,8 @@
 				<td>사진</td>
 				<td>매장명</td>
 				<td>매장설명</td>
-				<td>동물</td>
-				<td>서비스, 물품</td>
+				<td>전문 지원 동물</td>
+				<td>서비스</td>
 				<td>주소</td>
 				<td>비교</td>
 			</tr>

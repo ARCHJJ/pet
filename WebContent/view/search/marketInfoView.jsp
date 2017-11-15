@@ -29,7 +29,7 @@
 				<td>${mb.photos }</td>
 			</tr>
 			<tr>
-				<td>매장주인 email</td>
+				<td>매장 email</td>
 				<td>${mb.email }</td>
 			</tr>
 			<tr>
@@ -41,32 +41,32 @@
 				<td>${mb.description }</td>
 			</tr>
 			<tr>
-				<td>매장에서 지원하는 펫</td>
-				<td><c:if test="${mb1.pet_dog == 1}">개 </c:if> <c:if
-						test="${mb1.pet_cat == 1}">고양이 </c:if> <c:if
-						test="${mb1.pet_etc == 1}">기타 </c:if></td>
+				<td>전문 지원 동물</td>
+				<td><c:if test="${mb.pet_dog == 1}">개 </c:if> <c:if
+						test="${mb.pet_cat == 1}">고양이 </c:if> <c:if
+						test="${mb.pet_etc == 1}">기타 </c:if></td>
 			</tr>
 			<tr>
 				<td>매장 주소</td>
 				<td>${mb.address }</td>
 			</tr>
 			<tr>
-				<td>매장 종류</td>
-				<td><c:if test="${mb1.cl_hospital == 1}">병원 </c:if> <c:if
-						test="${mb1.cl_market == 1}">상점 </c:if> <c:if
-						test="${mb1.cl_beauty == 1}">미용샵 </c:if> <c:if
-						test="${mb1.cl_hotel == 1}">호텔 </c:if></td>
+				<td>업종</td>
+				<td><c:if test="${mb.cl_hospital == 1}">병원 </c:if> <c:if
+						test="${mb.cl_market == 1}">상점 </c:if> <c:if
+						test="${mb.cl_beauty == 1}">미용샵 </c:if> <c:if
+						test="${mb.cl_hotel == 1}">호텔 </c:if></td>
 			</tr>
 			<tr>
 				<td>매장 서비스</td>
-				<td><c:if test="${mb1.ser_doctor == 1}">의사상담 </c:if> <c:if
-						test="${mb1.ser_surgery == 1}">수술 </c:if> <c:if
-						test="${mb1.ser_lodge == 1}">애완호텔(장기) </c:if> <c:if
-						test="${mb1.ser_buypet == 1}">펫분양 </c:if> <c:if
-						test="${mb1.ser_buystuff == 1}">펫용품 </c:if> <c:if
-						test="${mb1.ser_hair == 1}">털손질 </c:if> <c:if
-						test="${mb1.ser_bath == 1}">목욕 </c:if> <c:if
-						test="${mb1.ser_rent == 1}">애완호텔(단기) </c:if></td>
+				<td><c:if test="${mb.ser_doctor == 1}">의사상담 </c:if> <c:if
+						test="${mb.ser_surgery == 1}">수술 </c:if> <c:if
+						test="${mb.ser_lodge == 1}">애완호텔(장기) </c:if> <c:if
+						test="${mb.ser_buypet == 1}">펫분양 </c:if> <c:if
+						test="${mb.ser_buystuff == 1}">펫용품 </c:if> <c:if
+						test="${mb.ser_hair == 1}">털손질 </c:if> <c:if
+						test="${mb.ser_bath == 1}">목욕 </c:if> <c:if
+						test="${mb.ser_rent == 1}">애완호텔(단기) </c:if></td>
 			</tr>
 		</tbody>
 	</table>
@@ -80,7 +80,7 @@
 				</tr>
 				<tr>
 					<td>작성자</td>
-					<td>후기 내용</td>
+					<td>내용</td>
 					<td>작성일</td>
 					<td>수정</td>
 					<td>삭제</td>
