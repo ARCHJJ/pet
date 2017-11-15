@@ -47,7 +47,7 @@
 				<td>
 				<!--<c:set var="array" value="${fn:split(mb.photos,',')}" /> -->
 				<c:forTokens items="${mb.photos }" delims="," var="name">
-					<img src="upload/${name }" width="200" height="200"><br>
+					<img src="upload/${name }" width="200" height="200"> 
 				</c:forTokens>
 				</td>
 			</tr>

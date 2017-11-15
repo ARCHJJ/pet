@@ -3,7 +3,6 @@ package com.action.mymenu.market;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +26,7 @@ public class Market_Menu_Info_Modify_Action extends CommonAction {
 					new DefaultFileRenamePolicy());
 			String filename = "";
 			Enumeration<String> files = multi.getFileNames();
+			
 			int market_id = Integer.parseInt(multi.getParameter("market_id"));
 			String market_name = multi.getParameter("market_name");
 			String description = multi.getParameter("description");

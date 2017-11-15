@@ -36,7 +36,10 @@
 						<td>${itemlist.idx }</td>
 						<td>${itemlist.name }</td>
 						<td>${itemlist.description }</td>
-						<td>${itemlist.photos }</td>
+						<td><c:forTokens items="${itemlist.photos }" delims="," var="name">
+							<img src="upload/${name }" width="100" height="100"> 
+							</c:forTokens>
+						</td>
 						<td>${itemlist.price }</td>
 						<td>
 							<button class="ui small button"	onclick="upInfo('${itemlist.idx }', '${itemlist.name }', '${itemlist.description }', '${itemlist.photos }', '${itemlist.price }')">수정</button>
@@ -64,12 +67,34 @@
 			<div class="description">
 				<div class="ui header">상품 추가</div>
 				<div class="ui input focus">
-					<form name="insert_form" method="post"	action="mymenu_shop_item_insert.do">
-						마켓 번호<input type="text" name="market_id" id="market_id" readonly="readonly"/> <br> 
-						상품 이름<input type="text" name="name" id="input_name" maxlength="20" /> <br> 
-						상품 설명 <input type="text" name="description" id="input_description" maxlength="20" />	<br> 
-						상품 사진 <input type="text" name="photos" id="input_photos" maxlength="20" /> <br> 
-						상품 가격 <input type="text" name="price" id="input_price" maxlength="20" />
+					<form name="insert_form" method="post"	action="mymenu_shop_item_insert.do" enctype="multipart/form-data">
+					<table>
+							<tr>
+								<td>마켓 번호</td>
+								<td><input type="text" name="market_id" id="market_id" readonly="readonly"/></td>
+							</tr>
+							<tr>
+								<td>상품 이름</td>
+								<td><input type="text" name="name" id="input_name" maxlength="20" /></td>
+							</tr>
+							<tr>							 
+								<td>상품 설명</td> 
+								<td><input type="text" name="description" id="input_description" maxlength="20" /></td>
+							</tr>
+							<tr> 
+								<td>상품 사진</td> 
+								<td>
+								<input type="file" name="uploadFile[0]" id="uploadFile1" accept=".jpg, .jpeg, .png"><br>
+								<input type="file" name="uploadFile[1]" id="uploadFile2" accept=".jpg, .jpeg, .png"><br>
+								<input type="file" name="uploadFile[2]" id="uploadFile3" accept=".jpg, .jpeg, .png"><br>
+								<input type="file" name="uploadFile[3]" id="uploadFile4" accept=".jpg, .jpeg, .png"><br>
+								<input type="file" name="uploadFile[4]" id="uploadFile5" accept=".jpg, .jpeg, .png"></td>
+							</tr>
+							<tr> 
+								<td>상품 가격</td> 
+								<td><input type="text" name="price" id="input_price" maxlength="20" /></td>
+							</tr>
+						</table>
 					</form>
 				</div>
 				<p>추가 하시겠습니까?</p>
@@ -92,12 +117,34 @@
 			<div class="description">
 				<div class="ui header">상품 정보 수정</div>
 				<div class="ui input focus">
-					<form name="modify_form" method="post"	action="mymenu_shop_item_modi.do">
-						상품 번호<input type="text" name="idx" id="idx" readonly="readonly"/>	<br> 
-						상품 이름<input type="text" name="name" id="name" maxlength="20"/> <br> 
-						상품 설명<input type="text" name="description" id="description" maxlength="20"/>	<br>
-						상품 사진<input type="text" name="photos" id="photos"	maxlength="20"/> <br> 
-						상품 가격<input type="text" name="price" id="price" maxlength="20"/>
+					<form name="modify_form" method="post"	action="mymenu_shop_item_modi.do" enctype="multipart/form-data">
+						<table>
+							<tr>
+								<td>상품 번호</td><td><input type="text" name="idx" id="idx" readonly="readonly"/>	</td>
+							</tr>
+							<tr>
+								<td>상품 이름</td>
+								<td><input type="text" name="name" id="name" maxlength="20"/></td>
+							</tr> 
+							<tr>
+								<td>상품 설명</td>
+								<td><input type="text" name="description" id="description" maxlength="20"/></td>
+							</tr>
+							<tr>
+								<td>상품 사진</td>
+								<td>
+								<input type="file" name="uploadFile[0]" id="uploadFile1" accept=".jpg, .jpeg, .png">
+								<input type="file" name="uploadFile[1]" id="uploadFile2" accept=".jpg, .jpeg, .png"><br>
+								<input type="file" name="uploadFile[2]" id="uploadFile3" accept=".jpg, .jpeg, .png"><br>
+								<input type="file" name="uploadFile[3]" id="uploadFile4" accept=".jpg, .jpeg, .png"><br>
+								<input type="file" name="uploadFile[4]" id="uploadFile5" accept=".jpg, .jpeg, .png">
+								</td>
+							</tr> 
+							<tr>
+								<td>상품 가격</td>
+								<td><input type="text" name="price" id="price" maxlength="20"/></td>
+							</tr>
+						</table>
 					</form>
 				</div>
 				<p>수정 하시겠습니까?</p>
