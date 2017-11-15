@@ -34,7 +34,9 @@
 					<td>${item.sender_email }</td>
 					<td>${item.content }</td>
 					<td>${item.date }</td>
-					<td><button class="ui red basic button" onClick="delMessage('${item.receiver_email }', '${item.sender_email }', '${item.date }');">삭제</button>
+					<td>
+						<button class="ui blue basic button" onClick="returnMessage('${item.sender_email }', '${ub.email}');">답장</button>
+						<button class="ui red basic button" onClick="delMessage('${item.receiver_email }', '${item.sender_email }', '${item.date }');">삭제</button>
 					</td>
 				</tr>
 			</c:forEach>

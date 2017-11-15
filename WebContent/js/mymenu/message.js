@@ -7,6 +7,12 @@ function send_Message() {
 	document.send_form.submit();
 }
 
+function returnMessage(receiver_email, sender_email){
+	$('#receiver_email').val(receiver_email);
+	$('#sender_email').val(sender_email);
+	$('#modal_send').modal('show');
+}
+
 /* 메시지 삭제 */
 function delMessage(receiver, sender, date){
 	if (confirm("해당 메시지를 삭제 하시겠습니까?")) {
