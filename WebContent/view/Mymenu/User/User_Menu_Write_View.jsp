@@ -26,7 +26,6 @@
 				<td>게시판종류</td>
 				<td>날짜</td>
 				<td>제목</td>
-				<td>file</td>
 				<td>내용</td>
 				<td>비고</td>
 			</tr>
@@ -43,7 +42,6 @@
 						</c:choose></td>
 					<td>${item.date }</td>
 					<td>${item.title }</td>
-					<td>${item.file }</td>
 					<td>${item.content }</td>
 					<td><button class="ui red basic button" onClick="delWrite(${item.idx });">삭제</button></td>
 				</tr>
