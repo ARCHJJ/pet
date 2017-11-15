@@ -2,3 +2,5 @@ build/classes/com/properties/url-mapping.properties
 build/classes/com/action/admin/MarketInsertAction.class
 *.class
 *.class
+build/classes/com/model/board/board_replyBean.class
+build/classes/com/model/board/board_replyBean.class

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Board_replyDao">
+	<typeAlias alias="Integer" type="java.lang.Integer" />
+	<typeAlias alias="String" type="java.lang.String" />
+	<typeAlias alias="HashMap" type="java.util.HashMap" />
+	<typeAlias alias="Date" type="java.util.Date" />
+	<typeAlias alias="Board_replyBean" type="com.model.board.Board_replyBean" />
+	
+	<select id="getreply" parameterClass="Integer" resultClass="Board_replyBean">
+		SELECT * FROM Board_reply
+			WHERE
+				board_id = #idx#
+	</select>
+	
+	<!--마켓 댓글 쓰기  -->
+	<insert id="insertComment" parameterClass="HashMap">
+		insert into 
+			board_reply (board_id, content, email) 
+				values (#board_id#, #content#, #email#)
+	</insert>
+	
+	<!--마켓 댓글 수정  -->
+	<update id="updateComment" parameterClass="HashMap">
+		UPDATE board_reply
+			SET
+				content = #content#
+			WHERE
+				idx = #idx#
+	</update>
+	
+	<!--마켓 댓글 삭제  -->
+	<delete id="deleteComment" parameterClass="Integer">
+		DELETE FROM board_reply 
+			WHERE 
+				idx = #idx#
+	</delete>
+	
+
+</sqlMap>
