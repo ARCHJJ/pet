@@ -40,9 +40,12 @@
 						<td>${item.reservation_pets }</td>
 						<td>${item.timeofrev }</td>
 						<td>${item.date }</td>
-						<td><form name="cctv_view">
-								<input type="button" name="cctvView" value="CCTV 확인" onClick="location.href='User_Menu_Monitor_View.do'">
-							</form>
+						<td>
+							<c:if test="${item.cctvid != 0}">
+								<form name="cctv_view">
+									<input type="button" name="cctvView" value="CCTV 확인" onClick="location.href='User_Menu_Monitor_View.do'">
+								</form>
+							</c:if>
 						</td>
 						<td><button class="ui violet basic button" onClick="updateReserv('${item.rev_idx}', '${item.member_email }', '${item.market_name }', '${item.item_name }', '${item.reservation_pets }', '${item.timeofrev }', '${item.date }', '${item.cctvid }')">예약수정</button>
 							<br>
