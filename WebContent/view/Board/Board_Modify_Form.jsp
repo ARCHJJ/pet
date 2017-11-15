@@ -37,7 +37,7 @@
 		</table>
 		<p align="center">
 			<button type="button" class="ui violet basic button" OnClick="updateCheck('${bb.idx}', '${bb.board_type }', '${email }')">수정</button>
-			<button class="ui red basic button" OnClick="javascript:history.back(-1)">취소</button>
+			<button type="button" class="ui red basic button" OnClick="javascript:history.back(-1)">취소</button>
 		</p>
 	</form>
 	<script>

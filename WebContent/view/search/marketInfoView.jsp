@@ -112,7 +112,7 @@
 			</div>
 		</div>
 		<div class="actions">
-			<div class="ui button">Cancel</div>
+			<div class="ui deny button">Cancel</div>
 			<div class="ui button" onclick="update_comment();">OK</div>
 		</div>
 	</div>
