@@ -5,10 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>선택 매장 페이지</title>
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
-<link rel="stylesheet" type="text/css" href="css/search/search.css" />
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -22,43 +21,43 @@
 		<button class="ui positive basic button" onclick="reserv()" id="market_id" name="market_id" value="${mb.market_id }">예약하기</button>
 	</form>
 	<table class="ui orange table">
-		<thead>
-		<tbody>
+		<tbody class="market_info">
 			<tr>
-				<td>매장 사진</td>
+				<th>매장 사진</th>
 				<td>${mb.photos }</td>
 			</tr>
 			<tr>
-				<td>매장 email</td>
+				<th>매장 email</th>
 				<td>${mb.email }</td>
 			</tr>
 			<tr>
-				<td>매장 이름</td>
+				<th>매장 이름</th>
 				<td>${mb.market_name }</td>
 			</tr>
 			<tr>
-				<td>매장 설명</td>
+				<th>매장 설명</th>
 				<td>${mb.description }</td>
 			</tr>
 			<tr>
-				<td>전문 지원 동물</td>
+				<th>전문 지원 동물</th>
 				<td><c:if test="${mb.pet_dog == 1}">개 </c:if> <c:if
 						test="${mb.pet_cat == 1}">고양이 </c:if> <c:if
 						test="${mb.pet_etc == 1}">기타 </c:if></td>
 			</tr>
 			<tr>
-				<td>매장 주소</td>
+				<th>매장 주소</th>
 				<td>${mb.address }</td>
 			</tr>
 			<tr>
-				<td>업종</td>
+				<th>업종</th>
 				<td><c:if test="${mb.cl_hospital == 1}">병원 </c:if> <c:if
 						test="${mb.cl_market == 1}">상점 </c:if> <c:if
 						test="${mb.cl_beauty == 1}">미용샵 </c:if> <c:if
-						test="${mb.cl_hotel == 1}">호텔 </c:if></td>
+						test="${mb.cl_hotel == 1}">호텔 </c:if>
+				</td>
 			</tr>
 			<tr>
-				<td>매장 서비스</td>
+				<th>매장 서비스</th>
 				<td><c:if test="${mb.ser_doctor == 1}">의사상담 </c:if> <c:if
 						test="${mb.ser_surgery == 1}">수술 </c:if> <c:if
 						test="${mb.ser_lodge == 1}">애완호텔(장기) </c:if> <c:if
@@ -74,16 +73,16 @@
 		<table class="ui orange table">
 			<thead>
 				<tr>
-					<td>댓글작성</td>
-					<td><textarea name="content" id="content"></textarea></td>
-					<td><button class="ui secondary basic button" onclick="insert_comment();" id="insert_btn">댓글 작성</button></td>
+					<th>댓글작성</th>
+					<td colspan="2"><textarea name="content" id="content" rows="3" cols="100"></textarea></td>
+					<td colspan="2"><button class="ui secondary basic button" onclick="insert_comment();" id="insert_btn">댓글 작성</button></td>
 				</tr>
 				<tr>
-					<td>작성자</td>
-					<td>내용</td>
-					<td>작성일</td>
-					<td>수정</td>
-					<td>삭제</td>
+					<th>작성자</th>
+					<th style="width:58%;">내용</th>
+					<th style="width:15%;">작성일</th>
+					<th style="width:6%;">수정</th>
+					<th style="width:6%;">삭제</th>
 				</tr>
 			</thead>
 			<tbody>

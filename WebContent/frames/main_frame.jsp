@@ -10,6 +10,7 @@
 <meta charset="UTF-8">
 <title><decorator:title /></title>
 <link rel="stylesheet" type="text/css" href="frames/main_frame.css" />
+<link rel="stylesheet" type="text/css" href="css/table.css" />
 <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>

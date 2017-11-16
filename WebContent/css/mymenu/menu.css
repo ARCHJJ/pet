@@ -1,7 +1,1 @@
 @charset "EUC-KR";
-
-/* table */
-table, th, td { border-style:solid; border-color:#000000; border-width:1px; height:400px; align:center; }
-table{ border-width:2px; width:90%;}
-th{ border-bottom-width:2px; height:25px;}
-td{ border-bottom-width:2px; height:25px; align:center; text-align:center; }
