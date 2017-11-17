@@ -22,31 +22,30 @@
 <body>
 <div class="container">
 	<form name="submit_form" method="post" action="Reserv_submit.do">
-		<table class="ui orange table">
-			<thead>
+		<table class="ui orange table" id="reserv_info">
 			<tbody>
 				<tr>
-					<td>매장이름</td>
+					<th class="reservinfo_a">매장이름</th>
 					<td>${mb.market_name }</td>
 				</tr>
 				<tr>
-					<td>매장 주소</td>
+					<th>매장 주소</th>
 					<td>${mb.address }</td>
 				</tr>
 				<tr>
-					<td>매장 email</td>
+					<th>매장 email</th>
 					<td>${mb.market_email }</td>
 				</tr>
 				<tr>
-					<td>예약 뭎룸/서비스</td>
+					<th>예약 물품/서비스</th>
 					<td>${mb.service_name }</td>
 				</tr>
 				<tr>
-					<td>가격</td>
+					<th>가격</th>
 					<td>${mb.price }</td>
 				</tr>
 				<tr>
-					<td>동물</td>
+					<th>동물</th>
 					<td>
 						<select id="pets" name="pets">
 							<option>개</option>
@@ -56,7 +55,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>예약희망시간</td>
+					<th>예약희망시간</th>
 					<td>
 					    <div class="row">
 					        <div class='col-sm-6'>
@@ -71,10 +70,6 @@
 					        </div>
 				    	</div>
 					</td>
-				</tr>
-				<tr>
-					<td>고객주소</td>
-					<td><input type="text" id="user_address" name="user_address" value="${ub.address1} ${ub.address2}"></td>
 				</tr>
 			</tbody>
 		</table>

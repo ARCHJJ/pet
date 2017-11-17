@@ -70,7 +70,7 @@
 		</tbody>
 	</table>
 	<form name="comment_form" method="post">
-		<table class="ui orange table">
+		<table class="ui orange table" id="marketsearch_info">
 			<thead>
 				<tr>
 					<th>댓글작성</th>
@@ -79,10 +79,10 @@
 				</tr>
 				<tr>
 					<th>작성자</th>
-					<th style="width:58%;">내용</th>
-					<th style="width:15%;">작성일</th>
-					<th style="width:6%;">수정</th>
-					<th style="width:6%;">삭제</th>
+					<th class="marketsearch_a">내용</th>
+					<th class="marketsearch_b">작성일</th>
+					<th class="marketsearch_c">수정</th>
+					<th class="marketsearch_c">삭제</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -97,7 +97,6 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		
 		<input type="hidden" name="market_id" value="${mb.market_id }">
 	</form>
 	

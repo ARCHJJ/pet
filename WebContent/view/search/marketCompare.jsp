@@ -16,12 +16,12 @@
 </head>
 <body>
 	<table class="ui orange table">
-		<tbody class="compare">
+		<tbody id="compare_market">
 			<tr>
-				<th style="width: 90pt;">매장 email</th>
-				<td style="width: 350pt;">${mb1.email }</td>
-				<td style="width: 350pt;">${mb2.email }</td>
-				<td style="width: 350pt;">${mb3.email }</td>
+				<th class="marketcompare_a">매장 email</th>
+				<td class="marketcompare_b">${mb1.email }</td>
+				<td class="marketcompare_b">${mb2.email }</td>
+				<td class="marketcompare_b">${mb3.email }</td>
 			</tr>
 			<tr>
 				<th>매장 이름</th>

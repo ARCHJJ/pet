@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>서비스/물품조회</title>
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css"
 	href="Semantic-UI-CSS-master/semantic.min.css">
@@ -22,20 +22,20 @@
 <body>
 	<!-- 매장에서 가능한 예약들을 보여줌  -->
 
-	<table class="ui orange table">
+	<table class="ui orange table" id="reserv_avalible">
 		<thead>
 			<tr>
-				<td>서비스/물품명</td>
-				<td>가격</td>
-				<td>설명</td>
-				<td>예약</td>
+				<th class="reservavalible_a">서비스/물품 명</th>
+				<th class="reservavalible_b">설명</th>
+				<th class="reservavalible_c">가격</th>
+				<th class="reservavalible_d">예약</th>
 			</tr>
 			<c:forEach items="${mblist}" var="item">
 				<tbody>
 					<tr>
 						<td>${item.name }</td>
-						<td>${item.price }</td>
 						<td>${item.description }</td>
+						<td>${item.price }</td>
 						<td><button class="ui positive basic button" onclick="reserv_page('${item.market_id}', '${item.name}')" id="reserv_page" name="reserv_page">예약하기</button></td>
 					</tr>
 			</c:forEach>
