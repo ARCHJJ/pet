@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+#container{display: inline;}
 /* 공통 */
 body{width:100%;}
 .body_wrapper{height:100%; width:100%; min-width:1478px;}
