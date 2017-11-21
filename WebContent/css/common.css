@@ -11,7 +11,7 @@
 *{margin:0;padding:0;  -webkit-text-size-adjust: none;  -moz-text-size-adjust: none;  -ms-text-size-adjust: none; }
 html, body {width:100%; /*height:100%;*/ margin:0; padding:0; font-family:'Nanum Gothic', Nanum Gothic, '나눔고딕', Dotum, '돋움', Gulim, '굴림',sans-serif;  -webkit-text-size-adjust: none;  -moz-text-size-adjust: none;  -ms-text-size-adjust: none; }
 html{overflow-y:scroll; -webkit-text-size-adjust: none;  -moz-text-size-adjust: none;  -ms-text-size-adjust: none; }
-body{font-size:12px;  word-break:break-all; background:#434C5B;}
+body{font-size:12px;  word-break:break-all; /* background:#434C5B; */}
 a, address, blockquote, br, fieldset, legend, label, form, input, select, textarea, button, table, th, td caption, cite, code, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, div, iframe, ul, ol, li, hr, img{margin:0; padding:0;}
 h1, h2, h3, h4, h5, h6 {font-size:12px; text-align:left;}
 ul, ol, li {list-style:none;}
