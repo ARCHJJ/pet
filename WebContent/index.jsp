@@ -977,19 +977,21 @@
 
 						<!--배경-->
 
-						<!-- <ul class="slideshow">
+						 <ul class="slideshow">
 
 							<li class="bg_1 active">&nbsp;<img style="display: none;"
 								alt="홈페이지메인배경화면" src="/upload//"></li>
 
 						</ul>
-						/배경
+						<!-- 배경 -->
 
-						모바일 로고
+						<!-- 모바일 로고 -->
+						<!-- 
 						<p class="m_logo">
 							<img src="/front/images/container/img_m.png"
 								alt="Lead the Standard Build the Trust 세계의료의 표준을 선도하는 국민의 병원">
-						</p> -->
+						</p> 
+						 -->
 						<!--/모바일 로고-->
 					</div>
 					<!--/메인 비주얼-->
@@ -1253,6 +1255,7 @@
 							<!--/Health4U-->
 
 							<!--주요기사-->
+							<!-- 
 							<li class="main_li_10" style="top: -1px; height: 239px;"><a
 								href="/intro/news/newsList.do">
 									<dl>
@@ -1260,6 +1263,7 @@
 										<dd>병원관련 주요기사</dd>
 									</dl>
 							</a></li>
+							 -->
 							<!--/주요기사-->
 						</ul>
 
