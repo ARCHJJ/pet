@@ -17,21 +17,21 @@
 
 </head>
 <body>
-	<table class="ui celled table">
+	<table class="ui celled table" id="write_view">
 		<thead class="full-width">
 			<tr>
-				<th>번호</th>
-				<th>게시판종류</th>
-				<th>날짜</th>
-				<th>제목</th>
-				<th>내용</th>
-				<th>비고</th>
+				<th class="writeview_a">번호</th>
+				<th class="writeview_b">게시판종류</th>
+				<th class="writeview_c">날짜</th>
+				<th class="writeview_d">제목</th>
+				<th class="writeview_e">내용</th>
+				<th class="writeview_f">비고</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${bblist}" var="item">
 				<tr>
-					<td>${item.idx }</td>
+					<td class="writeview_a_a">${item.idx }</td>
 					<td>
 						<c:choose>
 							<c:when test="${item.board_type == 1}">공지사항</c:when>

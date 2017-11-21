@@ -8,27 +8,25 @@
 <title>마켓 예약 현황</title>
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
-<link rel="stylesheet" type="text/css" href="css/admin/market.css">
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <script type="text/javascript" src="js/market_mymenu/reserv.js"></script>
+
 </head>
 <body>
-	<table class="ui compact celled definition table">
-		<thead class="full-width">
-			<tr>
-				<td>예약번호</td>
-				<td>고객 이메일</td>
-				<td>물품/서비스</td>
-				<td>동물</td>
-				<td>예약시간</td>
-				<td>접수시간</td>
-				<td>CCTV</td>
-				<td>비고</td>
-			</tr>
-		</thead>
+	<table class="ui celled table">
+		<tr>
+			<td>예약번호</td>
+			<td>고객 이메일</td>
+			<td>물품/서비스</td>
+			<td>동물</td>
+			<td>예약시간</td>
+			<td>접수시간</td>
+			<td>동물모니터링</td>
+			<td>비고</td>
+		</tr>
 		<tbody>
 			<c:forEach items="${rblist}" var="item">
 				<tr>

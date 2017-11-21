@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,7 +8,6 @@
 <title>예약정보 확인</title>
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
-<link rel="stylesheet" type="text/css" href="css/mymenu/menu.css" />
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -18,34 +16,34 @@
 
 </head>
 <body>
-	<table class="ui celled table">
+	<table class="ui celled table" id="reserv_view">
 			<tr>
-				<th>예약번호</th>
-				<th>매장명</th>
-				<th>서비스/물품</th>
-				<th>동물</th>
-				<th>예약시간</th>
-				<th>예약접수날짜</th>
-				<th>동물모니터링</th>
-				<th>비고</th>
+				<th class="reservview_a">예약번호</th>
+				<th class="reservview_b">매장명</th>
+				<th class="reservview_c">서비스/물품</th>
+				<th class="reservview_d">동물</th>
+				<th class="reservview_e">예약시간</th>
+				<th class="reservview_f">접수시간</th>
+				<th class="reservview_g">동물모니터링</th>
+				<th class="reservview_h">비고</th>
 			</tr>
 			<c:forEach items="${rblist}" var="item">
 				<tbody>
 					<tr>
-						<td>${item.rev_idx }</td>
+						<td class="tr_center">${item.rev_idx }</td>
 						<td>${item.market_name }</td>
 						<td>${item.item_name }</td>
 						<td>${item.reservation_pets }</td>
-						<td>${item.timeofrev }</td>
-						<td>${item.date }</td>
-						<td>
+						<td class="tr_center">${item.timeofrev }</td>
+						<td class="tr_center">${item.date }</td>
+						<td class="tr_center">
 							<c:if test="${item.cctvid != 0}">
 								<form name="cctv_view">
 									<input type="button" name="cctvView" value="동물 상태확인" onClick="location.href='User_Menu_Monitor_View.do'">
 								</form>
 							</c:if>
 						</td>
-						<td><button class="ui violet basic button" onClick="updateReserv('${item.rev_idx}', '${item.member_email }', '${item.market_name }', '${item.item_name }', '${item.reservation_pets }', '${item.timeofrev }', '${item.date }', '${item.cctvid }')">예약수정</button>
+						<td class="reservview_h_a"><button class="ui violet basic button" onClick="updateReserv('${item.rev_idx}', '${item.member_email }', '${item.market_name }', '${item.item_name }', '${item.reservation_pets }', '${item.timeofrev }', '${item.date }', '${item.cctvid }')">예약수정</button>
 							<br>
 							<button class="ui red basic button" onClick="delReserv(${item.rev_idx });">예약취소</button>
 						</td>

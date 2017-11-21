@@ -80,3 +80,23 @@ th {
 #message_view .messageview_b{ width: 65%;}
 #message_view .messageview_c{ width: 10%;}
 #message_view .messageview_d{ width: 10%;}
+
+/* user_menu_write_view */
+#write_view .writeview_a{ width: 7%;}
+#write_view .writeview_a_a{ text-align:center;}
+#write_view .writeview_b{ width: 10%;}
+#write_view .writeview_c{ width: 10%;}
+#write_view .writeview_d{ width: 20%;}
+#write_view .writeview_e{ width: 43%;}
+#write_view .writeview_f{ width: 10%;}
+
+/* user_menu_reserv_view */
+#reserv_view .tr_center{ text-align:center;}
+#reserv_view .reservview_a{ width: 7%;}
+#reserv_view .reservview_b{ width: 25%;}
+#reserv_view .reservview_c{ width: 10%;}
+#reserv_view .reservview_d{ width: 5%;}
+#reserv_view .reservview_e{ width: 10%;}
+#reserv_view .reservview_f{ width: 10%;}
+#reserv_view .reservview_g{ width: 5%;}
+#reserv_view .reservview_h{ width: 10%;}
