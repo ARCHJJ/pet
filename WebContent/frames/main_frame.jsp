@@ -31,9 +31,10 @@
 				</div> -->
 
 				<div class="ui menu" id="main_menu">
+					<div class="header item"><img src="./img/pet_room_logo.png" id="logo"></div>
 					<div class="header item">펫방</div>
 					
-					<a class="active item" href="search.do">검색</a> 
+					<a class="active item" href="search.do">검색 바로가기</a> 
 					<!-- <a class="item">Link</a> -->
 					
 					<div class="ui dropdown item" tabindex="0">	커뮤니티 <i class="dropdown icon"></i>
