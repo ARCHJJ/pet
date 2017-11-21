@@ -31,61 +31,91 @@
 				</div> -->
 
 				<div class="ui menu" id="main_menu">
-					<div class="header item">Brand</div>
-					<a class="active item">Link</a> <a class="item">Link</a>
-					<div class="ui dropdown item" tabindex="0">
-						Dropdown <i class="dropdown icon"></i>
+					<div class="header item">펫방</div>
+					
+					<a class="active item" href="search.do">검색</a> 
+					<!-- <a class="item">Link</a> -->
+					
+					<div class="ui dropdown item" tabindex="0">	커뮤니티 <i class="dropdown icon"></i>
 						<div class="menu" tabindex="-1">
-							<div class="item">Action</div>
-							<div class="item">Another Action</div>
-							<div class="item">Something else here</div>
+							<div class="item"><a href="board_notice.do">공지사항</a></div>
+							<div class="item"><a href="board_customer_service.do">고객센터</a></div>
 							<div class="divider"></div>
-							<div class="item">Separated Link</div>
-							<div class="divider"></div>
-							<div class="item">One more separated link</div>
+							<div class="item"><a href="board_kin.do">지식인</a></div>
+							<div class="item"><a href="board_freeboard.do">자유게시판</a></div>
 						</div>
 					</div>
-					<div class="right menu">
-						<div class="item">
-							<div class="ui action left icon input">
-								<i class="search icon"></i> <input type="text"
-									placeholder="Search">
-								<button class="ui button">Submit</button>
+					
+					<c:if test="${session.power eq 100}">
+						<div class="ui dropdown item" tabindex="0">	Dropdown <i class="dropdown icon"></i>
+							<div class="menu" tabindex="-1">
+								<div class="item"><a href="User_Menu_Reserv.do">예약정보</a></div>
+								<div class="item"><a href="User_Menu_Write.do">게시글관리</a></div>
+								<div class="item"><a href="User_Menu_Message.do">메시지확인</a></div>
+								<div class="divider"></div>
+								<div class="item"><a href="User_Menu_Person.do">개인정보</a></div>
 							</div>
 						</div>
-						<a class="item">Link</a>
+					</c:if>
+					
+					<c:if test="${session.power eq 200}">
+						<div class="ui dropdown item" tabindex="0">	Dropdown <i class="dropdown icon"></i>
+							<div class="menu" tabindex="-1">
+								<div class="item"><a href="mymenu_shop_item.do">물품관리</a></div>
+								<div class="item"><a href="mymenu_shop_reserv.do">예약현황관리</a></div>
+								<div class="item"><a href="mymenu_shop_info.do">매장정보수정</a></div>
+								<div class="divider"></div>
+								<div class="item"><a href="User_Menu_Message.do">메시지확인</a></div>
+							</div>
+						</div>
+					</c:if>
+					
+					<c:if test="${session.power eq 300}">
+						<div class="ui dropdown item" tabindex="0">	Dropdown <i class="dropdown icon"></i>
+							<div class="menu" tabindex="-1">
+								<div class="item"><a href="marketmanage.do">매장관리</a></div>
+								<div class="item"><a href="membermanage.do">회원관리</a></div>
+								<div class="item"><a href="reservemanage.do">예약현황관리</a></div>
+								<div class="divider"></div>
+								<div class="item"><a href="board_notice.do">공지사항관리</a></div>
+								<div class="item"><a href="board_customer_service.do">고객센터관리</a></div>
+							</div>
+						</div>
+					</c:if>
+					
+					<div class="right menu">
+						<div class="item">
+							<!-- <div class="ui action left icon input">
+								<i class="search icon"></i> <input type="text" placeholder="Search">
+								<button class="ui button">Submit</button>
+							</div> -->
+							
+							<div id="login_info">
+								<c:choose>
+									<c:when test="${session ne null }">
+										<span>${session.name}님</span>
+										<span> <a onclick="javascript:Logout()">[로그아웃]</a>
+										</span>
+									</c:when>
+									<c:when test="${session eq null}">
+										<div id="button">
+											<button class="ui primary basic button" id="login">로그인
+											</button>
+											<button class="ui positive basic button" id="signup">
+												회원가입</button>
+										</div>
+									</c:when>
+								</c:choose>
+							</div>
+							
+						</div>
+						<!-- <a class="item">Link</a> -->
 					</div>
+					
 				</div>
 
 
-				<!-- <div class="ui menu">
-					<div class="header item">Brand</div>
-					<a class="active item">Link</a> <a class="item">Link</a>
-					<div class="ui dropdown item" tabindex="0">
-						Dropdown <i class="dropdown icon"></i>
-						<div class="menu transition hidden" tabindex="-1">
-							<div class="item">Action</div>
-							<div class="item">Another Action</div>
-							<div class="item">Something else here</div>
-							<div class="divider"></div>
-							<div class="item">Separated Link</div>
-							<div class="divider"></div>
-							<div class="item">One more separated link</div>
-						</div>
-					</div>
-					<div class="right menu">
-						<div class="item">
-							<div class="ui action left icon input">
-								<i class="search icon"></i> <input type="text"
-									placeholder="Search">
-								<button class="ui button">Submit</button>
-							</div>
-						</div>
-						<a class="item">Link</a>
-					</div>
-				</div> -->
 
-				<!--  -->
 				<%-- <div id="menu">
 					<ul id="nav">
 						<li><a href="search.do">검색</a></li>
@@ -130,28 +160,6 @@
 								</ul></li>
 						</c:if>
 					</ul>
-				</div> --%>
-
-				<%-- <div id="login_info">
-					<span class="auth"> <c:choose>
-							<c:when test="${session.power eq 300}">[관리자]</c:when>
-						</c:choose>
-					</span>
-					<c:choose>
-						<c:when test="${session ne null }">
-							<span>${session.name}님</span>
-							<span> <a onclick="javascript:Logout()">[로그아웃]</a>
-							</span>
-						</c:when>
-						<c:when test="${session eq null}">
-							<div id="button">
-								<button class="ui primary basic button" id="login">로그인
-								</button>
-								<button class="ui positive basic button" id="signup">
-									회원가입</button>
-							</div>
-						</c:when>
-					</c:choose>
 				</div> --%>
 
 			</div>
