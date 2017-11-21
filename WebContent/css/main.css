@@ -119,7 +119,7 @@ body{width:100%;}
 .header_wrapper .header_section .header_search_section .top_search_form .btn_search{border:1px solid #2d58b5; background:#2d58b5; padding:0; height:39px; text-align:center; font-size:16px; font-weight:600; color:#fff; position:absolute; top:0; right:0; display:block; width:87px; cursor:pointer;}
 
 /* 메인 비주얼 영역 */
-.main_v_section{position:relative; width:100%; text-align:center; height:661px; z-index:1;}
+.main_v_section{position:relative; width:100%; text-align:center; height:400px; z-index:1;}
 .slideshow {width:100%;position:relative;height:661px;text-align:center;}
 .slideshow li {position:absolute;top:0;left:0%; z-index:8; opacity:0.0; width:100%; height:661px;}
 .slideshow li.active {z-index:10; opacity:1.0;}
