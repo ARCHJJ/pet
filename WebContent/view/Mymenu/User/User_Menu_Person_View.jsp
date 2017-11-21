@@ -14,28 +14,25 @@
 </head>
 <body>
 	<table class="ui orange table">
-		<thead>
+		<tbody class="market_info">
 			<tr>
-			</tr>
-		<tbody>
-			<tr>
-				<td>id</td>
+				<th>ID (e-mail)</th>
 				<td>${ub.email }</td>
 			</tr>
 			<tr>
-				<td>이름</td>
+				<th>이름</th>
 				<td>${ub.name }</td>
 			</tr>
 			<tr>
-				<td>주소</td>
+				<th>주소</th>
 				<td>${ub.address1 }&nbsp${ub.address2}</td>
 			</tr>
 			<tr>
-				<td>전화번호</td>
+				<th>전화번호</th>
 				<td>${ub.phone }</td>
 			</tr>
 			<tr>
-				<td>성별</td>
+				<th>성별</th>
 				<td>${ub.gender }</td>
 			</tr>
 		</tbody>

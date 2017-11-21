@@ -1,8 +1,30 @@
 @charset "UTF-8";
 
 /* table */
-table, th, td { border-style:solid; border-color:#333333; border-width:1px; height:auto; align:center; }
+body{
+background: url("img/mainback.jpg") no-repeat;
+}
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+th {
+    height: 50px;
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+#addpro{
+margin: 10px 0 10px 0;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
 
+/* 위에 주석으로 사용된 jsp페이지 표시 */
 
 /* search_main */
 #search_menu th{ text-align:center; height:auto;}
@@ -19,10 +41,12 @@ table, th, td { border-style:solid; border-color:#333333; border-width:1px; heig
 .ui .content tr{ height:auto;}
 #item_search .itemsearch_a{ width:15%; height:auto;}
 #item_search .itemsearch_b{ width:7%; height:auto;}
-#item_search .itemsearch_c{ width:20%; height:auto;}
-#item_search .itemsearch_d{ width:48%; height:auto;}
+#item_search .itemsearch_c{ width:55%; height:auto;}
+#item_search .itemsearch_d{ width:13%; height:auto;}
 #item_search .itemsearch_e{ width:10%; height:auto;}
 
+/* user_menu_person_view */
+/* board_detail_view */
 /* marketInfoView */
 #marketsearch_info .marketsearch_a{ width:58%; }
 #marketsearch_info .marketsearch_b{ width:15%; }
@@ -44,4 +68,15 @@ table, th, td { border-style:solid; border-color:#333333; border-width:1px; heig
 /* reserv_select */
 #reserv_info th{ text-align:center; width:20%; vertical-align: middle;}
 
+/* board_view */
+#board_table th{ text-align: center;}
+#board_table .boardtable_a{ width: 7%;}
+#board_table .boardtable_b{ width: 50%;}
+#board_table .boardtable_c{ width: 20%;}
+#board_table .boardtable_d{ width: 16%;}
 
+/* user_menu_message_view */
+#message_view .messageview_a{ width: 15%;}
+#message_view .messageview_b{ width: 65%;}
+#message_view .messageview_c{ width: 10%;}
+#message_view .messageview_d{ width: 10%;}

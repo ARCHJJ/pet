@@ -2,15 +2,28 @@
 
 #form1, #form2, #form3 {
 	border-collapse: collapse; 
-	width: 70%;
 	margin: auto;
+	margin-bottom: 20px;
 }
 
-#form3 {
+#form1 .form1_a {
+	text-align: center;
+}
+
+#form1 {
+	border-collapse: collapse;
+	width: 70%;
+}
+
+#form1 th{    
+	background-color: lightgreen;
+    color: black;
+    width: 10%;
+}
+
+#marketsearch_info {
 	margin-top: 40px;
 	margin-bottom: 20px;
 }
 
-#form2 th {
-	text-align: center;
-}
+	

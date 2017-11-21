@@ -7,39 +7,39 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>작성한 글</title>
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-<link rel="stylesheet" type="text/css"
-	href="Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
 <link rel="stylesheet" type="text/css" href="css/mymenu/menu.css" />
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript"
-	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <script type="text/javascript" src="js/mymenu/write.js"></script>
 
 </head>
 <body>
-	<table class="ui orange table">
-		<thead>
+	<table class="ui celled table">
+		<thead class="full-width">
 			<tr>
-				<td>번호</td>
-				<td>게시판종류</td>
-				<td>날짜</td>
-				<td>제목</td>
-				<td>내용</td>
-				<td>비고</td>
+				<th>번호</th>
+				<th>게시판종류</th>
+				<th>날짜</th>
+				<th>제목</th>
+				<th>내용</th>
+				<th>비고</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${bblist}" var="item">
 				<tr>
 					<td>${item.idx }</td>
-					<td><c:choose>
+					<td>
+						<c:choose>
 							<c:when test="${item.board_type == 1}">공지사항</c:when>
 							<c:when test="${item.board_type == 2}">고객센터</c:when>
 							<c:when test="${item.board_type == 3}">지식인</c:when>
 							<c:when test="${item.board_type == 4}">자유게시판</c:when>
-						</c:choose></td>
+						</c:choose>
+					</td>
 					<td>${item.date }</td>
 					<td>${item.title }</td>
 					<td>${item.content }</td>
@@ -59,8 +59,8 @@
 		        <a class="icon item" onclick="boardSearch('${pageInfo.nextPage}')">
 		          <i class="right chevron icon"></i>
 		        </a>
-		      </div>
-	      </th></tr>
+				</div>
+			</th></tr>
 		</tfoot>
 	</table>
 </body>

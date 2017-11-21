@@ -11,8 +11,7 @@
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript"
-	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="js/board/board.js"></script>
 </head>
@@ -20,19 +19,19 @@
 	<form name="write_form" method=post action="board_write.do">
 		<input type="hidden" name="board_type" id="board_type" value="${board_type }">
 		<table class="ui celled table" id="form1">
-			<tr style="text-align: center;">
-				<td colspan="2">글쓰기</td>
+			<tr class="form1_a">
+				<th colspan="2">글쓰기</th>
 			</tr>
 			<tr>
-				<td>제목</td>
+				<th>제목</th>
 				<td><input type="text" name="title" id="title" size="100" maxlength="100"></td>
 			</tr>
 			<tr>
-				<td>작성자</td>
+				<th>작성자</th>
 				<td><input type="text" name="email" id="email" readonly="readonly" size="100" maxlength="50" value="${email }"></td>
 			</tr>
 			<tr>
-				<td>내용</td>
+				<th>내용</th>
 				<td><textarea name="content" id="content" cols="60" rows="10"></textarea></td>
 			</tr>
 		</table>

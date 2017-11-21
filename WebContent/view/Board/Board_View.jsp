@@ -19,13 +19,13 @@
 
 </head>
 <body>
-	<table class="ui celled table">
+	<table class="ui celled table" id="board_table">
 		<thead><tr>
-			<th style="text-align: center;width: 70pt;">글번호</th>
-			<th style="text-align: center;width: 500pt;">제목</th>
-			<th style="text-align: center;width: 200pt;">작성자</th>
-			<th style="text-align: center;width: 150pt;">작성일</th>
-			<th style="text-align: center;width: 70pt;">조회수</th>
+			<th class="boardtable_a">글번호</th>
+			<th class="boardtable_b">제목</th>
+			<th class="boardtable_c">작성자</th>
+			<th class="boardtable_d">작성일</th>
+			<th class="boardtable_a">조회수</th>
 		</tr></thead>
 		<tbody>
 			<c:forEach items="${bblist }" var="board">

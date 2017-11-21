@@ -21,9 +21,6 @@
 </head>
 <body>
 	<table class="ui orange table">
-		<thead>
-			<tr>
-			</tr>
 		<tbody>
 			<tr>
 				<td>매장번호</td>

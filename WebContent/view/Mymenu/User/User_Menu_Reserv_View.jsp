@@ -13,23 +13,21 @@
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript"
-	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <script type="text/javascript" src="js/mymenu/reserv.js"></script>
 
 </head>
 <body>
-	<table class="ui compact celled definition table">
-		<thead class="full-width">
+	<table class="ui celled table">
 			<tr>
-				<td>예약번호</td>
-				<td>매장명</td>
-				<td>서비스/물품</td>
-				<td>동물</td>
-				<td>예약시간</td>
-				<td>예약접수날짜</td>
-				<td>CCTV</td>
-				<td>비고</td>
+				<th>예약번호</th>
+				<th>매장명</th>
+				<th>서비스/물품</th>
+				<th>동물</th>
+				<th>예약시간</th>
+				<th>예약접수날짜</th>
+				<th>동물모니터링</th>
+				<th>비고</th>
 			</tr>
 			<c:forEach items="${rblist}" var="item">
 				<tbody>
@@ -43,7 +41,7 @@
 						<td>
 							<c:if test="${item.cctvid != 0}">
 								<form name="cctv_view">
-									<input type="button" name="cctvView" value="CCTV 확인" onClick="location.href='User_Menu_Monitor_View.do'">
+									<input type="button" name="cctvView" value="동물 상태확인" onClick="location.href='User_Menu_Monitor_View.do'">
 								</form>
 							</c:if>
 						</td>

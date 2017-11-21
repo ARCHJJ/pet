@@ -23,7 +23,7 @@
 			</tr>
 		</table>
 		<input type="hidden" name="board_type" id="board_type" value="${board_type }">
-		<table class="ui celled table" id="form2">
+		<table class="ui celled table" id="form1">
 			<tr>
 				<th>제목</th>
 				<td>${bb.title }</td>
@@ -47,23 +47,23 @@
 		</table>
 	</form>
 	<form name="comment_form" method="post">
-		<table class="ui orange table" id="form3">
+		<table class="ui orange table" id="marketsearch_info">
 			<thead>
 				<tr>
-					<td>댓글작성</td>
-					<td><textarea name="content" id="content"></textarea></td>
-					<td><button class="ui secondary basic button" onclick="insert_comment();" id="insert_btn">댓글 작성</button></td>
+					<th>댓글작성</th>
+					<td colspan="2"><textarea name="content" id="content" rows="3" cols="100"></textarea></td>
+					<td colspan="2"><button class="ui secondary basic button" onclick="insert_comment();" id="insert_btn">댓글 작성</button></td>
 				</tr>
 				<tr>
-					<td>작성자</td>
-					<td>내용</td>
-					<td>작성일</td>
-					<td>수정</td>
-					<td>삭제</td>
+					<th>작성자</th>
+					<th class="marketsearch_a">내용</th>
+					<th class="marketsearch_b">작성일</th>
+					<th class="marketsearch_c">수정</th>
+					<th class="marketsearch_c">삭제</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${bblist}" var="item">
+				<c:forEach items="${mflist}" var="item">
 					<tr>
 						<td>${item.email }</td>
 						<td>${item.content }</td>

@@ -9,11 +9,11 @@
 	<typeAlias alias="Date" type="java.util.Date" />
 	<typeAlias alias="MessageBean" type="com.model.mymenu.user.MessageBean" />
 
-	<select id="getMessageList" parameterClass="String" resultClass="MessageBean">
+	<select id="getMessageList" parameterClass="HashMap" resultClass="MessageBean">
 		SELECT * FROM message
 		WHERE
 			receiver_email = #userid#
-		ORDER BY date desc
+				ORDER BY date DESC limit #startrow#, #get_record#
 	</select>
 	
 	<insert id="sendMessage" parameterClass="HashMap">

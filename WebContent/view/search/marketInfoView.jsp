@@ -24,7 +24,11 @@
 		<tbody class="market_info">
 			<tr>
 				<th>매장 사진</th>
-				<td>${mb.photos }</td>
+				<td>
+					<c:forTokens items="${mb.photos }" delims="," var="name">
+						<img src="upload/${name }" width="200" height="200">
+					</c:forTokens>
+				</td>
 			</tr>
 			<tr>
 				<th>매장 email</th>

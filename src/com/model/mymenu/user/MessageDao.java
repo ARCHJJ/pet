@@ -10,10 +10,14 @@ public class MessageDao extends DaoCore{
 	private static MessageDao instance = new MessageDao();
 	public static MessageDao getInstance(){return instance;}
 	
-	public ArrayList<MessageBean> getMessageList(String userid) {
+	public ArrayList<MessageBean> getMessageList(String userid, int page) {
 		ArrayList<MessageBean> mblist = new ArrayList<MessageBean>();
 		try{
-			mblist = (ArrayList<MessageBean>) getSqlMapClient().queryForList("MessageDao.getMessageList", userid);
+			HashMap<String, Object> param = new HashMap<String, Object>();
+			param.put("userid", userid);
+			param.put("startrow", (page-1)*5);
+			param.put("get_record", 5);
+			mblist = (ArrayList<MessageBean>) getSqlMapClient().queryForList("MessageDao.getMessageList", param);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -46,5 +50,15 @@ public class MessageDao extends DaoCore{
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+	}
+
+	public int getBoardCount(String userid) {
+		int count = -1;
+		try{
+			count = (int) getSqlMapClient().queryForObject("MessageDao.getBoardCount", userid);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return count;
 	}
 }
