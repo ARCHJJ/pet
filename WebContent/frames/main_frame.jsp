@@ -11,12 +11,14 @@
 <title><decorator:title /></title>
 <link rel="stylesheet" type="text/css" href="frames/main_frame.css" />
 <link rel="stylesheet" type="text/css" href="css/table.css" />
-<link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css"
+	href="Semantic-UI-CSS-master/semantic.min.css">
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="frames/main_frame.js"></script>
 <!-- <script type="text/javascript" src="js/common.js"></script> -->
-<script type="text/javascript"	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script type="text/javascript"
+	src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <decorator:head />
 </head>
@@ -24,22 +26,78 @@
 	<div id="wrapper">
 		<div id="top">
 			<div id="header">
-				<div class="logo">
-					<a href="main.do" id="logo"><img src="../img/pet_room_logo.png"></a>
+				<!-- <div class="logo">
+					<a href="main.do" id="logo"><img src="./img/pet_room_logo.png"></a>
+				</div> -->
+
+				<div class="ui menu" id="main_menu">
+					<div class="header item">Brand</div>
+					<a class="active item">Link</a> <a class="item">Link</a>
+					<div class="ui dropdown item" tabindex="0">
+						Dropdown <i class="dropdown icon"></i>
+						<div class="menu" tabindex="-1">
+							<div class="item">Action</div>
+							<div class="item">Another Action</div>
+							<div class="item">Something else here</div>
+							<div class="divider"></div>
+							<div class="item">Separated Link</div>
+							<div class="divider"></div>
+							<div class="item">One more separated link</div>
+						</div>
+					</div>
+					<div class="right menu">
+						<div class="item">
+							<div class="ui action left icon input">
+								<i class="search icon"></i> <input type="text"
+									placeholder="Search">
+								<button class="ui button">Submit</button>
+							</div>
+						</div>
+						<a class="item">Link</a>
+					</div>
 				</div>
-				<div id="menu">
+
+
+				<!-- <div class="ui menu">
+					<div class="header item">Brand</div>
+					<a class="active item">Link</a> <a class="item">Link</a>
+					<div class="ui dropdown item" tabindex="0">
+						Dropdown <i class="dropdown icon"></i>
+						<div class="menu transition hidden" tabindex="-1">
+							<div class="item">Action</div>
+							<div class="item">Another Action</div>
+							<div class="item">Something else here</div>
+							<div class="divider"></div>
+							<div class="item">Separated Link</div>
+							<div class="divider"></div>
+							<div class="item">One more separated link</div>
+						</div>
+					</div>
+					<div class="right menu">
+						<div class="item">
+							<div class="ui action left icon input">
+								<i class="search icon"></i> <input type="text"
+									placeholder="Search">
+								<button class="ui button">Submit</button>
+							</div>
+						</div>
+						<a class="item">Link</a>
+					</div>
+				</div> -->
+
+				<!--  -->
+				<%-- <div id="menu">
 					<ul id="nav">
 						<li><a href="search.do">검색</a></li>
-						
+
 						<li><a href="#">커뮤니티</a>
 							<ul>
 								<li><a href="board_notice.do">공지사항</a></li>
 								<li><a href="board_customer_service.do">고객센터</a></li>
 								<li><a href="board_kin.do">지식인</a></li>
 								<li><a href="board_freeboard.do">자유게시판</a></li>
-							</ul>
-						</li>
-							
+							</ul></li>
+
 						<c:if test="${session.power eq 100}">
 							<li><a href="#">마이 메뉴</a>
 								<ul>
@@ -47,10 +105,9 @@
 									<li><a href="User_Menu_Write.do">게시글관리</a></li>
 									<li><a href="User_Menu_Message.do">메시지확인</a></li>
 									<li><a href="User_Menu_Person.do">개인정보</a></li>
-								</ul>
-							</li>
+								</ul></li>
 						</c:if>
-						
+
 						<c:if test="${session.power eq 200}">
 							<li><a href="#">매장 관리</a>
 								<ul>
@@ -58,10 +115,9 @@
 									<li><a href="mymenu_shop_reserv.do">예약현황관리</a></li>
 									<li><a href="User_Menu_Message.do">메시지확인</a></li>
 									<li><a href="mymenu_shop_info.do">매장정보수정</a></li>
-								</ul>
-							</li>
+								</ul></li>
 						</c:if>
-						
+
 						<!-- 관리자메뉴 -->
 						<c:if test="${session.power eq 300}">
 							<li><a href="#">시스템 관리</a>
@@ -71,14 +127,12 @@
 									<li><a href="reservemanage.do">예약현황관리</a></li>
 									<li><a href="board_notice.do">공지사항관리</a></li>
 									<li><a href="board_customer_service.do">고객센터관리</a></li>
-								</ul>
-							</li>
+								</ul></li>
 						</c:if>
-						
 					</ul>
-				</div>
+				</div> --%>
 
-				<div id="login_info">
+				<%-- <div id="login_info">
 					<span class="auth"> <c:choose>
 							<c:when test="${session.power eq 300}">[관리자]</c:when>
 						</c:choose>
@@ -98,7 +152,8 @@
 							</div>
 						</c:when>
 					</c:choose>
-				</div>
+				</div> --%>
+
 			</div>
 		</div>
 		<div id="middle">
@@ -123,20 +178,22 @@
 				<div class="ui fluid input">
 					<form name="login_form" method="post" action="login.do">
 						아이디(이메일) : <input type="text" name="userid" /> <br> <br>
-						비밀번호 : <input type="password" name="password" onkeyup="enterSubmit(event)"/> <br> <br>
+						비밀번호 : <input type="password" name="password"
+							onkeyup="enterSubmit(event)" /> <br> <br>
 					</form>
 				</div>
 			</div>
 		</div>
 		<div class="actions">
 			<div class="ui black deny button">취소</div>
-			<div class="ui positive right labeled icon button" onclick="loginCheck();" >
+			<div class="ui positive right labeled icon button"
+				onclick="loginCheck();">
 				로그인 <i class="checkmark icon"></i>
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 	<div class="ui modal second">
 		<i class="close icon"></i>
 		<div class="header">회원가입 폼</div>
@@ -164,13 +221,15 @@
 							</tr>
 							<tr>
 								<td>우편번호</td>
-								<td><input type="text" name="address1"  id="sample4_postcode" placeholder="우편번호" maxlength="20"/>
-									<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-								</td>
+								<td><input type="text" name="address1"
+									id="sample4_postcode" placeholder="우편번호" maxlength="20" /> <input
+									type="button" onclick="sample4_execDaumPostcode()"
+									value="우편번호 찾기"><br></td>
 							</tr>
 							<tr>
 								<td>주소</td>
-								<td><input type="text" name="address2" id="sample4_roadAddress" placeholder="도로명주소" maxlength="20" /></td>
+								<td><input type="text" name="address2"
+									id="sample4_roadAddress" placeholder="도로명주소" maxlength="20" /></td>
 							</tr>
 							<tr>
 								<td>핸드폰</td>
@@ -191,7 +250,8 @@
 		</div>
 		<div class="actions">
 			<div class="ui black deny button">취소</div>
-			<div class="ui positive right labeled icon button" onclick="registerCheck();">
+			<div class="ui positive right labeled icon button"
+				onclick="registerCheck();">
 				가입 <i class="checkmark icon"></i>
 			</div>
 		</div>
