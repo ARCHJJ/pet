@@ -7,6 +7,13 @@
 <title></title>
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/main.css" />
+<javascript>
+$(document).ready(function(){
+	$(#container).css().display('inline');
+
+	});
+});
+</javascript>
 </head>
 <body>
 	<div class="body_wrapper" style="position: static;">
