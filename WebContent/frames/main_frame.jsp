@@ -32,15 +32,15 @@
 
 				<div class="ui menu" id="main_menu">
 					<div class="header item">
-						<img src="./img/pet_room_logo.png" id="logo">
+						<a href="main.do" ><img src="./img/pet_room_logo.png" id="logo"></a>
 					</div>
-					<div class="header item">펫방</div>
+					<div class="header item"><a href="main.do" >메인 화면</a></div>
 
 					<a class="active item" href="search.do">검색 바로가기</a>
 					<!-- <a class="item">Link</a> -->
 
 					<div class="ui dropdown item" tabindex="0">
-						커뮤니티 <i class="dropdown icon"></i>
+						커뮤니티 바로가기<i class="dropdown icon"></i>
 						<div class="menu" tabindex="-1">
 							<div class="item">
 								<a href="board_notice.do">공지사항</a>
@@ -60,7 +60,7 @@
 
 					<c:if test="${session.power eq 100}">
 						<div class="ui dropdown item" tabindex="0">
-							Dropdown <i class="dropdown icon"></i>
+							마이메뉴 바로가기 <i class="dropdown icon"></i>
 							<div class="menu" tabindex="-1">
 								<div class="item">
 									<a href="User_Menu_Reserv.do">예약정보</a>
@@ -81,7 +81,7 @@
 
 					<c:if test="${session.power eq 200}">
 						<div class="ui dropdown item" tabindex="0">
-							Dropdown <i class="dropdown icon"></i>
+							매장 관리자 메뉴 바로가기 <i class="dropdown icon"></i>
 							<div class="menu" tabindex="-1">
 								<div class="item">
 									<a href="mymenu_shop_item.do">물품관리</a>
@@ -102,7 +102,7 @@
 
 					<c:if test="${session.power eq 300}">
 						<div class="ui dropdown item" tabindex="0">
-							Dropdown <i class="dropdown icon"></i>
+							시스템 관리자 메뉴 바로가기 <i class="dropdown icon"></i>
 							<div class="menu" tabindex="-1">
 								<div class="item">
 									<a href="marketmanage.do">매장관리</a>
