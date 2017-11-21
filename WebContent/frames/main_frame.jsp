@@ -25,7 +25,7 @@
 		<div id="top">
 			<div id="header">
 				<div class="logo">
-					<a href="main.do">메인</a>
+					<a href="main.do" id="logo"><img src="../img/pet_room_logo.png"></a>
 				</div>
 				<div id="menu">
 					<ul id="nav">
