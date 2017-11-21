@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -40,19 +39,21 @@
 			</c:forEach>
 		</tbody>
 		<tfoot>
-			<tr><th colspan="4">
-				<div class="ui right floated pagination menu">
-		        <a class="icon item" onclick="boardSearch('${pageInfo.prevPage}')">
-		          <i class="left chevron icon"></i>
-		        </a>
-		        <c:forEach begin="${pageInfo.firstPage}" end="${pageInfo.endPage}" var="pages">
-		        	<a class="item" onclick="boardSearch('${pages}')">${pages}</a>
-		        </c:forEach>
-		        <a class="icon item" onclick="boardSearch('${pageInfo.nextPage}')">
-		          <i class="right chevron icon"></i>
-		        </a>
-		      	</div>
-	      </th></tr>
+			<tr>
+				<th colspan="4">
+					<div class="ui right floated pagination menu">
+				        <a class="icon item" onclick="boardSearch('${pageInfo.prevPage}')">
+							<i class="left chevron icon"></i>
+				        </a>
+				        <c:forEach begin="${pageInfo.firstPage}" end="${pageInfo.endPage}" var="pages">
+							<a class="item" onclick="boardSearch('${pages}')">${pages}</a>
+				        </c:forEach>
+				        <a class="icon item" onclick="boardSearch('${pageInfo.nextPage}')">
+							<i class="right chevron icon"></i>
+				        </a>
+			      	</div>
+	      		</th>
+	      	</tr>
 		</tfoot>
 	</table>
 	<button class="ui violet basic button" type="button" onclick="sendMessage('${ub.email}');">메시지 작성</button>

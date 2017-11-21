@@ -41,9 +41,9 @@ th {
 .ui .content tr{ height:auto;}
 #item_search .itemsearch_a{ width:15%; height:auto;}
 #item_search .itemsearch_b{ width:7%; height:auto;}
-#item_search .itemsearch_c{ width:55%; height:auto;}
+#item_search .itemsearch_c{ width:15%; height:auto;}
 #item_search .itemsearch_d{ width:13%; height:auto;}
-#item_search .itemsearch_e{ width:10%; height:auto;}
+#item_search .itemsearch_e{ width:50%; height:auto;}
 
 /* user_menu_person_view */
 /* board_detail_view */

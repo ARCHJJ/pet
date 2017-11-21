@@ -31,8 +31,8 @@ public class User_Menu_Message_View extends CommonAction{
 		
 		PageInfo pageInfo = new PageInfo(count, page);
 		
-		ArrayList<MessageBean> mblist = new ArrayList<MessageBean>();
 		UserBean ub = UserDao.getInstance().getUserInfo(userid);
+		ArrayList<MessageBean> mblist = new ArrayList<MessageBean>();
 		mblist = MessageDao.getInstance().getMessageList(userid, page);
 
 		request.setAttribute("pageInfo", pageInfo);

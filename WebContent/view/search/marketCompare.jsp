@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,9 +37,39 @@
 			</tr>
 			<tr>
 				<th>매장 사진</th>
-				<td>${mb1.photos }</td>
-				<td>${mb2.photos }</td>
-				<td>${mb3.photos }</td>
+				<td>
+						<c:set var="array" value="${fn:split(mb1.photos,',')}" />
+						<c:forEach items="${array}" varStatus="s" var="s1">
+							<c:if test="${(s.count==1)&&(s1 != null)}"> <c:set var="imgno1" value="${s1}" /> </c:if>
+							<c:if test="${s.count==2}"> <c:set var="imgno2" value="${s1}" /> </c:if>
+							<c:if test="${s.count==3}"> <c:set var="imgno3" value="${s1}" /> </c:if>								
+							<c:if test="${s.count==4}"> <c:set var="imgno4" value="${s1}" /> </c:if>
+							<c:if test="${s.count==5}"> <c:set var="imgno5" value="${s1}" /> </c:if>
+						</c:forEach>
+							<c:if test="${imgno1 != null}"> <img width="100" height="100" src="upload/${imgno1}" onclick="pop(this)"/> </c:if>
+				</td>
+				<td>
+						<c:set var="array" value="${fn:split(mb2.photos,',')}" />
+						<c:forEach items="${array}" varStatus="s" var="s1">
+							<c:if test="${(s.count==1)&&(s1 != null)}"> <c:set var="imgno1" value="${s1}" /> </c:if>
+							<c:if test="${s.count==2}"> <c:set var="imgno2" value="${s1}" /> </c:if>
+							<c:if test="${s.count==3}"> <c:set var="imgno3" value="${s1}" /> </c:if>								
+							<c:if test="${s.count==4}"> <c:set var="imgno4" value="${s1}" /> </c:if>
+							<c:if test="${s.count==5}"> <c:set var="imgno5" value="${s1}" /> </c:if>
+						</c:forEach>
+							<c:if test="${imgno1 != null}"> <img width="100" height="100" src="upload/${imgno1}" onclick="pop(this)"/> </c:if>
+						</td>
+				<td>
+						<c:set var="array" value="${fn:split(mb3.photos,',')}" />
+						<c:forEach items="${array}" varStatus="s" var="s1">
+							<c:if test="${(s.count==1)&&(s1 != null)}"> <c:set var="imgno1" value="${s1}" /> </c:if>
+							<c:if test="${s.count==2}"> <c:set var="imgno2" value="${s1}" /> </c:if>
+							<c:if test="${s.count==3}"> <c:set var="imgno3" value="${s1}" /> </c:if>								
+							<c:if test="${s.count==4}"> <c:set var="imgno4" value="${s1}" /> </c:if>
+							<c:if test="${s.count==5}"> <c:set var="imgno5" value="${s1}" /> </c:if>
+						</c:forEach>
+							<c:if test="${imgno1 != null}"> <img width="100" height="100" src="upload/${imgno1}" onclick="pop(this)"/> </c:if>
+						</td>
 			</tr>
 			<tr>
 				<th>전문 지원 동물</th>

@@ -16,6 +16,11 @@
 				ORDER BY date DESC limit #startrow#, #get_record#
 	</select>
 	
+	<select id="getBoardCount" parameterClass="String" resultClass="int">
+		SELECT count(*) FROM message 
+			WHERE receiver_email = #userid#
+	</select>
+	
 	<insert id="sendMessage" parameterClass="HashMap">
 		INSERT INTO message(receiver_email, sender_email, content, date)
 			VALUES(#receiver_email#, #sender_email#, #content#, SYSDATE())
