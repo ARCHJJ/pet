@@ -1201,80 +1201,77 @@ $(document).ready(function(){
 
 							<!--온라인 예약-->
 							<li class="main_li_4" style="top: 0px; height: 239px;"><a
-								href="/reserve/onlineReserve.do">
+								href="User_Menu_Write.do">
 									<dl>
-										<dt>온라인 예약</dt>
-										<dd>온라인으로 진료예약을 진행</dd>
+										<dt>작성글 관리</dt>
+										<dd></dd>
 									</dl>
 							</a></li>
 							<!--/온라인 예약-->
 
 							<!--오시는길-->
-							<li class="main_li_5" style="top: 240px; height: 239px;"><a
-								href="/intro/map/road.do">
+							<li class="main_li_5" style="top: 240px; height: 239px;">
 									<dl>
-										<dt>찾아오시는 길</dt>
-										<dd>지하철, 버스, 자동차, 기차</dd>
+										<dt></dt>
+										<dd></dd>
 									</dl>
-							</a></li>
+							</li>
 							<!--/오시는길-->
 
 							<!--진료비결제-->
 							<li class="main_li_6" style="top: 0px; height: 239px;"><a
-								href="/treatmentpay/PayMedicalList.do">
+								href="board_notice.do">
 									<dl>
-										<dt>진료비결제</dt>
-										<dd>결제관련 절차 및 안내</dd>
+										<dt>공지사항</dt>
+										<dd></dd>
 									</dl>
 							</a></li>
 							<!--/진료비결제-->
 
 							<!--진료스케쥴-->
 							<li class="main_li_7" style="top: 0px; height: 239px;"><a
-								href="/medical/deptListTime.do">
+								href="board_customer_service.do">
 									<dl>
-										<dt>외래진료일정표</dt>
-										<dd>진료과별 진료스케쥴 확인</dd>
+										<dt>고객센터</dt>
+										<dd>시스템 문의사항</dd>
 									</dl>
 							</a></li>
 							<!--/진료스케쥴-->
 
 							<!--처방동영상-->
 							<li class="main_li_8" style="top: 0px; height: 239px;"><a
-								href="/personal/myHichart.do">
+								href="board_kin.do">
 									<dl>
-										<dt>처방동영상</dt>
-										<dd>나의 처방동영상 확인</dd>
+										<dt>지식인</dt>
+										<dd></dd>
 									</dl>
 							</a></li>
 							<!--/처방동영상-->
 
 							<!--Health4U-->
 							<li class="main_li_9" style="top: 0px; height: 239px;"><a
-								href="/personal/health4u.do">
+								href="board_freeboard.do">
 									<dl>
 										<dt>
-											<span>Health4U</span>
+											자유게시판
 										</dt>
-										<dd>나의 진료기록 조회</dd>
+										<dd></dd>
 									</dl>
 							</a></li>
 							<!--/Health4U-->
 
 							<!--주요기사-->
-							<!-- 
-							<li class="main_li_10" style="top: -1px; height: 239px;"><a
-								href="/intro/news/newsList.do">
+							<li class="main_li_10" style="top: -1px; height: 239px;">
 									<dl>
-										<dt>언론소식</dt>
-										<dd>병원관련 주요기사</dd>
+										<dt></dt>
+										<dd></dd>
 									</dl>
 							</a></li>
-							 -->
 							<!--/주요기사-->
 						</ul>
 
 						<!--하단 add 메뉴-->
+						<!-- 
 						<ul class="add_menu_section fix">
 							<li class="add_menu_1"><a href="/medical/out/clinic01.do">
 									<dl>
@@ -1305,6 +1302,7 @@ $(document).ready(function(){
 									</dl>
 							</a></li>
 						</ul>
+						 -->
 						<!--/하단 add 메뉴-->
 					</div>
 					<!--/메인 메뉴-->
