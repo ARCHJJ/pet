@@ -31,66 +31,106 @@
 				</div> -->
 
 				<div class="ui menu" id="main_menu">
-					<div class="header item"><img src="./img/pet_room_logo.png" id="logo"></div>
+					<div class="header item">
+						<img src="./img/pet_room_logo.png" id="logo">
+					</div>
 					<div class="header item">펫방</div>
-					
-					<a class="active item" href="search.do">검색 바로가기</a> 
+
+					<a class="active item" href="search.do">검색 바로가기</a>
 					<!-- <a class="item">Link</a> -->
-					
-					<div class="ui dropdown item" tabindex="0">	커뮤니티 <i class="dropdown icon"></i>
+
+					<div class="ui dropdown item" tabindex="0">
+						커뮤니티 <i class="dropdown icon"></i>
 						<div class="menu" tabindex="-1">
-							<div class="item"><a href="board_notice.do">공지사항</a></div>
-							<div class="item"><a href="board_customer_service.do">고객센터</a></div>
+							<div class="item">
+								<a href="board_notice.do">공지사항</a>
+							</div>
+							<div class="item">
+								<a href="board_customer_service.do">고객센터</a>
+							</div>
 							<div class="divider"></div>
-							<div class="item"><a href="board_kin.do">지식인</a></div>
-							<div class="item"><a href="board_freeboard.do">자유게시판</a></div>
+							<div class="item">
+								<a href="board_kin.do">지식인</a>
+							</div>
+							<div class="item">
+								<a href="board_freeboard.do">자유게시판</a>
+							</div>
 						</div>
 					</div>
-					
+
 					<c:if test="${session.power eq 100}">
-						<div class="ui dropdown item" tabindex="0">	Dropdown <i class="dropdown icon"></i>
+						<div class="ui dropdown item" tabindex="0">
+							Dropdown <i class="dropdown icon"></i>
 							<div class="menu" tabindex="-1">
-								<div class="item"><a href="User_Menu_Reserv.do">예약정보</a></div>
-								<div class="item"><a href="User_Menu_Write.do">게시글관리</a></div>
-								<div class="item"><a href="User_Menu_Message.do">메시지확인</a></div>
+								<div class="item">
+									<a href="User_Menu_Reserv.do">예약정보</a>
+								</div>
+								<div class="item">
+									<a href="User_Menu_Write.do">게시글관리</a>
+								</div>
+								<div class="item">
+									<a href="User_Menu_Message.do">메시지확인</a>
+								</div>
 								<div class="divider"></div>
-								<div class="item"><a href="User_Menu_Person.do">개인정보</a></div>
+								<div class="item">
+									<a href="User_Menu_Person.do">개인정보</a>
+								</div>
 							</div>
 						</div>
 					</c:if>
-					
+
 					<c:if test="${session.power eq 200}">
-						<div class="ui dropdown item" tabindex="0">	Dropdown <i class="dropdown icon"></i>
+						<div class="ui dropdown item" tabindex="0">
+							Dropdown <i class="dropdown icon"></i>
 							<div class="menu" tabindex="-1">
-								<div class="item"><a href="mymenu_shop_item.do">물품관리</a></div>
-								<div class="item"><a href="mymenu_shop_reserv.do">예약현황관리</a></div>
-								<div class="item"><a href="mymenu_shop_info.do">매장정보수정</a></div>
+								<div class="item">
+									<a href="mymenu_shop_item.do">물품관리</a>
+								</div>
+								<div class="item">
+									<a href="mymenu_shop_reserv.do">예약현황관리</a>
+								</div>
+								<div class="item">
+									<a href="mymenu_shop_info.do">매장정보수정</a>
+								</div>
 								<div class="divider"></div>
-								<div class="item"><a href="User_Menu_Message.do">메시지확인</a></div>
+								<div class="item">
+									<a href="User_Menu_Message.do">메시지확인</a>
+								</div>
 							</div>
 						</div>
 					</c:if>
-					
+
 					<c:if test="${session.power eq 300}">
-						<div class="ui dropdown item" tabindex="0">	Dropdown <i class="dropdown icon"></i>
+						<div class="ui dropdown item" tabindex="0">
+							Dropdown <i class="dropdown icon"></i>
 							<div class="menu" tabindex="-1">
-								<div class="item"><a href="marketmanage.do">매장관리</a></div>
-								<div class="item"><a href="membermanage.do">회원관리</a></div>
-								<div class="item"><a href="reservemanage.do">예약현황관리</a></div>
+								<div class="item">
+									<a href="marketmanage.do">매장관리</a>
+								</div>
+								<div class="item">
+									<a href="membermanage.do">회원관리</a>
+								</div>
+								<div class="item">
+									<a href="reservemanage.do">예약현황관리</a>
+								</div>
 								<div class="divider"></div>
-								<div class="item"><a href="board_notice.do">공지사항관리</a></div>
-								<div class="item"><a href="board_customer_service.do">고객센터관리</a></div>
+								<div class="item">
+									<a href="board_notice.do">공지사항관리</a>
+								</div>
+								<div class="item">
+									<a href="board_customer_service.do">고객센터관리</a>
+								</div>
 							</div>
 						</div>
 					</c:if>
-					
+
 					<div class="right menu">
 						<div class="item">
 							<!-- <div class="ui action left icon input">
 								<i class="search icon"></i> <input type="text" placeholder="Search">
 								<button class="ui button">Submit</button>
 							</div> -->
-							
+
 							<div id="login_info">
 								<c:choose>
 									<c:when test="${session ne null }">
@@ -108,11 +148,11 @@
 									</c:when>
 								</c:choose>
 							</div>
-							
+
 						</div>
 						<!-- <a class="item">Link</a> -->
 					</div>
-					
+
 				</div>
 
 
@@ -171,7 +211,37 @@
 			</div>
 		</div>
 		<div id="bottom">
-			<div id="footer"></div>
+			<div class="ui inverted vertical footer segment">
+				<div class="ui container">
+					<div
+						class="ui stackable inverted divided equal height stackable grid">
+						<div class="three wide column">
+							<h4 class="ui inverted header">About</h4>
+							<div class="ui inverted link list">
+								<a href="#" class="item">Sitemap</a> 
+								<a href="#" class="item">Contact Us</a> 
+								<a href="#" class="item">Religious Ceremonies</a> 
+							</div>
+						</div>
+						<div class="three wide column">
+							<h4 class="ui inverted header">Services</h4>
+							<div class="ui inverted link list">
+								<a href="#" class="item">Banana Pre-Order</a> 
+								<a href="#"	class="item">DNA FAQ</a> 
+								<a href="#" class="item">How To	Access</a> 
+							</div>
+						</div>
+						<div class="seven wide column">
+							<h4 class="ui inverted header">영남대학교 컴퓨터 공학과</h4>
+							<p>정재웅 / 최병환 / 박지섭 / 이재원 / 김동후</p>
+							<p>관리자 : <a href="mailto:jjwpiano@ynu.ac.kr">jjwpiano@ynu.ac.kr</a>
+							<br>
+							Copyright © 2017 by 프로젝트 펫방. All rights reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div id="footer"></div> -->
 		</div>
 	</div>
 
