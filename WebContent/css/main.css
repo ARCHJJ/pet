@@ -174,7 +174,7 @@ body{width:100%;}
 .main_menu_section .m_ddd li dd{left:240px;}
 .main_menu_section .m_ddd li:first-child{margin-left:240px;}
 .main_menu_section .m_ddd li.main_li_1{background:#fff;   top:472px;  border-left:1px solid #dddcdc; margin-left:239px; width:238px;}
-.main_menu_section .m_ddd li.main_li_1 dl{padding-top:55px;  height:184px; }
+.main_menu_section .m_ddd li.main_li_1 dl{padding-top:55px; background:url(/pet/img/ico/bbb.png) no-repeat 50% 118px; height:184px;}
 .main_menu_section .m_ddd li.main_li_1 dl dt{margin-bottom:7px; font-size:24px; font-weight:600; color:#222; margin-bottom:25px;  font-family:KoPub Dotum, 'KoPub Dotum'; letter-spacing:0.5px;}
 .main_menu_section .m_ddd li.main_li_1 dl dt a{font-size:24px; font-weight:bold; color:#222; }
 .main_menu_section .m_ddd li.main_li_1 dl dd{font-size:12px; color:#333; font-weight:600;}
@@ -184,13 +184,13 @@ body{width:100%;}
 .main_menu_section .m_ddd li.main_li_2 dl dt{margin-bottom:7px; font-size:24px; font-weight:600; color:#222; font-family:KoPub Dotum, 'KoPub Dotum'; letter-spacing:0.5px;}
 .main_menu_section .m_ddd li.main_li_2 dl dd{font-size:14px; color:#333; font-weight:600;}
 .main_menu_section .m_ddd li.main_li_3{background:#f0f8ff; top:472px;}
-.main_menu_section .m_ddd li.main_li_3 dl{padding-top:55px;  height:184px;}
+.main_menu_section .m_ddd li.main_li_3 dl{padding-top:55px; background:url(/pet/img/ico/aaa.png) no-repeat 50% 118px; height:184px;}
 .main_menu_section .m_ddd li.main_li_3 dl dt{margin-bottom:7px;  font-size:24px; font-weight:bold; color:#222;  margin-bottom:25px; font-family:KoPub Dotum, 'KoPub Dotum'; letter-spacing:0.5px;}
 .main_menu_section .m_ddd li.main_li_3 dl dt a{font-size:24px; font-weight:600; color:#222;  font-family:KoPub Dotum, 'KoPub Dotum'; letter-spacing:0.5px;}
 .main_menu_section .m_ddd li.main_li_3 dl dd{font-size:14px; color:#333; font-weight:600;}
-.main_menu_section .m_ddd li.main_li_4{background:url(/pet/img/ex/b_2.jpg) no-repeat 0 0; background-size:cover; top:472px;}
+.main_menu_section .m_ddd li.main_li_4{background:url(/pet/img/ico/b_2.jpg) no-repeat 0 0; background-size:cover; top:472px;}
 .main_menu_section .m_ddd li.main_li_4 a{display:block; width:100%;}
-.main_menu_section .m_ddd li.main_li_4 dl{padding-top:55px; background:url(/pet/img/ico/ico_2.png) no-repeat 50% 118px; height:184px;}
+.main_menu_section .m_ddd li.main_li_4 dl{padding-top:55px; background:url(/pet/img/ico/ccc.png) no-repeat 50% 118px; height:184px;}
 .main_menu_section .m_ddd li.main_li_4 dl dt{margin-bottom:7px; font-size:24px; font-weight:bold; color:#fff; font-family:KoPub Dotum, 'KoPub Dotum'; letter-spacing:0.5px;}
 .main_menu_section .m_ddd li.main_li_4 dl dd{font-size:14px; color:#fff; font-weight:600;}
 .main_menu_section .m_ddd li.main_li_5{background:#f0f8ff; border-left:1px solid #dddcdc; left:-1199px; top:472px; z-index:5;}

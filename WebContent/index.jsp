@@ -1051,12 +1051,10 @@
 						<ul class="m_ddd fix">
 
 							<!--간편예약상담-->
-							<li class="main_li_1" style="top: 0px; height: 239px;">
+							<li class="main_li_1" style="top: 0px; height: 239px;"><a href="search.do">
 								<dl>
-									<dt>
-										<a href="/reserve/firstReserve.do">간편상담예약</a>
-									</dt>
-									<dd>
+									<dt>전체 검색</dt>
+									<dd><!-- 
 										<form onsubmit="return chkPhone(this)" lpformnum="2">
 											<fieldset>
 												<legend>간편상담예약</legend>
@@ -1073,8 +1071,9 @@
 												</p>
 											</fieldset>
 										</form>
+										 -->
 									</dd>
-								</dl> <!--PC 개인화 정보-->
+								</dl></a> <!--PC 개인화 정보-->
 								<div class="pc_login_info">
 									<div class="top_pc_login_info">
 										<p>
@@ -1109,10 +1108,10 @@
 
 							<!--예약현황조회-->
 							<li class="main_li_2" style="top: 0px; height: 239px;"><a
-								href="/personal/resvrStatusList.do">
+								href="User_Menu_Reserv.do">
 									<dl>
 										<dt>예약현황조회</dt>
-										<dd>진료예약현황을 조회</dd>
+										<dd><!-- 진료예약현황을 조회--></dd>
 									</dl>
 							</a> <!--진료예약,검사예약-->
 								<div class="pc_card_bottom_form fix">
@@ -1167,13 +1166,11 @@
 							<!--/예약현황조회-->
 
 							<!--의료진/진료과 찾기-->
-							<li class="main_li_3" style="top: 0px; height: 239px;">
+							<li class="main_li_3" style="top: 0px; height: 239px;"><a href="User_Menu_Message.do">
 								<dl>
-									<dt>
-										<a href="/medical/drMedicalTeam.do">의료진/<span>진료과
-												찾기</span></a>
-									</dt>
+									<dt>메시지</dt>
 									<dd>
+									<!-- 
 										<form action="/search.do" onsubmit="return chkTxt2( this );">
 											<fieldset>
 												<legend>의료진/진료과 찾기</legend>
@@ -1187,8 +1184,9 @@
 												</p>
 											</fieldset>
 										</form>
+										-->
 									</dd>
-								</dl>
+								</dl></a>
 							</li>
 							<!--/의료진/진료과 찾기-->
 
