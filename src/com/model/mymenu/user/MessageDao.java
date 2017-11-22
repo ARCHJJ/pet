@@ -15,8 +15,8 @@ public class MessageDao extends DaoCore{
 		try{
 			HashMap<String, Object> param = new HashMap<String, Object>();
 			param.put("userid", userid);
-			param.put("startrow", (page-1)*10);
-			param.put("get_record", 10);
+			param.put("startrow", (page-1)*5);
+			param.put("get_record", 5);
 			mblist = (ArrayList<MessageBean>) getSqlMapClient().queryForList("MessageDao.getMessageList", param);
 		}catch(Exception e){
 			e.printStackTrace();

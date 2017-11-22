@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.action.CommonAction;
 import com.action.board.PageInfo;
+import com.action.board.PageInfo_5;
 import com.model.login.LoginBean;
 import com.model.mymenu.user.MessageDao;
 import com.model.mymenu.user.UserBean;
@@ -29,7 +30,7 @@ public class User_Menu_Message_View extends CommonAction{
 		//레코드 총 개수
 		count = MessageDao.getInstance().getBoardCount(userid);
 		
-		PageInfo pageInfo = new PageInfo(count, page);
+		PageInfo_5 pageInfo = new PageInfo_5(count, page);
 		
 		UserBean ub = UserDao.getInstance().getUserInfo(userid);
 		ArrayList<MessageBean> mblist = new ArrayList<MessageBean>();
