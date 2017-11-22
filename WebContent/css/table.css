@@ -98,5 +98,8 @@ th {
 #reserv_view .reservview_d{ width: 5%;}
 #reserv_view .reservview_e{ width: 10%;}
 #reserv_view .reservview_f{ width: 10%;}
-#reserv_view .reservview_g{ width: 10%;}
-#reserv_view .reservview_h{ width: 10%;}
+#reserv_view .reservview_g{ width: 8%;}
+#reserv_view .reservview_h{ width: 12%;}
+
+/* modal_form */
+#item .item_a{ width: 15%;}

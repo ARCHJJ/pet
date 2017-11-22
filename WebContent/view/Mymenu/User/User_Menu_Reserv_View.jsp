@@ -62,7 +62,7 @@
 				<div class="ui header">예약정보 수정</div>
 				<div class="ui input focus">
 					<form name="modify_form" method="post"  action="User_Menu_Reserv_Modi.do">
-						<table>
+						<table class="ui compact celled definition table">
 							<tr>
 								<td>예약번호</td>
 								<td><input type="text" name="rev_idx" id="rev_idx" readonly="readonly"/></td>

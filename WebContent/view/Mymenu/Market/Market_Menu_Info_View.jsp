@@ -81,16 +81,13 @@
 		<button class="ui primary basic button" type="button"
 			onclick="upInfo('${mb.market_id }', '${mb.market_name }', '${mb.description }', '${mb.photos }', '${mb.address }', ${mb.pet_dog }, ${mb.pet_cat }, ${mb.pet_etc }, ${mb.cl_market }, ${mb.cl_beauty }, ${mb.cl_hotel }, ${mb.cl_hospital }, ${mb.ser_buypet }, ${mb.ser_buystuff }, ${mb.ser_hair }, ${mb.ser_bath }, ${mb.ser_rent }, ${mb.ser_lodge }, ${mb.ser_doctor }, ${mb.ser_surgery })">수정하기</button>
 	</div>
-	<div class="ui modal second" id="modal_update">
+	<div class="ui modal first" id="modal_update">
 		<i class="close icon"></i>
 		<div class="header">매장정보 수정</div>
 		<div class="image content">
-			<div class="ui medium image">
-				<img src="img/logo.gif">
-			</div>
 			<div class="description">
 				<div class="ui header">매장정보 수정</div>
-				<div class="ui input focus">
+				<div class="ui input focus" id="modal1">
 					<form name="modify_form" method="post"
 						action="mymenu_shop_info_modi.do" enctype="multipart/form-data">
 						<table>
@@ -107,7 +104,7 @@
 								<td><input type="text" name="description" id="description" maxlength="20" /></td>
 							</tr>
 							<tr>
-								<td>매장 사진</td>
+								<td style="height: 10%;">매장 사진</td>
 								<td>
 									<input type="file" name="uploadFile[0]" id="uploadFile1" accept=".jpg, .jpeg, .png"> 
 									<input type="file" name="uploadFile[1]" id="uploadFile2" accept=".jpg, .jpeg, .png"> 

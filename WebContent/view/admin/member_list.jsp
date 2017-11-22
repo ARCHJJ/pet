@@ -30,7 +30,7 @@
 				<th>권한</th>
 				<th>수정</th>
 				<th>삭제</th>
-				<th>마켓 할당</th>
+				<th id="a">마켓 할당</th>
 			</tr>
 			<c:forEach items="${memberlist}" var="item">
 				<tr>

@@ -5,15 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>매장 상품 목록</title>
+<title>매장 상품/서비스 목록</title>
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-<link rel="stylesheet" type="text/css"
-	href="Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.min.css">
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript"
-	src="Semantic-UI-CSS-master/semantic.min.js"></script>
+<script type="text/javascript" src="Semantic-UI-CSS-master/semantic.min.js"></script>
 <script type="text/javascript" src="js/market_mymenu/item.js"></script>
 </head>
 <body>
@@ -61,13 +59,13 @@
 	</table>
 	<div class="ui modal first" id="modal_insert">
 		<i class="close icon"></i>
-		<div class="header">상품 추가</div>
+		<div class="header">상품/서비스 추가</div>
 		<div class="image content">
 			<div class="description">
 				<div class="ui header">상품 추가</div>
-				<div class="ui input focus">
+				<div class="ui input focus" id="modal1">
 					<form name="insert_form" method="post"	action="mymenu_shop_item_insert.do" enctype="multipart/form-data">
-					<table>
+					<table class="ui compact celled definition table">
 							<tr>
 								<td>마켓 번호</td>
 								<td><input type="text" name="market_id" id="market_id" readonly="readonly"/></td>
@@ -106,20 +104,18 @@
 			</div>
 		</div>
 	</div>
-	<div class="ui modal second" id="modal_update">
+	<div class="ui modal first" id="modal_update">
 		<i class="close icon"></i>
 		<div class="header">상품 정보 수정</div>
 		<div class="image content">
-			<div class="ui medium image">
-				<img src="img/logo.gif">
-			</div>
 			<div class="description">
 				<div class="ui header">상품 정보 수정</div>
-				<div class="ui input focus">
+				<div class="ui input focus" id="modal1">
 					<form name="modify_form" method="post"	action="mymenu_shop_item_modi.do" enctype="multipart/form-data">
-						<table>
+						<table class="ui compact celled definition table" id="item">
 							<tr>
-								<td>상품 번호</td><td><input type="text" name="idx" id="idx" readonly="readonly"/>	</td>
+								<td class="item_a">상품 번호</td>
+								<td><input type="text" name="idx" id="idx" readonly="readonly"/>	</td>
 							</tr>
 							<tr>
 								<td>상품 이름</td>

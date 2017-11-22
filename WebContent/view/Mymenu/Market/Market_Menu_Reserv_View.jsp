@@ -45,7 +45,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<div class="ui modal second" id="modal_update">
+	<div class="ui modal first" id="modal_update">
 		<i class="close icon"></i>
 		<div class="header">예약정보 수정</div>
 		<div class="image content">
@@ -54,9 +54,9 @@
 			</div>
 			<div class="description">
 				<div class="ui header">예약정보 수정</div>
-				<div class="ui input focus">
+				<div class="ui input focus" id="modal1">
 					<form name="modify_form" method="post"  action="mymenu_shop_reserv_modi.do">
-						<table>
+						<table class="ui compact celled definition table" >
 							<tr>
 								<td>예약번호</td>
 								<td><input type="text" name="rev_idx" id="rev_idx" readonly="readonly"/></td>

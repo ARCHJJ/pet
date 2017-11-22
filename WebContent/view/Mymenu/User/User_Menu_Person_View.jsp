@@ -53,7 +53,7 @@
 				<div class="ui header">개인정보 수정</div>
 				<div class="ui input focus">
 					<form name="modify_form" method="post"  action="User_Menu_Person_Modi.do">
-						<table border="1">
+						<table class="ui compact celled definition table">
 							<tr>
 								<td>이메일</td>
 								<td><input type="text" name="email" id="email" readonly="readonly"/></td>
