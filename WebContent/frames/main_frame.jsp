@@ -210,7 +210,7 @@
 				<decorator:body />
 			</div>
 		</div>
-		<div id="bottom">
+		<!-- <div id="bottom">
 			<div class="ui inverted vertical footer segment">
 				<div class="ui container">
 					<div
@@ -241,8 +241,8 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div id="footer"></div> -->
-		</div>
+			<div id="footer"></div>
+		</div> -->
 	</div>
 
 	<div class="ui modal first">

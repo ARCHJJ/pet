@@ -2386,6 +2386,38 @@
 			<!--/footer_wrapper-->
 		</div>
 		<!--/common_wrapper-->
+		<div id="bottom">
+			<div class="ui inverted vertical footer segment">
+				<div class="ui container">
+					<div
+						class="ui stackable inverted divided equal height stackable grid">
+						<div class="three wide column">
+							<h4 class="ui inverted header">About</h4>
+							<div class="ui inverted link list">
+								<a href="#" class="item">Sitemap</a> 
+								<a href="#" class="item">Contact Us</a> 
+								<a href="#" class="item">Religious Ceremonies</a> 
+							</div>
+						</div>
+						<div class="three wide column">
+							<h4 class="ui inverted header">Services</h4>
+							<div class="ui inverted link list">
+								<a href="#" class="item">Banana Pre-Order</a> 
+								<a href="#"	class="item">DNA FAQ</a> 
+								<a href="#" class="item">How To	Access</a> 
+							</div>
+						</div>
+						<div class="seven wide column">
+							<h4 class="ui inverted header">영남대학교 컴퓨터 공학과</h4>
+							<p>정재웅 / 최병환 / 박지섭 / 이재원 / 김동후</p>
+							<p>관리자 : <a href="mailto:jjwpiano@ynu.ac.kr">jjwpiano@ynu.ac.kr</a>
+							<br>
+							Copyright © 2017 by 프로젝트 펫방. All rights reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 </body>
