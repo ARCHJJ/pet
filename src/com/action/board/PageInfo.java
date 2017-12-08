@@ -9,8 +9,6 @@ public class PageInfo {
 	int endPage;	//화면 마지막부분에 보일 페이지의 마지막숫자
 	int prevPage;	//이전페이지 번호
 	int nextPage;	//다음페이지 번호
-	int start;	//시작 레코드
-	int end;	//끝의 레코두
 	int maxPage;	//최대 표시되는 페이지 수
 	
 	public PageInfo(int count, int page){
