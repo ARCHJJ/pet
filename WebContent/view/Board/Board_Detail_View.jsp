@@ -63,7 +63,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${mflist}" var="item">
+				<c:forEach items="${bblist}" var="item">
 					<tr>
 						<td>${item.email }</td>
 						<td>${item.content }</td>
