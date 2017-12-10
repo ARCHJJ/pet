@@ -19,7 +19,7 @@ public class Select_Market_View implements CommandAction{
 		MarketBean mb = new MarketBean();
 		mb = MarketDao.getInstance().getMarketInfo(idx);
 		
-		ArrayList<Market_feedbackBean> mflist =  new ArrayList<Market_feedbackBean>();
+		ArrayList<Market_feedbackBean> mflist = new ArrayList<Market_feedbackBean>();
 		mflist = MarketDao.getInstance().getmarketEvaluate(idx);
 		
 		request.setAttribute("mb", mb);

@@ -76,7 +76,7 @@
 		<input type="hidden" name="reservation_service" value="${mb.item_idx}">
 	</form>
 	
-	<input type="button" onclick="reserv_submit()" value="예약하기">
+	<button class="ui positive basic button" type="button" onclick="reserv_submit()">예약하기</button>
 	
 	<!-- <input type="button" onclick="reserv_confirm_form('${ub.email}', '${mb.market_id}', '${ub.address1}', '${ub.address2}', '11', '123', 000, '${mb.price }')"	value="예약하기">
 
